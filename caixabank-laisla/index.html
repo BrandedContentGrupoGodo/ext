@@ -226,6 +226,9 @@
 
 function closePopup() {
     document.getElementById('popup').style.display = 'none';
+    // Stop video playback
+    var videoFrame = document.getElementById('video-frame');
+    videoFrame.src = '';
 }
 
 function changeContent(territory) {
