@@ -452,6 +452,9 @@ padding-right: 24px;
 .img-final img {
   width: 100%;
 }
+.destacado-final a {
+  color: var(--white)!important;
+}
  /*CRÉDITOS*/
  .creditos {
   padding:16px 0;
