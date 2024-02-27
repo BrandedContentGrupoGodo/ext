@@ -65,6 +65,15 @@ h1 {
   padding-right: 0 !important;
   padding-left: 0 !important;
 }
+.visual__story--free .content-free-html {
+  margin: 0px !important;
+}
+.row>* {
+  padding-right: 0!important;
+  padding-left: 0!important;
+  margin-top: 0!important;
+}
+
 /* CABECERA */
 .collab {
   padding: 10px 30px;
