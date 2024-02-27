@@ -315,18 +315,21 @@ padding-right: 24px;
   background-color: #019AD8 !important;
   color: var(--white)!important;
   border: none!important;
+  background-image: none!important;
 }
 .fondo-azul-light .btn-warning:active {
   margin: 10px;
-  /* background-color: #F8CD46!important; */
+  background-color: #F8CD46!important; 
   color: var(--white)!important;
   border: none!important;
+  background-image: none!important;
 }
 .fondo-azul-light .btn-warning:hover {
   margin: 10px;
-  /* background-color: #F8CD46!important; */
+  background-color: #F8CD46!important;
   color: var(--white)!important;
   border: none!important;
+  background-image: none!important;
 }
 .image-popup {
   position: fixed;
