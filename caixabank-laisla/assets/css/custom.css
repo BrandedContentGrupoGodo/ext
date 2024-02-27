@@ -310,6 +310,9 @@ padding-right: 24px;
   background-color: var(--blue);
   column-gap: 10px;
 }
+.fondo-azul-light .btn {
+  background-image: none!important;
+}
 .fondo-azul-light .btn-warning {
   margin: 10px;
   background-color: #019AD8 !important;
