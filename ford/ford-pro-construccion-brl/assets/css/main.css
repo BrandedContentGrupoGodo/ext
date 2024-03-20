@@ -57,7 +57,7 @@ h3 {
     font-size: 9vw;
   }
   h2 {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 
@@ -239,7 +239,7 @@ h3 {
   }
 } 
 .titular h1 {
-  max-width: 800px;
+  max-width: 815px;
   overflow: hidden; 
   animation: slideUp 1s forwards; 
 }
