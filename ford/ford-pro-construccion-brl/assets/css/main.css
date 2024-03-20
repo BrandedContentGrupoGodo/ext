@@ -221,7 +221,7 @@ h3 {
   padding-right: 20px;
 }
 .titular img{
-  max-width: 420px;
+  max-width: 370px;
   width: 100%;
   animation: image-anim cubic-bezier(.12, 1, .25, 1) 2.3s;
 }
