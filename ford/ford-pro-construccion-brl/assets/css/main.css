@@ -61,6 +61,10 @@ h3 {
   h2 {
     font-size: 16px;
   }
+  h3 {
+    padding-left:14px!important;
+    padding-right:14px!important;
+  }
 }
 
 .pt-3 {
@@ -164,12 +168,6 @@ h3 {
   padding-right: 0 !important;
   padding-left: 0 !important;
   margin-top: 0 !important;
-}
-@media (max-width: 520px) {
-  .visual-article-free .col-12 {
-    padding-right: 14px !important;
-    padding-left: 14px !important;
-  }
 }
 .content-free-html {
   margin:0 !important;
@@ -334,6 +332,12 @@ h3 {
 @media (max-width: 768px) {
   .contenedor-cuerpo-img {
     margin: 0px ;
+  }
+}
+@media (max-width: 520px) {
+  .contenedor-cuerpo-txt {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
   }
 }
 
