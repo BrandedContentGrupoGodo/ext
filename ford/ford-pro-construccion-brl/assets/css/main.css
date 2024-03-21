@@ -164,6 +164,12 @@ h3 {
   padding-left: 0 !important;
   margin-top: 0 !important;
 }
+@media (max-width: 520px) {
+  .visual-article-free {
+    padding-right: 14px !important;
+    padding-left: 14px !important;
+  }
+}
 .content-free-html {
   margin:0 !important;
 }
