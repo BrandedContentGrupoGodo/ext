@@ -26,6 +26,7 @@ h1 {
   font-family: "Rubik", sans-serif;
   font-optical-sizing: auto;
   margin: 0 0 10px 0;
+  font-style: normal!important;
 }
 h2 {
   font-size: 18px;
@@ -165,7 +166,7 @@ h3 {
   margin-top: 0 !important;
 }
 @media (max-width: 520px) {
-  .visual-article-free {
+  .visual-article-free .col-12 {
     padding-right: 14px !important;
     padding-left: 14px !important;
   }
