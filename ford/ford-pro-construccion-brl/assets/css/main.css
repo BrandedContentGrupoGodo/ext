@@ -22,7 +22,7 @@ h1 {
   font-size: 3.5vw;
   font-weight: 600;
   color: var(--blue);
-  line-height: 1.2;
+  line-height: 1.1!important;
   font-family: "Rubik", sans-serif;
   font-optical-sizing: auto;
   margin: 0 0 10px 0;
