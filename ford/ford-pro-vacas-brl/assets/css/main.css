@@ -22,7 +22,7 @@ h1 {
   font-size: 3.5vw;
   font-weight: 600;
   color: var(--blue);
-  line-height: 1.2;
+  line-height: 1;
   font-family: "Rubik", sans-serif;
   font-optical-sizing: auto;
   margin: 0 0 10px 0;
@@ -34,6 +34,7 @@ h2 {
   font-optical-sizing: auto;
   margin-top: 0;
   color: var(--dark-blue);
+  line-height: normal;
 }
 h3 {
   font-family: "Rubik", sans-serif;
@@ -623,8 +624,7 @@ h3 {
 
 /*CRÉDITOS*/
 .authorship-creditos {
-  color: white;
-  background-color: var(--dark-blue);
+  color: var(--gray);
   font-size:0.8em;
   text-align:center;
   padding:16px 0;
