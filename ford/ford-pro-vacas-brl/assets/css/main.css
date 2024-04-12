@@ -213,13 +213,14 @@ h3 {
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   text-align: center;
   margin: auto;
   max-width: 1024px;
   padding-left: 20px;
   padding-right: 20px;
+  padding-top: 10px;
 }
 .titular img{
   max-width: 420px;
