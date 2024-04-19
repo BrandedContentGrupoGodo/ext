@@ -394,6 +394,9 @@ color: #ffffff;
 .text {
   width: 48%;
 }
+.mitad {
+  width: 48%;
+}
 
 .text.left {
   text-align: left;
@@ -451,7 +454,7 @@ color: #ffffff;
 }
 
 @media (max-width: 990px) {
-.content-coca-cola {
+  .content-coca-cola {
     padding: 10px;
   }
 }
@@ -460,7 +463,10 @@ color: #ffffff;
     flex-direction: column;
     justify-content: flex-start;
   }
-.text {
+   .text {
+    width: 90%;
+  }
+  .mitad {
     width: 90%;
   }
   .text.left .image1 {
