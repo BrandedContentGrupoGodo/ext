@@ -371,7 +371,7 @@ letter-spacing: 1.2px;
 text-transform: uppercase;
 color: #ffffff;
 }
-.coca-cola .content {
+.content-coca-cola {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -383,10 +383,10 @@ color: #ffffff;
   font-family: 'coca-cola', sans-serif;
   color: #ffffff;
 }
-.slide:nth-child(2) .content, .slide:nth-child(3) .content, .slide:nth-child(4) .content {
+.slide:nth-child(2) .content-coca-cola, .slide:nth-child(3) .content-coca-cola, .slide:nth-child(4) .content-coca-cola {
   justify-content: flex-end!important;
 }
-.slide:nth-child(6) .content {
+.slide:nth-child(6) .content-coca-cola {
   justify-content: center!important;
   text-align: left!important;
 }
@@ -401,6 +401,9 @@ color: #ffffff;
 
 .text.left .image1 {
   cursor: pointer;
+}
+.text.left img {
+  width: auto;
 }
 
 .text.right {
@@ -448,12 +451,12 @@ color: #ffffff;
 }
 
 @media (max-width: 990px) {
-  .coca-cola .content {
+  .coca-cola .content-coca-cola {
     padding: 10px;
   }
 }
 @media (max-width: 520px) {
-  .coca-cola .content {
+  .coca-cola .content-coca-cola {
     flex-direction: column;
     justify-content: flex-start;
   }
@@ -510,5 +513,4 @@ color: #ffffff;
 .prueba-xac {
   position: relative;
   width: auto;
-  height: 95vh;
 }
