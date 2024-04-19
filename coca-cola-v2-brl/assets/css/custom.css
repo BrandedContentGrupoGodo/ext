@@ -516,8 +516,6 @@ color: #ffffff;
   cursor: pointer;
   color: #2C2B29;
 }
-/* .prueba-xac {
-  position: relative;
-  width: auto;
-  height: auto;
-} */
+.prueba-xac {
+  height: 100vh;
+} 
