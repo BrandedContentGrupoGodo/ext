@@ -1,6 +1,6 @@
 var $window = $(window);
 var $document = $(document);
-var $navButtons = $("nav a").filter("[href^=#]");
+var $navButtons = $(".coca-cola nav a").filter("[href^=#]");
 var $navGoPrev = $(".go-prev");
 var $navGoNext = $(".go-next");
 var $slidesContainer = $(".slides-container");
