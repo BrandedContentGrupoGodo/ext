@@ -8,7 +8,7 @@
   font-family: 'coca-cola';
   src: url('../fonts/coca-cola.woff2') format("woff2");
 }
-.coca-cola {
+.body {
   margin: 0;
   font-family: 'coca-cola', sans-serif;
   text-rendering: optimizeLegibility;
