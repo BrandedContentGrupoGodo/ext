@@ -407,6 +407,7 @@ color: #ffffff;
 }
 .text.left img {
   width: auto;
+  max-width: 100%;
 }
 
 .text.right {
@@ -463,6 +464,10 @@ color: #ffffff;
     flex-direction: column;
     justify-content: flex-start;
   }
+  .content-coca-cola:nth-child(6) {
+    max-width: 320px!important;
+  }
+
    .text {
     width: 90%;
   }
@@ -519,3 +524,8 @@ color: #ffffff;
 .prueba-xac {
   height: 100vh;
 } 
+@media screen and (min-width: 768px) {
+  footer .container {
+      display: none!important;
+  }
+}
