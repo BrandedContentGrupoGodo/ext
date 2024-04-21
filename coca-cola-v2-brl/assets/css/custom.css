@@ -285,7 +285,7 @@ a.underline-hover-effect {
     display: none; 
   }
   .slide .mobile-video {
-    display: block;
+    display: block!important;
     position: absolute;
   top: 0;
   left: 0;
