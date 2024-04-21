@@ -524,8 +524,6 @@ color: #ffffff;
 .prueba-xac {
   height: 100vh;
 } 
-@media screen and (min-width: 768px) {
   footer .container {
       display: none!important;
   }
-}
