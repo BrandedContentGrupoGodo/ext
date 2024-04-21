@@ -281,9 +281,9 @@ a.underline-hover-effect {
   display: none;
 }
 @media (max-width: 576px) {
-  .desktop-video {
+   /* .desktop-video {
     display: none; 
-  }
+  } */
   .slide .mobile-video {
     display: block!important;
     position: absolute;
