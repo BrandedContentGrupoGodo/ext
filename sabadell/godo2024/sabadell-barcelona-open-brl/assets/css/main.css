@@ -91,6 +91,32 @@ h3 {
   visibility: hidden;
 }
 
+/* estilos para que en LV se muestre el contenido sin margenes */
+.wallpaper-inverted-ad{
+  display: none!important;
+}
+
+.visual-article-free .col-12 {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  margin-top: 0 !important;
+}
+.content-free-html {
+  margin:0 !important;
+}
+.container-fluid {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+.visual__story--free .content-free-html {
+  margin: 0px !important;
+}
+.row>* {
+  padding-right: 0!important;
+  padding-left: 0!important;
+  margin-top: 0!important;
+}
+
 /* IMAGEN CABECERA */
 .hero {
   width: 100%;
@@ -98,7 +124,7 @@ h3 {
   display: flex;
 }
 .imagen-cabecera {
-  background-image: url('../img/cabecera.jpg');
+  background-image: url('https://brandedcontentgrupogodo.github.io/ext/sabadell/godo2024/sabadell-barcelona-open-brl/assets/img/cabecera.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -149,7 +175,7 @@ h3 {
     padding-right: 10px;
   }
   .imagen-cabecera {
-    background-image: url('../img/cabecera-mobile.jpg');
+    background-image: url('https://brandedcontentgrupogodo.github.io/ext/sabadell/godo2024/sabadell-barcelona-open-brl/assets/img/cabecera-mobile.jpg');
   }
 }
 
@@ -376,7 +402,7 @@ h3 {
   background-size: cover;
 }
 .parallax-img-destacado1 {
-  background-image: url('../img/destacado-laliga-1.jpg');
+  background-image: url('https://brandedcontentgrupogodo.github.io/ext/sabadell/godo2024/sabadell-barcelona-open-brl/assets/img/destacado-laliga-1.jpg');
   transition: filter .5s ease-in-out;
   -webkit-filter: grayscale(100%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
   filter: grayscale(100%); /* FF 35+ */
@@ -399,14 +425,14 @@ h3 {
 }
 @media (max-width: 550px) {
   .parallax-img-destacado1 {
-    background-image: url('../img/destacado-laliga-1-mobile.jpg');
+    background-image: url('https://brandedcontentgrupogodo.github.io/ext/sabadell/godo2024/sabadell-barcelona-open-brl/assets/img/destacado-laliga-1-mobile.jpg');
   }
 }
 
 /* destacado fondo tenis */
 .contenedor-destacado {
   height: 100vh;
-  background-image: url('../img/tenis-fondo.svg');
+  background-image: url('https://brandedcontentgrupogodo.github.io/ext/sabadell/godo2024/sabadell-barcelona-open-brl/assets/img/tenis-fondo.svg');
   background-size: cover;
   background-position: center;
   display: flex;
