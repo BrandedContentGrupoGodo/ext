@@ -171,8 +171,8 @@ h3 {
     font-size: 0.5rem;
   }
   .hero__title { 
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 40px!important;
+    padding-right: 20px!important;
   }
   .imagen-cabecera {
     background-image: url('https://brandedcontentgrupogodo.github.io/ext/sabadell/godo2024/sabadell-barcelona-open-brl/assets/img/cabecera-mobile.jpg');
@@ -278,6 +278,12 @@ h3 {
   .cuerpo-txt {
     padding-left: 24px;
     padding-right: 24px;
+  }
+}
+@media (max-width:575px) {
+  .contenedor-cuerpo-txt .intro {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
@@ -618,7 +624,7 @@ h3 {
   
   .carousel-navigation2 {
     bottom: 10px;
-    right: 10px;
+    right: 120px;
   }
 
   .carousel-slide2 .mobile {
