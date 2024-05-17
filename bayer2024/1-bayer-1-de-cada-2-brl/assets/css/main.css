@@ -168,6 +168,10 @@ body p {
     text-align: left;
 }
 
+#paragraphs p:last-of-type {
+    padding-bottom: 60px;
+}
+
 #center-image {
     text-align: center;
     opacity: 0;
