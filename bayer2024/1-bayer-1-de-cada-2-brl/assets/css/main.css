@@ -252,10 +252,12 @@ body p {
 @media (max-width: 550px) {
     #two-columns {
         flex-direction: column;
+        padding:20px;
     }
 
     #column h2 {
         margin-left: 0;
+        padding-bottom:20px;
     }
 }
 
