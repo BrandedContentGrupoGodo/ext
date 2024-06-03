@@ -87,7 +87,7 @@ body p {
     right: 0;
     background-color: rgba(3, 23, 34, 0.7);
     border-radius: 50px;
-    padding: 0px 23px;
+    padding: 7px 23px;
     text-align: center;
     color: var(--white-txt);
     z-index: 1;
