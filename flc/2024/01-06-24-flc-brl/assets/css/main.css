@@ -69,6 +69,7 @@ body p {
     width: 100%;
     height: 100vh;
     overflow: hidden;
+	background:url('https://brandedcontentgrupogodo.github.io/ext/flc/2024/01-06-24-flc-brl/assets/img/cabecera.jpg') center bottom no-repeat;
 }
 
 #cabecera-container img {
