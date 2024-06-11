@@ -113,6 +113,12 @@ a {
     text-decoration: none;
     box-shadow: none;
   }
+.article-default .paragraph a {
+    color: var(--black);
+}
+.article-default .paragraph a {
+    color: var(--black);
+}
 
 /* Animaciones */
 .fade-in {
