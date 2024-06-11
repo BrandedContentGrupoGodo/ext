@@ -50,7 +50,7 @@ a {
     color: var(--black);
 }
 .block-5 a, .block-6 a {
-    color: var(--white);
+    color: var(--white)!important;
 }
 .links-ap {
     text-decoration: none;
@@ -71,7 +71,7 @@ a {
     width: 0;
   }
   .block-5 .links-ap:after, .block-6 .links-ap:after {
-    background: var(--white);
+    background: var(--white)!important;
   }
   .links-ap:hover:after { 
     width: 100%; 
@@ -112,7 +112,7 @@ a {
 .article-default a:hover {
     text-decoration: none;
     box-shadow: none;
-  }
+}
 .article-default .paragraph a {
     color: var(--black);
 }
