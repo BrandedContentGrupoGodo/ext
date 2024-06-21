@@ -24,12 +24,17 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+
 const leftArrow = document.getElementById('left-arrow');
 const rightArrow = document.getElementById('right-arrow');
 const sliderWrapper = document.querySelector('.slider-wrapper');
 const images = document.querySelectorAll('.slider-wrapper img');
-let imageWidth = images[0].clientWidth + 10; // Width of the image plus margin
+let imageWidth;
 let currentIndex = 0;
+
+function updateImageWidth() {
+    imageWidth = images[0].clientWidth + 10; // Recalculate image width plus margin
+}
 
 function updateArrows() {
     leftArrow.classList.toggle('disabled', currentIndex === 0);
@@ -38,7 +43,7 @@ function updateArrows() {
 
 function slideToIndex(index) {
     currentIndex = index;
-    sliderWrapper.style.transform = `translateX(-${currentIndex * (imageWidth)}px)`;
+    sliderWrapper.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
     updateArrows();
 }
 
@@ -55,8 +60,12 @@ rightArrow.addEventListener('click', () => {
 });
 
 window.addEventListener('resize', () => {
-    imageWidth = images[0].clientWidth + 10; // Recalculate image width on resize
+    updateImageWidth();
     slideToIndex(currentIndex); // Maintain current index after resize
 });
 
-updateArrows();
+// Initial setup
+window.addEventListener('load', () => {
+    updateImageWidth();
+    updateArrows();
+});
