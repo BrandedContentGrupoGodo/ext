@@ -133,6 +133,7 @@ body {
     line-height: 127.075%;
     letter-spacing: 1.76px;
     text-transform: uppercase;
+    padding-top: 50px;
 }
 .epigrafe p {
     margin-bottom: 5px;
@@ -323,7 +324,6 @@ section:nth-child(15) .img-dos-col {
 
 .slider img {
     max-height: 600px;
-    border-radius: var(--radius-lg);
     margin-right: 10px;
     flex-shrink: 0;
 }
@@ -336,11 +336,12 @@ section:nth-child(15) .img-dos-col {
     border: none;
     border-radius: 50%;
     cursor: pointer;
-    font-size: 20px;
-    padding: 5px 2px;
+    font-size: 24px;
+    padding: 9px 2px;
     z-index: 1;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
+    color: #009EE1;
 }
 
 .left {
@@ -360,7 +361,7 @@ section:nth-child(15) .img-dos-col {
 }
 
 .arrow.disabled {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.115);
     cursor: not-allowed;
 }
 
