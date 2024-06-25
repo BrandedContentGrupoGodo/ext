@@ -270,7 +270,7 @@ body {
     border-radius: var(--radius-lg);
 }
 
-section:nth-child(15) .img-dos-col {
+section:nth-child(17) .img-dos-col {
     grid-template-columns: 2fr 3fr;
 }
 
