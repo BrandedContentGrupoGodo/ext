@@ -274,6 +274,9 @@ body {
 section:nth-child(17) .img-dos-col {
     grid-template-columns: 2fr 3fr!important;
 }
+.img-dos-col .especial {
+    grid-template-columns: 2fr 3fr;
+}
 
 @media (max-width: 550px) {
     .destacado {
