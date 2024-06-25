@@ -152,6 +152,7 @@ body {
 .intro {
     height: auto;
     position: relative;
+    margin-top: 50px;
 }
 .intro img {
     width: 100%;
@@ -271,7 +272,7 @@ body {
 }
 
 section:nth-child(17) .img-dos-col {
-    grid-template-columns: 2fr 3fr;
+    grid-template-columns: 2fr 3fr!important;
 }
 
 @media (max-width: 550px) {
