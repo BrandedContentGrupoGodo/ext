@@ -260,6 +260,7 @@ button:focus {
     font-weight: 400;
     line-height: 168.8%;
     color: var(--dark-gray);
+    padding: 10px 20px;
 }
 
 .contenedor-img {
