@@ -99,6 +99,9 @@ body {
 .article-default .paragraph a:hover {
     color: var(--black);
 }
+button:focus {
+    outline: none;
+}
 /* FIN LV xalok*/
 
 
@@ -341,7 +344,7 @@ section:nth-child(17) .img-dos-col {
     border-radius: 50%;
     cursor: pointer;
     font-size: 24px;
-    padding: 9px 2px;
+    padding: 4px 2px;
     z-index: 1;
     width: 40px;
     height: 40px;
