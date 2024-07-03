@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let player;
 
+    // Esta función se llama cuando la API está lista
     window.onYouTubeIframeAPIReady = () => {
         player = new YT.Player('youtubePlayer', {
             height: '100%',
