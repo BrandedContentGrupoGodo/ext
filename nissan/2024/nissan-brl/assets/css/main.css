@@ -55,7 +55,8 @@ section p {
     font-size: var(--font-size-h1);
     font-weight: 900;
     text-transform: uppercase;
-    margin: 20px 0;
+    margin: 20px auto;
+    max-width: 1034px;
 }
 
 .container-nissan {
