@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let player;
 
-    // Esta función se llama cuando la API está lista
     window.onYouTubeIframeAPIReady = () => {
+        console.log('YouTube IFrame API is ready');
         player = new YT.Player('youtubePlayer', {
             height: '100%',
             width: '100%',
@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     function onPlayerReady(event) {
+        console.log('YouTube Player is ready');
         const previewImg = document.getElementById('previewImg');
         const videoPopup = document.getElementById('videoPopup');
         const closePopup = document.getElementById('closePopup');
@@ -34,13 +35,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function closeVideoPopup() {
+        console.log('Closing video popup');
         const videoPopup = document.getElementById('videoPopup');
         videoPopup.style.display = 'none';
         player.stopVideo();
     }
-});
 
-document.addEventListener("DOMContentLoaded", function() {
+    // Audio play/pause functionality
     const playPauseBtn = document.getElementById('playPauseBtn');
     const audioElement = document.getElementById('audioElement');
 
