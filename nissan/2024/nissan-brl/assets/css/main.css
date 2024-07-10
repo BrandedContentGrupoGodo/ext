@@ -319,6 +319,7 @@ section p {
     right: 0;
     padding: 20px;
     margin-left: 50px;
+    z-index: 1;
 }
 
 .highlight-overlay h2 {
@@ -330,6 +331,7 @@ section p {
     text-transform: uppercase;
     max-width: 450px;
     padding-bottom: 50px;
+    z-index: 3;
 }
 
 .mobile-image {
@@ -780,6 +782,12 @@ section p {
     }
     .content {
         padding-top: 20px;
+    }
+  }
+
+  @media(max-width:380px) {
+    li:last-of-type .content{
+        padding-top: 80px;
     }
   }
 
