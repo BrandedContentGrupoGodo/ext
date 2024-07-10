@@ -8,6 +8,12 @@
     --font-size-h2: 28px;
     --transition-speed: 1s;
 }
+body {
+    margin: 0!important;
+    background-color: var(--bg-color)!important;
+    color: var(--text-color)!important;
+    font-family: var(--font-primary)!important;
+}
 
 .nissan-main {
     margin: 0!important;
@@ -63,6 +69,10 @@ h2 {
   }
 
 .header-nissan {
+    margin: 0!important;
+    background-color: var(--bg-color)!important;
+    color: var(--text-color)!important;
+    font-family: var(--font-primary)!important;
     text-align: center;
     padding: 20px;
     margin-bottom: 50px;
