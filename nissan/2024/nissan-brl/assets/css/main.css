@@ -378,6 +378,18 @@ h2 {
     z-index: 3;
 }
 
+.highlight-overlay h2 {
+    color: var(--text-color);
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 168.8%; /* 60.768px */
+    text-transform: uppercase;
+    max-width: 450px;
+    padding-bottom: 50px;
+    z-index: 3;
+}
+
 .mobile-image {
     display: none;
 }
@@ -386,7 +398,7 @@ h2 {
 
     #full-width-image {
         position: relative;
-        height: 90vh;
+        height: auto;
     }
     #full-width-image img {
         width: 100%;
@@ -407,6 +419,18 @@ h2 {
     }
     .video-container {
         height: 50vh;
+    }
+    .pt-0r {
+        padding-top: 0!important;
+    }
+    .pt-1r {
+        padding-top: 10px!important;
+    }
+    .pb-0r {
+        padding-bottom: 0!important;
+    }
+    .pb-1r {
+        padding-bottom: 10px!important;
     }
 }
 .futuro {
@@ -749,7 +773,7 @@ h2 {
     border-radius:180px;
     box-shadow:0 0 0 1px var(--bg-color);
     padding: 0 25px;
-    font-size: 30px;
+    font-size: 28px;
     font-style: normal;
     font-weight: 200;
     line-height: 168.8%;
