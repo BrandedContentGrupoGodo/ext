@@ -33,6 +33,13 @@ h2 {
     line-height: 168.8%; 
 }
 
+@media (max-width: 680px) {
+    .nissan-main section p {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+}
+
 .pt-2{padding-top: 20px;}
 .pt-4{padding-top: 40px;}
 .pb-2{padding-bottom: 20px;}
@@ -442,10 +449,10 @@ h2 {
     padding-left: 14px;
     padding-right: 14px;
 }
-@media (max-width: 600px) {
+@media (max-width: 680px) {
     .futuro h2 {
-        padding-left: 14px;
-        padding-right: 14px;
+        padding-left: 14px!important;
+        padding-right: 14px!important;
         text-align: left !important;
     }
 }
