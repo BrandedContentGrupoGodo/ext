@@ -451,8 +451,12 @@ h2 {
 }
 @media (max-width: 680px) {
     .futuro h2 {
-        padding-left: 14px!important;
-        padding-right: 14px!important;
+        padding-left: 24px!important;
+        padding-right: 24px!important;
+    }
+    .futuro h2 {
+        padding-left: 24px!important;
+        padding-right: 24px!important;
         text-align: left !important;
     }
 }
