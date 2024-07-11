@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
             player = new YT.Player('youtubePlayer', {
                 height: '100%',
                 width: '100%',
-                videoId: '9_aTx-nbMX8?si=FpLX6JOuQb3CtoWQ', // Aquí se coloca el ID de tu video
+                videoId: 'FpLX6JOuQb3CtoWQ', // Aquí se coloca el ID de tu video
                 events: {
                     'onReady': onPlayerReady
                 }
