@@ -9,6 +9,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+body, html {
+    overflow-x: hidden;
+  }
 
 body {
     background-color: var(--background-color);
@@ -446,6 +449,12 @@ section .texto-parrafo:first-of-type {
     margin: auto;
     font-weight: 300;
     line-height: 27.01px;
+}
+
+@media (max-width: 550px) {
+    .invitados {
+        flex-direction: column;
+    }
 }
 
 /* resumen */
