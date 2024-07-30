@@ -10,7 +10,7 @@ window.addEventListener("load", () => {
             scrollTrigger: {
                 trigger: ".wrapper",
                 start: "top top",
-                end: "bottom+=100%",
+                end: "+=150%",
                 pin: true,
                 scrub: true,
                 markers: false // Puedes eliminar los marcadores después de las pruebas
@@ -18,6 +18,7 @@ window.addEventListener("load", () => {
         })
         .to(".image-container img", {
             scale: 2,
+            z: 350,
             transformOrigin: "center center",
             ease: "power1.inOut"
         })
