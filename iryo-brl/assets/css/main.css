@@ -331,8 +331,8 @@ section .texto-parrafo:first-of-type {
 
 .contenido-cap {
     text-align: left;
-    max-width: 400px;
-    padding: 10px;
+    max-width: 520px;
+    padding: 10px 10px 20px 10px;
 
 }
 
@@ -371,7 +371,7 @@ section .texto-parrafo:first-of-type {
     position: absolute;
     z-index: 3;
     border: solid 1px var(--text-color);
-    padding: 10px 20px;
+    padding: 14px 20px;
     border-radius: var(--border-radius);
     top: 50%;
     left: 50%;
@@ -437,6 +437,7 @@ section .texto-parrafo:first-of-type {
 .invitado-desc {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 .invitado-desc img {
     max-width: 100%;
@@ -449,6 +450,11 @@ section .texto-parrafo:first-of-type {
     margin: auto;
     font-weight: 300;
     line-height: 27.01px;
+}
+
+.invitado-desc span {
+    text-align: center;
+    margin: auto;
 }
 
 @media (max-width: 550px) {
@@ -477,6 +483,8 @@ section .texto-parrafo:first-of-type {
 
 .resumen p {
     padding-bottom: 50px;
+    padding-left: 14px;
+    padding-right: 14px;
     line-height: 27.01px;
     max-width: 1200px;
     margin: auto;
