@@ -104,6 +104,10 @@ body, html {
     flex: 2;
 }
 
+.hero__block--3 {
+    gap: 10px;
+}
+
 section .texto-parrafo {
     max-width: 800px;
     margin: auto;
