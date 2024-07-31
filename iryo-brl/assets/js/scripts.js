@@ -10,7 +10,7 @@ window.addEventListener("load", () => {
             scrollTrigger: {
                 trigger: ".wrapper",
                 start: "top top",
-                end: "+=150%",
+                end: "+=350%",
                 pin: true,
                 scrub: true,
                 markers: false // Puedes eliminar los marcadores después de las pruebas
