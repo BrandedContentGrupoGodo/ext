@@ -198,7 +198,7 @@ section .texto-parrafo:first-of-type {
     }
 }
 
-.wrapper,
+.wrapper-iryo,
 .content {
     position: relative;
     width: 100%;
