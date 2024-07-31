@@ -567,5 +567,7 @@ section .texto-parrafo:first-of-type {
     overflow: hidden!important;
 }
 @media (max-width: 768px) {
-    height: auto !important;
+        .pin-spacer {
+            height: auto !important;
+    }
 }
