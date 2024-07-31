@@ -564,10 +564,8 @@ section .texto-parrafo:first-of-type {
 
   .pin-spacer {
     height: 4603px !important; /* Ajustar según sea necesario */
-    overflow: hidden;
+    overflow: hidden!important;
 }
-
-/* Asegúrate de que no haya márgenes o rellenos adicionales */
-.pin-spacer > .wrapper-iryo {
-    margin: 0;
-    pa
+@media (max-width: 768px) {
+    height: auto !important;
+}
