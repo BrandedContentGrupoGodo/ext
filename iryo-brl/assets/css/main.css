@@ -203,6 +203,7 @@ section .texto-parrafo:first-of-type {
     position: relative;
     width: 100%;
     z-index: 1;
+    height: auto; 
 }
 
 .content {
