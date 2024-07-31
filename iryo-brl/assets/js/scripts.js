@@ -21,11 +21,6 @@ window.addEventListener("load", () => {
             z: 350,
             transformOrigin: "center center",
             ease: "power1.inOut"
-        })
-        .to(".section.hero", {
-            scale: 1.1,
-            transformOrigin: "center center",
-            ease: "power1.inOut"
-        }, "<");
+        });
     }
 });
