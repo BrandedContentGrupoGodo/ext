@@ -8,7 +8,7 @@ window.addEventListener("load", () => {
     if (!isMobile) {
         gsap.timeline({
             scrollTrigger: {
-                trigger: ".wrapper",
+                trigger: ".wrapper-iryo",
                 start: "top top",
                 end: "+=150%",
                 pin: true,
