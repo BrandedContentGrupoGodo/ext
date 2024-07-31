@@ -563,7 +563,7 @@ section .texto-parrafo:first-of-type {
 }
 
   .pin-spacer {
-    height: 4603px !important; /* Ajustar según sea necesario */
+    height: 4903px !important; /* Ajustar según sea necesario */
     overflow: hidden!important;
 }
 @media (max-width: 768px) {
