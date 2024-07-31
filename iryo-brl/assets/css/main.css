@@ -564,6 +564,7 @@ section .texto-parrafo:first-of-type {
 
   .pin-spacer {
     height: 4603px !important; /* Ajustar según sea necesario */
+    overflow: hidden;
 }
 
 /* Asegúrate de que no haya márgenes o rellenos adicionales */
