@@ -90,6 +90,10 @@ body {
 .article-default .paragraph a:hover {
     color: var(--black);
 }
+.article-default ol li, .article-default ul li {
+    font-size:19px;!important
+    list-style: auto;!important
+}
 /* FIN LV xalok*/
 
 a {
