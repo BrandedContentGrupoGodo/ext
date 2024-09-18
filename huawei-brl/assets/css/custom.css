@@ -191,6 +191,8 @@ a {
     font-family: var(--font-encode);
     font-weight: 200;
     line-height: 94%;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .block-1 .right-title .italic {
@@ -201,6 +203,7 @@ a {
 
 .middle-img {
     background: linear-gradient(0deg, var(--white) 50%, var(--black) 50%);
+    padding-top: 70px;
 }
 
 .middle-img img{
@@ -209,6 +212,9 @@ a {
     text-align: center;
     margin: auto;
     display: flex;
+}
+.strong {
+    font-weight: 600;
 }
 
 @media(max-width:600px) {
