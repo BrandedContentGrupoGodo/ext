@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Webfont -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiko:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- jQuery -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <!-- Wow.js -->
+    <script src="https://brandedcontentgrupogodo.github.io/ext/sabadell/godo2024/sabadell-barcelona-open-brl/assets/js/wow.min.js"></script>
+
+    <!-- Otros scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://brandedcontentgrupogodo.github.io/repsol-2024/hub/assets/js/split-text.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/ScrollTrigger.min.js"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="https://brandedcontentgrupogodo.github.io/ext/sabadell/godo2024/sabadell-barcelona-open-brl/assets/css/animate.css">
+  </head>
+  <body>
+    <main>
+      <article>
+        <section class="content-wrapper">
+          <div class="text-content">
+            <p class="small-text">Un proyecto de Grupo Godó y Naturgy</p>
+            <p class="small-text">#buenahuella</p>
+            <h1>La sorpresa de cuatro famosos al descubrir trabajos que pueden cambiar el mundo</h1>
+            <p class="subtitle">
+              Somos, y en el siglo XXI más que nunca, la huella que dejamos a nuestro paso, y de ella depende nuestro futuro.
+              Por eso, nos embarcamos en un viaje transformador con cuatro paradas de la mano de cuatro rostros reconocidos
+              que se visten un traje diferente y anónimo: el de las personas que ponen toda su energía en cambiar el mundo.
+            </p>
+          </div>
+          <div class="video-grid">
+            <!-- Videos con lazy loading y compresión -->
+            <video class="custom-video" src="assets/img/naturgy-cap1.mp4" loop autoplay muted loading="lazy"></video>
+            <video class="custom-video" src="assets/img/naturgy-cap2.mp4" loop autoplay muted loading="lazy"></video>
+            <video class="custom-video" src="assets/img/naturgy-cap3.mp4" loop autoplay muted loading="lazy"></video>
+            <video class="custom-video" src="assets/img/naturgy-cap4.mp4" loop autoplay muted loading="lazy"></video>
+          </div>
+        </section>
+
+        <!-- Capítulos -->
+        <section class="chapter-section">
+          <div class="chapter-grid">
+            <!-- Chapter 1 -->
+            <div class="chapter">
+              <img src="assets/img/naturgy-cap1-link.jpg" alt="Jesús Castro en la posidonia"
+                   class="chapter-image"
+                   srcset="assets/img/naturgy-cap1-link-small.jpg 480w,
+                           assets/img/naturgy-cap1-link-medium.jpg 800w,
+                           assets/img/naturgy-cap1-link-large.jpg 1200w"
+                   sizes="(max-width: 600px) 480px, 
+                          (max-width: 900px) 800px, 
+                          1200px"
+                   loading="lazy">
+              <p class="chapter-title"><strong>Capítulo 1.</strong></p>
+              <p class="chapter-description">Viaje de película con Jesús Castro al pulmón del Mediterráneo, la posidonia que salva nuestras playas.</p>
+              <a href="https://external-link-1.com" class="chapter-button" target="_blank">
+                Ver contenido <img src="assets/img/arrow-icon.svg" alt="Ver contenido" loading="lazy">
+              </a>
+            </div>
+            
+            <!-- Chapter 2 -->
+            <div class="chapter">
+              <img src="assets/img/naturgy-cap2-link.jpg" alt="Capítulo 2" 
+                   class="chapter-image"
+                   srcset="assets/img/naturgy-cap2-link-small.jpg 480w,
+                           assets/img/naturgy-cap2-link-medium.jpg 800w,
+                           assets/img/naturgy-cap2-link-large.jpg 1200w"
+                   sizes="(max-width: 600px) 480px, 
+                          (max-width: 900px) 800px, 
+                          1200px"
+                   loading="lazy">
+              <p class="chapter-title"><strong>Capítulo 2.</strong></p>
+              <p class="chapter-description">Texto descriptivo del capítulo 2.</p>
+              <a href="https://external-link-2.com" class="chapter-button" target="_blank">
+                Ver contenido <img src="assets/img/arrow-icon.svg" alt="Ver contenido" loading="lazy">
+              </a>
+            </div>
+        
+            <!-- Chapter 3 (locked) -->
+            <div class="chapter locked">
+              <img src="assets/img/naturgy-cap3-link.jpg" alt="Capítulo 3 bloqueado"
+                   class="chapter-image"
+                   srcset="assets/img/naturgy-cap3-link-small.jpg 480w,
+                           assets/img/naturgy-cap3-link-medium.jpg 800w,
+                           assets/img/naturgy-cap3-link-large.jpg 1200w"
+                   sizes="(max-width: 600px) 480px, 
+                          (max-width: 900px) 800px, 
+                          1200px"
+                   loading="lazy">
+              <p class="chapter-title"><strong>Capítulo 3.</strong></p>
+              <p class="chapter-description">disponible próximamente.</p>
+            </div>
+        
+            <!-- Chapter 4 (locked) -->
+            <div class="chapter locked">
+              <img src="assets/img/naturgy-cap4-link.jpg" alt="Capítulo 4 bloqueado"
+                   class="chapter-image"
+                   srcset="assets/img/naturgy-cap4-link-small.jpg 480w,
+                           assets/img/naturgy-cap4-link-medium.jpg 800w,
+                           assets/img/naturgy-cap4-link-large.jpg 1200w"
+                   sizes="(max-width: 600px) 480px, 
+                          (max-width: 900px) 800px, 
+                          1200px"
+                   loading="lazy">
+              <p class="chapter-title"><strong>Capítulo 4.</strong></p>
+              <p class="chapter-description">disponible próximamente.</p>
+            </div>
+          </div>
+        </section>
+        
+        
+        <!-- INICIO créditos -->
+        <div class="authorship-f-1 pb-4 pt-3">				
+          <div class="container-fluid-f-1">
+              <h4 class="creditos">Créditos</h4>
+              <span class="d-inline-block-f-1">Coordinación y redacción: Andrea Valladolid</span> | 
+              <span class="d-inline-block-f-1">Diseño y maquetación: Alejandra Santander</span> | 
+              <span class="d-inline-block-f-1">Fotografía y vídeo: The Lemon Juice Films</span>.
+              <span class="d-inline-block-f-1">Un proyecto de Brandslab. Godó Vertical Media</span>
+          </div>
+        </div>
+      </article>
+    </main>
+    <script src="assets/js/script.js"></script> 
+  </body>
+</html>
