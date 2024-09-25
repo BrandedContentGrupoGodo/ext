@@ -288,9 +288,8 @@ body {
   .chapter-grid {
     grid-template-columns: 1fr;
   }
-
   .chapter-button {
-    width: 100%;
+    width: 90%;
   }
 }
 
@@ -317,6 +316,145 @@ body {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
   }
+}
+
+/* buena huella */
+
+section .contenedor-principal {
+  margin: 0;
+  padding: 0;
+}
+.contenedor-principal {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.izquierda {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.izquierda h2 {
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 146.8%; /* 46.976px */
+  max-width: 550px;
+
+}
+.izquierda p {
+  max-width: 650px;
+}
+.logo {
+  padding-top: 20px;
+  width: 300px;
+  text-align: left;
+}
+
+.derecha {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 0;
+  max-width: 1380px;
+  margin: auto;
+  border-radius: 7px;
+  background-color: var(--background-color);
+  box-shadow: 0px 949px 266px 0px rgba(204, 204, 204, 0.00), 0px 607px 243px 0px rgba(204, 204, 204, 0.01), 0px 342px 205px 0px rgba(204, 204, 204, 0.05), 0px 152px 152px 0px rgba(204, 204, 204, 0.09), 0px 38px 83px 0px rgba(204, 204, 204, 0.10);
+}
+
+@media (max-width: 550px) {
+  .derecha p {
+    font-size: 14px !important;
+  }
+  .izquierda {
+    flex-direction: column;
+    padding-left:16px !important;
+    padding-right:16px !important;
+  }
+}
+.imagenes-centrales {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around!important;
+  text-align: center;
+}
+
+.imagen {
+  width: 280px;
+}
+
+.derecha h3 {
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 146.8%;
+}
+.derecha hr {
+  width: 85%;
+  color: var(--black-txt);
+  opacity: 0.2;
+}
+
+.icono-parrafo {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;  /* Asegurando que cada contenedor .icono-parrafo ocupe el mismo espacio */
+}
+
+.icono-parrafo p {
+  flex: 1;  
+  max-width: 480px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.desplazamientos, .energia {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.bullets {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.desplazamientos {
+display: flex;
+flex-direction: column;
+}
+.energia {
+  display: flex;
+  flex-direction: column;
+  }
+
+@media (max-width: 768px) {
+  .contenedor-principal {
+      flex-direction: column;
+  }
+}
+
+.fuente {
+  max-width: 90%;
+  font-size: 1rem;
+  margin: auto;
+}
+
+.fuente p {
+  font-size: 0.9rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 121.023%;
 }
 
 
