@@ -289,6 +289,15 @@ h3 {
     height: 440px;
   }
 }
+
+.no-click img {
+  cursor: default !important; /* Forzamos el cursor a ser el predeterminado */
+}
+
+.no-click {
+  cursor: default !important; /* Forzamos el cursor en todo el contenedor a ser el predeterminado */
+}
+
 /*CRÉDITOS*/
 .authorship-f-1 {
   color: #7E7E7E;
