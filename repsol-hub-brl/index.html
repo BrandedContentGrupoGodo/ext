@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Webfont -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!-- jQuery -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <!-- Wow.js -->
+    <script src="https://brandedcontentgrupogodo.github.io/ext/sabadell/godo2024/sabadell-barcelona-open-brl/assets/js/wow.min.js"></script>
+
+    <!-- Otros scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://brandedcontentgrupogodo.github.io/repsol-2024/hub/assets/js/split-text.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/ScrollTrigger.min.js"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="https://brandedcontentgrupogodo.github.io/ext/sabadell/godo2024/sabadell-barcelona-open-brl/assets/css/animate.css">
+  </head>
+  <body>
+    <main>
+      <article>
+        <div class="container">
+          <!-- primera fila -->
+          <div class="row first-row">
+              <div class="left-side pb-4">
+                  <p>En colaboración con Repsol</p>
+                  <h1 id="titular">Vivir en lo extraordinario</h1>
+                  <p class="description">El mundo está lleno de lugares extraordinarios. Espacios de climatología extrema, escenarios que parecen sacados de una película de ciencia ficción, refugios aislados en medio de la nieve o el hielo, viviendas rodeadas de agua por todas partes. Por imposible que parezca, el ser humano ha conseguido hacer de todos ellos su hogar y, en este proyecto, conocemos sus historias. Las historias de quienes viven en lo extraordinario, de la mano de Flavia Codinas.</p>
+              </div>
+              <!-- Primera caja de imagen -->
+              <div class="right-side">
+                <div class="video-container"> 
+                  <video preload="metadata" muted loop style="width: 100%; height: auto;"></video>
+                  <img src="assets/img/cap1.jpg" alt="Schoonschip" class="clickable-image" data-video="assets/img/video1.mp4" data-url="https://www.tu-sitio.com" loading="lazy">
+                  <div class="image-top">
+                    <img src="assets/img/play.svg" alt="Play" class="icon" loading="lazy">
+                    <h2>Schoonschip: un barrio flotante sobre los canales de Ámsterdam</h2>
+                  </div>
+                  <div class="image-bottom">
+                    <h3>La comunidad de casas sobre el agua en la que ya viven un centenar de personas.</h3>
+                    <img src="assets/img/link-externo.svg" alt="clic Schoonschip" class="icon" loading="lazy">
+                  </div>
+                </div>
+              </div>
+          </div>
+          <!-- segunda fila -->
+          <div class="capitulos-contenedor">
+              <div class="row second-row">
+                  <!-- Segunda caja de imagen -->
+                  <div class="right-side no-click">
+                    <div class="video-container"> 
+                      <video preload="metadata" muted loop style="width: 100%; height: auto;"></video>
+                      <img src="assets/img/cap2-off.jpg" alt="Sierra Nevada" class="clickable-image" data-video="assets/img/video2.mp4" data-url="#" loading="lazy">
+                      <div class="image-top">
+                          <img src="assets/img/play-off.svg" alt="Play" class="icon">
+                          <h2>Sierra Nevada. Un refugio de alta montaña</h2>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Tercera caja de imagen -->
+                  <div class="right-side no-click">
+                    <div class="video-container"> 
+                      <video preload="metadata" muted loop style="width: 100%; height: auto;"></video>
+                      <img src="assets/img/cap3-off.jpg" alt="Gabriel de Castilla" class="clickable-image" data-video="assets/img/video3.mp4" data-url="#" loading="lazy">
+                      <div class="image-top">
+                        <img src="assets/img/play-off.svg" alt="Play" class="icon" loading="lazy">
+                        <h2>Gabriel de Castilla. Una base científica en la Antártida</h2>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <!-- tercera fila -->
+              <div class="row third-row">
+                 <!-- Cuarta caja de imagen -->
+                 <div class="right-side no-click">
+                  <div class="video-container"> 
+                    <video preload="metadata" muted loop style="width: 100%; height: auto;"></video>
+                    <img src="assets/img/cap4-off.jpg" alt="El Espacio" class="clickable-image" data-video="assets/img/video4.mp4" data-url="#" loading="lazy">
+                    <div class="image-top">
+                      <img src="assets/img/play-off.svg" alt="Play" class="icon" loading="lazy">
+                      <h2>El Espacio. La última frontera</h2>
+                    </div>
+                  </div>
+                    <!-- <div class="image-bottom">
+                        <h3>Explora el bosque de laurisilva y disfruta de la tranquilidad en el Parque Nacional de Garajonay.</h3>
+                        <img src="assets/img/link-externo.svg" alt="Icono" class="icon">
+                    </div> -->
+                  </div>
+                  <!-- Quinta caja de imagen -->
+                  <div class="right-side reveal">
+                    <img src="assets/img/cap5-off.jpg" alt="Imagen decorativa" class="" data-video="assets/img/video5.mp4" data-url="#" loading="lazy">
+                    <!-- <div class="image-top">
+                        <img src="assets/img/play-off.svg" alt="Play" class="icon" loading="lazy">
+                        <h2>Energía en el espacio</h2>
+                    </div> -->
+                    <!-- <div class="image-bottom">
+                        <h3>Descubre los paisajes montañosos y la diversidad de flora y fauna en la Sierra de Guadarrama.</h3>
+                        <img src="assets/img/link-externo.svg" alt="Icono" class="icon" loading="lazy">
+                    </div> -->
+                  </div> 
+              </div>
+            </div>
+            <!-- INICIO créditos -->
+            <div class="authorship-f-1 pb-4 pt-3">				
+              <div class="container-fluid-f-1">
+                  <h4 class="creditos">Créditos</h4>
+                  <span class="d-inline-block-f-1">Coordinación y redacción: Kevin Casas, Flavia Codinas</span> | 
+                  <span class="d-inline-block-f-1">Diseño y maquetación: Alejandra Santander</span> | 
+                  <span class="d-inline-block-f-1">Vídeo: Linkvids</span> | 
+                  <span class="d-inline-block-f-1">Fotografía: Manu Medir.</span>
+                  <span class="d-inline-block-f-1">Un proyecto de Brandslab. Godó Vertical Media</span>
+              </div>
+          </div>
+      </div>
+      </article>
+    </main>
+    <!-- animacion intro -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const $title = document.getElementById("titular");
+        const $description = document.querySelector(".description");
+        const mySplitTextTitle = new SplitText($title, { type: "lines" });
+        const mySplitTextDescription = new SplitText($description, { type: "lines" });
+        const splitTextTimeline = gsap.timeline();
+
+        gsap.set($title, { perspective: 300 });
+        gsap.set($description, { perspective: 300 });
+
+          splitTextTimeline.from(mySplitTextTitle.lines, { 
+            duration: 0.5, 
+            opacity: 0, 
+            rotationX: -50, 
+            force3D: true, 
+            transformOrigin: "top center -50", 
+            stagger: 0.1 
+          })
+                     
+          .from(mySplitTextDescription.lines, { 
+            duration: 0.5, 
+            opacity: 0, 
+            rotationX: -50, 
+            force3D: true, 
+            transformOrigin: "top center -50", 
+            stagger: 0.1 
+          }, "-=0.3");
+
+          function kill() {
+            splitTextTimeline.clear().time(0);
+            mySplitTextTitle.revert();
+            mySplitTextDescription.revert();
+          }
+      });
+    </script>
+
+    <!-- img animation -->
+    <script>
+      const options = {
+          root: null,
+          rootMargin: "0px",
+          threshold: 0.5
+      };
+
+      let revealCallback = (entries, observer) => {
+          entries.forEach(entry => {
+              let container = entry.target;
+              let img = container.querySelector("img");
+              const easeInOut = "power3.out";
+              const revealAnim = gsap.timeline({ ease: easeInOut });
+
+              if (entry.isIntersecting) {
+                  revealAnim.set(container, { visibility: "visible" });
+                  revealAnim.fromTo(
+                      container,
+                      { clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)", webkitClipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)" },
+                      { clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)", webkitClipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)", duration: 1, ease: easeInOut }
+                  );
+                  revealAnim.from(img, { scale: 1.4, duration: 4, ease: easeInOut, delay: -1 });
+                  observer.unobserve(container);
+              }
+          });
+      };
+
+      let revealObserver = new IntersectionObserver(revealCallback, options);
+
+      document.querySelectorAll(".reveal").forEach(reveal => {
+          revealObserver.observe(reveal);
+      });
+    </script> 
+
+
+    <!-- Video hover -->
+    <script>
+document.querySelectorAll('.video-container').forEach(function(container) {
+  const image = container.querySelector('.clickable-image');
+  const videoElement = container.querySelector('video');
+
+  if (!image || !videoElement) {
+    console.error('No se encontraron elementos de imagen o video dentro del contenedor.');
+    return;
+  }
+
+  let isVideoPlaying = false;
+
+  container.addEventListener('mouseenter', function() {
+    if (!isVideoPlaying) {
+      const videoSrc = image.getAttribute('data-video');
+
+      videoElement.src = videoSrc;
+      videoElement.play().then(() => {
+        isVideoPlaying = true;
+      }).catch((error) => {
+        console.error('Error al reproducir el video:', error);
+      });
+    }
+  });
+
+  container.addEventListener('mouseleave', function() {
+    if (isVideoPlaying) {
+      videoElement.pause();
+      isVideoPlaying = false;
+    }
+  });
+
+  container.addEventListener('click', function() {
+    // Evita que la segunda caja sea clicable
+    if (!container.closest('.no-click')) {
+      const url = image.getAttribute('data-url');
+      window.open(url, '_blank');
+    }
+  });
+});
+    </script>
+  </body>
+</html>
