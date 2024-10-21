@@ -9,7 +9,7 @@
 html {
   scroll-behavior: smooth;
 }
-body, body-repsol {
+body, .body-repsol {
   margin: 0;
   color: var(--black-txt);
   font-family: "Titillium Web", sans-serif;
@@ -110,7 +110,6 @@ h3 {
 /* Página */
 .container-repsol {
   display: flex;
-  height: 100vh;
   flex-direction: column;
   max-width: 100%;
   width: 100%;
