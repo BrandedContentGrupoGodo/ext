@@ -108,10 +108,12 @@ h3 {
 } */
 
 /* Página */
-.container {
+.container-repsol {
   display: flex;
   height: 100vh;
   flex-direction: column;
+  max-width: 100%;
+  width: 100%;
 }
 .images-container {
   display: flex;
