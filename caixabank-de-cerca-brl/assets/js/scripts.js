@@ -80,4 +80,37 @@ document.addEventListener("DOMContentLoaded", () => {
     // Escuchar el evento de scroll para actualizar el contador y mostrarlo al inicio
     window.addEventListener("scroll", updateCounter);
     window.addEventListener("scroll", handleInitialVisibility);
+
+    // Código para el botón de scroll hacia arriba
+    const scrollToTopButton = document.createElement("button");
+    scrollToTopButton.textContent = "↑";
+    scrollToTopButton.id = "scrollToTopButton";
+    scrollToTopButton.style.position = "fixed";
+    scrollToTopButton.style.bottom = "20px";
+    scrollToTopButton.style.right = "20px";
+    scrollToTopButton.style.display = "none"; // Oculto inicialmente
+    scrollToTopButton.style.backgroundColor = "#009AD8"; // Color de fondo
+    scrollToTopButton.style.color = "#ffffff"; // Color del texto
+    scrollToTopButton.style.border = "none";
+    scrollToTopButton.style.borderRadius = "5px";
+    scrollToTopButton.style.padding = "10px 15px";
+    scrollToTopButton.style.cursor = "pointer";
+    document.body.appendChild(scrollToTopButton);
+
+    // Mostrar el botón al hacer scroll
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 200) { // Cambia 200 al valor que desees
+            scrollToTopButton.style.display = "block";
+        } else {
+            scrollToTopButton.style.display = "none";
+        }
+    });
+
+    // Evento de click para el botón de scroll hacia arriba
+    scrollToTopButton.addEventListener("click", () => {
+        const buttonsSection = document.querySelector(".buttons-section");
+        if (buttonsSection) {
+            buttonsSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
 });
