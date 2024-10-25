@@ -1,0 +1,295 @@
+/* Variables */
+:root {
+    --primary-color: #006DFF;
+    --text-color-white: #ffffff;
+    --text-color-dark: #47484A;
+    --background-light: #F4F4F4;
+    --max-width: 627px;
+}
+
+/* FUENTE PERSONALIZADA */
+@font-face {
+    font-family: 'Tiempos-text';
+    src: url('../fonts/TiemposText-Regular.woff2') format("woff2"),
+    url('../fonts/TiemposHeadline-Semibold.woff2') format("woff2"),
+    url('../fonts/TiemposText-Bold.woff2') format("woff2"),
+    url('../fonts/TiemposText-RegularItalic.woff2') format("woff2");
+}
+@font-face {
+  font-family: 'Tiempos';
+  src: url('../fonts/TiemposHeadline-Bold.woff2') format("woff2"),
+  url('../fonts/TiemposHeadline-Light.woff2') format("woff2"),
+  url('../fonts/TiemposHeadline-Medium.woff2') format("woff2"),
+  url('../fonts/TiemposHeadline-Semibold.woff2') format("woff2");
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body-experto {
+    font-family: 'Tiempos-text';
+    line-height: 1.6;
+    background-color: #ffffff;
+    color: var(--text-color-dark);
+}
+
+/* Header Styles */
+.header-experto {
+    background-color: var(--primary-color);
+    color: var(--text-color-white);
+    text-align: center;
+    padding: 10px 20px 1px;
+}
+
+.header-experto h1 {
+    font-family: 'Tiempos';
+    font-size: 2.3em;
+}
+
+.header-experto p {
+    font-size: 16px;
+    max-width: 900px;
+    margin: 0 auto 30px;
+}
+
+.categoria {
+    background-color: black;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.categoria p {
+    font-family: "Open Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 127.075%; /* 20.332px */
+    letter-spacing: 1.76px;
+text-transform: uppercase;
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 20px;
+}
+.navigation-buttons span:first-of-type {
+    margin-right: 5px;
+}
+.navigation-buttons span:last-of-type {
+    margin-left: 5px;
+}
+
+.btn-experto {
+    color: var(--text-color-dark);
+    background: transparent;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    font-family: "Open Sans";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 127.075%; /* 15.249px */
+    letter-spacing: 1.32px;
+    text-transform: uppercase;
+}
+
+.btn-experto:hover {
+    color: var(--primary-color);
+}
+
+.arrow-left, .arrow-right {
+    font-size: 1.2em;
+}
+
+.main-content-experto {
+    display: flex;
+    flex-direction: row; /* Se muestra en columnas en pantallas grandes */
+    align-items: stretch; /* Asegura que ambos lados tengan la misma altura */
+    padding: 40px 20px;
+    justify-content: space-between; /* Espacio entre la izquierda y la derecha */
+    gap: 20px;
+    flex-wrap: wrap; /* Permite que los elementos se apilen en pantallas pequeñas */
+}
+
+.main-content-experto h2 {
+    font-family: 'Tiempos';
+    font-size: 2.3em;
+}
+.left, .right {
+    width: 50%;
+}
+
+.left {
+    text-align: left;
+    max-width: 500px;
+    flex: 1; /* Ocupa más espacio si hay disponible */
+}
+
+.right {
+    text-align: center;
+    flex: 1; /* Hace que el contenedor del video sea igual de importante */
+}
+
+/* Estilo para el vídeo de YouTube */
+.video-responsive {
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    position: relative;
+    width: 100%; 
+    border-radius: 50px;
+}
+
+.video-responsive iframe {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+}
+
+/* Estilos responsivos para dispositivos móviles */
+@media (max-width: 768px) {
+    .main-content-experto {
+        flex-direction: column; /* Cambia a disposición vertical en pantallas pequeñas */
+        align-items: center;
+    }
+    
+    .left, .right {
+        width: 100%;
+    }
+}
+
+
+.epigraph {
+    color: var(--primary-color);
+    font-size: 12px;
+    font-family: "Open Sans", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 127.075%; /* 15.249px */
+    letter-spacing: 1.32px;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    border-top: solid 1px #B0B0B0;
+    padding-top: 10px;
+}
+
+/* Profile Section */
+.profile {
+    background-color: var(--background-light);
+    padding: 20px;
+    border-radius: 150px;
+    max-width: var(--max-width);
+    margin: 40px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-card {
+    display: flex;
+    align-items: center;
+}
+
+.profile-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.profile-text {
+    text-align: left;
+}
+.profile-text h3 {
+    font-family: 'Tiempos';
+}
+.profile-text p {
+    font-size: 14px;
+}
+/* Centered Paragraph */
+.centered-paragraph {
+    padding: 40px 20px;
+    max-width: var(--max-width);
+    margin: 0 auto 50px;
+}
+
+/* Footer */
+.footer-experto {
+    background-color: var(--background-light);
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-experto img {
+    max-width: 150px;
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+    .main-content-experto {
+        flex-direction: row;
+        align-items: flex-end;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .left, .right {
+        padding: 20px;
+    }
+
+    .left {
+        flex: 1;
+    }
+
+    /* .video-container {
+        height: auto;
+    } */
+}
+
+/*CRÉDITOS*/
+.authorship-creditos {
+    color: #B1B1B1;
+    font-size:0.8em!important;
+    text-align:center;
+    padding:16px 0;
+}
+.d-inline-block-creditos {
+    display: inline-block!important;
+    opacity: 0.7;
+}
+.container-fluid-creditos {
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.creditos {
+    font-size:2em;
+    margin-bottom: 5px;
+    opacity: 0.7;
+}
+@media (min-width: 768px) {
+  .container-fluid-creditos {
+  padding-right: 24px;
+  padding-left: 24px;
+  }
+}
+@media (max-width: 520px) {
+    .authorship-creditos {
+      text-align:left!important;
+    }
+}
