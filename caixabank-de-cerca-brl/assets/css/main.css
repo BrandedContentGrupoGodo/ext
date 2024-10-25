@@ -241,12 +241,15 @@ p {
     justify-content: center;
     align-items: center;
     color: #FFFFFF;
-    font-size: 14px;
+    font-size: 13px;
     font-style: normal;
     font-weight: 500;
     line-height: 168.8%; /* 30.384px */
     letter-spacing: 5px;
     text-transform: uppercase;
+}
+.circle-overlay:last-of-type{
+    font-size: 11px;
 }
 
 /* Estilo para el vídeo de YouTube */
@@ -267,6 +270,10 @@ p {
         left: 20px;
         width: 120px;
         height: 120px;
+        font-size: 10px;
+    }
+    .circle-overlay:last-of-type {
+        font-size: 9px;
     }
 }
 
