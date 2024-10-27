@@ -124,12 +124,14 @@
 }
 
 .epigraph {
-    color: var(--subtext-color);
+    color: var(--primary-color);
+    text-align: center;
+    padding-top: 20px;
     margin-bottom: 10px;
     font-family: "Open Sans";
     font-size: 12px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 127.075%; /* 15.249px */
     letter-spacing: 1.32px;
     text-transform: uppercase;
@@ -277,12 +279,12 @@
     font-family: "Open Sans";
     font-size: 12px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 127.075%; /* 15.249px */
     letter-spacing: 1.32px;
     text-transform: uppercase;
-    margin-top: 10px;
-    text-align: left;
+    margin: 10px auto 0 auto;
+    text-align: center;
     padding-bottom: 10px;
 }
 
@@ -315,6 +317,7 @@
 @media (max-width: 600px) {
     .grid-row {
         margin-bottom: 0px;
+        flex-wrap: wrap;
     }
     .grid-section {
         padding: 14px;
