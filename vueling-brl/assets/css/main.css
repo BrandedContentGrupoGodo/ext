@@ -224,15 +224,27 @@
     font-size: 30px;
     color: #4D4D4D;
     text-transform: uppercase;
-    max-width: 400px;
+    max-width: 180px;
     margin-bottom: 20px;
     transform: rotate(-2.732deg);
     text-align: left;
     padding-bottom: 20px;
 }
 
+.highlight-2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 14px;
+    background-color: var(--color-highlight);
+    transform: translateY(-131%)!important;
+    z-index: -1;
+}
+
 .highlight {
-    background-color: #FFCC00;
+    _background-color: #FFCC00;
     padding-bottom: 5px;
 }
 
@@ -274,6 +286,14 @@
     }
 }
 
+@media screen  and (max-width: 550px) {
+    .highlight-2::before {
+        opacity: 0;
+    }
+    .intro {
+        padding: 0;
+    }
+}
 .destacado-amarillo {
     margin-top: 100px;
     margin-bottom: 100px;
