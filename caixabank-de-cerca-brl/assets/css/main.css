@@ -414,6 +414,17 @@ p {
     padding-top: 100px; /* Ajusta el padding según lo necesites */
 }
 
+.logo-cerca {
+    background-color: #B1B1B1;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin: auto;
+}
+
+.logo-cerca img {
+    max-width: 100%;
+}
 
 
 /*CRÉDITOS*/
