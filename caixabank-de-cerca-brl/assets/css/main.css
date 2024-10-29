@@ -420,10 +420,13 @@ p {
     height: auto;
     text-align: center;
     margin: auto;
+    padding-top:20px;
+    padding-bottom: 20px;
 }
 
 .logo-cerca img {
     max-width: 100%;
+    width: 200px;
 }
 
 
