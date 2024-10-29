@@ -84,12 +84,7 @@ text-transform: uppercase;
     display: flex;
     justify-content: space-between;
     padding: 5px 20px;
-}
-.navigation-buttons span:first-of-type {
-    margin-right: 5px;
-}
-.navigation-buttons span:last-of-type {
-    margin-left: 5px;
+    gap: 10px; /* Añade espacio entre los botones */
 }
 
 .btn-experto {
@@ -113,10 +108,28 @@ text-transform: uppercase;
     color: var(--primary-color);
 }
 
-.arrow-left, .arrow-right {
+.arrow-left, .arrow-right, .home-icon {
     font-size: 1.2em;
 }
 
+.home-icon {
+    margin: 0 5px;
+}
+
+.navigation-buttons span:first-of-type {
+    margin-right: 5px;
+}
+
+.navigation-buttons span:last-of-type {
+    margin-left: 5px;
+}
+
+@media (max-width: 600px) {
+    .btn-left span:not(.arrow-left),
+    .btn-right span:not(.arrow-right) {
+        display: none; /* Oculta solo las palabras "Anterior" y "Siguiente" */
+    }
+}
 .main-content-experto {
     display: flex;
     flex-direction: row; /* Se muestra en columnas en pantallas grandes */
@@ -130,6 +143,8 @@ text-transform: uppercase;
 .main-content-experto h2 {
     font-family: 'Tiempos';
     font-size: 2.3em;
+    line-height: 120%;
+    padding-bottom: 15px
 }
 .left, .right {
     width: 50%;
@@ -195,6 +210,10 @@ text-transform: uppercase;
     margin: 10px auto 0 auto;
     text-align: center;
     padding-bottom: 10px;
+}
+
+.epigraph:nth-last-of-type(2n) {
+    text-align: left!important;
 }
 
 .subtitle {
@@ -295,6 +314,32 @@ text-transform: uppercase;
     /* .video-container {
         height: auto;
     } */
+}
+
+/* img centrada */
+.centered-paragraph img {
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 30px;
+}
+
+.img-centrada {
+    margin-top: 50px;
+    margin-bottom: 60px;
+}
+
+.subtitulos-par {
+    color: var(--text-color-dark);
+    font-family: 'Tiempos';
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 120%;
+    border-bottom: 1px solid var(--text-color-dark);
+    padding-bottom: 10px;
+    margin-bottom: 50px;
 }
 
 /*CRÉDITOS*/
