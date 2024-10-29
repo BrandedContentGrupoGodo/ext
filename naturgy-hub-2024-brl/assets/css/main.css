@@ -408,7 +408,7 @@ section .contenedor-principal {
 .derecha hr {
   width: 85%;
   color: var(--black-txt);
-  opacity: 0.2;
+  opacity: 1;
 }
 
 .icono-parrafo {
