@@ -52,6 +52,9 @@
 .visual__story--free .content-free-html {
   margin: 0px !important;
 }
+  .article-default a:hover {
+    box-shadow: none !important;
+}
 /* .row>* {
   padding-right: 0!important;
   padding-left: 0!important;
