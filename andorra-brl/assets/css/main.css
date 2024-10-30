@@ -1,0 +1,98 @@
+
+:root {
+    --white: #FFF;
+    --black: #222;
+    --gray-dark: #4E4D4D;
+    --avenir: 'Avenir', sans-serif;
+    --libre-bodoni: "Libre Bodoni", serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--avenir);
+    color: var(--white);
+    background: linear-gradient(180deg, var(--black) 0%, var(--gray-dark) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.hero-section {
+    width: 100%;
+    text-align: center;
+    background-image: url('img/andorra-fondo.jgp');
+    background-size: cover;
+    background-position: center;
+    padding: 50px 20px;
+}
+
+.hero-content {
+    max-width: 930px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Texto de colaboración */
+.collab-text {
+    color: var(--white);
+    font-family: var(--avenir);
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 127.075%;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+}
+
+/* Título del festival */
+.festival-title {
+    color: var(--white);
+    font-family: var(--libre-bodoni);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 110%;
+    letter-spacing: -0.18px;
+    margin: 10px 0 20px;
+}
+
+/* Título principal */
+.main-heading {
+    color: var(--white);
+    font-family: var(--libre-bodoni);
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 110%;
+    letter-spacing: -1px;
+    max-width: 930px;
+    margin: 20px auto;
+}
+
+/* Imagen principal */
+.festival-image {
+    width: 100%;
+    max-width: 930px;
+    border-radius: 5px;
+    transition: filter 0.3s ease;
+    filter: grayscale(100%);
+}
+
+.festival-image:hover {
+    filter: grayscale(0%);
+}
+
+/* Texto de introducción */
+.intro-text {
+    color: var(--white);
+    font-family: var(--avenir);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: normal;
+    max-width: 930px;
+    margin: 20px auto;
+}
