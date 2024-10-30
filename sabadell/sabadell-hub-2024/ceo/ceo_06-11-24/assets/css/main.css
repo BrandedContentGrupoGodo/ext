@@ -23,6 +23,45 @@
   url('../fonts/TiemposHeadline-Semibold.woff2') format("woff2");
 }
 
+/* estilos para que en LV se muestre el contenido sin margenes */
+.wallpaper-inverted-ad{
+    display: none!important;
+  }
+  
+  .visual-article-free .col-12 {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    margin-top: 0 !important;
+  }
+  .content-free-html {
+    margin:0 !important;
+  }
+  .container-fluid {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+  .visual__story--free .content-free-html {
+    margin: 0px !important;
+  }
+
+  .article-default a:hover {
+    box-shadow: none !important;
+}
+
+.article-default .content-border, .article-default .content-free-html, .article-default .content-subtitle {
+        margin: 0!important;
+    }
+
+    .col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto {
+        padding-left: 0!important;
+        padding-right: 0!important;
+    }
+  /* .row>* {
+    padding-right: 0!important;
+    padding-left: 0!important;
+    margin-top: 0!important;
+  } */
+
 /* Reset & Base Styles */
 * {
     margin: 0;
@@ -84,12 +123,7 @@ text-transform: uppercase;
     display: flex;
     justify-content: space-between;
     padding: 5px 20px;
-}
-.navigation-buttons span:first-of-type {
-    margin-right: 5px;
-}
-.navigation-buttons span:last-of-type {
-    margin-left: 5px;
+    gap: 10px; /* Añade espacio entre los botones */
 }
 
 .btn-experto {
@@ -113,8 +147,27 @@ text-transform: uppercase;
     color: var(--primary-color);
 }
 
-.arrow-left, .arrow-right {
+.arrow-left, .arrow-right, .home-icon {
     font-size: 1.2em;
+}
+
+.home-icon {
+    margin: 0 5px;
+}
+
+.navigation-buttons span:first-of-type {
+    margin-right: 5px;
+}
+
+.navigation-buttons span:last-of-type {
+    margin-left: 5px;
+}
+
+@media (max-width: 600px) {
+    .btn-left span:not(.arrow-left),
+    .btn-right span:not(.arrow-right) {
+        display: none; /* Oculta solo las palabras "Anterior" y "Siguiente" */
+    }
 }
 
 .main-content-experto {
@@ -129,10 +182,8 @@ text-transform: uppercase;
 
 .main-content-experto h2 {
     font-family: 'Tiempos';
-    font-size: 28px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 120%; /* 33.6px */
+    font-size: 2.3em;
+    line-height: 120%;
     padding-bottom: 15px
 }
 .left, .right {
@@ -186,19 +237,18 @@ text-transform: uppercase;
     }
 }
 
-
 .epigraph {
     color: var(--primary-color);
-    font-family: "Open Sans";
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 127.075%; /* 15.249px */
-    letter-spacing: 1.32px;
-    text-transform: uppercase;
-    margin: 10px auto 0 auto;
-    text-align: center;
-    padding-bottom: 10px;
+    font-family: "Open Sans"!important;
+    font-size: 12px!important;
+    font-style: normal!important;
+    font-weight: 600!important;
+    line-height: 127.075%!important; /* 15.249px */
+    letter-spacing: 1.32px!important;
+    text-transform: uppercase!important;
+    margin: 10px auto 0 auto!important;
+    text-align: center!important;
+    padding-bottom: 10px!important;
 }
 
 .epigraph:nth-last-of-type(2n) {
