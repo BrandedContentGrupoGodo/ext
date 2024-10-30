@@ -23,6 +23,46 @@
   url('../fonts/TiemposHeadline-Semibold.woff2') format("woff2");
 }
 
+
+/* estilos para que en LV se muestre el contenido sin margenes */
+.wallpaper-inverted-ad{
+    display: none!important;
+  }
+  
+  .visual-article-free .col-12 {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    margin-top: 0 !important;
+  }
+  .content-free-html {
+    margin:0 !important;
+  }
+  .container-fluid {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+  .visual__story--free .content-free-html {
+    margin: 0px !important;
+  }
+
+  .article-default a:hover {
+    box-shadow: none !important;
+}
+
+.article-default .content-border, .article-default .content-free-html, .article-default .content-subtitle {
+        margin: 0!important;
+    }
+
+    .col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto {
+        padding-left: 0!important;
+        padding-right: 0!important;
+    }
+  /* .row>* {
+    padding-right: 0!important;
+    padding-left: 0!important;
+    margin-top: 0!important;
+  } */
+
 /* Reset & Base Styles */
 * {
     margin: 0;
