@@ -13,34 +13,79 @@
     box-sizing: border-box;
 }
 
-body {
+/* estilos para que en LV se muestre el contenido sin margenes */
+.wallpaper-inverted-ad{
+    display: none!important;
+  }
+  
+  .visual-article-free .col-12 {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    margin-top: 0 !important;
+  }
+  .content-free-html {
+    margin:0 !important;
+  }
+  .container-fluid {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+  .visual__story--free .content-free-html {
+    margin: 0px !important;
+  }
+  .row>* {
+    padding-right: 0!important;
+    padding-left: 0!important;
+    margin-top: 0!important;
+  }
+  .article-default a:hover {
+    text-decoration: none;
+    box-shadow: none;
+  }
+  /* body.wf-editor, body.cms {
+    font-size: 16px !important;
+  } */
+  .article-default.visual__story--free .content-free-html {
+    margin: 0 !important;
+}
+
+.pt-4 {padding-top: 40px!important;}
+.pt-2 {padding-top: 20px!important;}
+
+/* contenido andorra */
+
+.body-andorra {
     font-family: var(--avenir);
     color: var(--white);
     background: linear-gradient(180deg, var(--black) 0%, var(--gray-dark) 100%);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    overflow-x: hidden;
 }
 
-.hero-section {
-    width: 100%;
+.hero-section-andorra {
+    width: 100%!important;
     text-align: center;
-    background-image: url('img/andorra-fondo.jgp');
+    background-image: url('https://brandedcontentgrupogodo.github.io/ext/andorra-brl/assets/img/andorra-fondo.jpg');
     background-size: cover;
     background-position: center;
-    padding: 50px 20px;
+    padding: 10px 20px 50px 20px;
+    position: relative;
 }
 
-.hero-content {
-    max-width: 930px;
+.fondo-andorra {
+    width: 100%;
+}
+
+.hero-content-andorra {
     margin: 0 auto;
     text-align: center;
 }
 
 /* Texto de colaboración */
 .collab-text {
+    width: 100%;
     color: var(--white);
     font-family: var(--avenir);
     font-size: 10px;
@@ -48,10 +93,12 @@ body {
     line-height: 127.075%;
     letter-spacing: 1.8px;
     text-transform: uppercase;
+    padding-bottom: 20px;
 }
 
 /* Título del festival */
 .festival-title {
+    width: 100%;
     color: var(--white);
     font-family: var(--libre-bodoni);
     font-size: 18px;
@@ -63,6 +110,7 @@ body {
 
 /* Título principal */
 .main-heading {
+    max-width: 930px;
     color: var(--white);
     font-family: var(--libre-bodoni);
     font-size: 50px;
@@ -73,13 +121,21 @@ body {
     margin: 20px auto;
 }
 
-/* Imagen principal */
+/* Imagen principal con posición y superposición */
+.image-wrapper {
+    position: relative;
+    margin: 20px auto 0;
+    max-width: 930px;
+    z-index: 1;
+}
+
 .festival-image {
     width: 100%;
-    max-width: 930px;
     border-radius: 5px;
     transition: filter 0.3s ease;
     filter: grayscale(100%);
+    position: relative;
+    top: -50px;
 }
 
 .festival-image:hover {
@@ -95,4 +151,193 @@ body {
     line-height: normal;
     max-width: 930px;
     margin: 20px auto;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .intro-text {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+}
+
+/* parrafos */
+.intro {
+    max-width: 930px;
+    margin: 0 auto 40px;
+    text-align: center;
+    padding: 20px;
+}
+
+.content-paragraphs {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 14px;
+}
+.content-paragraphs h2 {
+    font-family: var(--libre-bodoni);
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding-bottom: 40px;
+}
+
+.content-text {
+    color: var(--white);
+    font-family: var(--avenir);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.688; /* Ajustando para una lectura fluida */
+    margin-bottom: 50px;
+    text-align: left;
+}
+
+@media screen  and (max-width: 600px) {
+    .intro {
+        padding: 0;
+    }
+}
+
+/* Estilo para el vídeo de YouTube */
+.video-container {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 80px;
+    max-width: 100%;
+}
+
+.video-container iframe {
+    width: 800px;
+    height: 450px;
+}
+
+.festival-image-andorra {
+    width: 100%;
+    border-radius: 5px;
+    transition: filter 0.3s ease;
+    filter: grayscale(100%);
+}
+
+.festival-image-andorra:hover {
+    filter: grayscale(0%);
+}
+.festival-image-andorra img {
+    max-width: 100%;
+}
+
+.highlight-section {
+    padding: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.highlight-box {
+    width: 100%!important;
+    text-align: center;
+    padding: 50px 20px;
+    position: relative;
+}
+
+.highlight-text {
+    color: var(--white); /* Color blanco */
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.4;
+    max-width: 930px;
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.highlight-1 {
+    background-image: url('https://brandedcontentgrupogodo.github.io/ext/andorra-brl/assets/img/andorra-fondo-2.jpg');
+    background-size: cover;
+    background-position: center right;
+}
+
+.highlight-2 {
+    background-image: url('https://brandedcontentgrupogodo.github.io/ext/andorra-brl/assets/img/andorra-fondo.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.highlight-2 .highlight-text {
+    font-family: var(--libre-bodoni);
+    font-size: 36px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.highlight-3 {
+    background-image: url('https://brandedcontentgrupogodo.github.io/ext/andorra-brl/assets/img/andorra-fondo-3.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.highlight-3 .highlight-text {
+    text-align: left!important;
+    padding-top: 100px !important;
+    padding-bottom: 100px !important;
+}
+
+.fondo-negro {
+    width: 100%;
+    background: #222;
+}
+
+.fondo-estrella {
+    width: 100%;
+    background-image: url('https://brandedcontentgrupogodo.github.io/ext/andorra-brl/assets/img/fondo-estrella.png');
+    background-size: cover;
+    background-position: top right ;
+}
+
+@media screen  and (max-width: 600px) {
+    .highlight-1 {
+        background-position: center center;
+    }
+}
+
+/*CRÉDITOS*/
+.container-creditos {
+    background: #1C1B1B;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    width: 100%;
+}
+
+.authorship-creditos {
+    color: #B1B1B1;
+    font-size:0.8em!important;
+    text-align:center;
+    padding:16px 0;
+}
+.d-inline-block-creditos {
+    display: inline-block!important;
+    opacity: 0.7;
+}
+.container-fluid-creditos {
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.creditos {
+    font-size:2em;
+    margin-bottom: 5px;
+    opacity: 0.7;
+}
+@media (min-width: 768px) {
+  .container-fluid-creditos {
+  padding-right: 24px;
+  padding-left: 24px;
+  }
+}
+@media (max-width: 520px) {
+    .authorship-creditos {
+      text-align:left!important;
+    }
 }
