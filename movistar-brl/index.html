@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ofertas Exclusivas MoviStar</title>
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anybody:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- estilos -->
+    <link rel="stylesheet" href="assets/css/main.css">
+
+</head>
+<body>
+    <section class="intro">
+        <!-- Texto de colaboración -->
+        <div class="colaboracion">En colaboración con MoviStar</div>
+
+        <!-- Contenedor central -->
+        <div class="contenedor-central">
+            <div class="subtitulo">Ofertas exclusivas</div>
+            <h1 class="titulo-principal">Llegan los dispositivos que te harán disfrutar del deporte como nunca a precios del Black Friday</h1>
+        </div>
+
+        <!-- Contenedor de franjas cruzadas -->
+        <div class="body-marquee">
+            <div class="marquee">
+                <div class="marquee__group">
+                <p class="marquee__text">• Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday •</p>
+                </div>
+            </div>
+
+            <div class="marquee marquee--reverse">
+                <div class="marquee__group">
+                    <p class="marquee__text">• Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday • Ofertas exclusivas • Black Friday •</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="entradilla">
+        <p>
+            Adelántate al Black Friday en las próximas <a href="https://www.movistar.es/black-friday" rel="nofollow" target="_blank">Blue Weeks de Movistar.</a> Podrás comprar los mejores dispositivos tecnológicos con unos precios exclusivos en la Blue Week Samsung, desde el 12 hasta el 18 de noviembre. No lo dejes pasar: es por tiempo limitado.
+        </p>
+    </section>
+
+    <section>
+        <div class="contenedor-parrafos">
+            <p>
+                Nos gusta el deporte: nos gusta practicarlo y nos gusta verlo. Y así lo confirman las estadísticas. El último estudio <a href="https://www.cis.es/-/avance-de-resultados-del-estudio-3447-habitos-deportivos-en-espana-v-?redirect=%2F" rel="nofollow" target="_blank"> Hábitos deportivos en España,</a> elaborado por el Centro de Investigaciones Sociológicas, asegura que un 47,9% de los españoles hace uno o varios deportes al mes. Y si nos fijamos en los datos de la Encuesta de Presupuestos Familiares del Instituto Nacional de Estadística, descubrimos que, en 2023, el gasto en servicios deportivos y recreativos superó por primera vez los 100 euros por persona en nuestro país.
+            </p>
+            <p>
+                Además, hoy los avances tecnológicos nos están dando la oportunidad de disfrutarlo y practicarlo en unas condiciones inmejorables. Los dispositivos inteligentes permiten que controlemos nuestra salud, midamos nuestro rendimiento o veamos el último partido de Champions League o de la NBA con una calidad asombrosa. ¿Quién no quiere hacerse con el último de ellos para aprovechar al máximo su experiencia deportiva?
+            </p>
+        </div>
+    </section>
+
+    <section class="contenedor-galeria">
+        <div class="gallery-container">
+            <div class="gallery-images">
+              <img src="assets/img/blueweeks1.png" class="active" alt="Imagen 1">
+              <img src="assets/img/blueweeks2.png" alt="Imagen 2">
+              <img src="assets/img/blueweeks3.png" alt="Imagen 3">
+              <img src="assets/img/blueweeks4.png" alt="Imagen 4">
+            </div>
+          </div>
+    </section>
+
+    <script>
+        // Selección de las imágenes
+        const images = document.querySelectorAll('.gallery-images img');
+        let currentIndex = 0;
+    
+        // Cambiar la imagen automáticamente
+        function changeImage() {
+          images[currentIndex].classList.remove('active'); // Quitar clase 'active' de la imagen actual
+          currentIndex = (currentIndex + 1) % images.length; // Pasar al siguiente índice
+          images[currentIndex].classList.add('active'); // Añadir clase 'active' a la nueva imagen
+        }
+    
+        // Cambia la imagen cada 3 segundos
+        setInterval(changeImage, 3000);
+      </script>
+</body>
+</html>
