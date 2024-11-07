@@ -32,15 +32,15 @@
   .visual__story--free .content-free-html {
     margin: 0px !important;
   }
-  .row>* {
-    padding-right: 0!important;
-    padding-left: 0!important;
-    margin-top: 0!important;
-  }
   .article-default a:hover {
     text-decoration: none;
     box-shadow: none;
   }
+
+/* estilos MD */
+.article-default.visual__story--icon .content-free-html, .article-default.visual__story--square .content-free-html, .article-default.visual__story--panoramic .content-free-html, .article-default.visual__story--free .content-free-html {
+    margin: 0 !important; 
+}
 
 /* Estilos generales */
 .intro {
@@ -213,6 +213,7 @@
 
 .entradilla a {
     color: var(--blanco);
+    text-decoration: underline;
 }
 
 .contenedor-parrafos {
@@ -233,6 +234,7 @@
 
 .contenedor-parrafos a {
     color: var(--azul);
+    text-decoration: underline;
 }
 
 /* galería */
