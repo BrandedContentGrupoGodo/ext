@@ -154,14 +154,14 @@
 .marquee:first-child {
     transform: skewY(-2deg) rotate(-2deg);
     position: absolute;
-    top: 62%;
+    /*top: 62%;*/
     transform-origin: center;
 }
 
 .marquee:last-child {
     transform: skewY(2deg) rotate(2deg);
     position: absolute;
-    bottom: 34%;
+    /*bottom: 34%;*/
     transform-origin: center;
 }
 
@@ -182,12 +182,12 @@
 @media (max-width: 600px) {
     .marquee:first-child {
         transform: skewY(-5deg) rotate(-5deg);
-        top: 83%;
+        /*top: 83%;*/
     }
     
     .marquee:last-child {
         transform: skewY(5deg) rotate(5deg);
-        bottom: 12%;
+        /*bottom: 12%;*/
     }
 }
 
