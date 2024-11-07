@@ -613,6 +613,18 @@
     .productos, .productos:nth-child(even) {
         flex-direction: column;
     }
+    .productos:nth-child(even) .producto-img {
+        margin-left: 30px;
+    }
+    .producto-img {
+        margin-left: 30px;
+    }
+    .productos:nth-child(3) .producto-img {
+        margin-left: 30px;
+    }
+    .productos:nth-child(1) .producto-img {
+        margin-left: 30px;
+    }
 }
 
 .destacado a {
