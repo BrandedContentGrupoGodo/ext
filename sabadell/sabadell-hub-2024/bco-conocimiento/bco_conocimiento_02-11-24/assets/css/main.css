@@ -222,6 +222,10 @@ text-transform: uppercase;
     position: absolute;
 }
 
+.video-responsive img {
+        border-radius: 50px;
+}
+
 /* Estilos responsivos para dispositivos móviles */
 @media (max-width: 768px) {
     .main-content-experto {
