@@ -214,7 +214,7 @@
             let index = sections.length;
 
             // Revisa cada sección desde abajo hacia arriba para ver cuál está en el viewport
-            while (--index && window.scrollY + 100 < sections[index].offsetTop) {}
+            while (--index && window.scrollY + 300 < sections[index].offsetTop) {}
 
             // Remueve la clase 'active' de todos los enlaces y agrega a la sección activa
             navLinks.forEach(link => link.classList.remove('active'));
