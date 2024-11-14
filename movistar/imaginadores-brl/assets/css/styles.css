@@ -12,7 +12,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 /* estilos para que en LV se muestre el contenido sin margenes */
 .wallpaper-inverted-ad{
     display: none!important;
@@ -49,18 +48,26 @@
     margin: 0 !important;
 }
 
+body  {
+    overflow-x: hidden!important;
+}
+
 .body-imaginadores {
     font-family: 'Afacad', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
-    overflow-x: hidden;
+}
+.parent-container {
+    overflow: visible; /* Asegúrate de que no esté oculta */
 }
 
 /* Sticky Menu */
 .sticky-menu {
+    position: -webkit-sticky; /* Para navegadores antiguos */
     position: sticky;
     top: 0;
     max-width: 1200px;
+    height: auto;
     margin: auto;
     padding: 1rem 0;
     background-color: var(--menu-bg-color);
@@ -137,8 +144,41 @@
 }
 
 @media (max-width: 550px) {
+    /* Menú Sticky */
+    .sticky-menu {
+        position: sticky;
+        top: 0;
+        max-width: 1200px;
+        margin: auto;
+        padding: 1rem 0;
+        background-color: var(--menu-bg-color);
+        border-radius: 8px;
+        text-align: center;
+        z-index: 1000 !important;
+        overflow-x: auto; /* Desplazamiento horizontal */
+        overflow-y: hidden; /* Evita el desplazamiento vertical */
+        white-space: nowrap; /* Mantiene los elementos en una sola línea */
+    }
+
+    /* Estilos para el contenedor de enlaces */
+    .sticky-menu ul {
+        display: inline-flex; /* Alinea los elementos en una fila */
+        justify-content: flex-start;
+        gap: 1rem;
+        padding: 0;
+        list-style: none;
+    }
+
+    /* Estilo para los enlaces */
     .sticky-menu a {
-        font-size: 11px;
+        color: var(--text-color);
+        text-decoration: none;
+        padding: 0.5rem;
+        position: relative;
+        font-size: 12px;
+        font-weight: 400;
+        opacity: 0.9;
+        white-space: nowrap; /* Evita que el texto se corte en varias líneas */
     }
 }
 
@@ -169,6 +209,12 @@
 /* Muestra el tooltip cuando se pasa el cursor */
 .sticky-menu a:hover::after {
     opacity: 1;
+}
+
+@media (max-width: 550px) {
+    .sticky-menu a::after {
+        display: none;
+    }
 }
 
 
@@ -248,7 +294,10 @@
         position: relative;
         width: 100%;
         height: auto;
-        z-index: -2;
+    }
+    .sticky-menu a::after {
+        white-space: normal;
+        max-width: 100px;
     }
 }
 
@@ -270,6 +319,7 @@
 .chapter-section:first-of-type {
     padding-top: 7rem;
 }
+
 
 .chapter-section {
     padding: 5rem 0;
@@ -427,3 +477,64 @@ hr {
         padding: 14px;
     }
 }
+
+.video-section-bloq {
+    text-align: center;
+    margin: auto;
+    justify-content: center;
+    background-color: #002E39;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    margin-bottom: 5rem;
+}
+
+.video-section-bloq .chapter-content {
+    width: 50%;
+    text-align: center;
+    margin: auto;
+}
+
+.video-section-bloq .contenido-bloqueado {
+    text-align: center;
+    margin: auto;
+    justify-content: center;
+}
+
+
+/*CRÉDITOS*/
+.authorship-f {
+    color: #B1B1B1;
+    font-size: 1em;
+    text-align: center;
+    padding-bottom: 40px;
+    padding-top: 30px;
+  }
+  .d-inline-block-f {
+    display: inline-block!important;
+  }
+  .container-fluid-f {
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  }
+  @media (min-width: 768px) {
+  .container-fluid-f {
+  padding-right: 24px;
+  padding-left: 24px;
+  }
+  }
+  .creditos {
+    font-size:1.6em;
+    font-weight: 400;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+  .container-fluid-f {
+    width: calc(100% - 40px);
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1280px
+  }
