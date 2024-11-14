@@ -19,7 +19,7 @@
             <li><a href="#section3">Capítulo 3</a></li>
             <li><a href="#section4">Capítulo 4</a></li>
             <li><a href="#section5">Capítulo 5</a></li>
-            <li><a href="#section6">Capítulo 6</a></li>
+            <li><a href="#section6">Documental completo</a></li>
         </ul>
     </nav>
 
@@ -55,7 +55,7 @@
                 <div class="chapter-content">
                     <h2><span class="chapter-number">Capítulo 1.</span> <span class="chapter-category">Medicina</span></h2>
                     <h3>Iluminando el cerebro</h3>
-                    <!-- <p class="chapter-subtitle">Un subtítulo inspirador va aquí</p> -->
+                    <p class="chapter-subtitle">Las herederas de Ramón y Cajal cuyos avances podrían curar el Parkinson y el dolor crónico</p>
                     <p class="chapter-description">Este capítulo honra al médico español Santiago Ramón y Cajal -premio Nobel en 1906-, cuyas investigaciones sobre el sistema nervioso abrieron nuevas fronteras en neurociencia, transformando la ciencia y la medicina para siempre. Siguiendo su estela se encuentran profesionales actuales de referencia internacional como Patricia González y Gloria Villalba, con avances pioneros en la lucha contra el Parkinson y el dolor crónico, respectivamente.</p>
                     <button class="view-more" data-url="https://url-capitulo-1.com">Ver más</button>
                 </div>
@@ -82,7 +82,7 @@
                 <div class="chapter-content">
                     <h2><span class="chapter-number">Capítulo 2.</span> <span class="chapter-category">Gastronomía</span></h2>
                     <h3>La receta de la imaginación</h3>
-                    <!-- <p class="chapter-subtitle">Un subtítulo inspirador va aquí</p> -->
+                    <p class="chapter-subtitle">Los tres chefs españoles que revolucionan la historia de la gastronomía mundia</p>
                     <!-- <p class="chapter-description">Un episodio que sigue los pasos de Teodoro Bardají, padre de la cocina moderna española y fuente de inspiración de chefs como Ferran Adrià, fundador de elBulli y referente global en innovación gastronómica, y Alejandro Serrano, chef estrella Michelin más joven de España. Cada uno, en su tiempo y lugar, desafía las normas, reescribe el lenguaje gastronómico y transforma lo cotidiano en extraordinario.</p> -->
                     <div class="contenido-bloqueado">
                         <img src="assets/img/bloqueado.svg" alt="IMAGINADORES contenido bloqueado">
@@ -115,7 +115,7 @@
                 <div class="chapter-content">
                     <h2><span class="chapter-number">Capítulo 3.</span> <span class="chapter-category">Ciencia y Tecnología</span></h2>
                     <h3>Imaginando robots</h3>
-                    <!-- <p class="chapter-subtitle">Un subtítulo inspirador va aquí</p> -->
+                    <p class="chapter-subtitle">Los ingenieros españoles detrás del primer exoesqueleto infantil y el idioma universal de los robots</p>
                     <!-- <p class="chapter-description">En este capítulo descubrimos a Minerva, una pequeña superheroína cuya ‘capa’ tejida de robótica le ayuda a reducir el dolor. Lleva el primer exoesqueleto pediátrico del mundo, creado por Elena García Armada, quien comparte capítulo con Víctor Mayoral, referente global en ciberseguridad y robótica. Su trabajo es el fruto de lo sembrado hace un siglo por Leonardo Torres Quevedo, un precursor de la robótica sin el que nada hubiera sido posible.</p> -->
                     <div class="contenido-bloqueado">
                         <img src="assets/img/bloqueado.svg" alt="IMAGINADORES contenido bloqueado">
@@ -214,7 +214,7 @@
             let index = sections.length;
 
             // Revisa cada sección desde abajo hacia arriba para ver cuál está en el viewport
-            while (--index && window.scrollY + 300 < sections[index].offsetTop) {}
+            while (--index && window.scrollY + 150 < sections[index].offsetTop) {}
 
             // Remueve la clase 'active' de todos los enlaces y agrega a la sección activa
             navLinks.forEach(link => link.classList.remove('active'));
