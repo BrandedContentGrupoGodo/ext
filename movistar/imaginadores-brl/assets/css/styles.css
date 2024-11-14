@@ -106,6 +106,36 @@ body {
     }
 }
 
+/* Estilos para el menú sticky */
+.sticky-menu a {
+    position: relative;
+}
+
+/* Estilos para el tooltip */
+.sticky-menu a::after {
+    content: attr(data-tooltip); /* Muestra el texto del atributo data-tooltip */
+    position: absolute;
+    bottom: -2rem; /* Mueve el tooltip arriba del enlace */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--hover-color);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+    white-space: nowrap;
+    z-index: 1000; /* Asegura que el tooltip esté por encima de otros elementos */
+}
+
+/* Muestra el tooltip cuando se pasa el cursor */
+.sticky-menu a:hover::after {
+    opacity: 1;
+}
+
+
 /* Video Background Section */
 .intro-section {
     position: relative;
