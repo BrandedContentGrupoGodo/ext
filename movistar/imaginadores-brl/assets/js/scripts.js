@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Smooth scroll para el menú sticky sin GSAP
-document.querySelectorAll(".sticky-menu a").forEach(anchor => {
+document.querySelectorAll(".sticky-menu-mov a").forEach(anchor => {
     anchor.addEventListener("click", function(e) {
         e.preventDefault();
         const targetSection = document.querySelector(this.getAttribute("href"));
@@ -17,7 +17,7 @@ document.querySelectorAll(".sticky-menu a").forEach(anchor => {
 
 // Función para activar el enlace en el menú
 function setActiveMenuItem(activeAnchor) {
-    document.querySelectorAll(".sticky-menu a").forEach(anchor => {
+    document.querySelectorAll(".sticky-menu-mov a").forEach(anchor => {
         anchor.classList.remove("active-menu-item");
     });
     activeAnchor.classList.add("active-menu-item");
@@ -25,7 +25,7 @@ function setActiveMenuItem(activeAnchor) {
 
 // IntersectionObserver para detectar capítulos en el viewport y animarlos
 const chapters = document.querySelectorAll(".chapter-section");
-const menuLinks = document.querySelectorAll(".sticky-menu a");
+const menuLinks = document.querySelectorAll(".sticky-menu-mov a");
 
 const observerOptions = {
     threshold: 0.3 // 30% visible para activar la animación
