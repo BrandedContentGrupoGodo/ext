@@ -62,7 +62,7 @@ body  {
 }
 
 /* Sticky Menu */
-.sticky-menu {
+.sticky-menu-mov {
     position: -webkit-sticky; /* Para navegadores antiguos */
     position: sticky;
     top: 0;
@@ -76,13 +76,13 @@ body  {
     z-index: 1000!important;
 }
 
-.sticky-menu ul {
+.sticky-menu-mov ul {
     display: flex;
     justify-content: space-around;
     list-style: none;
 }
 
-.sticky-menu a {
+.sticky-menu-mov a {
     color: var(--text-color);
     text-decoration: none;
     padding: 0.5rem;
@@ -94,7 +94,7 @@ body  {
     opacity: 0.9;
 }
 
-.sticky-menu a:hover::before, .sticky-menu a:focus::before {
+.sticky-menu-mov a:hover::before, .sticky-menu-mov a:focus::before {
     content: '';
     position: absolute;
     top: 0;
@@ -128,11 +128,11 @@ body  {
     );
 }
 
-.sticky-menu a:active {
+.sticky-menu-mov a:active {
     color: var(--hover-color);
 }
 
-.sticky-menu a.active {
+.sticky-menu-mov a.active {
     color: var(--hover-color);
 }
 
@@ -145,7 +145,7 @@ body  {
 
 @media (max-width: 550px) {
     /* Menú Sticky */
-    .sticky-menu {
+    .sticky-menu-mov {
         position: sticky;
         top: 0;
         max-width: 1200px;
@@ -161,7 +161,7 @@ body  {
     }
 
     /* Estilos para el contenedor de enlaces */
-    .sticky-menu ul {
+    .sticky-menu-mov ul {
         display: inline-flex; /* Alinea los elementos en una fila */
         justify-content: flex-start;
         gap: 1rem;
@@ -170,7 +170,7 @@ body  {
     }
 
     /* Estilo para los enlaces */
-    .sticky-menu a {
+    .sticky-menu-mov a {
         color: var(--text-color);
         text-decoration: none;
         padding: 0.5rem;
@@ -183,12 +183,12 @@ body  {
 }
 
 /* Estilos para el menú sticky */
-.sticky-menu a {
+.sticky-menu-mov a {
     position: relative;
 }
 
 /* Estilos para el tooltip */
-.sticky-menu a::after {
+.sticky-menu-mov a::after {
     content: attr(data-tooltip); /* Muestra el texto del atributo data-tooltip */
     position: absolute;
     bottom: -2rem; /* Mueve el tooltip arriba del enlace */
@@ -207,12 +207,12 @@ body  {
 }
 
 /* Muestra el tooltip cuando se pasa el cursor */
-.sticky-menu a:hover::after {
+.sticky-menu-mov a:hover::after {
     opacity: 1;
 }
 
 @media (max-width: 550px) {
-    .sticky-menu a::after {
+    .sticky-menu-mov a::after {
         display: none;
     }
 }
@@ -295,7 +295,7 @@ body  {
         width: 100%;
         height: auto;
     }
-    .sticky-menu a::after {
+    .sticky-menu-mov a::after {
         white-space: normal;
         max-width: 100px;
     }
