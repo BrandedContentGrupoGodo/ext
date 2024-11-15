@@ -10,7 +10,7 @@
 <body>
     <div class="body-imaginadores">
     <!-- Sticky Navigation -->
-        <nav class="sticky-menu">
+        <div class="sticky-menu-mov">
             <ul>
                 <li><a href="#section1" data-tooltip="Medicina">Capítulo 1</a></li>
                 <li><a href="#section2" data-tooltip="Gastronomía">Capítulo 2</a></li>
@@ -19,7 +19,7 @@
                 <li><a href="#section5" data-tooltip="Arte y cultura">Capítulo 5</a></li>
                 <li><a href="#section6" data-tooltip="Documental completo">Documental completo</a></li>
             </ul>
-        </nav>
+        </div>
 
         <!-- Video Background Section -->
         <section class="intro-section">
@@ -229,7 +229,7 @@
     <script>
         // Selecciona todas las secciones de capítulo y los enlaces de navegación
         const sections = document.querySelectorAll('.chapter-section');
-        const navLinks = document.querySelectorAll('.sticky-menu a');
+        const navLinks = document.querySelectorAll('.sticky-menu-mov a');
 
         // Función para detectar la sección visible y actualizar el menú
         function updateActiveLink() {
