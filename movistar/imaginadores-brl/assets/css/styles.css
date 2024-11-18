@@ -249,6 +249,14 @@ body  {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    z-index: 0;
+}
+.video-container-mov {
+    /* position: relative; */
+    z-index: 2;
+}
+.video-container-mov video {
+    z-index: 5; /* Si el video tiene controles, asegúrate de que el z-index sea mayor */
 }
 
 .intro-text {
