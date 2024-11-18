@@ -10,9 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Función para manejar el menú sticky
     window.addEventListener("scroll", () => {
         if (window.scrollY > 50) {
-            stickyMenu.classList.add("sticky-active");
+            stickyMenu.classList.add("sticky-active-mov");
         } else {
-            stickyMenu.classList.remove("sticky-active");
+            stickyMenu.classList.remove("sticky-active-mov");
         }
     });
 
