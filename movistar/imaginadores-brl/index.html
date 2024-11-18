@@ -8,24 +8,27 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
 </head>
 <body>
+    <div class="parent-container">
     <div class="body-imaginadores">
     <!-- Sticky Navigation -->
-        <nav class="sticky-menu">
+        <div class="sticky-menu-mov">
             <ul>
                 <li><a href="#section1" data-tooltip="Medicina">Capítulo 1</a></li>
                 <li><a href="#section2" data-tooltip="Gastronomía">Capítulo 2</a></li>
-                <li><a href="#section3" data-tooltip="Ciencia y Tecnología">Capítulo 3</a></li>
+                <li><a href="#section3" data-tooltip="Ciencia y tecnología">Capítulo 3</a></li>
                 <li><a href="#section4" data-tooltip="Deporte">Capítulo 4</a></li>
                 <li><a href="#section5" data-tooltip="Arte y cultura">Capítulo 5</a></li>
                 <li><a href="#section6" data-tooltip="Documental completo">Documental completo</a></li>
             </ul>
-        </nav>
+        </div>
 
         <!-- Video Background Section -->
         <section class="intro-section">
-            <video autoplay muted loop class="background-video">
-                <source src="https://brandedcontentgrupogodo.github.io/ext/movistar/imaginadores-brl/assets/img/video-1.mp4" type="video/mp4">
-            </video>
+            <div class="video-container-mov">
+                <video controls autoplay muted loop class="background-video">
+                    <source src="https://brandedcontentgrupogodo.github.io/ext/movistar/imaginadores-brl/assets/img/video-1.mp4" type="video/mp4" loading="lazy">
+                </video>
+            </div>
             <div class="intro-text">
                 <p class="intro-subtitle">Un proyecto de La Vanguardia con la participación de Movistar Plus+</p>
                 <img src="https://brandedcontentgrupogodo.github.io/ext/movistar/imaginadores-brl/assets/img/imaginadores.svg" alt="Logo de Imaginadores" class="intro-logo">
@@ -80,7 +83,7 @@
                     <div class="chapter-content">
                         <h2><span class="chapter-number">Capítulo 2.</span> <span class="chapter-category">Gastronomía</span></h2>
                         <h3>La receta de la imaginación</h3>
-                        <p class="chapter-subtitle">Los tres chefs españoles que revolucionan la historia de la gastronomía mundial</p>
+                        <p class="chapter-subtitle">Ferran Adrià, Alejandro Serrano y Teodoro Bardají, los chefs que revolucionan la historia de la gastronomía mundial</p>
                         <!-- <p class="chapter-description">Un episodio que sigue los pasos de Teodoro Bardají, padre de la cocina moderna española y fuente de inspiración de chefs como Ferran Adrià, fundador de elBulli y referente global en innovación gastronómica, y Alejandro Serrano, chef estrella Michelin más joven de España. Cada uno, en su tiempo y lugar, desafía las normas, reescribe el lenguaje gastronómico y transforma lo cotidiano en extraordinario.</p> -->
                         <div class="contenido-bloqueado">
                             <img src="https://brandedcontentgrupogodo.github.io/ext/movistar/imaginadores-brl/assets/img/bloqueado.svg" alt="IMAGINADORES contenido bloqueado">
@@ -111,9 +114,9 @@
                         </div>
                     </div>
                     <div class="chapter-content">
-                        <h2><span class="chapter-number">Capítulo 3.</span> <span class="chapter-category">Ciencia y Tecnología</span></h2>
+                        <h2><span class="chapter-number">Capítulo 3.</span> <span class="chapter-category">Ciencia y tecnología</span></h2>
                         <h3>Imaginando robots</h3>
-                        <p class="chapter-subtitle">Los ingenieros españoles detrás del primer exoesqueleto infantil y el idioma universal de los robots</p>
+                        <p class="chapter-subtitle">Elena García Armada y Víctor Mayoral, los herederos de Leonardo Torres Quevedo que han creado el primer exoesqueleto infantil y el idioma universal de los robotss</p>
                         <!-- <p class="chapter-description">En este capítulo descubrimos a Minerva, una pequeña superheroína cuya ‘capa’ tejida de robótica le ayuda a reducir el dolor. Lleva el primer exoesqueleto pediátrico del mundo, creado por Elena García Armada, quien comparte capítulo con Víctor Mayoral, referente global en ciberseguridad y robótica. Su trabajo es el fruto de lo sembrado hace un siglo por Leonardo Torres Quevedo, un precursor de la robótica sin el que nada hubiera sido posible.</p> -->
                         <div class="contenido-bloqueado">
                             <img src="https://brandedcontentgrupogodo.github.io/ext/movistar/imaginadores-brl/assets/img/bloqueado.svg" alt="IMAGINADORES contenido bloqueado">
@@ -179,7 +182,7 @@
                     <div class="chapter-content">
                         <h2><span class="chapter-number">Capítulo 5.</span> <span class="chapter-category">Arte y cultura</span></h2>
                         <h3>La magia del cine</h3>
-                        <!-- <p class="chapter-subtitle">Un subtítulo inspirador va aquí</p> -->
+                        <p class="chapter-subtitle">Chomón, González y Bergés: los creadores españoles detrás de los efectos visuales más memorables del cine</p>
                         <!-- <p class="chapter-description">Esta entrega reivindica la figura del Segundo de Chomón, pionero del cine y alquimista de las imágenes. Un creador de ilusiones que sigue asombrando a dos de los referentes internacionales más premiados: Félix Bergés, uno de los Supervisores de VFX más reconocidos del cine español, nominado al Oscar por su labor en La sociedad de la nieve y ganador de ocho Goyas por películas como Lo imposible o Un monstruo viene a verme; y Víctor González, Oscar al mérito técnico (El Señor de los Anillos, 300, Charlie y la fábrica de chocolate).</p> -->
                         <div class="contenido-bloqueado">
                             <img src="https://brandedcontentgrupogodo.github.io/ext/movistar/imaginadores-brl/assets/img/bloqueado.svg" alt="IMAGINADORES contenido bloqueado">
@@ -216,20 +219,22 @@
 
 
         <!-- INICIO créditos -->
-    <div class="authorship-f">				
-        <div class="container-fluid-f">
-            <span class="d-inline-block-f">Coordinación: Andrea Valladolid</span> | 
-            <span class="d-inline-block-f">Diseño y maquetación: Alejandra Santander</span> | 
-            <span class="d-inline-block-f">Vídeo: Nolich. </span>
-            <span class="d-inline-block-f">Un proyecto de Brandslab. Godó Vertical Media</span>
+        <div class="authorship-f">				
+            <div class="container-fluid-f">
+                <span class="d-inline-block-f">Coordinación: Andrea Valladolid</span> | 
+                <span class="d-inline-block-f">Diseño y maquetación: Alejandra Santander</span> | 
+                <span class="d-inline-block-f">Vídeo: NOLICH. </span>
+                <span class="d-inline-block-f">Un proyecto de Brandslab. Godó Vertical Media</span>
+            </div>
         </div>
     </div>
     </div>
+
     <script src="https://brandedcontentgrupogodo.github.io/ext/movistar/imaginadores-brl/assets/js/scripts.js"></script>
     <script>
         // Selecciona todas las secciones de capítulo y los enlaces de navegación
         const sections = document.querySelectorAll('.chapter-section');
-        const navLinks = document.querySelectorAll('.sticky-menu a');
+        const navLinks = document.querySelectorAll('.sticky-menu-mov a');
 
         // Función para detectar la sección visible y actualizar el menú
         function updateActiveLink() {
