@@ -63,9 +63,8 @@ body  {
 
 /* Sticky Menu */
 .sticky-menu-mov {
-    /* position: -webkit-sticky;
-    position: sticky;
-    top: 0; */
+    position: fixed; /* Ahora es fijo */
+    top: 50px; /* Esto se ajustará dinámicamente */
     max-width: 1200px;
     height: auto;
     margin: auto;
@@ -73,7 +72,8 @@ body  {
     background-color: var(--menu-bg-color);
     border-radius: 8px;
     text-align: center;
-    z-index: 1000!important;
+    z-index: 1000;
+    transition: top 0.3s ease;
 }
 
 .sticky-menu-mov ul {
@@ -475,6 +475,9 @@ hr {
     .chapter-carousel, .chapter-content {
         width: 100%;
         padding: 14px;
+    }
+    .chapter-section {
+        padding: 2rem 0;
     }
 }
 
