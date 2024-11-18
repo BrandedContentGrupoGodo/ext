@@ -1,18 +1,28 @@
 // Inicializa el código cuando el DOM esté cargado
 document.addEventListener("DOMContentLoaded", () => {
-    // Verifica que el menú sticky existe
+    // Referencia al menú sticky
     const stickyMenu = document.querySelector(".sticky-menu-mov");
     if (!stickyMenu) {
         console.error("El menú sticky no está presente en el DOM.");
         return;
     }
 
-    // Función para manejar el menú sticky
+    // Calcula la altura inicial para posicionar el sticky
+    const stickyOffset = stickyMenu.offsetTop;
+
+    // Comportamiento del menú sticky
     window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) {
-            stickyMenu.classList.add("sticky-active-mov");
+        if (window.scrollY > stickyOffset) {
+            stickyMenu.style.position = "fixed";
+            stickyMenu.style.top = "0";
+            stickyMenu.style.width = "100%";
+            stickyMenu.style.zIndex = "1000";
+            stickyMenu.style.backgroundColor = "var(--menu-bg-color)"; // Usa la variable definida en tu CSS
+            stickyMenu.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)"; // Añade una sombra sutil
         } else {
-            stickyMenu.classList.remove("sticky-active-mov");
+            stickyMenu.style.position = "relative";
+            stickyMenu.style.top = "unset";
+            stickyMenu.style.boxShadow = "none";
         }
     });
 
@@ -37,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
         activeAnchor.classList.add("active-menu-item");
     }
 
-    // IntersectionObserver para detectar capítulos en el viewport y animarlos
+    // IntersectionObserver para detectar capítulos en el viewport
     const chapters = document.querySelectorAll(".chapter-section");
     const menuLinks = document.querySelectorAll(".sticky-menu-mov a");
 
