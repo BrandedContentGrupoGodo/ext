@@ -10,19 +10,30 @@ document.addEventListener("DOMContentLoaded", () => {
     // Calcula la altura inicial para posicionar el sticky
     const stickyOffset = stickyMenu.offsetTop;
 
+    // Guardar el tamaño original del menú
+    const originalWidth = window.getComputedStyle(stickyMenu).width;
+    const originalHeight = window.getComputedStyle(stickyMenu).height;
+
     // Comportamiento del menú sticky
     window.addEventListener("scroll", () => {
         if (window.scrollY > stickyOffset) {
             stickyMenu.style.position = "fixed";
-            stickyMenu.style.top = "0";
-            stickyMenu.style.width = "100%";
+            stickyMenu.style.top = "50px"; // Altura fija desde el header
+            stickyMenu.style.left = "50%"; // Centrado horizontal
+            stickyMenu.style.transform = "translateX(-50%)"; // Ajusta para centrar
+            stickyMenu.style.width = originalWidth; // Mantener el ancho original
+            stickyMenu.style.height = originalHeight; // Mantener la altura original
             stickyMenu.style.zIndex = "1000";
             stickyMenu.style.backgroundColor = "var(--menu-bg-color)"; // Usa la variable definida en tu CSS
             stickyMenu.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)"; // Añade una sombra sutil
         } else {
             stickyMenu.style.position = "relative";
             stickyMenu.style.top = "unset";
+            stickyMenu.style.left = "unset";
+            stickyMenu.style.transform = "unset";
             stickyMenu.style.boxShadow = "none";
+            stickyMenu.style.width = "100%"; // Restaura el ancho relativo si es necesario
+            stickyMenu.style.height = "auto"; // Restaura la altura relativa si es necesario
         }
     });
 
