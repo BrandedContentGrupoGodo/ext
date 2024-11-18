@@ -130,3 +130,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// Animaciones con GSAP
+document.addEventListener("DOMContentLoaded", () => {
+    gsap.timeline()
+        .from(".intro-subtitle", { duration: 1, opacity: 0, y: 20 })
+        .from(".intro-logo", { duration: 1, opacity: 0, y: 20 }, "-=0.8")
+        .from(".intro-description", { duration: 1, opacity: 0, y: 20 }, "-=0.8");
+});
+
