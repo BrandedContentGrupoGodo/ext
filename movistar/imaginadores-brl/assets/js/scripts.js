@@ -13,29 +13,29 @@ document.addEventListener("DOMContentLoaded", () => {
     // Guardar referencia al contenedor padre (si aplica)
     const parentContainer = stickyMenu.parentElement;
 
-    // Calcular ancho inicial del menú
-    const calculateMenuWidth = () => {
+    // Función para calcular y ajustar el ancho y posición del menú
+    const adjustMenuStyles = () => {
         if (parentContainer) {
             const containerWidth = parentContainer.offsetWidth;
             stickyMenu.style.width = `${containerWidth}px`;
         } else {
             stickyMenu.style.width = "100%"; // Fallback si no hay contenedor padre
         }
+        stickyMenu.style.left = "50%"; // Centrado horizontal
+        stickyMenu.style.transform = "translateX(-50%)"; // Ajuste para centrar
     };
 
-    // Aplicar estilos al menú
+    // Aplicar estilos al menú en modo sticky
     const applyStickyStyles = () => {
         stickyMenu.style.position = "fixed";
         stickyMenu.style.top = "50px"; // Altura fija desde el header
-        stickyMenu.style.left = "50%"; // Centrado horizontal
-        stickyMenu.style.transform = "translateX(-50%)"; // Ajusta para centrar
         stickyMenu.style.zIndex = "1000";
-        stickyMenu.style.backgroundColor = "var(--menu-bg-color)"; // Usa la variable definida en tu CSS
-        stickyMenu.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)"; // Añade una sombra sutil
+        stickyMenu.style.backgroundColor = "var(--menu-bg-color)";
+        stickyMenu.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)";
     };
 
     // Comportamiento del menú sticky
-    window.addEventListener("scroll", () => {
+    const onScroll = () => {
         if (window.scrollY > stickyOffset) {
             applyStickyStyles();
         } else {
@@ -44,15 +44,20 @@ document.addEventListener("DOMContentLoaded", () => {
             stickyMenu.style.left = "unset";
             stickyMenu.style.transform = "unset";
             stickyMenu.style.boxShadow = "none";
-            calculateMenuWidth(); // Recalcula el ancho
+            adjustMenuStyles(); // Recalcular ancho y posición
         }
-    });
+    };
 
-    // Ajuste del ancho inicial
-    calculateMenuWidth();
+    // Ajustar estilos al cargar la página
+    const initializeMenu = () => {
+        adjustMenuStyles(); // Asegura que el menú esté centrado desde el inicio
+        onScroll(); // Aplica los estilos iniciales basados en la posición de scroll
+    };
 
-    // Recalcular ancho al redimensionar la ventana
-    window.addEventListener("resize", calculateMenuWidth);
+    // Configurar eventos
+    window.addEventListener("scroll", onScroll);
+    window.addEventListener("resize", adjustMenuStyles);
+    window.addEventListener("load", initializeMenu);
 
     // Smooth scroll para enlaces del menú
     document.querySelectorAll(".sticky-menu-mov a").forEach(anchor => {
