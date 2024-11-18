@@ -65,7 +65,7 @@ body  {
 .sticky-menu-mov {
     position: fixed; /* Ahora es fijo */
     top: 80px; /* Esto se ajustará dinámicamente */
-    max-width: 1200px;
+    /* max-width: 1200px; */
     height: auto;
     margin: auto;
     padding: 1rem 0;
