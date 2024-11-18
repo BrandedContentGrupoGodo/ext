@@ -63,9 +63,9 @@ body  {
 
 /* Sticky Menu */
 .sticky-menu-mov {
-    position: -webkit-sticky; /* Para navegadores antiguos */
+    /* position: -webkit-sticky;
     position: sticky;
-    top: 0;
+    top: 0; */
     max-width: 1200px;
     height: auto;
     margin: auto;
@@ -146,8 +146,8 @@ body  {
 @media (max-width: 550px) {
     /* Menú Sticky */
     .sticky-menu-mov {
-        position: sticky;
-        top: 0;
+        /* position: sticky;
+        top: 0; */
         max-width: 1200px;
         margin: auto;
         padding: 1rem 0;
