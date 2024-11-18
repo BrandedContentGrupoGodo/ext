@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Aplicar estilos al menú
     const applyStickyStyles = () => {
         stickyMenu.style.position = "fixed";
-        stickyMenu.style.top = "50px"; // Altura fija desde el header
+        stickyMenu.style.top = "40px"; // Altura fija desde el header
         stickyMenu.style.left = "50%"; // Centrado horizontal
         stickyMenu.style.transform = "translateX(-50%)"; // Ajusta para centrar
         stickyMenu.style.zIndex = "1000";
