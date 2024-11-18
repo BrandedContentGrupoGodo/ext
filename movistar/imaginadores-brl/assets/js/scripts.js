@@ -10,32 +10,49 @@ document.addEventListener("DOMContentLoaded", () => {
     // Calcula la altura inicial para posicionar el sticky
     const stickyOffset = stickyMenu.offsetTop;
 
-    // Guardar el tamaño original del menú
-    const originalWidth = window.getComputedStyle(stickyMenu).width;
-    const originalHeight = window.getComputedStyle(stickyMenu).height;
+    // Guardar referencia al contenedor padre (si aplica)
+    const parentContainer = stickyMenu.parentElement;
+
+    // Calcular ancho inicial del menú
+    const calculateMenuWidth = () => {
+        if (parentContainer) {
+            const containerWidth = parentContainer.offsetWidth;
+            stickyMenu.style.width = `${containerWidth}px`;
+        } else {
+            stickyMenu.style.width = "100%"; // Fallback si no hay contenedor padre
+        }
+    };
+
+    // Aplicar estilos al menú
+    const applyStickyStyles = () => {
+        stickyMenu.style.position = "fixed";
+        stickyMenu.style.top = "50px"; // Altura fija desde el header
+        stickyMenu.style.left = "50%"; // Centrado horizontal
+        stickyMenu.style.transform = "translateX(-50%)"; // Ajusta para centrar
+        stickyMenu.style.zIndex = "1000";
+        stickyMenu.style.backgroundColor = "var(--menu-bg-color)"; // Usa la variable definida en tu CSS
+        stickyMenu.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)"; // Añade una sombra sutil
+    };
 
     // Comportamiento del menú sticky
     window.addEventListener("scroll", () => {
         if (window.scrollY > stickyOffset) {
-            stickyMenu.style.position = "fixed";
-            stickyMenu.style.top = "50px"; // Altura fija desde el header
-            stickyMenu.style.left = "50%"; // Centrado horizontal
-            stickyMenu.style.transform = "translateX(-50%)"; // Ajusta para centrar
-            stickyMenu.style.width = originalWidth; // Mantener el ancho original
-            stickyMenu.style.height = originalHeight; // Mantener la altura original
-            stickyMenu.style.zIndex = "1000";
-            stickyMenu.style.backgroundColor = "var(--menu-bg-color)"; // Usa la variable definida en tu CSS
-            stickyMenu.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)"; // Añade una sombra sutil
+            applyStickyStyles();
         } else {
             stickyMenu.style.position = "relative";
             stickyMenu.style.top = "unset";
             stickyMenu.style.left = "unset";
             stickyMenu.style.transform = "unset";
             stickyMenu.style.boxShadow = "none";
-            stickyMenu.style.width = "100%"; // Restaura el ancho relativo si es necesario
-            stickyMenu.style.height = "auto"; // Restaura la altura relativa si es necesario
+            calculateMenuWidth(); // Recalcula el ancho
         }
     });
+
+    // Ajuste del ancho inicial
+    calculateMenuWidth();
+
+    // Recalcular ancho al redimensionar la ventana
+    window.addEventListener("resize", calculateMenuWidth);
 
     // Smooth scroll para enlaces del menú
     document.querySelectorAll(".sticky-menu-mov a").forEach(anchor => {
@@ -50,14 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Función para activar el enlace en el menú
-    function setActiveMenuItem(activeAnchor) {
-        document.querySelectorAll(".sticky-menu-mov a").forEach(anchor => {
-            anchor.classList.remove("active-menu-item");
-        });
-        activeAnchor.classList.add("active-menu-item");
-    }
-
     // IntersectionObserver para detectar capítulos en el viewport
     const chapters = document.querySelectorAll(".chapter-section");
     const menuLinks = document.querySelectorAll(".sticky-menu-mov a");
@@ -70,7 +79,8 @@ document.addEventListener("DOMContentLoaded", () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const index = Array.from(chapters).indexOf(entry.target);
-                setActiveMenuItem(menuLinks[index]);
+                menuLinks.forEach(link => link.classList.remove("active-menu-item"));
+                menuLinks[index]?.classList.add("active-menu-item");
 
                 gsap.fromTo(entry.target,
                     { opacity: 0, scale: 0.95 },
@@ -81,68 +91,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }, observerOptions);
 
     chapters.forEach(chapter => observer.observe(chapter));
-
-    // Carrusel de imágenes en cada capítulo con swipe para mobile
-    const carousels = document.querySelectorAll('.chapter-carousel');
-
-    carousels.forEach(carousel => {
-        const images = carousel.querySelectorAll('.carousel img');
-        const dots = carousel.querySelectorAll('.dot');
-        let currentIndex = 0;
-        let startX = 0;
-        let endX = 0;
-
-        function showSlide(index) {
-            images.forEach((img, i) => img.style.display = i === index ? 'block' : 'none');
-            dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
-        }
-
-        showSlide(currentIndex);
-
-        setInterval(() => {
-            currentIndex = (currentIndex + 1) % images.length;
-            showSlide(currentIndex);
-        }, 5000);
-
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                currentIndex = index;
-                showSlide(currentIndex);
-            });
-        });
-
-        // Eventos para el swipe en dispositivos móviles
-        carousel.addEventListener('touchstart', (e) => {
-            startX = e.touches[0].clientX;
-        });
-
-        carousel.addEventListener('touchmove', (e) => {
-            endX = e.touches[0].clientX;
-        });
-
-        carousel.addEventListener('touchend', () => {
-            if (startX - endX > 50) {
-                // Deslizar a la izquierda, mostrar la siguiente imagen
-                currentIndex = (currentIndex + 1) % images.length;
-            } else if (endX - startX > 50) {
-                // Deslizar a la derecha, mostrar la imagen anterior
-                currentIndex = (currentIndex - 1 + images.length) % images.length;
-            }
-            showSlide(currentIndex);
-        });
-    });
-
-    // Botones 'Ver más'
-    document.querySelectorAll('.view-more').forEach(button => {
-        button.addEventListener('click', () => {
-            const url = button.getAttribute('data-url');
-            window.open(url, '_blank');
-        });
-    });
-
-    // Animación inicial en la sección introductoria
-    gsap.timeline()
-        .from(".intro-subtitle", { duration: 1.2, opacity: 0, y: 20, ease: "power2.out" })
-        .from(".intro-logo", { duration: 1.2, opacity: 0, y: 20, ease: "power2.out" }, "-=0.8")
-        .from(".intro-description", { duration: 1.2, opacity: 0, y: 20, ease: "power2.out" }, "-=0.8");
 });
