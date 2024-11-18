@@ -92,3 +92,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
     chapters.forEach(chapter => observer.observe(chapter));
 });
+
+// Carrusel de imágenes en cada capítulo
+document.addEventListener('DOMContentLoaded', () => {
+    const carousels = document.querySelectorAll('.chapter-carousel');
+
+    carousels.forEach(carousel => {
+        const images = carousel.querySelectorAll('.carousel img');
+        const dots = carousel.querySelectorAll('.dot');
+        let currentIndex = 0;
+
+        // Función para mostrar la diapositiva actual
+        function showSlide(index) {
+            images.forEach((img, i) => {
+                img.style.display = i === index ? 'block' : 'none';
+            });
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        }
+
+        // Mostrar la diapositiva inicial
+        showSlide(currentIndex);
+
+        // Cambiar las diapositivas automáticamente cada 5 segundos
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % images.length; // Avanza al siguiente índice
+            showSlide(currentIndex);
+        }, 5000); // 5000 milisegundos = 5 segundos
+
+        // Paginadores para que también se pueda hacer clic en ellos
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentIndex = index;
+                showSlide(currentIndex);
+            });
+        });
+    });
+});
