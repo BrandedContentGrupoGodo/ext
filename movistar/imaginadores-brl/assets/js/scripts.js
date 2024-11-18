@@ -1,54 +1,67 @@
-// Animación inicial en la sección introductoria
+// Inicializa el código cuando el DOM esté cargado
 document.addEventListener("DOMContentLoaded", () => {
-    gsap.timeline()
-        .from(".intro-subtitle", { duration: 1.2, opacity: 0, y: 20, ease: "power2.out" })
-        .from(".intro-logo", { duration: 1.2, opacity: 0, y: 20, ease: "power2.out" }, "-=0.8")
-        .from(".intro-description", { duration: 1.2, opacity: 0, y: 20, ease: "power2.out" }, "-=0.8");
-});
+    // Verifica que el menú sticky existe
+    const stickyMenu = document.querySelector(".sticky-menu-mov");
+    if (!stickyMenu) {
+        console.error("El menú sticky no está presente en el DOM.");
+        return;
+    }
 
-// Smooth scroll para el menú sticky sin GSAP
-document.querySelectorAll(".sticky-menu-mov a").forEach(anchor => {
-    anchor.addEventListener("click", function(e) {
-        e.preventDefault();
-        const targetSection = document.querySelector(this.getAttribute("href"));
-        targetSection.scrollIntoView({ behavior: "smooth" });
-    });
-});
-
-// Función para activar el enlace en el menú
-function setActiveMenuItem(activeAnchor) {
-    document.querySelectorAll(".sticky-menu-mov a").forEach(anchor => {
-        anchor.classList.remove("active-menu-item");
-    });
-    activeAnchor.classList.add("active-menu-item");
-}
-
-// IntersectionObserver para detectar capítulos en el viewport y animarlos
-const chapters = document.querySelectorAll(".chapter-section");
-const menuLinks = document.querySelectorAll(".sticky-menu-mov a");
-
-const observerOptions = {
-    threshold: 0.3 // 30% visible para activar la animación
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const index = Array.from(chapters).indexOf(entry.target);
-            setActiveMenuItem(menuLinks[index]);
-            
-            gsap.fromTo(entry.target, 
-                { opacity: 0, scale: 0.95 }, 
-                { opacity: 1, scale: 1, duration: 1, ease: "power3.out" }
-            );
+    // Función para manejar el menú sticky
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+            stickyMenu.classList.add("sticky-active");
+        } else {
+            stickyMenu.classList.remove("sticky-active");
         }
     });
-}, observerOptions);
 
-chapters.forEach(chapter => observer.observe(chapter));
+    // Smooth scroll para enlaces del menú
+    document.querySelectorAll(".sticky-menu-mov a").forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetSection = document.querySelector(this.getAttribute("href"));
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: "smooth" });
+            } else {
+                console.error("Sección objetivo no encontrada:", this.getAttribute("href"));
+            }
+        });
+    });
 
-// Carrusel de imágenes en cada capítulo con swipe para mobile
-document.addEventListener('DOMContentLoaded', () => {
+    // Función para activar el enlace en el menú
+    function setActiveMenuItem(activeAnchor) {
+        document.querySelectorAll(".sticky-menu-mov a").forEach(anchor => {
+            anchor.classList.remove("active-menu-item");
+        });
+        activeAnchor.classList.add("active-menu-item");
+    }
+
+    // IntersectionObserver para detectar capítulos en el viewport y animarlos
+    const chapters = document.querySelectorAll(".chapter-section");
+    const menuLinks = document.querySelectorAll(".sticky-menu-mov a");
+
+    const observerOptions = {
+        threshold: 0.3 // 30% visible para activar la animación
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const index = Array.from(chapters).indexOf(entry.target);
+                setActiveMenuItem(menuLinks[index]);
+
+                gsap.fromTo(entry.target,
+                    { opacity: 0, scale: 0.95 },
+                    { opacity: 1, scale: 1, duration: 1, ease: "power3.out" }
+                );
+            }
+        });
+    }, observerOptions);
+
+    chapters.forEach(chapter => observer.observe(chapter));
+
+    // Carrusel de imágenes en cada capítulo con swipe para mobile
     const carousels = document.querySelectorAll('.chapter-carousel');
 
     carousels.forEach(carousel => {
@@ -97,12 +110,18 @@ document.addEventListener('DOMContentLoaded', () => {
             showSlide(currentIndex);
         });
     });
-});
 
-// Botones 'Ver más'
-document.querySelectorAll('.view-more').forEach(button => {
-    button.addEventListener('click', () => {
-        const url = button.getAttribute('data-url');
-        window.open(url, '_blank');
+    // Botones 'Ver más'
+    document.querySelectorAll('.view-more').forEach(button => {
+        button.addEventListener('click', () => {
+            const url = button.getAttribute('data-url');
+            window.open(url, '_blank');
+        });
     });
+
+    // Animación inicial en la sección introductoria
+    gsap.timeline()
+        .from(".intro-subtitle", { duration: 1.2, opacity: 0, y: 20, ease: "power2.out" })
+        .from(".intro-logo", { duration: 1.2, opacity: 0, y: 20, ease: "power2.out" }, "-=0.8")
+        .from(".intro-description", { duration: 1.2, opacity: 0, y: 20, ease: "power2.out" }, "-=0.8");
 });
