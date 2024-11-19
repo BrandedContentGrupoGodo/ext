@@ -216,6 +216,8 @@ text-transform: uppercase;
 
 .video-responsive img {
     border-radius: 50px;
+    max-width: 100%;
+    width: 100%;
 }
 
 .video-responsive iframe {
