@@ -139,3 +139,11 @@ document.addEventListener("DOMContentLoaded", () => {
         .from(".intro-description", { duration: 1, opacity: 0, y: 20 }, "-=0.8");
 });
 
+// Botones 'Ver más'
+document.querySelectorAll('.view-more').forEach(button => {
+    button.addEventListener('click', () => {
+        const url = button.getAttribute('data-url');
+        window.open(url, '_blank');
+    });
+});
+
