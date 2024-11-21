@@ -94,6 +94,7 @@ html {
     margin: 0 auto;
     text-align: left;
     animation: fadeIn 1.4s ease-in-out;
+        font-size: 16px;
 }
 
 p {
