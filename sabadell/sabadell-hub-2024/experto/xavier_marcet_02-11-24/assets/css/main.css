@@ -369,7 +369,7 @@ text-transform: uppercase;
     width: 100%;
     transition: filter 0.3s ease-in-out;
     filter: grayscale(100%);
-    width: 100%;
+    object-fit: cover;
     height: 180px;
   }
   
