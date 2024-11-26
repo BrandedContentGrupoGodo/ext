@@ -480,7 +480,7 @@ text-transform: uppercase;
     transition: filter 0.3s ease-in-out;
     filter: grayscale(100%);
     height: 180px;
-    width: 100%;
+    object-fit: cover;
   }
   
   .news-item:hover .image-wrapper-sabadell img {
