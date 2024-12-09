@@ -131,7 +131,7 @@
 }
 
 .magazine-section__text {
-    max-width: 990px;
+    max-width: 790px;
     margin: 0 auto;
     color: var(--white);
     text-align: left;
@@ -158,7 +158,7 @@
 }
 
 .green-section__content {
-    max-width: 990px; /* Ancho máximo */
+    max-width: 790px; /* Ancho máximo */
     margin: 0 auto; /* Centra el contenido */
     text-align: left;
 }
@@ -174,7 +174,7 @@
 
 .green-section__image {
     width: 100%; /* Imagen responsive */
-    max-width: 990px; /* Asegura el mismo ancho que el texto */
+    max-width: 790px; /* Asegura el mismo ancho que el texto */
     height: auto; /* Mantiene proporción */
     display: block; /* Elimina márgenes internos */
     margin: 50px auto; /* Centra la imagen y añade espaciado inferior */
@@ -216,6 +216,12 @@
     height: auto;
 }
 
+@media (max-width: 520px) {
+    .green-section__decoration {
+      display: none;
+    }
+}
+
 .dark-green-section {
     background: #032A19; /* Fondo oscuro */
     padding: 40px 0; /* Espaciado interno */
@@ -223,7 +229,7 @@
 }
 
 .dark-green-section__content {
-    max-width: 990px; /* Ancho máximo */
+    max-width: 790px; /* Ancho máximo */
     margin: 0 auto; /* Centra el contenido */
     text-align: center; /* Texto centrado */
 }
@@ -276,7 +282,7 @@
 }
 
 .background-image-section__content {
-    max-width: 990px; /* Ancho máximo del contenido */
+    max-width: 790px; /* Ancho máximo del contenido */
     margin: 0 auto; /* Centra el contenido */
     text-align: center; /* Centra el texto */
 }
