@@ -44,6 +44,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+.pt-5 {
+    padding-top: 50px;
+}
+.pb-5 {
+    padding-bottom: 50px;
+}
 
 .body-christmas {
     font-family: var(--font-family);
@@ -324,6 +330,45 @@
     width: 100%;
     max-width: 100%;
     height: auto;
+}
+
+/* galeria */
+.image-grid-section {
+    padding: 50px 0;
+}
+
+.image-grid {
+    display: flex; /* Coloca las imágenes en fila */
+    flex-wrap: wrap; /* Permite múltiples filas si es necesario */
+    gap: 10px; /* Espacio entre las imágenes */
+    margin: 0; /* Elimina márgenes del contenedor */
+    padding: 0 10px; /* Relleno lateral para ajustar imágenes dentro del contenedor */
+}
+
+.image-grid__item {
+    flex: 1 1 calc(25% - 10px); /* Ocupa un cuarto del ancho del contenedor menos el espacio del gap */
+    height: auto; /* Mantiene proporciones de la imagen */
+    max-height: 300px; /* Límite opcional para la altura */
+    object-fit: cover; /* Asegura que las imágenes no se deformen */
+    opacity: 0.6; /* Opacidad inicial */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+}
+
+.image-grid__item:hover {
+    opacity: 1; /* Opacidad completa al hacer hover */
+    transform: scale(1.05); /* Ligero zoom */
+}
+
+@media (max-width: 1024px) {
+    .image-grid__item {
+        flex: 1 1 calc(50% - 10px); /* Dos imágenes por fila en pantallas medianas */
+    }
+}
+
+@media (max-width: 600px) {
+    .image-grid__item {
+        flex: 1 1 100%; /* Una imagen por fila en pantallas pequeñas */
+    }
 }
 
 /*CRÉDITOS*/
