@@ -1,8 +1,8 @@
 :root {
     /* Variables para estilos */
-    --primary-red: #CF0013;
+    --primary-red: #cf0013;
     --secondary-red: #88000D;
-    --yellow: #FFC107;
+    --yellow: #DDC099;
     --white: #FFFFFF;
     --font-family: "Baskervville", serif;
 }
@@ -22,15 +22,17 @@
 .christmas-section {
     background: linear-gradient(180deg, var(--primary-red) 52.49%, var(--secondary-red) 99.36%);
     text-align: center;
-    padding: 15px 10px;
 }
 
 .christmas-section__header {
     position: relative;
-    background-image: url('ruta-de-la-imagen.jpg'); /* Reemplazar con la URL de la imagen */
+    background: linear-gradient(rgba(207, 0, 19, 0.5), rgba(207, 0, 19, 0.5)), 
+                url('https://brandedcontentgrupogodo.github.io/ext/lidl/lidl-navidad-2024-brl/assets/img/fondo-lidl-1.png') no-repeat center center / cover; 
+    /* background-image: url('https://brandedcontentgrupogodo.github.io/ext/lidl/lidl-navidad-2024-brl/assets/img/fondo-lidl-1.png');  */
     background-size: cover;
     background-position: center;
-    height: 155px;
+    background-blend-mode: lighten;
+    min-height: 155px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -59,7 +61,7 @@
 
 .christmas-section__headline {
     margin-top: 10px;
-    font-size: 1.8rem;
+    font-size: 1.8rem!important;
     font-size: 48px;
     font-style: normal;
     font-weight: 400;
@@ -69,23 +71,24 @@
 }
 
 .christmas-section__subtitle {
-    margin-top: 10px;
-    font-size: 20px;
+    margin-top: 30px!important;
+    font-size: 1.1rem!important;
     font-style: normal;
     font-weight: 400;
     line-height: 168.8%;
     padding: 0 20px;
-    max-width: 1030px;
+    max-width: 1016px;
     margin: auto;
 }
 
 @media (min-width: 768px) {
     .christmas-section__headline {
-        font-size: 2.5rem;
+        font-size: 2.5rem!important;
     }
 
     .christmas-section__subtitle {
         font-size: 1.2rem;
+        margin-top: 30px;
     }
 }
 
@@ -100,7 +103,7 @@
     margin: 0 auto;
     color: var(--white);
     text-align: left;
-    font-size: 16px;
+    font-size: 17px;
     font-style: normal;
     font-weight: 400;
     line-height: 168.8%;
@@ -131,7 +134,7 @@
 .green-section__text {
     margin-bottom: 50px;
     margin-top: 50px;
-    font-size: 16px; 
+    font-size: 17px; 
     font-style: normal;
     font-weight: 400;
     line-height: 168.8%;
@@ -183,7 +186,7 @@
 
 .dark-green-section {
     background: #032A19; /* Fondo oscuro */
-    padding: 40px 20px; /* Espaciado interno */
+    padding: 40px 0; /* Espaciado interno */
     color: var(--white); /* Texto en blanco */
 }
 
@@ -206,7 +209,7 @@
 
 .dark-green-section__text {
     margin-bottom: 20px; /* Espaciado entre párrafos */
-    font-size: 16px;
+    font-size: 17px;
     font-style: normal;
     font-weight: 400;
     line-height: 168.8%;
@@ -231,8 +234,8 @@
 
 .background-image-section {
     position: relative; /* Para superponer el contenido encima del fondo */
-    background: url('ruta-de-la-imagen-de-fondo.jpg') no-repeat center center / cover; /* Imagen de fondo */
-    padding: 60px 20px; /* Espaciado interno */
+    background: url('https://brandedcontentgrupogodo.github.io/ext/lidl/lidl-navidad-2024-brl/assets/img/fondo-lidl-2.png') no-repeat center center / cover; /* Imagen de fondo */
+    padding: 60px 0; /* Espaciado interno */
     color: var(--white); /* Texto en blanco */
 }
 
@@ -259,7 +262,7 @@
 
 .background-image-section__text {
     margin-bottom: 20px; /* Espaciado entre párrafos */
-    font-size: 16px;
+    font-size: 17px;
     font-style: normal;
     font-weight: 400;
     line-height: 168.8%;
@@ -281,4 +284,39 @@
     width: 100%;
     max-width: 100%;
     height: auto;
+}
+
+/*CRÉDITOS*/
+.authorship-creditos {
+    color: #FBDEA1;
+    background-color: #88000D;
+    font-size:0.8em!important;
+    text-align:center;
+    padding:17px 0;
+}
+.d-inline-block-creditos {
+    display: inline-block!important;
+    opacity: 0.7;
+}
+.container-fluid-creditos {
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.creditos {
+    font-size:2em;
+    margin-bottom: 5px;
+    opacity: 0.7;
+}
+@media (min-width: 768px) {
+  .container-fluid-creditos {
+  padding-right: 24px;
+  padding-left: 24px;
+  }
+}
+@media (max-width: 520px) {
+    .authorship-creditos {
+      text-align:left!important;
+    }
 }
