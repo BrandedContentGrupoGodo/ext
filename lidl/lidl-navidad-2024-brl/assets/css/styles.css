@@ -1,0 +1,284 @@
+:root {
+    /* Variables para estilos */
+    --primary-red: #CF0013;
+    --secondary-red: #88000D;
+    --yellow: #FFC107;
+    --white: #FFFFFF;
+    --font-family: "Baskervville", serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body-christmas {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--white);
+}
+
+.christmas-section {
+    background: linear-gradient(180deg, var(--primary-red) 52.49%, var(--secondary-red) 99.36%);
+    text-align: center;
+    padding: 15px 10px;
+}
+
+.christmas-section__header {
+    position: relative;
+    background-image: url('ruta-de-la-imagen.jpg'); /* Reemplazar con la URL de la imagen */
+    background-size: cover;
+    background-position: center;
+    height: 155px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.christmas-section__header-text {
+    color: var(--white);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 127.075%;
+    letter-spacing: 1.32px;
+    text-transform: uppercase;
+    margin-top: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.christmas-section__title {
+    margin-top: 15px;
+    font-size: 1.5rem;
+    color: var(--yellow);
+    font-style: italic;
+    font-weight: 400;
+    line-height: 127.075%
+}
+
+.christmas-section__headline {
+    margin-top: 10px;
+    font-size: 1.8rem;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 106%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.christmas-section__subtitle {
+    margin-top: 10px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 168.8%;
+    padding: 0 20px;
+    max-width: 1030px;
+    margin: auto;
+}
+
+@media (min-width: 768px) {
+    .christmas-section__headline {
+        font-size: 2.5rem;
+    }
+
+    .christmas-section__subtitle {
+        font-size: 1.2rem;
+    }
+}
+
+.magazine-section {
+    background-color: var(--secondary-red);
+    padding: 140px 20px;
+    text-align: center; 
+}
+
+.magazine-section__text {
+    max-width: 990px;
+    margin: 0 auto;
+    color: var(--white);
+    text-align: left;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 168.8%;
+}
+
+.magazine-section__first-letter {
+    color: var(--yellow); 
+    font-size: 6rem; 
+    font-weight: 400;
+    float: left; 
+    line-height: 1; 
+    margin-right: 8px; 
+}
+
+.green-section {
+    background: #045036; /* Fondo verde */
+    padding: 40px 20px; /* Espaciado interno */
+    position: relative; /* Permite posicionar elementos internos */
+    color: var(--white); /* Texto en blanco */
+}
+
+.green-section__content {
+    max-width: 990px; /* Ancho máximo */
+    margin: 0 auto; /* Centra el contenido */
+    text-align: left;
+}
+
+.green-section__text {
+    margin-bottom: 50px;
+    margin-top: 50px;
+    font-size: 16px; 
+    font-style: normal;
+    font-weight: 400;
+    line-height: 168.8%;
+}
+
+.green-section__image {
+    width: 100%; /* Imagen responsive */
+    max-width: 990px; /* Asegura el mismo ancho que el texto */
+    height: auto; /* Mantiene proporción */
+    display: block; /* Elimina márgenes internos */
+    margin: 50px auto; /* Centra la imagen y añade espaciado inferior */
+}
+.green-section__image img {
+    max-width: 100%;
+}
+
+.green-section__decoration {
+    position: absolute; /* Posiciona fuera del flujo normal */
+    top: 0;
+    left: 0;
+    width: 100%; /* Cubre todo el ancho */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    pointer-events: none; /* Elementos decorativos no interferirán con el contenido */
+}
+
+.green-section__image-left {
+    width: 150px; /* Tamaño de la imagen decorativa izquierda */
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.green-section__stars {
+    display: flex; /* Alinea las estrellas en fila */
+    gap: 10px; /* Espaciado entre las estrellas */
+    position: absolute;
+    top: 0; /* Ajusta la posición desde la parte superior */
+    right: 20px; 
+    align-items: flex-start;
+}
+
+.green-section__star {
+    width: 100%;
+    height: auto;
+}
+
+.dark-green-section {
+    background: #032A19; /* Fondo oscuro */
+    padding: 40px 20px; /* Espaciado interno */
+    color: var(--white); /* Texto en blanco */
+}
+
+.dark-green-section__content {
+    max-width: 990px; /* Ancho máximo */
+    margin: 0 auto; /* Centra el contenido */
+    text-align: center; /* Texto centrado */
+}
+
+.dark-green-section__title {
+    color: #DDC099;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 168.8%;
+    margin-bottom: 50px;
+    margin-top: 20px;
+    text-align: left; 
+}
+
+.dark-green-section__text {
+    margin-bottom: 20px; /* Espaciado entre párrafos */
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 168.8%;
+    text-align: left; 
+    margin-bottom: 50px;
+}
+
+.dark-green-section__text a {
+    color: #DDC099;
+}
+.dark-green-section__image {
+    width: 100%; /* Imagen de ancho completo */
+    height: auto; /* Mantiene la proporción */
+    margin: 100px 0; /* Espaciado superior e inferior */
+    display: block; /* Elimina márgenes internos */
+}
+.dark-green-section__image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.background-image-section {
+    position: relative; /* Para superponer el contenido encima del fondo */
+    background: url('ruta-de-la-imagen-de-fondo.jpg') no-repeat center center / cover; /* Imagen de fondo */
+    padding: 60px 20px; /* Espaciado interno */
+    color: var(--white); /* Texto en blanco */
+}
+
+.background-image-section__overlay {
+    padding: 40px 20px; /* Espaciado interno adicional */
+}
+
+.background-image-section__content {
+    max-width: 990px; /* Ancho máximo del contenido */
+    margin: 0 auto; /* Centra el contenido */
+    text-align: center; /* Centra el texto */
+}
+
+.background-image-section__title {
+    color: #DDC099;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 168.8%;
+    margin-bottom: 50px;
+    margin-top: 20px;
+    text-align: left; 
+}
+
+.background-image-section__text {
+    margin-bottom: 20px; /* Espaciado entre párrafos */
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 168.8%;
+    text-align: left; 
+    margin-bottom: 50px;
+}
+
+.background-image-section__text a {
+    color: #DDC099;
+}
+
+.background-image-section__full-image {
+    width: 100%; /* Imagen de ancho completo */
+    height: auto; /* Mantiene proporciones */
+    display: block; /* Elimina márgenes internos */
+}
+
+.background-image-section__full-image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
