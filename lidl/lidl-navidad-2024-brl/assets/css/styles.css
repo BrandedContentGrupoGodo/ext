@@ -243,6 +243,7 @@
     margin-bottom: 50px;
     margin-top: 20px;
     text-align: left; 
+    padding: 0 20px;
 }
 
 .dark-green-section__text {
@@ -253,6 +254,7 @@
     line-height: 168.8%;
     text-align: left; 
     margin-bottom: 50px;
+    padding: 0 20px;
 }
 
 .dark-green-section__text a {
