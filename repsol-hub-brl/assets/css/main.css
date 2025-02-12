@@ -46,7 +46,7 @@ h3 {
 }
 @media (max-width: 990px) {
   h1 {
-    font-size: 5vw;
+    font-size: 4vw;
   }
   h2 {
     font-size: 2.9vw;
@@ -54,7 +54,7 @@ h3 {
 }
 @media (max-width: 550px) {
   h1 {
-    font-size: 10vw;
+    font-size: 8vw;
   }
   h2 {
     font-size: 4vw;
