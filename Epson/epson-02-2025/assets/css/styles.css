@@ -299,16 +299,16 @@ html {
     margin-bottom: 50px;
     margin-top: 40px;
 }
-a {
+.conainer-paragraph a {
     border-bottom: 1px solid var(--orange);
     color: var(--orange);
     padding-bottom: .2em;
     text-decoration: none;
 }
-a:hover {
+.conainer-paragraph a:hover {
     opacity: 0.8;
 }
-a:visited {
+.conainer-paragraph a:visited {
     color: var(--orange);
 }
 .destacado-1 {
@@ -430,10 +430,11 @@ a:visited {
     background-color: var(--blue);
     color: var(--white);
 }
-.destacado-4-txt:nth-of-type(2n) span {
-    background-color: var(--white);
-    color: var(--purple);
+.destacado-4 .resaltado {
+    background-color: var(--white)!important;
+    color: var(--purple)!important;
 }
+
 .destacado-4 p {
     color: var(--blue);
     font-family: var(--font-title);
