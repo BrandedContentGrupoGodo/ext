@@ -181,12 +181,12 @@ html {
 @media (max-width: 575px) {
     .conainer-paragraph p {
         font-size: 5vw;
-        padding-right: 16px;
-        padding-left: 16px;
+        padding-right: 30px;
+        padding-left: 30px;
     }
     .conainer-paragraph h3 {
-        padding-right: 16px;
-        padding-left: 16px;
+        padding-right: 30px;
+        padding-left: 30px;
     }
     .titular h1 {
         font-size: 13vw;
@@ -496,7 +496,7 @@ html.lenis {
 /*CRÉDITOS*/
 .authorship-f {
     color: var(--credits);
-    font-size: 1.5em;
+    font-size: 1em;
     text-align: center;
     padding-bottom: 40px;
     padding-top: 30px;
@@ -531,7 +531,7 @@ html.lenis {
     max-width: 1280px
 }
 @media (max-width: 550px) {
-    .authorship-f {
+    /* .authorship-f {
         font-size: 5em;
-    }
+    } */
 }
