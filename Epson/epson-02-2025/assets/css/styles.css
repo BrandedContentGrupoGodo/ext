@@ -355,7 +355,7 @@ html {
         max-width: 97%;
     }
     .texto-destacado1 p {
-        font-size: 30px;
+        padding: 50px 30px;
     }
 }
 @media (max-width: 550px) {
