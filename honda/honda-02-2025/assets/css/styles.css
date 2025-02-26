@@ -135,7 +135,7 @@ html {
     font-weight: 300;
     letter-spacing: 2.52px;
     text-transform: uppercase;
-    padding-right: 20px;
+    padding-right: 10px;
 }
 
 .large {
@@ -154,7 +154,7 @@ html {
 .hero__cta {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
 }
 
 @keyframes bounce {
@@ -172,12 +172,12 @@ html {
   }
   
   .bounce {
-    animation: bounce 1s linear infinite;
+    animation: bounce 2s linear infinite;
   }
   
   .arrow {
-    height: 15px;
-    width: 15px;
+    height: 10px;
+    width: 10px;
     transform: rotate(45deg);
     border-bottom: 3px rgb(255, 255, 255) solid;
     border-right: 3px rgb(255, 255, 255) solid;
