@@ -101,11 +101,12 @@
     font-weight: 300;
     line-height: 161.3%; /* 29.034px */
     letter-spacing: 0.63px;
+    padding-top: 20px;
 }
 
 @media (max-width: 550px) {
     .hero-vueling {
-        height: 60vh;
+        height: 70vh;
     }
     .main-title {
         font-size: 35px;
