@@ -76,7 +76,7 @@
 }
 .hero-vueling .bottom-right-image {
     position: absolute;
-    bottom: 170px;  /* Ajusta según necesidad */
+    top: 300px;  /* Ajusta según necesidad */
     right: 20px;   /* Ajusta según necesidad */
     width: 8px;  /* Ajusta el tamaño según lo que necesites */
     height: auto;  
