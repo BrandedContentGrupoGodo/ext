@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Verifica si los elementos existen antes de animarlos
-  const elements = gsap.utils.toArray(".contenedor-derecha, h2, h3, .destacado-centro").filter(el => el);
+  const elements = gsap.utils.toArray(".contenedor-derecha, .destacado-centro").filter(el => el);
   
   elements.forEach(element => {
     gsap.from(element, {
