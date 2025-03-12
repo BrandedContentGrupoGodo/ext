@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
         trigger: element,
         start: "top 90%",
         end: "bottom 10%",
-        toggleActions: "play none reverse none",
+        toggleActions: "play none none none",
         once: false
       }
     });
