@@ -1,9 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
   console.log("JS cargado correctamente"); // Debugging
 
-  // Verifica que GSAP y ScrollTrigger están disponibles
-  if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {
-    console.error("GSAP o ScrollTrigger no están cargados.");
+  // Verifica que GSAP está disponible
+  if (typeof gsap === "undefined") {
+    console.error("GSAP no está cargado.");
+    return;
+  }
+
+  // Registra ScrollTrigger si está disponible
+  if (typeof ScrollTrigger !== "undefined") {
+    gsap.registerPlugin(ScrollTrigger);
+  } else {
+    console.error("ScrollTrigger no está cargado.");
     return;
   }
 
@@ -40,12 +48,10 @@ document.addEventListener("DOMContentLoaded", function () {
     ease: "power1.inOut"
   });
 
-  gsap.utils.toArray(".content-text, .contenedor-derecha, h2, h3, .destacado-centro").forEach(element => {
-    if (!element) {
-      console.warn("Elemento no encontrado para la animación:", element);
-      return;
-    }
-
+  // Verifica si los elementos existen antes de animarlos
+  const elements = gsap.utils.toArray(".content-text, .contenedor-derecha, h2, h3, .destacado-centro").filter(el => el);
+  
+  elements.forEach(element => {
     gsap.from(element, {
       opacity: 0,
       y: 50,
@@ -55,17 +61,18 @@ document.addEventListener("DOMContentLoaded", function () {
         trigger: element,
         start: "top 90%",
         end: "bottom 10%",
-        toggleActions: "play none none none",
+        toggleActions: "play none reverse none",
         once: false
       }
     });
   });
 
-  // Soluciona problemas con ScrollTrigger en CMS
+  // Forzar un ScrollTrigger.refresh() adicional
   ScrollTrigger.refresh();
   setTimeout(() => {
+    console.log("Forzando ScrollTrigger.refresh()");
     ScrollTrigger.refresh();
-  }, 500);
+  }, 1000);
 
   console.log("Animaciones cargadas correctamente");
 });
