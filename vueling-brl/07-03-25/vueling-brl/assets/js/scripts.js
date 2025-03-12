@@ -37,31 +37,3 @@ document.addEventListener("DOMContentLoaded", function () {
     duration: 0.8,  // Hace el rebote más rápido
     ease: "power1.inOut"
   });
-
-  gsap.utils.toArray(".content-text, .contenedor-derecha, h2, h3, .destacado-centro").forEach(element => {
-    if (!element) {
-      console.warn("Elemento no encontrado para la animación:", element);
-      return;
-    }
-
-    gsap.from(element, {
-      opacity: 0,  // Empieza invisible
-      y: 50,  // Se desplaza desde abajo
-      duration: 1,  // La animación dura 1 segundo
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: element,
-        start: "top 90%",  // La animación empieza cuando el elemento entra al 90% de la vista
-        end: "bottom 10%",  // Termina cuando el elemento llega al 10% desde abajo
-        toggleActions: "restart none none none",  // La animación se activa solo una vez
-        once: false,  // Asegura que se reactive en caso de que el CMS modifique el DOM
-      }
-    });
-  });
-
-  // Soluciona problemas con ScrollTrigger en CMS
-  ScrollTrigger.refresh();
-  setTimeout(() => {
-    ScrollTrigger.refresh();
-  }, 500);
-});
