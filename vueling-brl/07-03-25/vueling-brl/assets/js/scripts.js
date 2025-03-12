@@ -43,7 +43,7 @@ tl.to(".main-title", { opacity: 1, duration: 0 }) // Asegura que el título sea 
         trigger: element,
         start: "top 90%",  // La animación empieza cuando el elemento entra al 80% de la vista
         end: "bottom 10%",  // Termina cuando el elemento llega al 20% desde abajo
-        toggleActions: "play none none none",  // La animación se activa solo una vez
+        toggleActions: "restart none none none",  // La animación se activa solo una vez
       }
     });
   });
