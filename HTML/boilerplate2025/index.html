@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landing Base</title>
+
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/main.css">
+
+</head>
+<body>
+    <main>
+
+      <section class="landing-wrapper">
+        <h1>Bienvenida a tu nueva landing</h1>
+        <p>Este es un starter con grid fluido, tipografías responsivas y GSAP listo para animar.</p>
+      </section>
+  
+      <section class="landing-wrapper">
+        <div class="landing-box" id="animatedBox"></div>
+      </section>
+  
+      <section class="landing-wrapper texto-scroll">
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+        <div style="height: 5vh"></div>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+        <div style="height: 5vh"></div>
+      </section>
+
+      <section class="landing-wrapper">
+        <div class="card">
+            <div class="card-image">
+              <img src="assets/img/headphones.jpg" alt="Imagen de tarjeta" />
+            </div>
+            <div class="card-content">
+              <h3>Título de la tarjeta</h3>
+              <p>Descripción de la tarjeta.</p>
+            </div>
+          </div>
+      </section>
+
+      <section class="landing-wrapper texto-scroll">
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+        <div style="height: 5vh"></div>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+        <div style="height: 5vh"></div>
+      </section>
+
+      <section class="landing-wrapper landing-wrapper--full image-full">
+        <img src="assets/img/atardecer.jpg" alt="Imagen escénica" class="full-image" />
+        <div class="image-caption">
+          <h2>Explora el poder del diseño con scroll</h2>
+          <p>Esta imagen se transforma mientras haces scroll, gracias a GSAP + ScrollTrigger.</p>
+        </div>
+      </section>
+
+      <section class="landing-wrapper--full sticky-section">
+        <div class="sticky-container">
+          <div class="sticky-media">
+            <video src="assets/img/zoom-out.mp4" muted playsinline></video>
+          </div>
+          <div class="sticky-content">
+            <h2>Un viaje sensorial</h2>
+            <p>Mientras haces scroll, el video avanza y el texto se mantiene flotante. ¿Magia? No. GSAP.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="landing-wrapper hero-headline">
+        <h2 class="headline-animated">Este titular lo cambia todo</h2>
+      </section>
+      
+      <section class="landing-wrapper texto-scroll">
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+        <div style="height: 5vh"></div>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+        <div style="height: 5vh"></div>
+      </section>
+
+      <section class="landing-wrapper headline-stack">
+        <h2 class="headline-line">Making the Music</h2>
+        <h2 class="headline-line">Business Better</h2>
+        <h2 class="headline-line">The Music Business</h2>
+        <h2 class="headline-line">can be hard.</h2>
+        <h2 class="headline-line">Making money with music is hard</h2>
+        <h2 class="headline-line">and comes with complex tasks...</h2>
+        <h2 class="headline-line">It doesn’t</h2>
+        <h2 class="headline-line">have to be.</h2>
+      </section>
+      
+      <section class="full-screen-section push-container">
+        <div class="bg-push bg1" id="bg1"></div>
+        <div class="headline-push">La música puede ser difícil</div>
+      </section>
+  
+      <section class="full-screen-section push-container">
+        <div class="bg-push bg2" id="bg2"></div>
+        <div class="headline-push">Pero no tiene por qué serlo</div>
+      </section>
+  
+      <section class="landing-wrapper">
+        <p>Contenido para test de scroll...</p>
+      </section>
+
+      <section class="cover" id="cover">
+        <div class="cover__background">
+          <div class="cover__image image1"></div>
+          <div class="cover__image image2"></div>
+        </div>
+        <div class="cover__content">
+            <p>Contenido para test de scroll...</p>
+        </div>
+      </section>
+
+      <section class="landing-wrapper texto-scroll">
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+        <div style="height: 5vh"></div>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+        <div style="height: 5vh"></div>
+      </section>
+
+      <section class="section-1">Scroll Down</section>
+      <section class="section-1 audio-trigger">Hello World</section>
+      <section class="section-1">Good Bye</section>
+      
+
+    </main>
+  
+    <!-- Librerías externas: GSAP, ScrollTrigger, Lenis y Observer -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/Observer.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+    
+    <!-- Archivo JS principal personalizado -->
+    <script src="assets/js/scripts.js"></script>
+  </body>
+</html>

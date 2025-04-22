@@ -1,0 +1,326 @@
+/* ===================== */
+/* VARIABLES Y RESET     */
+/* ===================== */
+
+:root {
+  --font-main: 'Inter', sans-serif;
+  --color-bg: #fff;
+  --color-text: #111;
+  --color-accent: #0055ff;
+  --max-width: 1200px;
+  --gutter: clamp(1rem, 5vw, 3rem); /* espacio lateral adaptable */
+}
+
+/* Reset básico y box-sizing universal */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===================== */
+/* ESTILOS GENERALES     */
+/* ===================== */
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+/* ===================== */
+/* LAYOUT PRINCIPAL      */
+/* ===================== */
+
+.landing-wrapper {
+  padding-inline: var(--gutter);
+  padding-block: clamp(2rem, 8vw, 6rem);
+  max-width: var(--max-width);
+  margin-inline: auto;
+}
+
+/* ===================== */
+/* TIPOGRAFÍA            */
+/* ===================== */
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+}
+
+/* ===================== */
+/* COMPONENTES           */
+/* ===================== */
+
+.landing-box {
+  width: 100%;
+  max-width: 300px;
+  height: 300px;
+  background-color: var(--color-accent);
+  border-radius: 1rem;
+  margin: 0 auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* ===================== */
+/* CARDS                 */
+/* ===================== */
+
+.card {
+  max-width: 300px;
+  margin: var(--gutter) auto;
+  background: #f4f4f4;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-image img {
+  width: 100%;
+  height: auto;
+}
+
+.card-content {
+  padding: var(--gutter);
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* ===================== */
+/* IMG FULL WIDTH        */
+/* ===================== */
+
+.landing-wrapper--full {
+  padding-block: clamp(2rem, 8vw, 6rem);
+  margin: 0;
+  max-width: 100%;
+  width: 100%;
+  padding-inline: 0;
+}
+
+.image-full {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  margin: 4rem 0;
+}
+
+.full-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  transform-origin: center center;
+}
+
+.image-caption {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  color: white;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+  max-width: 70%;
+}
+
+/* ===================== */
+/*  sticky               */
+/* ===================== */
+
+.sticky-section {
+  height: 200vh; /* Le da espacio al scroll */
+  position: relative;
+}
+
+.sticky-container {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+.sticky-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sticky-content {
+  position: absolute;
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 10px rgba(0,0,0,0.7);
+  max-width: 600px;
+  padding: 2rem;
+}
+
+/* ===================== */
+/*  TITULAR              */
+/* ===================== */
+
+.hero-headline {
+  overflow: hidden;
+  text-align: center;
+}
+
+.headline-animated {
+  font-size: clamp(2rem, 6vw, 5rem);
+  font-weight: 600;
+  line-height: 1.2;
+  display: inline-block;
+}
+
+.headline-animated span {
+  display: inline-block;
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+/* ===================== */
+/*  TEXTO SCROLL         */
+/* ===================== */
+
+.texto-scroll p {
+  opacity: 0;
+  transform: translateY(40px);
+  will-change: transform, opacity;
+}
+
+/* .texto-scroll p.gsap-reveal {
+  filter: blur(0);
+} */
+
+/* ===================== */
+/*  TITULARES            */
+/* ===================== */
+
+.headline-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-block: clamp(4rem, 10vw, 8rem);
+  padding-inline: var(--gutter);
+  max-width: var(--max-width);
+  margin-inline: auto;
+}
+
+.headline-line {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 600;
+  line-height: 1.2;
+  opacity: 0;
+  transform: translateY(40px);
+  will-change: transform, opacity;
+}
+
+/* ===================== */
+/*  TITULARES Y FONDO    */
+/* ===================== */
+
+.full-screen-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-push {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.bg1 { background-image: url('https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); }
+.bg2 { background-image: url('https://images.unsplash.com/photo-1742943892627-f7e4ddf91224?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); }
+
+.headline-push {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+/* ===================== */
+/*  TRANSICIÓN FONDO     */
+/* ===================== */
+
+.cover {
+  position: relative;
+  height: 100vh; /* para permitir scroll */
+  overflow: hidden;
+}
+
+.cover__background {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.cover__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.image1 {
+  background-image: url('https://images.unsplash.com/photo-1741722604231-3d24c0c44864?q=80&w=2012&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  clip-path: circle(100% at 50% 50%);
+  z-index: 2;
+}
+
+.image2 {
+  background-image: url('https://images.unsplash.com/photo-1742647538330-350421bf1305?q=80&w=1943&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  z-index: 1;
+}
+
+/* ===================== */
+/*      AUDIO SCROLL     */
+/* ===================== */
+
+.section-1 {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8vmin;
+}
+
+.audio-trigger {
+  background: silver;
+}
