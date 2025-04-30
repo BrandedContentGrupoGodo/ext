@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landing Base</title>
+
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/main.css">
+
+</head>
+<body>
+  <!-- MENU -->
+  <div class="sticky-menu" aria-label="Menú de navegación por secciones">
+    <ul>
+      <li><a href="#section-1" style="--item-color: #ff595e;"><span>Sección 1</span><img src="assets/img/icono-1.svg" alt="" /></a></li>
+      <li><a href="#section-2" style="--item-color: #ff595e;"><span>Sección 2</span><img src="assets/img/icono-2.svg" alt="" /></a></li>
+      <li><a href="#section-3" style="--item-color: #1982c4;"><span>Sección 3</span><img src="assets/img/icono-3.svg" alt="" /></a></li>
+      <li><a href="#section-4" style="--item-color: #6a4c93;"><span>Sección 4</span><img src="assets/img/icono-4.svg" alt="" /></a></li>
+      <li><a href="#section-5" style="--item-color: #6a4c93;"><span>Sección 5</span><img src="assets/img/icono-5.svg" alt="" /></a></li>
+    </ul>
+  </div>
+
+  <main>
+    <div id="smoother-wrapper">
+      <div id="smoother-content">
+        <section class="section section-1" id="section-1">
+          <div class="inner">Sección 1</div>
+        </section>
+        <section class="section section-2" id="section-2">
+          <div class="inner">Sección 2</div>
+        </section>
+        <section class="section section-3" id="section-3">
+          <div class="inner">Sección 3</div>
+        </section>
+        <section class="section section-4" id="section-4">
+          <div class="inner">Sección 4</div>
+        </section>
+        <section class="section section-5" id="section-5">
+          <div class="inner">Sección 5</div>
+        </section>
+      </div>
+    </div>
+  </main>
+  
+    <!-- Librerías externas: GSAP, ScrollTrigger, Lenis y Observer -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/Observer.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.36/bundled/lenis.min.js"></script>
+
+    
+    <!-- Archivo JS principal personalizado -->
+    <script src="assets/js/scripts.js"></script>
+  </body>
+</html>

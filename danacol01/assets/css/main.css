@@ -1,0 +1,184 @@
+/* ===================== */
+/* VARIABLES Y RESET     */
+/* ===================== */
+
+:root {
+  --font-main: 'Inter', sans-serif;
+  --color-bg: #fff;
+  --color-text: #111;
+  --color-accent: #0055ff;
+  --max-width: 1200px;
+  --gutter: clamp(1rem, 5vw, 3rem); /* espacio lateral adaptable */
+}
+
+/* Reset básico y box-sizing universal */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===================== */
+/* ESTILOS GENERALES     */
+/* ===================== */
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+/* ===================== */
+/* TIPOGRAFÍA            */
+/* ===================== */
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+}
+
+/* ===================== */
+/*      FONDO     */
+/* ===================== */
+
+#smoother-wrapper {
+  height: 100%;
+  background-color: inherit;
+}
+
+#smoother-content {
+  position: relative;
+}
+
+.section {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.inner {
+  height: 200vh;
+  overflow-y: auto;
+  padding: 2rem;
+  font-size: 3rem;
+}
+
+.section-1 {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.section-2, .section-3, .section-4, .section-5 {
+  border-radius: 5rem 5rem 0 0;
+  transition: border-radius 0.3s ease, transform 0.3s ease;
+  transform-origin: center top;
+  overflow: hidden;
+  will-change: transform, border-radius;
+}
+
+.section-2 {
+  background-color: #ff595e;
+  color: #000000;
+}
+.section-3 {
+  background-color: #1982c4;
+  color: #ffffff;
+}
+.section-4 {
+  background-color: #6a4c93;
+  color: #ffe;
+}
+.section-5 {
+  background-color: #e2cdff;
+  color: #46461f;
+}
+
+/* ===================== */
+/*          MENU         */
+/* ===================== */
+
+.sticky-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  padding: 1rem;
+  backdrop-filter: blur(2px);
+}
+
+.sticky-menu ul {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.sticky-menu li a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--item-color);
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  min-width: 150px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.sticky-menu li a span {
+  flex-grow: 1;
+  text-align: left;
+  font-weight: bold;
+}
+
+.sticky-menu li a img {
+  width: 24px;
+  height: 24px;
+  margin-left: 1rem;
+}
+
+.sticky-menu li a:hover,
+.sticky-menu li a:focus {
+  transform: translateY(-3px);
+  background-color: white;
+  color: black;
+}
+
+.sticky-menu li a.active {
+  outline: 3px solid white;
+}
+
+@media (max-width: 600px) {
+  .sticky-menu ul {
+    flex-direction: row;
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .sticky-menu ul::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sticky-menu li {
+    flex: 0 0 auto;
+  }
+
+  .sticky-menu li a {
+    min-width: 140px;
+    white-space: nowrap;
+  }
+}
