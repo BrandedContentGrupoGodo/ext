@@ -11,6 +11,18 @@ if (isDesktop) {
     requestAnimationFrame(raf);
   }
   requestAnimationFrame(raf);
+  if (isDesktop) {
+    lenis = new Lenis({ smooth: true });
+  
+    function raf(time) {
+      lenis.raf(time);
+      ScrollTrigger.update(); // 🔧 Esta línea es clave para evitar el salto
+      requestAnimationFrame(raf);
+    }
+  
+    requestAnimationFrame(raf);
+  }
+  
 }
 
 // Scroll automático dentro de cada sección
@@ -22,17 +34,10 @@ if (isDesktop) {
     ScrollTrigger.create({
       trigger: section,
       start: "top top",
-      end: "+=100%",
+      end: () => `+=${section.offsetHeight}`, // duración dinámica según contenido
       pin: true,
       scrub: true,
-      markers: false,
-      onEnter: () => {
-        gsap.to(inner, {
-          scrollTop: inner.scrollHeight,
-          ease: "none",
-          duration: 2
-        });
-      }
+      anticipatePin: 1,
     });
 
     // Cambiar el color del body para acompañar el texto
@@ -96,9 +101,44 @@ function setActive(id) {
 const menu = document.querySelector('.sticky-menu');
 const section2 = document.querySelector('#section-2');
 
+// Oculta el menú de entrada
+menu.style.opacity = '0';
+menu.style.display = 'none';
+
 ScrollTrigger.create({
   trigger: section2,
   start: "top top",
-  onEnter: () => menu.style.display = 'block',
-  onLeaveBack: () => menu.style.display = 'none',
+  onEnter: () => {
+    menu.style.display = 'block';
+    setTimeout(() => {
+      menu.style.opacity = '1';
+    }, 10); // tiny delay to allow opacity transition
+  },
+  onLeaveBack: () => {
+    menu.style.opacity = '0';
+    setTimeout(() => {
+      menu.style.display = 'none';
+    }, 300); // espera a que se desvanezca antes de ocultar
+  },
+});
+
+window.addEventListener("load", () => {
+  requestAnimationFrame(() => {
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+      const section2Top = section2.getBoundingClientRect().top;
+      if (section2Top > 1) {
+        menu.style.opacity = '0';
+        menu.style.display = 'none';
+      }
+    }, 150);
+  });
+});
+
+
+
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    ScrollTrigger.refresh();
+  }, 100); // da un pequeño margen por si hay carga lenta
 });
