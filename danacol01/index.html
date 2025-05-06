@@ -7,8 +7,8 @@
 
   <!-- fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
   <!-- CSS -->
   <link rel="stylesheet" href="assets/css/main.css">
@@ -17,23 +17,62 @@
 <body>
   <!-- MENU -->
   <div class="sticky-menu" aria-label="Menú de navegación por secciones">
-    <ul>
-      <li><a href="#section-1" style="--item-color: #ff595e;"><span>Sección 1</span><img src="assets/img/icono-1.svg" alt="" /></a></li>
-      <li><a href="#section-2" style="--item-color: #ff595e;"><span>Sección 2</span><img src="assets/img/icono-2.svg" alt="" /></a></li>
-      <li><a href="#section-3" style="--item-color: #1982c4;"><span>Sección 3</span><img src="assets/img/icono-3.svg" alt="" /></a></li>
-      <li><a href="#section-4" style="--item-color: #6a4c93;"><span>Sección 4</span><img src="assets/img/icono-4.svg" alt="" /></a></li>
-      <li><a href="#section-5" style="--item-color: #6a4c93;"><span>Sección 5</span><img src="assets/img/icono-5.svg" alt="" /></a></li>
-    </ul>
+    <div class="scroll-menu">
+      <ul>
+        <li><a href="#section-2" style="--item-color: #D6E6D4; --item-text: #379D2F;"><span>Sala 1</span><img src="https://brandedcontentgrupogodo.github.io/ext/danacol01/assets/img/icono-1.svg" alt="" /></a></li>
+        <li><a href="#section-3" style="--item-color: #FBCFA7; --item-text: #EF7908;"><span>Sala 2</span><img src="https://brandedcontentgrupogodo.github.io/ext/danacol01/assets/img/icono-2.svg" alt="" /></a></li>
+        <li><a href="#section-4" style="--item-color: #E1EAF6; --item-text: #0B438C;"><span>Sala 3</span><img src="https://brandedcontentgrupogodo.github.io/ext/danacol01/assets/img/icono-3.svg" alt="" /></a></li>
+        <li><a href="#section-5" style="--item-color: #E9E9E9; --item-text: #646464;"><span>Sala 4</span><img src="https://brandedcontentgrupogodo.github.io/ext/danacol01/assets/img/icono-4.svg" alt="" /></a></li>
+        <li><a href="#section-6" style="--item-color: #FFFFFF; --item-text: #EF7908;"><span>Sala 5</span><img src="https://brandedcontentgrupogodo.github.io/ext/danacol01/assets/img/icono-5.svg" alt="" /></a></li>
+      </ul>
+    </div>
   </div>
 
   <main>
-    <div id="smoother-wrapper">
+    <div id="smoother-wrapper" class="body-danacol">
       <div id="smoother-content">
         <section class="section section-1" id="section-1">
-          <div class="inner">Sección 1</div>
+          <div class="inner">
+            <div class="hero-danacol">
+              <div class="collab">
+                <p>En colaboración con Danacol</p>
+              </div>
+              <div class="intro-hero">
+                <div class="izq">
+                  <h1>Lorem ipsum dolor sit amet consectetur adipiscing elit</h1>
+                  <p><span>Lorem ipsum dolor sit amet consectetur turpis fermentum</span> Lorem ipsum dolor sit amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque sem placerat</p>
+                </div>
+                <div class="der">
+                  <img src="assets/img/prota1.png" alt="Danacol" loading="lazy">
+                  <img src="assets/img/prota1.png" alt="Danacol" loading="lazy">
+                  <img src="assets/img/prota1.png" alt="Danacol" loading="lazy">
+                </div>
+              </div>
+            </div>
+            <div class="entradilla">
+              <p>
+                Lorem ipsum dolor sit amet consectetur. Turpis fermentum pellentesque risus arcu. Massa aliquam gravida leo sociis. Purus justo interdum tortor tincidunt. Massa ac auctor enim vulputate quis porttitor
+              </p>
+            </div>
+            <div class="video-danacol">
+              <div class="video-container">
+                <iframe 
+                  src="https://www.youtube.com/embed/VIDEO_ID_AQUI?rel=0&autoplay=1&mute=1"
+                  title="YouTube video"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+
+          </div>
         </section>
         <section class="section section-2" id="section-2">
-          <div class="inner">Sección 2</div>
+          <div class="inner">
+            <div class="sala1">
+
+            </div>
+          </div>
         </section>
         <section class="section section-3" id="section-3">
           <div class="inner">Sección 3</div>
@@ -43,6 +82,9 @@
         </section>
         <section class="section section-5" id="section-5">
           <div class="inner">Sección 5</div>
+        </section>
+        <section class="section section-6" id="section-6">
+          <div class="inner">Sección 6</div>
         </section>
       </div>
     </div>
