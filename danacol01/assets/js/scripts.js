@@ -122,7 +122,7 @@ ScrollTrigger.create({
   },
 });
 
-window.addEventListener("load", () => {
+document.addEventListener("DOMContentLoaded", () => {
   requestAnimationFrame(() => {
     setTimeout(() => {
       ScrollTrigger.refresh();
@@ -139,6 +139,6 @@ window.addEventListener("load", () => {
 window.addEventListener("load", () => {
   setTimeout(() => {
     ScrollTrigger.refresh(true); // 🔥 fuerza un full recalculo
-  }, 500); // dale más margen si el CMS tarda
+  }, 1000); // dale más margen si el CMS tarda
 });
 
