@@ -122,18 +122,22 @@ ScrollTrigger.create({
   },
 });
 
-window.addEventListener("load", () => {
-  // Asegura que Lenis esté en su sitio
+document.addEventListener("DOMContentLoaded", () => {
   requestAnimationFrame(() => {
-    lenis && lenis.raf(performance.now());
-
     setTimeout(() => {
-      ScrollTrigger.refresh(true); // fuerza full recálculo
+      ScrollTrigger.refresh();
       const section2Top = section2.getBoundingClientRect().top;
       if (section2Top > 1) {
         menu.style.opacity = '0';
         menu.style.display = 'none';
       }
-    }, 800); // Puedes aumentar si el CMS es lento
+    }, 150);
   });
+});
+
+
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    ScrollTrigger.refresh(true); // 🔥 fuerza un full recalculo
+  }, 1000); // dale más margen si el CMS tarda
 });
