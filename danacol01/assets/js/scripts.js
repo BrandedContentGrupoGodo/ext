@@ -35,9 +35,9 @@ if (isDesktop) {
       trigger: section,
       start: "top top",
       end: () => `+=${section.offsetHeight}`, // duración dinámica según contenido
-      pin: true,
+      //pin: true,
       scrub: true,
-      anticipatePin: 1,
+      //anticipatePin: 1,
     });
 
     // Cambiar el color del body para acompañar el texto
@@ -136,9 +136,9 @@ window.addEventListener("load", () => {
 });
 
 
-
 window.addEventListener("load", () => {
   setTimeout(() => {
-    ScrollTrigger.refresh();
-  }, 100); // da un pequeño margen por si hay carga lenta
+    ScrollTrigger.refresh(true); // 🔥 fuerza un full recalculo
+  }, 500); // dale más margen si el CMS tarda
 });
+
