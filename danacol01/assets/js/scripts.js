@@ -13,16 +13,15 @@ if (isDesktop) {
   requestAnimationFrame(raf);
   if (isDesktop) {
     lenis = new Lenis({ smooth: true });
-  
+
     function raf(time) {
       lenis.raf(time);
       ScrollTrigger.update(); // 🔧 Esta línea es clave para evitar el salto
       requestAnimationFrame(raf);
     }
-  
+
     requestAnimationFrame(raf);
   }
-  
 }
 
 // Scroll automático dentro de cada sección
@@ -138,3 +137,18 @@ window.addEventListener("load", () => {
   });
 });
 
+// Añadir MutationObserver para detectar cambios en el DOM
+let debounceTimer;
+const observer = new MutationObserver(() => {
+  clearTimeout(debounceTimer);
+  debounceTimer = setTimeout(() => {
+    console.log("Cambios detectados (con calma), refrescando ScrollTrigger...");
+    ScrollTrigger.refresh();
+  }, 300); // Espera 300ms tras el último cambio para refrescar
+});
+
+// Empieza a observar los cambios en el DOM
+observer.observe(document.body, {
+  childList: true,
+  subtree: true
+});
