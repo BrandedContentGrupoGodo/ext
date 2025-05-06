@@ -4,30 +4,21 @@ let lenis;
 const isDesktop = window.innerWidth >= 768;
 
 if (isDesktop) {
+  // Inicializar Lenis solo una vez
   lenis = new Lenis({ smooth: true });
 
+  // Función de animación para Lenis
   function raf(time) {
     lenis.raf(time);
+    ScrollTrigger.update(); // Actualizar ScrollTrigger en cada frame
     requestAnimationFrame(raf);
   }
   requestAnimationFrame(raf);
-  if (isDesktop) {
-    lenis = new Lenis({ smooth: true });
-  
-    function raf(time) {
-      lenis.raf(time);
-      ScrollTrigger.update(); // 🔧 Esta línea es clave para evitar el salto
-      requestAnimationFrame(raf);
-    }
-  
-    requestAnimationFrame(raf);
-  }
-  
 }
 
 // Scroll automático dentro de cada sección
 if (isDesktop) {
-  gsap.utils.toArray(".section").forEach((section, i) => {
+  gsap.utils.toArray(".section").forEach((section) => {
     const inner = section.querySelector(".inner");
 
     // Pin y animación de scroll interno
@@ -35,9 +26,7 @@ if (isDesktop) {
       trigger: section,
       start: "top top",
       end: () => `+=${section.offsetHeight}`, // duración dinámica según contenido
-      //pin: true,
       scrub: true,
-      //anticipatePin: 1,
     });
 
     // Cambiar el color del body para acompañar el texto
@@ -134,7 +123,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 150);
   });
 });
-
 
 window.addEventListener("load", () => {
   setTimeout(() => {
