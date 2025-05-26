@@ -125,6 +125,7 @@ h1 span:nth-of-type(2) {
 
 .links-audemars {
   color: var(--color-text);
+  text-decoration: underline;
 }
 
 /* ===================== */
