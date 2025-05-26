@@ -926,11 +926,31 @@ max-width: 100%;
 }
 .destacado-img2 {
   display: flex;
-  flex-direction: row;
-  align-content: center;
+  gap: 20px;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
+
+.columna {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.columna-grande {
+  flex: 2; /* Puedes ajustar este valor */
+}
+
+.columna-pequeña {
+  flex: 1; /* Y este también */
+}
+
+.destacado-img2 img {
+  max-width: 100%;
+  height: auto;
+}
+
 .destacado-img2 p {
   font-family: var(--font-title);
   font-size: 18px;
@@ -939,9 +959,6 @@ max-width: 100%;
   line-height: normal;
   max-width: 300px;
   padding: 16px;
-}
-.destacado-img2 img {
-max-width: 100%;
 }
 
 @media (max-width: 550px) {
