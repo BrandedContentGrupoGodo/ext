@@ -146,3 +146,55 @@ gsap.utils.toArray('.col-img, .col-text').forEach((el, i) => {
       ease: "power2.out",
     });
   });
+
+const bullets = gsap.utils.toArray(".quadrilateral-block .bullet");
+
+gsap.set(bullets, {opacity: 0, scale: 0.9});
+
+gsap.to(bullets, {
+  scrollTrigger: {
+    trigger: ".quadrilateral-block",
+    start: "top 80%",
+    toggleActions: "play none none reverse"
+  },
+  opacity: 1,
+  scale: 1,
+  duration: 1,
+  ease: "power2.out",
+  stagger: 0.2
+});
+
+  // slider
+
+  document.addEventListener("DOMContentLoaded", () => {
+  const track = document.querySelector(".slider-track");
+  const prevBtn = document.querySelector(".prev");
+  const nextBtn = document.querySelector(".next");
+  const slides = document.querySelectorAll(".slide");
+  const slideWidth = slides[0].offsetWidth + 20;
+  const visibleSlides = window.innerWidth < 768 ? 1 : 2.5;
+  const maxIndex = Math.max(0, Math.floor(slides.length - visibleSlides + 0.5));
+  let currentIndex = 0;
+
+  const updateSlider = () => {
+    const offset = currentIndex * slideWidth;
+    gsap.to(track, {
+      x: -offset,
+      duration: 0.8,
+      ease: "power2.out",
+    });
+    prevBtn.disabled = currentIndex === 0;
+    nextBtn.disabled = currentIndex >= maxIndex;
+  };
+
+  prevBtn.addEventListener("click", () => {
+    if (currentIndex > 0) currentIndex--;
+    updateSlider();
+  });
+
+  nextBtn.addEventListener("click", () => {
+    if (currentIndex < maxIndex) currentIndex++;
+    updateSlider();
+  });
+
+});
