@@ -20,7 +20,7 @@
 }
 
 body.preload .box {
-  opacity: 0;
+  opacity: 1;
   transform: translateY(50px);
   visibility: hidden;
 }
@@ -623,7 +623,7 @@ h1 span:nth-of-type(2) {
   gap: 10px;
   max-width: 500px;
   text-align: left;
-  opacity: 0;
+  opacity: 1;
   transform: scale(0.9);
 }
 
