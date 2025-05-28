@@ -4,69 +4,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const isDesktop = window.innerWidth >= 768;
   let lenis;
 
-  function setupScrollTrigger() {
-    ScrollTrigger.defaults({
-      scroller: isDesktop ? document.body : undefined,
-    });
-
-    gsap.utils.toArray(".collab").forEach((element) => {
-      gsap.fromTo(
-        element,
-        {
-          opacity: 0,
-          y: 100,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1.3,
-          ease: "power4.out",
-          scrollTrigger: {
-            trigger: element,
-            start: "top 80%",
-            toggleActions: "play none none reverse",
-            scroller: isDesktop ? document.body : undefined,
-          },
-        }
-      );
-    });
-
-    // Animaciones iniciales
-    gsap.from(".collab-1", {
-      opacity: 0,
-      y: -30,
-      delay: 0.8,
-      duration: 1,
-      ease: "power3.out",
-    });
-
-    gsap.from(".collab-2", {
-      opacity: 0,
-      y: -30,
-      delay: 1,
-      duration: 1,
-      ease: "power3.out",
-    });
-
-    gsap.from(".collab-3", {
-      opacity: 0,
-      y: -30,
-      delay: 1.2,
-      duration: 1,
-      ease: "power3.out",
-    });
-  }
-
   if (isDesktop) {
     lenis = new Lenis({
       smooth: true,
       lerp: 0.1,
     });
 
+    // proxy para que GSAP entienda el scroll de Lenis
     ScrollTrigger.scrollerProxy(document.body, {
       scrollTop(value) {
         return arguments.length
-          ? lenis.scrollTo(value, { duration: 0 })
+          ? lenis.scrollTo(value, { duration: 0, immediate: true })
           : window.scrollY;
       },
       getBoundingClientRect() {
@@ -80,30 +28,194 @@ document.addEventListener("DOMContentLoaded", () => {
       pinType: document.body.style.transform ? "transform" : "fixed",
     });
 
-    const raf = (time) => {
+    function raf(time) {
       lenis.raf(time);
       ScrollTrigger.update();
       requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+  }
+
+  // Refrescar después de un pequeño delay para asegurar que todo esté cargado
+  setTimeout(() => {
+    ScrollTrigger.refresh();
+  }, 1000);
+
+  // ANIMACIONES
+
+  gsap.from(".collab-1", {
+    opacity: 0,
+    y: -30,
+    delay: 0.8,
+    duration: 1,
+    ease: "power3.out",
+  });
+
+  gsap.utils.toArray(".parallax").forEach((elem) => {
+    gsap.to(elem, {
+      yPercent: 30,
+      ease: "none",
+      scrollTrigger: {
+        trigger: elem,
+        scroller: document.body,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
+  });
+
+  gsap.utils.toArray(".dashed-line").forEach((line) => {
+    const wrapper = line.closest(".timeline-wrapper");
+    const content = wrapper.querySelector(".timeline-content") || wrapper;
+    const contentHeight = content.offsetHeight;
+    line.style.height = `${contentHeight}px`;
+    line.style.backgroundImage =
+      "repeating-linear-gradient(to bottom, black 0, black 10px, transparent 10px, transparent 20px)";
+    line.style.backgroundRepeat = "repeat-y";
+    line.style.backgroundSize = "1px 20px";
+    line.style.width = "2px";
+
+    gsap.fromTo(
+      line,
+      { height: 0, opacity: 0 },
+      {
+        height: `${contentHeight}px`,
+        opacity: 1,
+        ease: "power1.out",
+        scrollTrigger: {
+          trigger: wrapper,
+          start: "top 90%",
+          end: "bottom top",
+          scrub: true,
+        },
+      }
+    );
+  });
+
+  window.addEventListener("resize", () => {
+    gsap.utils.toArray(".dashed-line").forEach((line) => {
+      const wrapper = line.closest(".timeline-wrapper");
+      const content = wrapper.querySelector(".timeline-content") || wrapper;
+      const contentHeight = content.offsetHeight;
+      line.style.height = `${contentHeight}px`;
+    });
+    ScrollTrigger.refresh();
+  });
+
+  // CAMBIO DE FONDOS
+  ScrollTrigger.create({
+    trigger: ".bg-fondo1",
+    start: "top center",
+    end: "bottom center",
+    onEnter: () => {
+      document
+        .querySelector(".timeline-section")
+        .classList.add("fondo1-activo");
+      document
+        .querySelector(".timeline-section")
+        .classList.remove("fondo2-activo");
+    },
+  });
+
+  ScrollTrigger.create({
+    trigger: ".bg-fondo2",
+    start: "top center",
+    end: "bottom center",
+    onEnter: () => {
+      document
+        .querySelector(".timeline-section")
+        .classList.add("fondo2-activo");
+      document
+        .querySelector(".timeline-section")
+        .classList.remove("fondo1-activo");
+    },
+  });
+
+  // OTROS ELEMENTOS
+
+  gsap.utils.toArray(".col-img, .col-text").forEach((el, i) => {
+    gsap.from(el, {
+      scrollTrigger: {
+        trigger: el,
+        start: "top 85%",
+        toggleActions: "play none none none",
+      },
+      opacity: 0,
+      y: 30,
+      scale: 0.98,
+      duration: 0.9,
+      ease: "power2.out",
+      delay: i * 0.2,
+    });
+  });
+
+  gsap.utils.toArray(".box").forEach((box) => {
+    gsap.from(box, {
+      scrollTrigger: {
+        trigger: box,
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      ease: "power2.out",
+    });
+  });
+
+  const bullets = gsap.utils.toArray(".quadrilateral-block .bullet");
+
+  gsap.set(bullets, { opacity: 0, scale: 0.9 });
+
+  gsap.to(bullets, {
+    scrollTrigger: {
+      trigger: ".quadrilateral-block",
+      start: "top 80%",
+      toggleActions: "play none none reverse",
+    },
+    opacity: 1,
+    scale: 1,
+    duration: 1,
+    ease: "power2.out",
+    stagger: 0.2,
+  });
+
+  // SLIDER
+
+  const track = document.querySelector(".slider-track");
+  const prevBtn = document.querySelector(".prev");
+  const nextBtn = document.querySelector(".next");
+  const slides = document.querySelectorAll(".slide");
+
+  if (track && prevBtn && nextBtn && slides.length) {
+    const slideWidth = slides[0].offsetWidth + 20;
+    const visibleSlides = window.innerWidth < 768 ? 1 : 2.5;
+    const maxIndex = Math.max(
+      0,
+      Math.floor(slides.length - visibleSlides + 0.5)
+    );
+    let currentIndex = 0;
+
+    const updateSlider = () => {
+      const offset = currentIndex * slideWidth;
+      gsap.to(track, {
+        x: -offset,
+        duration: 0.8,
+        ease: "power2.out",
+      });
+      prevBtn.disabled = currentIndex === 0;
+      nextBtn.disabled = currentIndex >= maxIndex;
     };
 
-    requestAnimationFrame((time) => {
-      raf(time);
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) currentIndex--;
+      updateSlider();
     });
 
-    setupScrollTrigger();
-
-    // Doble refresh por seguridad
-    setTimeout(() => {
-      ScrollTrigger.refresh();
-    }, 100);
-
-    setTimeout(() => {
-      ScrollTrigger.refresh();
-    }, 500);
-  } else {
-    setupScrollTrigger();
-    setTimeout(() => {
-      ScrollTrigger.refresh();
-    }, 300);
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < maxIndex) currentIndex++;
+      updateSlider();
+    });
   }
 });
