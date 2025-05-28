@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
       lerp: 0.1,
     });
 
-    // proxy para que GSAP entienda el scroll de Lenis
     ScrollTrigger.scrollerProxy(document.body, {
       scrollTop(value) {
         return arguments.length
@@ -36,13 +35,25 @@ document.addEventListener("DOMContentLoaded", () => {
     requestAnimationFrame(raf);
   }
 
-  // Refrescar después de un pequeño delay para asegurar que todo esté cargado
-  setTimeout(() => {
+  // Doble refresh por seguridad
+  const forceRefresh = () => {
     ScrollTrigger.refresh();
-  }, 1000);
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 300);
+  };
+
+  // Por si el contenido tarda (CMS)
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      forceRefresh();
+    }, 500);
+  });
+
+  // También por si acaso después del DOM ya cargado
+  setTimeout(forceRefresh, 1000);
 
   // ANIMACIONES
-
   gsap.from(".collab-1", {
     opacity: 0,
     y: -30,
@@ -103,7 +114,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ScrollTrigger.refresh();
   });
 
-  // CAMBIO DE FONDOS
   ScrollTrigger.create({
     trigger: ".bg-fondo1",
     start: "top center",
@@ -131,8 +141,6 @@ document.addEventListener("DOMContentLoaded", () => {
         .classList.remove("fondo1-activo");
     },
   });
-
-  // OTROS ELEMENTOS
 
   gsap.utils.toArray(".col-img, .col-text").forEach((el, i) => {
     gsap.from(el, {
@@ -182,7 +190,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // SLIDER
-
   const track = document.querySelector(".slider-track");
   const prevBtn = document.querySelector(".prev");
   const nextBtn = document.querySelector(".next");
