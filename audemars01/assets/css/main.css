@@ -385,7 +385,7 @@ h1 span:nth-of-type(2) {
     transparent 10px,
     transparent 20px
   );
-  opacity: 0;
+  opacity: 1;
   transform-origin: top;
   transition: all 0.5s ease-out;
   pointer-events: none; /* por si acaso */
