@@ -133,22 +133,7 @@ if (isDesktop) {
   });
 }
 
-// Animaciones generales
-gsap.utils.toArray('.col-img, .col-text').forEach((el, i) => {
-  gsap.from(el, {
-    scrollTrigger: {
-      trigger: el,
-      start: "top 85%",
-      toggleActions: "play none none none"
-    },
-    opacity: 0,
-    y: 30,
-    scale: 0.98,
-    duration: 0.9,
-    ease: "power2.out",
-    delay: i * 0.2
-  });
-});
+
 
 // Animación de aparición para las imágenes .box
 gsap.utils.toArray(".box").forEach((box) => {
