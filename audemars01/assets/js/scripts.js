@@ -27,19 +27,15 @@ document.addEventListener("DOMContentLoaded", () => {
       pinType: document.body.style.transform ? "transform" : "fixed",
     });
 
-    // El raf va a llamar a lenis.raf y a ScrollTrigger.update para sincronizar todo
     function raf(time) {
       lenis.raf(time);
       ScrollTrigger.update();
       requestAnimationFrame(raf);
     }
     requestAnimationFrame(raf);
-
-    // Quitamos esta línea porque lenis.update no existe
-    // ScrollTrigger.addEventListener("refresh", () => lenis.update());
   }
 
-  // Doble refresh por seguridad
+  // Doble refresh por seguridad para que ScrollTrigger calcule bien todo
   const forceRefresh = () => {
     ScrollTrigger.refresh();
     setTimeout(() => {
@@ -47,23 +43,24 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 300);
   };
 
-  // Por si el contenido tarda (CMS)
   window.addEventListener("load", () => {
-    setTimeout(() => {
-      forceRefresh();
-    }, 500);
+    setTimeout(forceRefresh, 500);
   });
 
-  // También por si acaso después del DOM ya cargado
   setTimeout(forceRefresh, 1000);
 
-  // ANIMACIONES
+  // Animaciones - sin "scroller" para que use el proxy de Lenis
   gsap.from(".collab-1", {
     opacity: 0,
     y: -30,
     delay: 0.8,
     duration: 1,
     ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".collab-1",
+      start: "top 85%",
+      toggleActions: "play none none none",
+    },
   });
 
   gsap.utils.toArray(".parallax").forEach((elem) => {
@@ -72,7 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
       ease: "none",
       scrollTrigger: {
         trigger: elem,
-        scroller: document.body,
         start: "top bottom",
         end: "bottom top",
         scrub: true,
