@@ -1,84 +1,67 @@
 gsap.registerPlugin(ScrollTrigger);
 
-document.addEventListener("DOMContentLoaded", () => {
-  const isDesktop = window.innerWidth >= 768;
-  let lenis;
+let lenis;
+const isDesktop = window.innerWidth >= 768;
 
-  if (isDesktop) {
-    lenis = new Lenis({
-      smooth: true,
-      lerp: 0.1,
-    });
-
-   ScrollTrigger.scrollerProxy(document.body, {
-      scrollTop(value) {
-        if (arguments.length) {
-          lenis.scrollTo(value, { duration: 0, immediate: true });
-        }
-        // ojo aquí, en vez de window.scrollY, usar lenis.scroll.instance.scroll y listo
-        return lenis.scroll.instance.scroll;
-      },
-      getBoundingClientRect() {
-        return {
-          top: 0,
-          left: 0,
-          width: window.innerWidth,
-          height: window.innerHeight,
-        };
-      },
-      pinType: document.body.style.transform ? "transform" : "fixed",
-    });
-
-    // Cada vez que Lenis hace scroll, le decimos a ScrollTrigger que actualice
-    lenis.on("scroll", () => {
-      ScrollTrigger.update();
-    });
-
-    // requestAnimationFrame para animar y sincronizar todo
-    function raf(time) {
-      lenis.raf(time);
-      // no es necesario llamar a ScrollTrigger.update aquí porque ya está en el evento scroll
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-
-    // Cuando cambie tamaño o refresques ScrollTrigger lo refrescamos
-    ScrollTrigger.addEventListener("refreshInit", () => lenis.stop());
-    ScrollTrigger.addEventListener("refresh", () => lenis.start());
-  }
-
-   // Fuerza refresh doble para seguridad
-  const forceRefresh = () => {
-    ScrollTrigger.refresh();
-    setTimeout(() => {
-      ScrollTrigger.refresh();
-    }, 300);
-  };
-
-  window.addEventListener("load", () => setTimeout(forceRefresh, 500));
-  setTimeout(forceRefresh, 1000);
+if (isDesktop) {
+  lenis = new Lenis({
+    smooth: true,
+    lerp: 0.1,
   });
 
-  // Animaciones - sin "scroller" para que use el proxy de Lenis
+  ScrollTrigger.scrollerProxy(document.body, {
+    scrollTop(value) {
+      return arguments.length
+        ? lenis.scrollTo(value, { duration: 0, immediate: true })
+        : lenis.scroll;
+    },
+    getBoundingClientRect() {
+      return {
+        top: 0,
+        left: 0,
+        width: window.innerWidth,
+        height: window.innerHeight,
+      };
+    },
+    pinType: document.body.style.transform ? "transform" : "fixed",
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    ScrollTrigger.update();
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+
+  // REFRESH DESPUÉS DE CARGA COMPLETA PARA EVITAR FALLOS
+  window.addEventListener("load", () => {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        ScrollTrigger.refresh();
+      });
+    });
+
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 500);
+  });
+
   gsap.from(".collab-1", {
     opacity: 0,
     y: -30,
     delay: 0.8,
     duration: 1,
     ease: "power3.out",
-    scrollTrigger: {
-      trigger: ".collab-1",
-      start: "top 85%",
-      toggleActions: "play none none none",
-    },
   });
 
+  // Parallax
   gsap.utils.toArray(".parallax").forEach((elem) => {
     gsap.to(elem, {
       yPercent: 30,
       ease: "none",
       scrollTrigger: {
         trigger: elem,
+        scroller: document.body,
         start: "top bottom",
         end: "bottom top",
         scrub: true,
@@ -91,8 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const content = wrapper.querySelector(".timeline-content") || wrapper;
     const contentHeight = content.offsetHeight;
     line.style.height = `${contentHeight}px`;
-    line.style.backgroundImage =
-      "repeating-linear-gradient(to bottom, black 0, black 10px, transparent 10px, transparent 20px)";
+    line.style.backgroundImage = "repeating-linear-gradient(to bottom, black 0, black 10px, transparent 10px, transparent 20px)";
     line.style.backgroundRepeat = "repeat-y";
     line.style.backgroundSize = "1px 20px";
     line.style.width = "2px";
@@ -114,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   });
 
-  window.addEventListener("resize", () => {
+  function refreshDashedLines() {
     gsap.utils.toArray(".dashed-line").forEach((line) => {
       const wrapper = line.closest(".timeline-wrapper");
       const content = wrapper.querySelector(".timeline-content") || wrapper;
@@ -122,19 +104,18 @@ document.addEventListener("DOMContentLoaded", () => {
       line.style.height = `${contentHeight}px`;
     });
     ScrollTrigger.refresh();
-  });
+  }
 
+  window.addEventListener("resize", refreshDashedLines);
+
+  // CAMBIO DE FONDO SUAVE
   ScrollTrigger.create({
     trigger: ".bg-fondo1",
     start: "top center",
     end: "bottom center",
     onEnter: () => {
-      document
-        .querySelector(".timeline-section")
-        .classList.add("fondo1-activo");
-      document
-        .querySelector(".timeline-section")
-        .classList.remove("fondo2-activo");
+      document.querySelector(".timeline-section").classList.add("fondo1-activo");
+      document.querySelector(".timeline-section").classList.remove("fondo2-activo");
     },
   });
 
@@ -143,96 +124,91 @@ document.addEventListener("DOMContentLoaded", () => {
     start: "top center",
     end: "bottom center",
     onEnter: () => {
-      document
-        .querySelector(".timeline-section")
-        .classList.add("fondo2-activo");
-      document
-        .querySelector(".timeline-section")
-        .classList.remove("fondo1-activo");
+      document.querySelector(".timeline-section").classList.add("fondo2-activo");
+      document.querySelector(".timeline-section").classList.remove("fondo1-activo");
     },
   });
+}
 
-  gsap.utils.toArray(".col-img, .col-text").forEach((el, i) => {
-    gsap.from(el, {
-      scrollTrigger: {
-        trigger: el,
-        start: "top 85%",
-        toggleActions: "play none none none",
-      },
-      opacity: 0,
-      y: 30,
-      scale: 0.98,
-      duration: 0.9,
-      ease: "power2.out",
-      delay: i * 0.2,
-    });
-  });
-
-  gsap.utils.toArray(".box").forEach((box) => {
-    gsap.from(box, {
-      scrollTrigger: {
-        trigger: box,
-        start: "top 80%",
-        toggleActions: "play none none none",
-      },
-      opacity: 0,
-      y: 50,
-      duration: 1,
-      ease: "power2.out",
-    });
-  });
-
-  const bullets = gsap.utils.toArray(".quadrilateral-block .bullet");
-
-  gsap.set(bullets, { opacity: 0, scale: 0.9 });
-
-  gsap.to(bullets, {
+// Animaciones generales
+gsap.utils.toArray('.col-img, .col-text').forEach((el, i) => {
+  gsap.from(el, {
     scrollTrigger: {
-      trigger: ".quadrilateral-block",
-      start: "top 80%",
-      toggleActions: "play none none reverse",
+      trigger: el,
+      start: "top 85%",
+      toggleActions: "play none none none"
     },
-    opacity: 1,
-    scale: 1,
+    opacity: 0,
+    y: 30,
+    scale: 0.98,
+    duration: 0.9,
+    ease: "power2.out",
+    delay: i * 0.2
+  });
+});
+
+// Animación de aparición para las imágenes .box
+gsap.utils.toArray(".box").forEach((box) => {
+  gsap.from(box, {
+    scrollTrigger: {
+      trigger: box,
+      start: "top 80%",
+      toggleActions: "play none none none",
+    },
+    opacity: 0,
+    y: 50,
     duration: 1,
     ease: "power2.out",
-    stagger: 0.2,
   });
+});
 
-  // SLIDER
+// Bullets
+const bullets = gsap.utils.toArray(".quadrilateral-block .bullet");
+
+gsap.set(bullets, {opacity: 0, scale: 0.9});
+
+gsap.to(bullets, {
+  scrollTrigger: {
+    trigger: ".quadrilateral-block",
+    start: "top 80%",
+    toggleActions: "play none none reverse"
+  },
+  opacity: 1,
+  scale: 1,
+  duration: 1,
+  ease: "power2.out",
+  stagger: 0.2
+});
+
+// Slider
+document.addEventListener("DOMContentLoaded", () => {
   const track = document.querySelector(".slider-track");
   const prevBtn = document.querySelector(".prev");
   const nextBtn = document.querySelector(".next");
   const slides = document.querySelectorAll(".slide");
+  const slideWidth = slides[0].offsetWidth + 20;
+  const visibleSlides = window.innerWidth < 768 ? 1 : 2.5;
+  const maxIndex = Math.max(0, Math.floor(slides.length - visibleSlides + 0.5));
+  let currentIndex = 0;
 
-  if (track && prevBtn && nextBtn && slides.length) {
-    const slideWidth = slides[0].offsetWidth + 20;
-    const visibleSlides = window.innerWidth < 768 ? 1 : 2.5;
-    const maxIndex = Math.max(
-      0,
-      Math.floor(slides.length - visibleSlides + 0.5)
-    );
-    let currentIndex = 0;
-
-    const updateSlider = () => {
-      const offset = currentIndex * slideWidth;
-      gsap.to(track, {
-        x: -offset,
-        duration: 0.8,
-        ease: "power2.out",
-      });
-      prevBtn.disabled = currentIndex === 0;
-      nextBtn.disabled = currentIndex >= maxIndex;
-    };
-
-    prevBtn.addEventListener("click", () => {
-      if (currentIndex > 0) currentIndex--;
-      updateSlider();
+  const updateSlider = () => {
+    const offset = currentIndex * slideWidth;
+    gsap.to(track, {
+      x: -offset,
+      duration: 0.8,
+      ease: "power2.out",
     });
+    prevBtn.disabled = currentIndex === 0;
+    nextBtn.disabled = currentIndex >= maxIndex;
+  };
 
-    nextBtn.addEventListener("click", () => {
-      if (currentIndex < maxIndex) currentIndex++;
-      updateSlider();
-    });
-  }
+  prevBtn.addEventListener("click", () => {
+    if (currentIndex > 0) currentIndex--;
+    updateSlider();
+  });
+
+  nextBtn.addEventListener("click", () => {
+    if (currentIndex < maxIndex) currentIndex++;
+    updateSlider();
+  });
 });
