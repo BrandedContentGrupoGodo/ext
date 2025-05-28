@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
       scrollTop(value) {
         return arguments.length
           ? lenis.scrollTo(value, { duration: 0, immediate: true })
-          : lenis.scroll; // <-- aquí el cambio clave
+          : window.scrollY;
       },
       getBoundingClientRect() {
         return {
@@ -27,17 +27,16 @@ document.addEventListener("DOMContentLoaded", () => {
       pinType: document.body.style.transform ? "transform" : "fixed",
     });
 
-    // Actualiza Lenis cuando ScrollTrigger refresca
-    ScrollTrigger.addEventListener("refresh", () => lenis.update());
-
-    ScrollTrigger.refresh();
-
+    // El raf va a llamar a lenis.raf y a ScrollTrigger.update para sincronizar todo
     function raf(time) {
       lenis.raf(time);
       ScrollTrigger.update();
       requestAnimationFrame(raf);
     }
     requestAnimationFrame(raf);
+
+    // Quitamos esta línea porque lenis.update no existe
+    // ScrollTrigger.addEventListener("refresh", () => lenis.update());
   }
 
   // Doble refresh por seguridad
