@@ -10,11 +10,13 @@ document.addEventListener("DOMContentLoaded", () => {
       lerp: 0.1,
     });
 
-    ScrollTrigger.scrollerProxy(document.body, {
+   ScrollTrigger.scrollerProxy(document.body, {
       scrollTop(value) {
-        return arguments.length
-          ? lenis.scrollTo(value, { duration: 0, immediate: true })
-          : window.scrollY;
+        if (arguments.length) {
+          lenis.scrollTo(value, { duration: 0, immediate: true });
+        }
+        // ojo aquí, en vez de window.scrollY, usar lenis.scroll.instance.scroll y listo
+        return lenis.scroll.instance.scroll;
       },
       getBoundingClientRect() {
         return {
@@ -27,15 +29,25 @@ document.addEventListener("DOMContentLoaded", () => {
       pinType: document.body.style.transform ? "transform" : "fixed",
     });
 
+    // Cada vez que Lenis hace scroll, le decimos a ScrollTrigger que actualice
+    lenis.on("scroll", () => {
+      ScrollTrigger.update();
+    });
+
+    // requestAnimationFrame para animar y sincronizar todo
     function raf(time) {
       lenis.raf(time);
-      ScrollTrigger.update();
+      // no es necesario llamar a ScrollTrigger.update aquí porque ya está en el evento scroll
       requestAnimationFrame(raf);
     }
     requestAnimationFrame(raf);
+
+    // Cuando cambie tamaño o refresques ScrollTrigger lo refrescamos
+    ScrollTrigger.addEventListener("refreshInit", () => lenis.stop());
+    ScrollTrigger.addEventListener("refresh", () => lenis.start());
   }
 
-  // Doble refresh por seguridad para que ScrollTrigger calcule bien todo
+   // Fuerza refresh doble para seguridad
   const forceRefresh = () => {
     ScrollTrigger.refresh();
     setTimeout(() => {
@@ -43,11 +55,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 300);
   };
 
-  window.addEventListener("load", () => {
-    setTimeout(forceRefresh, 500);
-  });
-
+  window.addEventListener("load", () => setTimeout(forceRefresh, 500));
   setTimeout(forceRefresh, 1000);
+  });
 
   // Animaciones - sin "scroller" para que use el proxy de Lenis
   gsap.from(".collab-1", {
