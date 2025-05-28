@@ -152,7 +152,7 @@ gsap.utils.toArray(".box").forEach((box) => {
 
 // Bullets
 const bullets = gsap.utils.toArray(".quadrilateral-block .bullet");
-gsap.set(bullets, { opacity: 0, scale: 0.9 });
+gsap.set(bullets, { opacity: 1, scale: 0.9 });
 
 gsap.to(bullets, {
   scrollTrigger: {
