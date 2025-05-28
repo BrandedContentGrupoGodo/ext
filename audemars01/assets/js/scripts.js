@@ -5,38 +5,38 @@ document.addEventListener("DOMContentLoaded", () => {
   let lenis;
 
   if (isDesktop) {
-  lenis = new Lenis({
-    smooth: true,
-    lerp: 0.1,
-  });
+    lenis = new Lenis({
+      smooth: true,
+      lerp: 0.1,
+    });
 
-  ScrollTrigger.scrollerProxy(document.body, {
-    scrollTop(value) {
-      return arguments.length
-        ? lenis.scrollTo(value, { duration: 0, immediate: true })
-        : lenis.scroll; // <- CAMBIO CLAVE aquí
-    },
-    getBoundingClientRect() {
-      return {
-        top: 0,
-        left: 0,
-        width: window.innerWidth,
-        height: window.innerHeight,
-      };
-    },
-    pinType: document.body.style.transform ? "transform" : "fixed",
-  });
+    ScrollTrigger.scrollerProxy(document.body, {
+      scrollTop(value) {
+        return arguments.length
+          ? lenis.scrollTo(value, { duration: 0, immediate: true })
+          : lenis.scroll; // <-- aquí el cambio clave
+      },
+      getBoundingClientRect() {
+        return {
+          top: 0,
+          left: 0,
+          width: window.innerWidth,
+          height: window.innerHeight,
+        };
+      },
+      pinType: document.body.style.transform ? "transform" : "fixed",
+    });
 
-    // Cada vez que ScrollTrigger refresca, Lenis actualiza su scroll interno
-  ScrollTrigger.addEventListener("refresh", () => lenis.update());
+    // Actualiza Lenis cuando ScrollTrigger refresca
+    ScrollTrigger.addEventListener("refresh", () => lenis.update());
 
-  ScrollTrigger.refresh();
-    
+    ScrollTrigger.refresh();
+
     function raf(time) {
-  lenis.raf(time);
-  ScrollTrigger.update();
-  requestAnimationFrame(raf);
-}
+      lenis.raf(time);
+      ScrollTrigger.update();
+      requestAnimationFrame(raf);
+    }
     requestAnimationFrame(raf);
   }
 
