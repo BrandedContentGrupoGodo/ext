@@ -33,7 +33,6 @@ if (isDesktop) {
   }
   requestAnimationFrame(raf);
 
-  // REFRESH DESPUÉS DE CARGA COMPLETA PARA EVITAR FALLOS
   window.addEventListener("load", () => {
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
@@ -71,10 +70,13 @@ if (isDesktop) {
 
   gsap.utils.toArray(".dashed-line").forEach((line) => {
     const wrapper = line.closest(".timeline-wrapper");
+    if (!wrapper) return;
     const content = wrapper.querySelector(".timeline-content") || wrapper;
     const contentHeight = content.offsetHeight;
+
     line.style.height = `${contentHeight}px`;
-    line.style.backgroundImage = "repeating-linear-gradient(to bottom, black 0, black 10px, transparent 10px, transparent 20px)";
+    line.style.backgroundImage =
+      "repeating-linear-gradient(to bottom, black 0, black 10px, transparent 10px, transparent 20px)";
     line.style.backgroundRepeat = "repeat-y";
     line.style.backgroundSize = "1px 20px";
     line.style.width = "2px";
@@ -99,6 +101,7 @@ if (isDesktop) {
   function refreshDashedLines() {
     gsap.utils.toArray(".dashed-line").forEach((line) => {
       const wrapper = line.closest(".timeline-wrapper");
+      if (!wrapper) return;
       const content = wrapper.querySelector(".timeline-content") || wrapper;
       const contentHeight = content.offsetHeight;
       line.style.height = `${contentHeight}px`;
@@ -114,8 +117,8 @@ if (isDesktop) {
     start: "top center",
     end: "bottom center",
     onEnter: () => {
-      document.querySelector(".timeline-section").classList.add("fondo1-activo");
-      document.querySelector(".timeline-section").classList.remove("fondo2-activo");
+      document.querySelector(".timeline-section")?.classList.add("fondo1-activo");
+      document.querySelector(".timeline-section")?.classList.remove("fondo2-activo");
     },
   });
 
@@ -124,8 +127,8 @@ if (isDesktop) {
     start: "top center",
     end: "bottom center",
     onEnter: () => {
-      document.querySelector(".timeline-section").classList.add("fondo2-activo");
-      document.querySelector(".timeline-section").classList.remove("fondo1-activo");
+      document.querySelector(".timeline-section")?.classList.add("fondo2-activo");
+      document.querySelector(".timeline-section")?.classList.remove("fondo1-activo");
     },
   });
 }
@@ -164,8 +167,7 @@ gsap.utils.toArray(".box").forEach((box) => {
 
 // Bullets
 const bullets = gsap.utils.toArray(".quadrilateral-block .bullet");
-
-gsap.set(bullets, {opacity: 0, scale: 0.9});
+gsap.set(bullets, { opacity: 0, scale: 0.9 });
 
 gsap.to(bullets, {
   scrollTrigger: {
@@ -186,6 +188,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const prevBtn = document.querySelector(".prev");
   const nextBtn = document.querySelector(".next");
   const slides = document.querySelectorAll(".slide");
+
+  if (!track || !prevBtn || !nextBtn || slides.length === 0) return;
+
   const slideWidth = slides[0].offsetWidth + 20;
   const visibleSlides = window.innerWidth < 768 ? 1 : 2.5;
   const maxIndex = Math.max(0, Math.floor(slides.length - visibleSlides + 0.5));
@@ -211,4 +216,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (currentIndex < maxIndex) currentIndex++;
     updateSlider();
   });
+
+  // Inicializamos al cargar
+  updateSlider();
 });
