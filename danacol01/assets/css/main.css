@@ -223,6 +223,9 @@ body {
   .intro-hero {
     flex-direction:column;
   }
+    .intro-hero p {
+    line-height: 138.8%; 
+  }
   .der img {
     max-width: 100%;
   }
