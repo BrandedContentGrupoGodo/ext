@@ -223,7 +223,7 @@ body {
   .intro-hero {
     flex-direction:column;
   }
-    .intro-hero p {
+  .intro-hero p {
     line-height: 138.8%; 
   }
   .der img {
@@ -599,6 +599,7 @@ padding-top: 50px;
   padding-left: 0.7rem;
   padding-bottom: 0;
   font-weight: 600;
+  padding-top: 0.7rem;
 }
 .play-button {
   cursor: pointer;
