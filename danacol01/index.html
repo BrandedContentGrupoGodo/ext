@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Landing Base</title>
 
   <!-- fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,17 +15,54 @@
 </head>
 <body>
   <!-- MENU -->
-  <div class="sticky-menu" aria-label="Menú de navegación por secciones">
-    <div class="scroll-menu">
-      <ul>
-        <li><a href="#section-2" style="--item-color: #D6E6D4; --item-text: #379D2F;"><span>Sala 1</span><img src="https://brandedcontentgrupogodo.github.io/ext/danacol01/assets/img/icono-1.svg" alt="" /></a></li>
-        <li><a href="#section-3" style="--item-color: #FBCFA7; --item-text: #EF7908;"><span>Sala 2</span><img src="https://brandedcontentgrupogodo.github.io/ext/danacol01/assets/img/icono-2.svg" alt="" /></a></li>
-        <li><a href="#section-4" style="--item-color: #E1EAF6; --item-text: #0B438C;"><span>Sala 3</span><img src="https://brandedcontentgrupogodo.github.io/ext/danacol01/assets/img/icono-3.svg" alt="" /></a></li>
-        <li><a href="#section-5" style="--item-color: #E9E9E9; --item-text: #646464;"><span>Sala 4</span><img src="https://brandedcontentgrupogodo.github.io/ext/danacol01/assets/img/icono-4.svg" alt="" /></a></li>
-        <li><a href="#section-6" style="--item-color: #FFFFFF; --item-text: #EF7908;"><span>Sala 5</span><img src="https://brandedcontentgrupogodo.github.io/ext/danacol01/assets/img/icono-5.svg" alt="" /></a></li>
-      </ul>
+<div class="sticky-menu" aria-label="Menú de navegación por secciones">
+  <div class="scroll-menu">
+
+    <!-- Item suelto ----------------------------------------- -->
+    <a class="menu-item"
+       href="#section-2"
+       style="--item-color:#D6E6D4; --item-text:#489D33">
+      <span>Sala visionado</span>
+      <img src="https://brandedcontentgrupogodo.github.io/ext/danacol01/assets/img/icono-1.svg" alt="Sala visionado">
+    </a>
+
+    <!-- Bloque: Síntomas visibles --------------------------- -->
+    <div class="symptom-group" data-label="SÍNTOMAS VISIBLES">
+      <a class="menu-item"
+         href="#section-3"
+         style="--item-color:#FBCFA7; --item-text:#FF8300">
+        <span>Sala sofocos</span>
+        <img src="https://brandedcontentgrupogodo.github.io/ext/danacol01/assets/img/icono-2.svg" alt="Sala sofocos">
+      </a>
+
+      <a class="menu-item"
+         href="#section-4"
+         style="--item-color:#E1EAF6; --item-text:#0B438C">
+        <span>Sala insomnio</span>
+        <img src="https://brandedcontentgrupogodo.github.io/ext/danacol01/assets/img/icono-3.svg" alt="Sala insomnio">
+      </a>
+
+      <a class="menu-item"
+         href="#section-5"
+         style="--item-color:#E9E9E9; --item-text:#646464">
+        <span>Sala cambios <br> corporales</span>
+        <img src="https://brandedcontentgrupogodo.github.io/ext/danacol01/assets/img/icono-4.svg" alt="Sala cambios corporales">
+      </a>
     </div>
+
+    <!-- Bloque: Síntoma invisible --------------------------- -->
+    <div class="symptom-group" data-label="SÍNTOMA INVISIBLE">
+      <a class="menu-item"
+         href="#section-6"
+         style="--item-color:#FFFFFF; --item-text:#FF8300">
+        <span>Sala colesterol</span>
+        <img src="https://brandedcontentgrupogodo.github.io/ext/danacol01/assets/img/icono-5.svg" alt="Sala colesterol">
+      </a>
+    </div>
+
   </div>
+</div>
+
 
   <main>
     <div id="smoother-wrapper" class="body-danacol">
@@ -35,23 +71,22 @@
           <div class="inner">
             <div class="hero-danacol">
               <div class="collab">
-                <p>En colaboración con Danacol</p>
+                <p>Danacol presenta</p>
+                <p>#menopausia<span>in</span>visible</p>
               </div>
               <div class="intro-hero">
                 <div class="izq">
-                  <h1>Lorem ipsum dolor sit amet consectetur adipiscing elit</h1>
-                  <p><span>Lorem ipsum dolor sit amet consectetur turpis fermentum</span> Lorem ipsum dolor sit amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque sem placerat</p>
+                  <h1>¿Sabías que el colesterol alto puede subir hasta un 15% con la menopausia?</h1>
+                  <p><span>La menopausia implica diferentes cambios visibles y reconocidos,</span> como los sofocos, los cambios corporales o el insomnio. Sin embargo, el 60% de las mujeres no conoce que existen otros síntomas invisibles, como el posible aumento del colesterol. Un cambio silencioso y poco conocido, que aumenta el riesgo cardiovascular en mujeres de mediana edad</p>
                 </div>
                 <div class="der">
-                  <img src="assets/img/prota1.png" alt="Danacol" loading="lazy">
-                  <img src="assets/img/prota1.png" alt="Danacol" loading="lazy">
-                  <img src="assets/img/prota1.png" alt="Danacol" loading="lazy">
+                  <img src="https://brandedcontentgrupogodo.github.io/ext/danacol01/assets/img/prota1.png" alt="Danacol" loading="lazy">
                 </div>
               </div>
             </div>
             <div class="entradilla">
               <p>
-                Lorem ipsum dolor sit amet consectetur. Turpis fermentum pellentesque risus arcu. Massa aliquam gravida leo sociis. Purus justo interdum tortor tincidunt. Massa ac auctor enim vulputate quis porttitor
+                Danacol lanza #MenopausiaInvisible, un experimento social que invita a diferentes familiares a vivir en primera persona lo que muchas mujeres viven en silencio durante la menopausia
               </p>
             </div>
             <div class="video-danacol">
@@ -70,22 +105,225 @@
         <section class="section section-2" id="section-2">
           <div class="inner">
             <div class="sala1">
-
+              <div class="izq">
+                <img src="https://brandedcontentgrupogodo.github.io/ext/danacol01/assets/img/sala1.png" alt="" loading="lazy">
+              </div>
+              <div class="der">
+                <h2>
+                  SALA DE VISIONADO
+                </h2>
+                <p class="subtitular">EL RETO DE PONERSE EN SU PIEL</p>
+                <p>
+                  Al igual que sucede con la menstruación, la menopausia se ha vivido siempre como un tabú. En apenas unos años tienen lugar muchos cambios físicos y hormonales. Maridos, hijos y su círculo de amistades más cercano no son conscientes del torbellino que supone esta etapa de la vida para la mujer con la que conviven a diario. 
+                </p>
+                <p>
+                  Decenas de síntomas se han llegado a asociar a la menopausia, según el informe <i>Hablemos de Menopausia</i> de Kantar. Los más conocidos son los sofocos, el insomnio o el aumento de peso, pero también aparece una ‘niebla mental’ o problemas para concentrarse, osteoporosis y una mayor predisposición a la depresión. De media, una mujer experimenta unos 6, que pueden llegar a más de 9 en los casos con síntomas más severos. Aunque no siempre lo exterioricen, esto altera en mayor o menor medida su vida cotidiana.
+                </p>
+              </div>
             </div>
+            <div class="destacado1">
+              <p>
+                El 16% de las mujeres entre los 45 y los 55 años señala que esta fase vital impacta de forma negativa en sus relaciones familiares. El 51% confiesa que los cambios han empeorado su estado de ánimo <a href="https://www.kantar.com/es/noticias-corporativas/nuevo-estudio-de-kantar-hablemos-de-menopausia" target="_blank" rel="nofollow">(Fuente: Kantar)</a>
+              </p>
+            </div>
+            <p class="parrafo-normal mb-5">
+              Por lo general, los síntomas se suavizan con el paso del tiempo. Aun así, sentirse arropadas por su entorno, y en general, por toda la sociedad, es clave para afrontar esta etapa con la mayor naturalidad posible. A fin de cuentas, es una etapa vital más, como lo es la pubertad o un embarazo. Para la mujer es fundamental conocer por qué cambios va a pasar su cuerpo y cómo cuidarse en lo físico y lo emocional. En esto último, el entorno desempeña un papel fundamental. Y ese es el gran reto de la sociedad: conocer y comprender la menopausia para que la mujer se sienta arropada, con la comprensión, la empatía y la tolerancia de su entorno, sin comentarios despectivos y sin hacerlas sentir mal.
+            </p>
           </div>
         </section>
         <section class="section section-3" id="section-3">
-          <div class="inner">Sección 3</div>
+          <div class="inner">
+            <img src="https://brandedcontentgrupogodo.github.io/ext/danacol01/assets/img/sala2.png" alt="Danacol" loading="lazy">
+            <div class="sala1 mb-5">
+              <div class="izq">
+                <img src="https://brandedcontentgrupogodo.github.io/ext/danacol01/assets/img/sala2-2.png" alt="Danacol" loading="lazy">
+              </div>
+              <div class="der">
+                <h2>
+                  Sala sofocos
+                </h2>
+                <p class="subtitular">¿Por qué, de repente, hace tanto calor?</p>
+                <p>
+                  Los sofocos se perciben como un aumento súbito de la temperatura. Como si de pronto alguien hubiera conectado a tope la calefacción y fuera necesario quitarse la chaqueta, bajar el edredón o abrir las ventanas de par en par, aunque estemos en invierno. No responden a ningún estímulo externo concreto, no hay nada ahí fuera que justifique ese repentino acaloramiento. Pero los sudores, el enrojecimiento y las palpitaciones que suelen acompañar a los sofocos son 100% reales.
+                </p>
+                <p>
+                  En el documental The Super Models (Apple TV) sobre las grandes maniquíes de los 90, Naomi Campbell detiene de golpe una sesión de fotos y sale a tomar el aire por un sofoco inesperado. Con resignación reconoce que la menopausia cambia el cuerpo de todas las mujeres y que las supermodelos no son una excepción.
+                </p>
+              </div>
+            </div>
+            <div class="destacado1">
+              <img src="https://brandedcontentgrupogodo.github.io/ext/danacol01/assets/img/sala2-3.png" alt="">
+              <div>
+                <p>Más del</p>
+                <p>70%</p>
+                <p>
+                  de las mujeres reconoce haber sentido esos calores intensos que nacen en la cara o el pecho y se extienden en cuestión de instantes por todo el cuerpo. Es uno de los síntomas más frecuentes y también, uno de los que más vergüenza da asumir
+                </p>
+              </div>
+            </div>
+            <div class="parrafo-normal">
+              <p>
+                No hay una pauta establecida, ni es posible anticiparse a su aparición. Pueden presentarse varias veces al día, independientemente de las temperaturas, y son más frecuentes por la noche. Las situaciones estresantes o de ansiedad también pueden precipitar su aparición, con lo que una discusión o un susto puede desencadenar ese temido acaloramiento. Tras un pico que suele coincidir con la retirada definitiva del período, los sofocos suelen remitir con el paso del tiempo. En muchos casos, desaparecen para siempre.
+              </p>
+            </div>
+            <div class="sala1 destacado-nuevo">
+              <div class="der">
+                <p>
+                  Este acaloramiento súbito genera incomodidad, inseguridad y miedo a que la sudoración espontánea se note desde fuera. Comprender y acompañar con naturalidad es la mejor respuesta. Nunca despreciar con frases como ‘ya está con los calores’
+                </p>
+              </div>
+              <div class="izq">
+                <img src="https://brandedcontentgrupogodo.github.io/ext/danacol01/assets/img/sala2-4.png" alt="Danacol" loading="lazy">
+              </div>
+            </div>
+
+          </div>
         </section>
         <section class="section section-4" id="section-4">
-          <div class="inner">Sección 4</div>
+          <div class="inner">
+            <div class="sala1">
+              <div class="izq">
+                <img src="assets/img/sala4.png" alt="" loading="lazy">
+              </div>
+              <div class="der">
+                <h2>
+                  Sala insomnio
+                </h2>
+                <p class="subtitular">Otra vez despierta a medianoche</p>
+                <p>
+                  Es como si su cuerpo se negara a pillar el sueño. O a mantenerlo durante toda la noche. Puede ser despertarse en mitad de la noche, empapada de sudor, debido a un sofoco, o por un aumento absurdo de las palpitaciones. Otras veces, el sueño se interrumpe sin razón y no hay manera de volver a pillarlo hasta poco antes de que suene el despertador.
+                </p>
+              </div>
+            </div>
+            <div class="destacado1">
+              <div>
+                <p>60%</p>
+                <p>
+                  Los trastornos del sueño acompañan al 60% de las mujeres durante la menopausia. Esta falta de descanso agudiza la sensación de cansancio diurno, favorece los olvidos y la falta de concentración, y agrava las situaciones de ansiedad, irritabilidad o depresión
+                </p>
+              </div>
+              <div class="video-circular">
+                <video src="assets/img/sala4-video.mp4" autoplay muted loop playsinline></video>
+              </div>
+            </div>
+            <div class="parrafo-normal">
+              <p>
+                Aunque se suele resumir como insomnio, la descripción más cercana es la pérdida repentina de la capacidad para dormir del tirón. Puede ser un despertar inesperado a las 3 de la madrugada seguido de horas de insomnio o duermevela. Una situación que las priva de un sueño completamente reparador y que, en muchos casos, ocasionar conflictos con el compañero de cama ante tanto ajetreo nocturno.
+              </p>
+            </div>
+            <div class="destacado2">
+              <p>
+                Practicar actividad física de forma regular contribuye a reducir el estrés y a mantener el patrón de sueño y vigilia. Hay que evitar entrenar a última hora del día, ya que genera un estado de alerta que dificulta quedarse dormida
+              </p>
+            </div>
+            <div class="parrafo-normal mb-5">
+              <p>
+                Esta situación puede ser aún más incómoda cuando llega acompañada del síndrome de las piernas inquietas (sensación de molestia en las piernas que obliga a moverlas) o apneas del sueño (falta de respiración durante el sueño que deteriora la calidad del descanso). Antes de recurrir a cualquier tipo de medicación, se aconseja cuidar todo lo que rodea a una buena higiene del sueño: mantener un horario regular para acostarse, reducir el consumo de cafeína, evitar cenas copiosas y no utilizar dispositivos móviles la hora anterior a irse a la cama, son algunos de los consejos para lograr un estado que facilite el sueño.
+              </p>
+            </div>
+          </div>
         </section>
         <section class="section section-5" id="section-5">
-          <div class="inner">Sección 5</div>
+          <div class="inner">
+            <div class="sala1">
+              <div class="izq">
+                <img src="assets/img/sala5.png" alt="Danacol" loading="lazy">
+              </div>
+              <div class="der">
+                <h2>
+                  Sala cambios corporales
+                </h2>
+                <p class="subtitular">‘Este no es mi cuerpo’</p>
+                <p>
+                  Aun comiendo lo mismo y realizando las mismas actividades que antes, se tiende a coger peso. La ropa que hasta hace nada quedaba como un guante, se queda pequeña. Aparecen redondeces donde antes había un vientre plano, la cintura pierde definición y el tono muscular decae. El cuerpo cambia y cuesta aceptar la nueva anatomía que devuelve el espejo.
+                </p>
+              </div>
+            </div>
+            <div class="destacado1">
+              <div>
+                <p>46%</p>
+                <p>
+                  El 46% de las mujeres reconocen experimentar o haber experimentado cambios corporales durante la menopausia. Esta nueva anatomía genera inseguridad, tristeza, ansiedad por no ajustarse a unos determinados estándares de belleza y hasta conflicto en la aceptación del propio cuerpo. La falta de apoyo del entorno cercano agrava aún más la sensación de falta de control o de culpa
+                </p>
+              </div>
+              <img src="assets/img/sala5-2.png" alt="Danacol">
+            </div>
+            <div class="parrafo-normal">
+              <p>
+                La caída en la producción de estrógenos se acompaña de una peor respuesta a la insulina y una pérdida progresiva de masa muscular, lo que popularmente se conoce como ‘es que ahora tengo el metabolismo más lento’ o ‘ahora todo me engorda’. La combinación de ambos factores provoca cambios visibles en la composición corporal: al cuerpo le resulta cada vez más fácil <a href="https://www.uchicagomedicine.org/forefront/womens-health-articles/menopause-weight-gain-hormone-therapy" rel="nofollow" target="_blank">acumular grasa en torno al abdomen y las caderas.</a>
+              </p>
+            </div>
+            <div class="destacado3">
+              <img src="assets/img/sala5-3.png" alt="Danacol">
+            </div>
+            <div class="parrafo-normal mb-5">
+              <p>
+                Sin mayores cambios en la dieta y con un estilo de vida sedentario, en esta etapa se pueden llegar a coger 1,5 kilogramos de peso al año, siendo relativamente fácil acabar con 10 kilogramos más al finalizarla. La grasa visceral puede pasar del 5-8% al 10-15% del peso corporal total, convirtiéndose no ya en un problema estético, sino en un factor de riesgo cardiovascular. Para revertir este proceso o, al menos, ralentizar su avance, los expertos en salud pública recomiendan llevar una dieta saludable, con un moderado aumento de la ingesta de proteínas (pescado, legumbres, aves, huevos, lácteos). También conviene adoptar un estilo de vida activo que incorpore también el deporte de fuerza para mejorar el tono muscular.
+              </p>
+            </div>
+          </div>
         </section>
         <section class="section section-6" id="section-6">
-          <div class="inner">Sección 6</div>
+          <div class="inner">
+            <div class="sala1">
+              <div class="izq">
+                <img src="assets/img/sala6.png" alt="Danacol" loading="lazy">
+              </div>
+              <div class="der">
+                <h2>
+                  Sala colesterol
+                </h2>
+                <p>
+                  Hay efectos en la menopausia que no se ven, pero que pueden suponer un riesgo para el corazón. A partir de los 45 años, el colesterol alto puede subir sin que la mujer, ni nadie de su entorno, note nada anormal en su cuerpo. Avanza silencioso, pero el riesgo cardiovascular aumenta y con él sus consecuencias.
+                </p>
+                <div class="audio">
+                  <!-- Botón Play/Pause -->
+                  <div class="play-button" id="playAudio">
+                    <img id="audioIcon" src="assets/img/play.svg" alt="Danacol">
+                  </div>
+                
+                  <!-- Audio oculto -->
+                  <audio id="audio" src="https://webaudioapi.com/samples/audio-tag/chrono.mp3"></audio>
+                
+                  <p>Escucha la sala</p>
+                </div>
+              </div>
+            </div>
+            <div class="destacado1">
+              <div>
+                <p>15%</p>
+                <p>
+                  Los estrógenos ejercen un papel cardioprotector en la salud de la mujer. Al bajar drásticamente en la menopausia, los niveles de colesterol pueden subir entre un 10% y un 15%, lo que aumenta el riesgo cardiovascular
+                </p>
+              </div>
+              <div>
+                <p>60%</p>
+                <p>
+                  El 60% de las mujeres españolas de entre 45 y 65 años no asocian la llegada de la menopausia a un posible aumento del colesterol. Tampoco sienten que eso pueda suponer un riesgo para su salud cardiovascular
+                </p>
+              </div>
+            </div>
+            <div class="parrafo-normal">
+              <p>
+                El estudio MENOCOL llevado a cabo por Danacol entre 600 mujeres revela que, pese a la evidencia de los cambios en el patrón del colesterol al llegar la menopausia, casi 1 de cada 3 mujeres de 45 – 55 años, desconoce cuáles son sus niveles de colesterol, sobre todo, el colesterol malo (LDL).
+              </p>
+              <p class="pt-1">
+                La reducción del riesgo pasa por adoptar un estilo de vida saludable. Entre estos nuevos hábitos se incluyen reducir o abandonar el tabaco y el alcohol, practicar actividad física de forma regular y, sobre todo, cuidar la dieta. Esta última es la estrategia favorita para el 88% de las encuestadas. Es también la palanca más apetecible gracias a la amplia variedad de alimentos ricos y saludables de nuestra dieta mediterránea. Consumir a diario 5 piezas de fruta y hortalizas, y dar más cabida a las legumbres en el menú semanal contribuye a mejorar los niveles de colesterol. Una apuesta por la salud a largo plazo que se puede redondear aún más introduciendo en nuestra dieta alimentos enriquecidos con esteroles vegetales, como Danacol, que contribuye a bajar de manera natural los niveles de colesterol LDL hasta un 10% en 3 semanas y a mantenerlo en cifras de normalidad.
+              </p>
+            </div>
+          </div>
         </section>
+        
+        <!-- INICIO créditos -->
+        <div class="authorship-f">				
+          <div class="container-fluid-f">
+              <span class="d-inline-block-f">Coordinación: Kevin Casas</span> | 
+              <span class="d-inline-block-f">Redacción: Salomé García</span> | 
+              <span class="d-inline-block-f">Diseño y maquetación: Alejandra Santander</span> | 
+              <span class="d-inline-block-f">Vídeo y fotografía: Getty Images, Somos5</span>. 
+              <span class="d-inline-block-f">Un proyecto de Brandslab. Godó Nexus.</span>
+          </div>
+        </div>
       </div>
     </div>
   </main>
@@ -94,11 +332,40 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/Observer.min.js"></script>
-    <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.36/bundled/lenis.min.js"></script>
+    <script src="https://brandedcontentgrupogodo.github.io/ext/danacol01/assets/js/lenis1.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.36/bundled/lenis.min.js"></script> -->
 
     
     <!-- Archivo JS principal personalizado -->
-    <script src="assets/js/scripts.js"></script>
+    <script src="https://brandedcontentgrupogodo.github.io/ext/danacol01/assets/js/scripts.js"></script>
+
+    <script>
+      const playButton = document.getElementById("playAudio");
+      const audio = document.getElementById("audio");
+      const icon = document.getElementById("audioIcon");
+    
+      let isPlaying = false;
+    
+      playButton.addEventListener("click", () => {
+        if (isPlaying) {
+          audio.pause();
+          isPlaying = false;
+          // Si quieres cambiar la imagen al pausar:
+          icon.src = "assets/img/play.svg";
+        } else {
+          audio.play();
+          isPlaying = true;
+          // Si quieres cambiar la imagen al reproducir:
+          icon.src = "assets/img/pause.svg";
+        }
+      });
+    
+      // Asegura que cuando termina, vuelva al estado inicial
+      audio.addEventListener("ended", () => {
+        isPlaying = false;
+        icon.src = "assets/img/play.svg";
+      });
+    </script>
+    
   </body>
 </html>
