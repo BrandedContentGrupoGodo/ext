@@ -664,7 +664,6 @@ padding-top: 50px;
     justify-content: center;
   }
 }
-}
 
 /* ===================== */
 /*          MENU         */
@@ -733,7 +732,7 @@ padding-top: 50px;
   font-weight: bold;
 }
 
-.sticky-menu-danacol li a img {
+.sticky-menu-danacol  li a img {
   width: 24px;
   height: 24px;
   margin-left: 1rem;
