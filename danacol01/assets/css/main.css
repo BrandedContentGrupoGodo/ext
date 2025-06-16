@@ -660,6 +660,10 @@ padding-top: 50px;
   .section-6 .destacado1 {
     flex-direction: column;
   }
+  .section-6 .audio {
+    justify-content: center;
+  }
+}
 }
 
 /* ===================== */
