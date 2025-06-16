@@ -261,7 +261,6 @@ body {
 
 .inner {
   overflow-y: auto;
-  font-size: 3rem;
 }
 
 .section-1 {
@@ -304,6 +303,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .parrafo-normal {
@@ -634,6 +635,8 @@ padding-top: 50px;
 @media (max-width: 600px) {
   .sala1 {
     flex-direction: column;
+    padding-left: 0;
+    padding-right: 0;
   }
   .section-3 .inner .destacado1:nth-of-type(2) {
     padding: 1rem;
