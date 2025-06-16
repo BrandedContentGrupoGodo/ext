@@ -623,7 +623,7 @@ padding-top: 50px;
 
 .section-6 .destacado1 p {
   text-align: left;
-  max-width: 700px;
+  max-width: 690px;
 }
 .section-6 .destacado1 p:first-of-type {
   font-size: clamp(3rem, 3vw, 3rem);
