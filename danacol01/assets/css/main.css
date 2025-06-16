@@ -861,7 +861,7 @@ padding-top: 50px;
 }
 @media (max-width: 600px) {
   .authorship-f {
-    padding-bottom: 280px;
+    padding-bottom: 50px;
     font-size: 1rem;
   }
 }
