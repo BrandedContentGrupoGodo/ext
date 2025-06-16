@@ -50,7 +50,7 @@ if (isDesktop) {
 }
 
 // Scroll suave al hacer clic en los enlaces del menú
-document.querySelectorAll('.sticky-menu a').forEach(link => {
+document.querySelectorAll('.sticky-menu-danacol a').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
     const targetId = link.getAttribute('href');
@@ -67,7 +67,7 @@ document.querySelectorAll('.sticky-menu a').forEach(link => {
 });
 
 // Actualiza clase .active en el menú según scroll
-const menuLinks = document.querySelectorAll('.sticky-menu a');
+const menuLinks = document.querySelectorAll('.sticky-menu-danacol a');
 
 gsap.utils.toArray(".section").forEach(section => {
   ScrollTrigger.create({
@@ -87,7 +87,7 @@ function setActive(id) {
 }
 
 // ✅ Mostrar el menú solo a partir de la sección 2 (como antes)
-const menu = document.querySelector('.sticky-menu');
+const menu = document.querySelector('.sticky-menu-danacol');
 const section2 = document.querySelector('#section-2');
 
 // Oculta el menú de entrada
