@@ -669,7 +669,7 @@ padding-top: 50px;
 /* ===================== */
 /*          MENU         */
 /* ===================== */
-.sticky-menu {
+.sticky-menu-danacol {
   box-sizing: border-box;
   position: fixed;
   top: 0;
@@ -694,7 +694,7 @@ padding-top: 50px;
   display: none;
 }
 
-.sticky-menu ul {
+.sticky-menu-danacol ul {
   display: flex;
   gap: 1rem;
   list-style: none;
@@ -705,11 +705,11 @@ padding-top: 50px;
   align-items: stretch;
 }
 
-.sticky-menu li {
+.sticky-menu-danacol li {
   display: flex; /* 👈 Asegura que el li no colapse */
 }
 
-.sticky-menu li a {
+.sticky-menu-danacol li a {
   flex: 0 0 auto;
   font-family: var(--font-main);
   height: 100%;
@@ -727,32 +727,32 @@ padding-top: 50px;
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.sticky-menu li a span {
+.sticky-menu-danacol li a span {
   flex-grow: 1;
   text-align: left;
   font-weight: bold;
 }
 
-.sticky-menu li a img {
+.sticky-menu-danacol li a img {
   width: 24px;
   height: 24px;
   margin-left: 1rem;
 }
 
-.sticky-menu li a:hover,
-.sticky-menu li a:focus {
+.sticky-menu-danacol li a:hover,
+.sticky-menu-danacol li a:focus {
   transform: translateY(-3px);
   background-color: white;
   color: var(--color-text);
 }
 
-.sticky-menu li a.active {
+.sticky-menu-danacol li a.active {
   outline: 3px solid white;
 }
 
 /* ✅ SOLO esto para mobile */
 @media (max-width: 600px) {
-  .sticky-menu ul {
+  .sticky-menu-danacol ul {
     justify-content: flex-start;
   }
 }
