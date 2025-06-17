@@ -93,7 +93,7 @@ html, body { margin: 0; overflow-x: hidden; }
 }
 
 .scroll-icon {
-  width: 1rem;
+  width: .6rem;
   animation: bounce 1.5s ease-in-out infinite;
 }
 
@@ -114,6 +114,15 @@ html, body { margin: 0; overflow-x: hidden; }
     height: 60vh; 
     }
 }
+@media (max-width: 980px) {
+  .hero-title {
+    line-height: 73%;
+    margin: 10px auto;
+  }
+  .hero-title-outline {
+        margin-top: 19px;
+    }
+ }
 
 @media (max-width: 600px) {
     .hero-content {
@@ -122,6 +131,7 @@ html, body { margin: 0; overflow-x: hidden; }
     .hero-title {
         font-size: clamp(2.5rem, 6vw + 1rem, 4rem);
         letter-spacing: 2px;
+        line-height: 153%;
     }
     .hero-title-outline {
         margin-top: -25px;
@@ -176,6 +186,9 @@ line-height: 168.8%;
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
+    opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .chapter-overlay {
@@ -192,6 +205,11 @@ line-height: 168.8%;
   color: white;
   max-width: 600px;
   padding: 2rem;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.164);
+   opacity: 0;
+  transform: translateY(50px);
+  filter: blur(6px);
+  transition: all 0.8s ease-out;
 }
 
 .chapter-content h2 {
