@@ -1,0 +1,622 @@
+:root {
+    --background-color: #000000;
+    --text-color: #ffffff;
+    --accent-color:#FF0000;
+    --border-radius: 30px;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body { margin: 0; overflow-x: hidden; }
+
+.body-estrella {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: "Hanken Grotesk", sans-serif;
+    margin: 0;
+}
+/* ---------- HERO -------------------------------------- */
+.hero-estrella {
+  position: relative;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  z-index: 0;
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.438);
+  z-index: -1;
+}
+
+.hero-content {
+  padding-inline: clamp(1rem, 4vw, 4rem);
+  position: relative; /* asegura que se posicione correctamente */
+  z-index: 1; /* se pone por encima del overlay y el vídeo */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+  text-align: left;
+}
+
+.collab {
+  font-size: clamp(.7rem, 1vw + .5rem, .8rem);
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  opacity: .85;
+  margin-bottom: .5rem;
+  color: var(--accent-color);
+  background-color: var(--background-color);
+  max-width: 192px;
+  padding: 15px;
+}
+
+.hero-title {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    font-style: normal;
+    width: 50vw; /* ancho completo */
+    margin: 0 auto;
+    color: var(--background-color); /* color de la primera línea */
+    text-transform: uppercase;
+    font-family: "Bebas Neue", sans-serif;
+    opacity: 0;
+    transform: translateY(20px);
+    background-color: var(--accent-color);
+    border:  5px solid var(--background-color);
+    padding: 30px;
+}
+
+.entradilla {
+  width: 100%;
+  background-color: var(--accent-color);
+}
+
+.subtitle {
+  color: var(--background-color);
+  text-align: center;
+  max-width: 90vw;
+  font-size: clamp(1.5rem, 2.2vw + 0.5rem, 1.75rem);
+  font-style: normal;
+  font-weight: 900;
+  line-height: 93%; /* 26.04px */
+  text-transform: uppercase;
+  margin: auto;
+  padding: 50px;
+}
+
+/* --- SON ESTRELLA GALICIA SECTION --- */
+.son-eg-section {
+  background: var(--background-color);
+  color: var(--text-color);
+  overflow: hidden;
+}
+
+/* GRID LAYOUT PARA ESCRITORIO */
+.son-eg-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 60vh; /* ajusta a tu gusto */
+}
+
+/* Invertir orden en la 2ª pareja */
+.son-eg-row--reverse {
+  direction: rtl; /* truco rápido */
+}
+.son-eg-row--reverse > * {
+  direction: ltr; /* devolvemos direcc. p/ hijos */
+}
+
+/* BLOQUE DE TEXTO */
+.son-eg-copy {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(2rem, 4vw, 4rem);
+  background-size: auto; /* mantiene el tamaño original de la imagen */
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.son-eg-copy--left {
+  background-image: url("../img/tu-bg-left.svg"); /* cambia a la que quieras */
+}
+.son-eg-copy--right {
+  background-image: url("../img/tu-bg-right.svg");
+}
+
+/* HEADING */
+.son-eg-heading {
+  margin: 0 0 1rem;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  text-transform: uppercase;
+  color: var(--accent-color); /* rojo SON */
+  border: 2px solid var(--accent-color);
+  padding: 0.5em 0.75em;
+  width: fit-content;
+  text-align: left;
+  font-weight: 900;
+}
+
+/* PARAGRAPH */
+.son-eg-paragraph {
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  max-width: 55ch;
+  line-height: 1.4;
+}
+
+/* IMAGEN DE LA DERECHA / IZQUIERDA */
+.son-eg-media,
+.son-eg-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0;
+}
+
+/* --- RESPONSIVE: STACK EN MÓVIL --- */
+@media (max-width: 768px) {
+  .son-eg-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* quitamos el truco 'direction' en móvil */
+  .son-eg-row--reverse {
+    direction: ltr;
+  }
+}
+
+
+/* motion‑safe */
+@media (prefers-reduced-motion: reduce) {
+  .hero-video  { display:none; }
+}
+
+/* pantallas muy bajitas */
+@media (max-height: 600px) {
+  .hero-estrella { 
+    height: 60vh; 
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-content {
+        padding-inline: 0;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .hero-title {
+        width: 80vw;
+    }
+}
+
+/* ---------- VARIABLES (si aún no las tienes) ---------- */
+:root {
+  --accent-color: #ff0033; /* Rojo SON Estrella Galicia */
+}
+
+/* ---------- PÁRRAFO CENTRADO + BORDE ---------- */
+.son-eg-bordered-box {
+  border: 40px solid var(--accent-color);
+  padding: clamp(2rem, 6vw, 4rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  color: #fff;
+}
+
+.son-eg-centered-paragraph {
+  font-size: clamp(0.9rem, 1.5vw, 1rem); /* ≈16 px máx */
+  max-width: 60ch;
+  line-height: 1.45;
+}
+
+/* ---------- SLIDER ---------- */
+.son-eg-slider {
+  position: relative;
+  margin-block: clamp(2rem, 6vw, 4rem);
+  padding-inline: clamp(1rem, 4vw, 2rem);
+}
+
+.son-eg-track {
+  display: flex;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  overflow-x: hidden;          /* oculta lo que sobra */
+  scroll-behavior: smooth;
+}
+
+.son-eg-slide {
+  flex: 0 0 42%;
+  border-radius: 70px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+/* ---------- FLECHAS ---------- */
+.son-eg-arrow {
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+  z-index: 2;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  background: transparent;
+  color: var(--accent-color);
+  border: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: opacity 0.2s;
+}
+.son-eg-arrow--left  { left: 0; }
+.son-eg-arrow--right { right: 0; }
+
+.son-eg-arrow:disabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* ---------- RESPONSIVE: MÓVIL ---------- */
+@media (max-width: 600px) {
+  .son-eg-slide { 
+    flex: 0 0 100%;
+    object-fit: contain;
+    aspect-ratio: auto;
+  } 
+}
+
+
+/* ---------- SECCIÓN 50/50 ---------- */
+.son-eg-double {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  min-height: 60vh;
+}
+
+.son-eg-block {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: clamp(2rem, 5vw, 3rem);
+}
+
+.son-eg-block__text {
+  max-width: 55ch;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  line-height: 1.45;
+}
+
+/* Izquierda: con caja roja y borde negro */
+.son-eg-block__text--box {
+  background: var(--accent-color);
+  color: #000;
+  border: 15px solid #000;
+  padding: clamp(1rem, 3vw, 2rem);
+}
+
+/* Derecha: solo texto blanco */
+.son-eg-block__text--light {
+  color: #fff;
+  padding: clamp(1rem, 3vw, 2rem);
+}
+
+/* ----- MOBILE: stack ----- */
+@media (max-width: 768px) {
+  .son-eg-double {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- BLOQUE FONDO NEGRO ---------- */
+.son-eg-black {
+  background: #000;
+  color: #fff;
+  padding: clamp(3rem, 8vw, 5rem);
+}
+
+.son-eg-black .son-eg-heading {
+  margin: auto;
+  text-align: left;
+  margin-bottom: 50px;
+}
+
+.son-eg-heading-black {
+  font-size: clamp(1rem, 2vw, 1.25rem); /* 20 px máx */
+  color: #fff;
+  margin-bottom: clamp(1.5rem, 3vw, 2rem);
+  text-transform: uppercase;
+}
+
+.son-eg-red-box {
+  background: var(--accent-color);
+  color: #000;
+  border: 15px solid #000;
+  display: inline-block;
+  padding: clamp(1rem, 3vw, 2rem);
+  margin-block: clamp(1rem, 2vw, 1.5rem);
+  font-size: clamp(0.9rem, 1.5vw, 1rem); /* 16 px máx */
+  max-width: 60ch;
+  line-height: 1.45;
+}
+
+.son-eg-paragraph--white {
+  color: #fff;
+  margin-block: clamp(1rem, 2vw, 1.5rem);
+  font-size: clamp(0.9rem, 1.5vw, 1rem); /* 16px máx */
+  max-width: 60ch;
+  line-height: 1.45;
+  margin-inline: auto;
+  text-align: left;
+}
+
+/* ---------- GRILLA DE 8 IMÁGENES ---------- */
+.son-eg-image-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1rem, 3vw, 1.5rem);
+  margin: clamp(3rem, 5vw, 6rem) auto;
+  max-width: 1400px; /* opcional, controla ancho en desktop */
+}
+
+.son-eg-grid-img {
+  width: 100%;
+  height: auto;
+  border-radius: 70px;
+  object-fit: cover;
+}
+
+/* Responsive: 2 columnas en tablets, 1 en móvil estrecho */
+@media (max-width: 960px) {
+  .son-eg-image-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .son-eg-image-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* MARQUEE BASE (estilo compartido) */
+.son-eg-marquee {
+  overflow: hidden;
+  width: 100%;
+}
+
+.son-eg-marquee__track {
+  display: flex;
+  gap: 2rem;
+  animation: son-eg-loop 25s linear infinite;
+  white-space: nowrap;
+}
+
+.son-eg-marquee__item {
+      font-size: clamp(1.9rem, 3.3vw, 2.25rem);
+  font-weight: 700;
+  white-space: nowrap;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+/* MARQUEE 1: fondo rojo, texto negro */
+.son-eg-marquee--main {
+  background: var(--accent-color);
+}
+.son-eg-marquee--main .son-eg-marquee__item {
+  color: #000;
+}
+
+/* MARQUEE 2: fondo gris, texto gris claro */
+.son-eg-marquee--quote {
+  background: #3b3b3b;
+}
+.son-eg-marquee--quote .son-eg-marquee__item {
+  color: #656565;
+}
+
+/* Keyframes compartidos */
+@keyframes son-eg-loop {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-33.333%); }
+}
+
+.son-eg-paragraph--white.no-margin-left {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+
+/* ---------- BLOQUE 50/50 VIDEO + TEXTO ---------- */
+.son-eg-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 2rem);
+  background: #000;
+  padding: clamp(3rem, 8vw, 5rem);
+}
+
+/* MEDIA (vídeo) */
+.son-eg-split__media {
+  display: flex;
+  justify-content: center;
+}
+
+.son-eg-ig-video {
+  width: clamp(220px, 40vw, 360px); /* mantiene 9-16 */
+  aspect-ratio: 9 / 16;
+  border-radius: 70px;
+  object-fit: cover;
+}
+
+/* COPY */
+.son-eg-split__copy {
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .son-eg-split {
+    grid-template-columns: 1fr;   /* apilar */
+    text-align: center;
+  }
+  .son-eg-split__copy { text-align: center; }
+}
+
+/* ---------- H3 + LÍNEA ---------- */
+.son-eg-heading-line {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-inline: clamp(1rem, 5vw, 3rem);
+  margin-bottom: clamp(1.5rem, 3vw, 2rem);
+}
+
+.son-eg-subtitle {
+  font-size: clamp(1.1rem, 2vw, 1.25rem); /* 20px máx */
+  font-style: normal;
+  font-weight: 900;
+  line-height: 168.8%; /* opcional, ya se adapta bien */
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0;
+}
+
+.son-eg-line {
+  flex-grow: 1;
+  height: 2px;
+  background-color: var(--accent-color);
+}
+
+
+.son-eg-slider-small {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: clamp(1rem, 3vw, 2rem);
+  overflow: hidden;
+}
+
+.son-eg-slider-track {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.son-eg-slider-track::-webkit-scrollbar {
+  display: none;
+}
+
+.son-eg-slider-img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  border-radius: 7px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+/* Flechas */
+.son-eg-slider-arrow {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--accent-color);
+  cursor: pointer;
+  z-index: 2;
+  padding: 0.5rem;
+  transition: opacity 0.3s;
+}
+.son-eg-slider-arrow:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+
+.logo-estrella {
+  margin-inline: 1.5rem auto;
+text-align: center;
+padding-top: 1rem;
+}
+.logo-estrella img {
+  max-width:185px;
+  width: 100%;
+}
+
+
+/* ---------- CRÉDITOS ---------------------------------- */
+.authorship-f {
+  color: #888;
+  font-size: .8em;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.creditos {
+  font-size: 1.6em;
+  font-weight: 400;
+  margin: 5px 0;
+}
+
+.container-fluid-f {
+  width: calc(100% - 40px);
+  max-width: 980px;
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+
+
+
+  /* estilos para que en LV se muestre el contenido sin margenes */
+.wallpaper-inverted-ad{
+    display: none!important;
+  }
+  
+  .visual-article-free .col-12 {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    margin-top: 0 !important;
+  }
+  .content-free-html {
+    margin:0 !important;
+  }
+  .container-fluid {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+  .visual__story--free .content-free-html {
+    margin: 0px !important;
+  }
+  .row>* {
+    padding-right: 0!important;
+    padding-left: 0!important;
+    margin-top: 0!important;
+  }
+  .article-default a:hover {
+    text-decoration: none;
+    box-shadow: none;
+  }
