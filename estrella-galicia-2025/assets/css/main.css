@@ -133,10 +133,10 @@ html, body { margin: 0; overflow-x: hidden; }
   background-position: center;
 }
 .son-eg-copy--left {
-  background-image: url("../img/tu-bg-left.svg"); /* cambia a la que quieras */
+  background-image: url("https://brandedcontentgrupogodo.github.io/ext/estrella-galicia-2025/assets/img/tu-bg-left.svg"); /* cambia a la que quieras */
 }
 .son-eg-copy--right {
-  background-image: url("../img/tu-bg-right.svg");
+  background-image: url("https://brandedcontentgrupogodo.github.io/ext/estrella-galicia-2025/assets/img/tu-bg-right.svg");
 }
 
 /* HEADING */
@@ -620,3 +620,7 @@ padding-top: 1rem;
     text-decoration: none;
     box-shadow: none;
   }
+button:focus {
+    outline: 1px dotted var(--background-color)!important;
+    outline: 5px auto var(--background-color) -webkit-focus-ring-color!important;
+}
