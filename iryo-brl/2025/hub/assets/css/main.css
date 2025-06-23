@@ -273,6 +273,25 @@ line-height: 168.8%;
   }
 }
 
+.destacdo-final {
+  margin: auto;
+  text-align: center;
+}
+
+.destacdo-final p {
+  color: #FFF;
+ font-family: "Bebas Neue", sans-serif;
+text-align: center;
+font-size: 36px;
+font-style: normal;
+font-weight: 400;
+line-height: 118.8%; /* 42.768px */
+}
+
+.destacdo-final img {
+  max-width: 138px;
+  width: 100%;
+}
 
 
 /* ---------- CRÉDITOS ---------------------------------- */
