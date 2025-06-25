@@ -131,6 +131,7 @@ html, body { margin: 0; overflow-x: hidden; }
   background-size: auto; /* mantiene el tamaño original de la imagen */
   background-repeat: no-repeat;
   background-position: center;
+    align-items: center;
 }
 .son-eg-copy--left {
   background-image: url("https://brandedcontentgrupogodo.github.io/ext/estrella-galicia-2025/assets/img/tu-bg-left.svg"); /* cambia a la que quieras */
