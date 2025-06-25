@@ -32,7 +32,10 @@ html, body { margin: 0; overflow-x: hidden; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -2;
+  z-index: 0;
+    display: block; /* 🔧 esto es importante en iOS */
+  pointer-events: none; /* evita que bloquee interacción */
+  background-color: #000;
 }
 
 .hero-overlay {
