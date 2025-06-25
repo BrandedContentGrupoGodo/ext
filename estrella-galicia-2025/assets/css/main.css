@@ -236,8 +236,13 @@ html, body { margin: 0; overflow-x: hidden; }
 .son-eg-track {
   display: flex;
   gap: clamp(1rem, 2vw, 1.5rem);
-  overflow-x: hidden;          /* oculta lo que sobra */
+  overflow-x: auto;
   scroll-behavior: smooth;
+  scrollbar-width: none; /* oculta scrollbar Firefox */
+  -webkit-overflow-scrolling: touch; /* mejora para iOS */
+}
+.son-eg-track::-webkit-scrollbar {
+  display: none; /* oculta scrollbar Webkit */
 }
 
 .son-eg-slide {
@@ -567,6 +572,12 @@ padding-top: 1rem;
   width: 100%;
 }
 
+.links-estrella-black {
+  color: var(--background-color);
+}
+.links-estrella-red {
+  color: var(--text-color);
+}
 
 /* ---------- CRÉDITOS ---------------------------------- */
 .authorship-f {
@@ -621,6 +632,6 @@ padding-top: 1rem;
     box-shadow: none;
   }
 button:focus {
-    outline: 1px dotted var(--background-color)!important;
-    outline: 5px auto var(--background-color) -webkit-focus-ring-color!important;
+    outline: 1px dotted var(--background-color);
+    outline: 5px auto var(--background-color) -webkit-focus-ring-color;
 }
