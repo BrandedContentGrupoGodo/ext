@@ -276,6 +276,9 @@ line-height: 168.8%;
   letter-spacing: 8px;
   text-transform: uppercase;
   }
+  .chapter.cap1 {
+  background-image: url('https://brandedcontentgrupogodo.github.io/ext/iryo-brl/2025/hub/assets/img/cap1.jpg');
+}
 
 @media (max-width: 768px) {
   .chapter-content {
@@ -284,6 +287,9 @@ line-height: 168.8%;
 
   .chapter-content h2 {
     font-size: clamp(1.8rem, 5vw, 2.5rem);
+  }
+     .chapter.cap1 {
+    background-image: url('https://brandedcontentgrupogodo.github.io/ext/iryo-brl/2025/hub/assets/img/cap1-mobile.jpg');
   }
 }
 
