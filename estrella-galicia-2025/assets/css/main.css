@@ -575,6 +575,7 @@ padding-top: 1rem;
 
 .links-estrella-black {
   color: var(--background-color);
+  text-decoration: underline;
 }
 .links-estrella-black:hover {
   color: var(--background-color);
