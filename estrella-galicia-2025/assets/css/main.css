@@ -576,8 +576,17 @@ padding-top: 1rem;
 .links-estrella-black {
   color: var(--background-color);
 }
+.links-estrella-black:hover {
+  color: var(--background-color);
+  text-decoration: none;
+}
 .links-estrella-red {
   color: var(--text-color);
+  text-decoration: underline;
+}
+.links-estrella-red:hover {
+  color: var(--text-color);
+  text-decoration: none;
 }
 
 /* ---------- CRÉDITOS ---------------------------------- */
