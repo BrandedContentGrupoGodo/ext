@@ -155,7 +155,7 @@ html, body { margin: 0; overflow-x: hidden; }
 
 /* PARAGRAPH */
 .son-eg-paragraph {
-  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  font-size: clamp(1rem, 1.5vw, 1rem);
   max-width: 55ch;
   line-height: 1.4;
 }
@@ -350,7 +350,7 @@ html, body { margin: 0; overflow-x: hidden; }
 }
 
 .son-eg-heading-black {
-  font-size: clamp(1rem, 2vw, 1.25rem); /* 20 px máx */
+  font-size: clamp(1.2rem, 2vw, 1.25rem); /* 20 px máx */
   color: #fff;
   margin-bottom: clamp(1.5rem, 3vw, 2rem);
   text-transform: uppercase;
