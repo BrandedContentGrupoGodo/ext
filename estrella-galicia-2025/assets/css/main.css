@@ -326,7 +326,7 @@ html, body { margin: 0; overflow-x: hidden; }
 
 .son-eg-block__text {
   max-width: 55ch;
-  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  font-size: clamp(1rem, 1.5vw, 1rem);
   line-height: 1.45;
 }
 
@@ -378,7 +378,7 @@ html, body { margin: 0; overflow-x: hidden; }
   display: inline-block;
   padding: clamp(1rem, 3vw, 2rem);
   margin-block: clamp(1rem, 2vw, 1.5rem);
-  font-size: clamp(0.9rem, 1.5vw, 1rem); /* 16 px máx */
+  font-size: clamp(1rem, 1.5vw, 1rem); /* 16 px máx */
   max-width: 60ch;
   line-height: 1.45;
 }
