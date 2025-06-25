@@ -34,6 +34,9 @@ html, body { margin: 0; overflow-x: hidden; }
   height: 100%;
   object-fit: cover;
   z-index: -2;
+  display: block; /* 🔧 esto es importante en iOS */
+  pointer-events: none; /* evita que bloquee interacción */
+  background-color: #000;
 }
 
 .hero-overlay {
@@ -222,7 +225,7 @@ html, body { margin: 0; overflow-x: hidden; }
 }
 
 .son-eg-centered-paragraph {
-  font-size: clamp(0.9rem, 1.5vw, 1rem); /* ≈16 px máx */
+  font-size: clamp(1rem, 1.5vw, 1rem); /* ≈16 px máx */
   max-width: 60ch;
   line-height: 1.45;
 }
@@ -371,7 +374,7 @@ html, body { margin: 0; overflow-x: hidden; }
 .son-eg-paragraph--white {
   color: #fff;
   margin-block: clamp(1rem, 2vw, 1.5rem);
-  font-size: clamp(0.9rem, 1.5vw, 1rem); /* 16px máx */
+  font-size: clamp(1rem, 1.5vw, 1rem); /* 16px máx */
   max-width: 60ch;
   line-height: 1.45;
   margin-inline: auto;
