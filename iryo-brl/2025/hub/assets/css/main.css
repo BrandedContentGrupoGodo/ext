@@ -151,6 +151,10 @@ html, body { margin: 0; overflow-x: hidden; }
         margin-top: -25px;
         -webkit-text-stroke: 0.5px white;
     }
+    .subtitle {
+        padding-left:25px;
+        padding-right:25px;
+}
 }
 
 /* ---------- FRASES----------- */
