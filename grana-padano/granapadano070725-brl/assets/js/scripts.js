@@ -16,38 +16,6 @@ if (isDesktop) {
   requestAnimationFrame(raf);
 }
 
-// Scroll automático dentro de cada sección
-if (isDesktop) {
-  gsap.utils.toArray(".section").forEach((section) => {
-    const inner = section.querySelector(".inner");
-
-    // Pin y animación de scroll interno
-    ScrollTrigger.create({
-      trigger: section,
-      start: "top top",
-      end: () => `+=${section.offsetHeight}`, // duración dinámica según contenido
-      scrub: true,
-    });
-
-    // Cambiar el color del body para acompañar el texto
-    const color = window.getComputedStyle(section).color;
-    const bgColor = window.getComputedStyle(section).backgroundColor;
-
-    ScrollTrigger.create({
-      trigger: section,
-      start: "top center",
-      end: "bottom center",
-      onEnter: () => {
-        document.body.style.color = color;
-        document.body.style.backgroundColor = bgColor;
-      },
-      onEnterBack: () => {
-        document.body.style.color = color;
-        document.body.style.backgroundColor = bgColor;
-      }
-    });
-  });
-}
 
 
 window.addEventListener("load", () => {
