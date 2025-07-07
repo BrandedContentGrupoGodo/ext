@@ -1,0 +1,198 @@
+/* ===================== */
+/* VARIABLES Y RESET     */
+/* ===================== */
+
+:root {
+      --color-primary: #FFDC00;
+      --color-black: #000000;
+      --color-white: #ffffff;
+      --color-gray: #f6f6f6;
+      --color-text: #222222;
+      --font-title: 'Georgia', serif;
+      --font-body: 'Helvetica Neue', sans-serif;
+}
+
+/* Reset básico y box-sizing universal */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* estilos para que en LV se muestre el contenido sin margenes */
+.wallpaper-inverted-ad{
+  display: none!important;
+}
+
+.visual-article-free .col-12 {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  margin-top: 0 !important;
+}
+.content-free-html {
+  margin:0 !important;
+}
+.container-fluid {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+.visual__story--free .content-free-html {
+  margin: 0px !important;
+}
+.row>* {
+  padding-right: 0!important;
+  padding-left: 0!important;
+  margin-top: 0!important;
+}
+.article-default a:hover {
+  text-decoration: none;
+  box-shadow: none;
+}
+/* body.wf-editor, body.cms {
+  font-size: 16px !important;
+} */
+.article-default.visual__story--free .content-free-html {
+  margin: 0 !important;
+}
+
+.article-default a:hover {
+  box-shadow: none !important;
+}
+.icon-link:before {
+  content: none !important;
+}
+
+/* ===================== */
+/* ESTILOS GENERALES     */
+/* ===================== */
+.body-gp {
+      margin: 0;
+      font-family: var(--font-body);
+      color: var(--color-text);
+      background-color: var(--color-white);
+      line-height: 1.6;
+    }
+
+    .cabecera {
+      background-color: var(--color-black);
+      color: var(--color-white);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .cabecera h1 {
+      font-size: 2.5rem;
+      font-family: var(--font-title);
+      margin-bottom: 1rem;
+    }
+
+    .cabecera p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 4rem 2rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .recipe {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 4rem;
+      align-items: start;
+    }
+
+    .recipe:nth-child(even) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .recipe img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .recipe h2 {
+      font-family: var(--font-title);
+      font-size: 1.8rem;
+      color: var(--color-black);
+      margin-bottom: 1rem;
+    }
+
+    .highlight {
+      background-color: var(--color-primary);
+      padding: 0.5rem 1rem;
+      display: inline-block;
+      font-weight: bold;
+    }
+
+    .quote {
+      font-style: italic;
+      margin-top: 2rem;
+      padding-left: 1rem;
+      border-left: 4px solid var(--color-primary);
+    }
+
+    .expert, .about {
+      background-color: var(--color-gray);
+      padding: 3rem 2rem;
+      border-radius: 8px;
+      margin-top: 4rem;
+    }
+
+    footer {
+      background-color: var(--color-black);
+      color: var(--color-white);
+      text-align: center;
+      padding: 2rem;
+      margin-top: 6rem;
+    }
+
+/*CRÉDITOS*/
+.authorship-f {
+  color: var(--color-text);
+  font-family: var(--font-main);
+  font-size: 0.8rem;
+  font-weight: 300;
+  text-align: center;
+  padding-bottom: 40px;
+  padding-top: 30px;
+}
+.d-inline-block-f {
+  display: inline-block!important;
+}
+.container-fluid-f {
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .container-fluid-f {
+      padding-right: 24px;
+      padding-left: 24px;
+  }
+}
+.creditos {
+  font-size:1.6em;
+  font-weight: 400;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+.container-fluid-f {
+  width: calc(100% - 40px);
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1280px
+}
+@media (max-width: 600px) {
+  .authorship-f {
+    padding-bottom: 50px;
+    font-size: 1rem;
+  }
+}
