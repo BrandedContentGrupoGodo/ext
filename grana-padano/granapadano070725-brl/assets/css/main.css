@@ -347,7 +347,7 @@ li, ul {
 
 @media (max-width: 550px) {
     .destacado-text {
-    padding: 1.5rem;
+    padding: 3.5rem;
   }
   .destacado-text p {
     font-size: 30px;
@@ -391,7 +391,7 @@ li, ul {
 }
 
 .imagen-fullscreen {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   overflow: hidden;
   position: relative;
