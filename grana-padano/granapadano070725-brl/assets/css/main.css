@@ -66,6 +66,15 @@ html, body {
   content: none !important;
 }
 
+
+.article-default ol li, .article-default ul li {
+    font-size: 16px!important;
+}
+
+li, ul {
+    list-style: disc inside!important;
+}
+
 /* ===================== */
 /* ESTILOS GENERALES     */
 /* ===================== */
