@@ -7,9 +7,9 @@
       --color-black: #000000;
       --color-white: #ffffff;
       --color-gray: #f6f6f6;
-      --color-text: #222222;
-      --font-title: 'Georgia', serif;
-      --font-body: 'Helvetica Neue', sans-serif;
+      --color-text: #646464;
+      --font-title: "Merriweather", serif;
+      --font-body: "Merriweather Sans", sans-serif;
 }
 
 /* Reset básico y box-sizing universal */
@@ -18,7 +18,11 @@
   margin: 0;
   padding: 0;
 }
-
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* bloquea scroll horizontal */
+}
 /* estilos para que en LV se muestre el contenido sin margenes */
 .wallpaper-inverted-ad{
   display: none!important;
@@ -69,95 +73,512 @@
       margin: 0;
       font-family: var(--font-body);
       color: var(--color-text);
-      background-color: var(--color-white);
       line-height: 1.6;
     }
 
     .cabecera {
-      background-color: var(--color-black);
-      color: var(--color-white);
-      padding: 4rem 2rem;
+      color: var(--color-text);
+      padding: 0 0 4rem 0;
       text-align: center;
     }
 
-    .cabecera h1 {
-      font-size: 2.5rem;
-      font-family: var(--font-title);
-      margin-bottom: 1rem;
+    .cabecera .intro-img {
+      text-align: right;
     }
 
-    .cabecera p {
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .section {
-      padding: 4rem 2rem;
-      max-width: 960px;
-      margin: 0 auto;
-    }
-
-    .recipe {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      margin-bottom: 4rem;
-      align-items: start;
-    }
-
-    .recipe:nth-child(even) {
-      grid-template-columns: 1fr 1fr;
-    }
-
-    .recipe img {
+    .intro-img img {
+      max-width: 430px;
       width: 100%;
-      border-radius: 12px;
     }
 
-    .recipe h2 {
+    .cabecera h1 {
+      font-size: 3.8rem;
+      color: #000000;
       font-family: var(--font-title);
-      font-size: 1.8rem;
-      color: var(--color-black);
       margin-bottom: 1rem;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 77px; 
+      display: grid;
+      max-width: 670px;
+      margin: auto;
     }
 
     .highlight {
       background-color: var(--color-primary);
+      color: #000000;
       padding: 0.5rem 1rem;
       display: inline-block;
       font-weight: bold;
-    }
-
-    .quote {
-      font-style: italic;
-      margin-top: 2rem;
-      padding-left: 1rem;
-      border-left: 4px solid var(--color-primary);
-    }
-
-    .expert, .about {
-      background-color: var(--color-gray);
-      padding: 3rem 2rem;
-      border-radius: 8px;
-      margin-top: 4rem;
-    }
-
-    footer {
-      background-color: var(--color-black);
-      color: var(--color-white);
+      border-radius: 15px;
+      font-weight: 900;
+      max-width: fit-content;
       text-align: center;
-      padding: 2rem;
-      margin-top: 6rem;
+      margin: auto;
     }
+
+    .cabecera .collab {
+      font-size: 0.8rem;
+      max-width: 600px;
+      margin: 0 auto;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 127.075%; /* 15.249px */
+      letter-spacing: 1.32px;
+      text-transform: uppercase;
+    }
+
+    .entradilla-gp {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .entradilla-gp img {
+      max-width: 450px;
+      width: 100%;
+    }
+
+    .entradilla-gp p {
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-size: 19px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 168.8%;
+      text-align: left;
+      margin: 0 5rem;
+    }
+
+@media (max-width: 990px) {
+  .cabecera h1 {
+    font-size: 2.8rem;
+    line-height: 50px;
+    margin-bottom: 2rem;
+  }
+
+  .entradilla-gp img {
+    max-width: 260px;
+  }
+}
+
+@media (max-width: 550px) {
+  .entradilla-gp {
+    flex-direction: column;
+    align-items: flex-start;
+    }
+}
+
+.primer-bloque {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 5rem;
+}
+
+.parrafos p {
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 168.8%;
+  max-width: 612px;
+  padding-left: 16px;
+  padding-right: 16px;
+      text-align: left;
+  }
+
+  .parrafos p:first-of-type {
+    padding-bottom: 3rem;
+  }
+
+  .parrafos a {
+    color: var(--color-black);
+    text-decoration: underline;
+  }
+
+  .primer-bloque video {
+    max-width: 320px;
+    border-radius: 20px;
+  }
+
+  .destacado-img {
+    margin: 6rem;
+    text-align: center;
+  }
+  .destacado-img img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .bloque-info {
+  display: flex;
+  flex-wrap: wrap; /* para que sea responsive */
+  width: 100%;
+  min-height: 400px; /* puedes ajustar según el diseño */
+}
+
+.bloque-info__img {
+  flex: 1;
+  min-width: 300px;
+  height: auto;
+  overflow: hidden;
+}
+
+.bloque-info__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.bloque-info__contenido {
+  flex: 1;
+  padding: 3rem;
+  background-color: var(--color-gray); /* gris claro */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bloque-info__contenido h2 {
+  color: var(--color-text);
+  font-family: var(--font-title);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 138.8%; 
+  padding-left: 16px;
+  padding-right: 16px;
+  max-width: 632px;
+}
+
+.parrafos {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 550px) {
+  .primer-bloque {
+    flex-direction: column-reverse;
+    padding: 0;
+  }
+  .primer-bloque video {
+    margin-bottom: 5rem;
+}
+.destacado-img {
+    height: 450px;
+    width: 100%;
+    margin: 5rem 0 0 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .destacado-img img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    display: block;
+  }
+ .bloque-info {
+    flex-direction: column;
+  }
+
+  .bloque-info__contenido {
+    order: 1;
+    padding: 1rem;
+  }
+
+  .bloque-info__img {
+    order: 2;
+  }
+}
+  
+.destacado-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem; /* espacio entre elementos */
+  padding: 2rem;
+  text-align: center;
+}
+
+.destacado-text p {
+  color: var(--color-text);
+  font-family: var(--font-title);
+  text-align: center;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 168.8%;
+  max-width: 590px;
+}
+
+.destacado-text .icono {
+  width: 100px; /* ajustable según tamaño del ícono */
+  height: auto;
+}
+
+.destacado-text .invertido {
+  transform: scaleY(-1);
+}
+
+@media (max-width: 550px) {
+    .destacado-text {
+    padding: 1.5rem;
+  }
+  .destacado-text p {
+    font-size: 30px;
+  }
+
+  .destacado-text .icono {
+    width: 80px;
+  }
+}
+
+.bloque-fondo {
+  position: relative;
+  width: 100%;
+  padding: 4rem 0;
+  overflow: hidden;
+}
+
+.bloque-fondo .parrafos {
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+   background-color: #ffffff49;
+}
+
+.bloque-fondo::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 300px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  background-image: url('https://brandedcontentgrupogodo.github.io/ext/grana-padano/granapadano070725-brl/assets/img/grana-padano-6.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 1;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.imagen-fullscreen {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.imagen-fullscreen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  display: block;
+}
+
+.bloque-fondo2 {
+  position: relative;
+  width: 100%;
+  padding: 4rem 0;
+  overflow: hidden;
+}
+
+.bloque-fondo2 .parrafos {
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  background-color: #ffffff49;
+}
+
+.bloque-fondo2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 300px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  background-image: url('https://brandedcontentgrupogodo.github.io/ext/grana-padano/granapadano070725-brl/assets/img/grana-padano-8.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
+  opacity: 1;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.section {
+  padding: 4rem 2rem 0;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.recipe {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 4rem;
+  align-items: stretch;
+}
+
+.recipe:nth-child(even) img {
+  order: 2;
+  border-radius: 0 12px 12px 0;
+}
+
+.recipe:nth-child(even) .recipe-content {
+  order: 1;
+  border-radius: 12px 0 0 12px;
+}
+
+.recipe img {
+  width: 100%;
+  border-radius: 12px 0 0 12px;
+}
+
+.recipe h3 {
+  font-family: var(--font-title);
+  font-size: 1.8rem;
+  color: var(--color-black);
+  margin-bottom: 1rem;
+}
+
+.expert, .about {
+  background-color: var(--color-gray);
+  padding: 3rem 2rem;
+  border-radius: 8px;
+  margin-top: 4rem;
+}
+    /* Aplica fondo gris solo al bloque de texto */
+.recipe-content {
+  background-color: var(--color-gray);
+  padding: 2rem;
+  border-radius: 0 12px 12px 0;
+}
+
+.recipe h2 {
+  font-family: var(--font-title);
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 138.8%;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+.recipe h3 {
+  font-family: var(--font-title);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 138.8%;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+
+.descripcion {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 168.8%;
+  margin-bottom: 1rem;
+}
+
+.recipe-content hr {
+  border: none;
+  border-top: 1px solid #D1D1D1;
+  margin: 1.5rem 0;
+}
+
+.ingredientes-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+  justify-content: flex-start;
+}
+
+.ingredientes-header img {
+  width: 24px;
+  height: 24px;
+}
+
+.ingredientes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--color-text);
+  font-weight: 300;
+  margin-bottom: 1rem;
+  gap: 0.5rem;
+}
+
+.ingredientes-grid ul {
+  list-style: disc inside;
+  margin: 0;
+  padding: 0;
+}
+@media (max-width: 768px) {
+  .recipe {
+    grid-template-columns: 1fr;
+  }
+
+  .ingredientes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .recipe-content {
+    padding: 1.5rem;
+    border-radius: 0 0 12px 12px;
+  }
+  .recipe img {
+  border-radius: 12px 12px 0 0;
+}
+  .recipe h2 {
+    font-size: 24px;
+  }
+  .recipe:nth-child(even) .recipe-content {
+    order: 2;
+    border-radius: 0 0 12px 12px;
+  }
+  .recipe:nth-child(even) img {
+    border-radius: 12px 12px 0 0;
+  }
+}
+
+
 
 /*CRÉDITOS*/
 .authorship-f {
   color: var(--color-text);
-  font-family: var(--font-main);
+  font-family: var(--font-body);
   font-size: 0.8rem;
   font-weight: 300;
   text-align: center;
+  margin: auto;
   padding-bottom: 40px;
   padding-top: 30px;
 }
@@ -165,31 +586,12 @@
   display: inline-block!important;
 }
 .container-fluid-f {
-  padding-right: 20px;
-  padding-left: 20px;
-  margin-right: auto;
-  margin-left: auto;
-}
-@media (min-width: 768px) {
-  .container-fluid-f {
-      padding-right: 24px;
-      padding-left: 24px;
-  }
-}
-.creditos {
-  font-size:1.6em;
-  font-weight: 400;
-  margin-bottom: 5px;
-  margin-top: 5px;
-}
-.container-fluid-f {
   width: calc(100% - 40px);
-  padding-right: 20px;
-  padding-left: 20px;
   margin-right: auto;
   margin-left: auto;
   max-width: 1280px
 }
+
 @media (max-width: 600px) {
   .authorship-f {
     padding-bottom: 50px;
