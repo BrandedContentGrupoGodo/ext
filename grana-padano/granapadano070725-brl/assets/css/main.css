@@ -552,6 +552,9 @@ li, ul {
   margin: 0;
   padding: 0;
 }
+.ingredientes-grid ul li {
+    list-style: disc inside !important;
+}
 @media (max-width: 768px) {
   .recipe {
     grid-template-columns: 1fr;
