@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/main.css">
+
+</head>
+<body>
+  <main>
+    <div id="smoother-wrapper" class="body-gp">
+      <div class="cabecera">
+        <h1>El sabor del verano empieza con <span class="highlight">Grana Padano</span></h1>
+        <p>Tres recetas frescas, ligeras y llenas de sabor, con el queso italiano más querido como protagonista.</p>
+      </div>
+
+      <section class="section">
+        <div class="recipe">
+          <img src="ensalada.jpg" alt="Ensalada de calabacín y Grana Padano" />
+          <div>
+            <h2>Ensalada de calabacín, bresaola y Grana Padano</h2>
+            <p>Fresca, ligera y lista en menos de 10 minutos. Ideal para una comida veraniega con toque gourmet.</p>
+            <ul>
+              <li>Calabacín, bresaola, rúcula, Grana Padano...</li>
+            </ul>
+            <p class="quote">“Una receta equilibrada que aporta proteínas, vegetales y grasas saludables” — Belén Serena</p>
+          </div>
+        </div>
+
+        <div class="recipe">
+          <img src="pasta.jpg" alt="Pasta con pesto de tomate y Grana Padano" />
+          <div>
+            <h2>Pasta con pesto de tomate, almendras y Grana Padano</h2>
+            <p>Sabor intenso y textura cremosa gracias al queso. Un plato reconfortante que no pesa.</p>
+            <p class="quote">“Perfecta para recuperar energía sin caer en platos pesados” — Belén Serena</p>
+          </div>
+        </div>
+
+        <div class="recipe">
+          <img src="berenjenas.jpg" alt="Bastones de berenjena con Grana Padano" />
+          <div>
+            <h2>Bastones de berenjena con Grana Padano y salsa de yogur</h2>
+            <p>Crujientes por fuera, jugosos por dentro. Una alternativa saludable y deliciosa para picar.</p>
+            <p class="quote">“Un snack sano, rico en calcio, y lleno de textura” — Belén Serena</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section expert">
+        <h2>La nutricionista opina</h2>
+        <p>Belén Serena (@sere_healthy) nos ayuda a entender el valor de estas recetas y desmonta mitos sobre el queso.</p>
+        <p class="quote">“Grana Padano es fuente de calcio, proteínas y sabor. ¡Y sí, encaja en una alimentación saludable!”</p>
+      </section>
+
+      <section class="section about">
+        <h2>¿Qué hace único al Grana Padano?</h2>
+        <ul>
+          <li>✔ Denominación de origen protegida</li>
+          <li>✔ Rico en calcio y proteínas</li>
+          <li>✔ Sin lactosa</li>
+          <li>✔ Más de 900 años de tradición</li>
+        </ul>
+      </section>
+
+        
+      <!-- INICIO créditos -->
+      <div class="authorship-f">				
+        <div class="container-fluid-f">
+            <span class="d-inline-block-f">Coordinación: Kevin Casas</span> | 
+            <span class="d-inline-block-f">Redacción: Salomé García</span> | 
+            <span class="d-inline-block-f">Diseño y maquetación: Alejandra Santander</span> | 
+            <span class="d-inline-block-f">Vídeo y fotografía: Getty Images, Somos5</span>. 
+            <span class="d-inline-block-f">Un proyecto de Brandslab. Godó Nexus.</span>
+        </div>
+      </div>
+
+    </div>
+  </main>
+  
+    <!-- Librerías externas: GSAP, ScrollTrigger, Lenis y Observer -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/Observer.min.js"></script>
+    <script src="https://brandedcontentgrupogodo.github.io/ext/danacol01/assets/js/lenis1.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.36/bundled/lenis.min.js"></script> -->
+
+    
+    <!-- Archivo JS principal personalizado -->
+    <script src="https://brandedcontentgrupogodo.github.io/ext/danacol01/assets/js/scripts.js"></script>
+
+    <script>
+      const playButton = document.getElementById("playAudio");
+      const audio = document.getElementById("audio");
+      const icon = document.getElementById("audioIcon");
+    
+      let isPlaying = false;
+    
+      playButton.addEventListener("click", () => {
+        if (isPlaying) {
+          audio.pause();
+          isPlaying = false;
+          // Si quieres cambiar la imagen al pausar:
+          icon.src = "https://brandedcontentgrupogodo.github.io/ext/danacol01/assets/img/play.svg";
+        } else {
+          audio.play();
+          isPlaying = true;
+          // Si quieres cambiar la imagen al reproducir:
+          icon.src = "https://brandedcontentgrupogodo.github.io/ext/danacol01/assets/img/pause.svg";
+        }
+      });
+    
+      // Asegura que cuando termina, vuelva al estado inicial
+      audio.addEventListener("ended", () => {
+        isPlaying = false;
+        icon.src = "https://brandedcontentgrupogodo.github.io/ext/danacol01/assets/img/play.svg";
+      });
+    </script>
+    
+  </body>
+</html>
