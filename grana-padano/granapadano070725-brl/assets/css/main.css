@@ -72,7 +72,7 @@ html, body {
 }
 
 li, ul {
-    list-style: disc inside!important;
+     /* list-style: disc inside!important; */
 }
 
 /* ===================== */
@@ -548,7 +548,7 @@ li, ul {
 }
 
 .ingredientes-grid ul {
-  list-style: disc inside;
+  list-style: disc inside!important;
   margin: 0;
   padding: 0;
 }
