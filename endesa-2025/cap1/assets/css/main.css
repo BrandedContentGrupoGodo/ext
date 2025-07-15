@@ -1,0 +1,245 @@
+:root {
+  --header-height: 50px;
+  --bg-color: #000;
+  --text-color: #fff;
+  --text-color-dark:#29385A;
+  --accent-color:#2B4071;
+  --star-glow: rgba(255, 255, 255, 0.15);
+  --font-sans: "Albert Sans", sans-serif;
+  --font-serif: "Bacasime Antique", serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- ESTILOS LANDING -------------------------------------- */
+.sticky-bar {
+      position: sticky;
+      top: 0;
+      height: var(--header-height);
+      background-color: var(--bg-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1rem;
+      z-index: 1000;
+    }
+
+    .sticky-bar__icon {
+      width: 24px;
+      height: 24px;
+      fill: var(--text-color);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .sticky-bar__icon:hover {
+      transform: scale(1.1);
+    }
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.header-section.loaded {
+  opacity: 1;
+  transition: opacity 1.4s ease;
+}
+
+.header-section {
+  position: relative;
+    overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  background: url('../img/endesa1.jpg') center/cover no-repeat;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  padding: 2rem;
+}
+.header-section::before {
+content: '';
+position: absolute;
+inset: 0;
+background: inherit;
+filter: blur(20px);
+transform: scale(1.2);
+opacity: 0;
+z-index: 1;
+pointer-events: none;
+}
+
+.header-section.loaded::before {
+transition: all 2s ease;
+filter: blur(0);
+transform: scale(1);
+opacity: 1;
+}
+
+.header-text {
+  max-width: 600px;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.header-text > * {
+  opacity: 0;
+  transform: translateY(20px);
+  filter: blur(6px);
+}
+
+.header-text__pretitle {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 127.075%;
+  letter-spacing: 1.32px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.header-text__title {
+  font-family: var(--font-serif);
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 80%;
+  margin-bottom: 1rem;
+}
+
+.header-text__subtitle {
+  max-width: 500px;
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 108.8%;
+}
+
+@media (max-width: 768px) {
+  .header-text__title {
+    font-size: 28px;
+  }
+  .header-text__subtitle {
+    font-size: 16px;
+  }
+}
+
+.entradilla {
+  background-color: var(--accent-color);
+  padding: 3.5rem 0;
+}
+
+.entradilla p {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 16px;
+  color: var(--text-color);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 168.8%;
+  text-align: center;
+}
+
+.titular-podcast {
+  max-width: 600px;
+  margin: 3.5rem auto;
+}
+
+.titular-podcast p {
+  color: var(--text-color-dark);
+  text-align: center;
+  font-family:var(--font-serif);
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 90%;
+  padding: 0 16px;
+}
+
+/* ---------- CRÉDITOS ---------------------------------- */
+.authorship-f {
+  color: #888;
+  font-size: .8em;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.container-fluid-f {
+  width: calc(100% - 40px);
+  max-width: 980px;
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+#audio-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1001;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 20px;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  transition: background 0.3s ease;
+}
+
+#audio-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+#audio-toggle.pulse {
+  animation: pulseIcon 1.5s infinite ease-in-out;
+}
+
+@keyframes pulseIcon {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* estilos para que en LV se muestre el contenido sin margenes */
+.wallpaper-inverted-ad{
+    display: none!important;
+  }
+  
+  .visual-article-free .col-12 {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    margin-top: 0 !important;
+  }
+  .content-free-html {
+    margin:0 !important;
+  }
+  .container-fluid {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+  .visual__story--free .content-free-html {
+    margin: 0px !important;
+  }
+  .row>* {
+    padding-right: 0!important;
+    padding-left: 0!important;
+    margin-top: 0!important;
+  }
+  .article-default a:hover {
+    text-decoration: none;
+    box-shadow: none;
+  }
+button:focus {
+    outline: 1px dotted var(--background-color);
+    outline: 5px auto var(--background-color) -webkit-focus-ring-color;
+}
