@@ -68,3 +68,71 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+// TIMELINE
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("active");
+    }
+  });
+}, {
+  threshold: 0.3
+});
+
+document.querySelectorAll(".timeline-item").forEach(item => {
+  observer.observe(item);
+});
+
+// MAPA
+document.addEventListener("DOMContentLoaded", () => {
+  const mapa = document.getElementById("mapa-img");
+
+  const boxAzul = document.querySelector(".map-box.azul");
+  const boxNaranja = document.querySelector(".map-box.naranja");
+
+  let boxesVisible = false;
+
+  // Desktop: hover
+  mapa.addEventListener("mouseenter", () => {
+    if (window.innerWidth > 768) {
+      boxAzul.classList.add("show");
+      boxNaranja.classList.add("show");
+    }
+  });
+
+  mapa.addEventListener("mouseleave", () => {
+    if (window.innerWidth > 768) {
+      boxAzul.classList.remove("show");
+      boxNaranja.classList.remove("show");
+    }
+  });
+
+  // Mobile: touch
+  mapa.addEventListener("click", (e) => {
+    if (window.innerWidth <= 768) {
+      e.preventDefault();
+      boxesVisible = !boxesVisible;
+
+      if (boxesVisible) {
+        boxAzul.classList.add("show");
+        boxNaranja.classList.add("show");
+      } else {
+        boxAzul.classList.remove("show");
+        boxNaranja.classList.remove("show");
+      }
+    }
+  });
+
+  // Tocar fuera del mapa oculta las cajas (mobile)
+  document.addEventListener("click", (e) => {
+    if (window.innerWidth <= 768) {
+      const isClickInside = mapa.contains(e.target);
+      if (!isClickInside && boxesVisible) {
+        boxAzul.classList.remove("show");
+        boxNaranja.classList.remove("show");
+        boxesVisible = false;
+      }
+    }
+  });
+});
