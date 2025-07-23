@@ -130,6 +130,12 @@ opacity: 1;
     font-size: 16px;
   }
 }
+@media (max-width: 550px) {
+  .header-section {
+    justify-content: center;
+  }
+}
+
 
 .entradilla {
   padding: 3.5rem 0;
@@ -745,7 +751,7 @@ line-height: 168.8%;
 .bloque-bosque {
   background-color: var(--accent-color);
   color: white;
-  padding: 3rem 1.5rem;
+  padding: 3rem 1.5rem 0;
   font-family: var(--font-sans);
   margin-top: 2rem;
 }
@@ -766,7 +772,6 @@ line-height: 168.8%;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 2rem;
   gap: 1rem;
   max-width: 1280px;
   margin-left: auto;
