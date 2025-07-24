@@ -134,6 +134,9 @@ opacity: 1;
   .header-section {
     justify-content: center;
   }
+  .header-text {
+    margin-top: 11rem;
+  }
 }
 
 
@@ -192,6 +195,9 @@ opacity: 1;
 @media (max-width: 600px) {
   .video-endesa {
     height: 60vh;
+  }
+  .entradilla {
+    padding: 3.5rem 1rem;
   }
 }
 
@@ -349,6 +355,11 @@ opacity: 1;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+}
+@media (max-width: 550px) {
+.image-caption {
+    max-width: 360px;
+}
 }
 
 .map-info-section {
@@ -613,17 +624,26 @@ line-height: 168.8%;
   font-style: normal;
   font-weight: 300;
   line-height: 168.8%;
+}
 
+@media (max-width: 768px) {
+  .parrafos-normal h2 {
+    padding: 50px 26px 10px;
+}
+
+.parrafos-normal p {
+    padding: 30px 26px;
+}
 }
 
 .destacado-endesa {
   background-color: var(--accent-color);
-  display: flex;
+    display: flex;
     flex-wrap: wrap;
-        justify-content: space-around;
+    justify-content: center;
     align-items: center;
     padding: 2rem;
-    gap: 1rem;
+    gap: 12rem;
     align-content: center;
 }
 
@@ -637,7 +657,7 @@ line-height: 168.8%;
 }
 
 .destacado-icono {
-  width: 40px;
+  width: 65px;
   height: auto;
 }
 
@@ -648,9 +668,9 @@ line-height: 168.8%;
 
 .destacado-grafico {
   flex: 1;
-  min-width: 250px;
+  min-width: 200px;
   position: relative;
-  max-width: 260px;
+  max-width: 220px;
 }
 
 .pie-chart {
