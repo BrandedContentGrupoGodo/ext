@@ -660,7 +660,12 @@ line-height: 168.8%;
 
 .parrafos-normal p {
     padding: 30px 26px;
+  }
 }
+@media (max-width: 550px) {
+  .parrafos-normal h2 {
+    padding: 15px 26px 10px;
+  }
 }
 
 .destacado-endesa {
