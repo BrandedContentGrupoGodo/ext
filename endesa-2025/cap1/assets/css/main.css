@@ -341,8 +341,8 @@ opacity: 1;
   object-position: center center; /* 1º imagen */
 }
 
-.body-endesa section.full-image:nth-child(9) img {
-  object-position: right center;  /* 2º imagen */
+.body-endesa section.full-image:nth-child(6) img {
+  object-position: right;  /* 2º imagen */
 }
 
 .body-endesa section.full-image:nth-child(12) img {
@@ -350,7 +350,7 @@ opacity: 1;
 }
 
 .body-endesa section.full-image:nth-child(18) img {
-  object-position: center center; /* 4º imagen */
+  object-position: left center; /* 4º imagen */
 }
 
 .body-endesa section.full-image:nth-child(22) img {
