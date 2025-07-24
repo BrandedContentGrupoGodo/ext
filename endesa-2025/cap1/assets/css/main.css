@@ -129,6 +129,9 @@ opacity: 1;
   .header-text__subtitle {
     font-size: 16px;
   }
+    .header-text {
+    margin-top: 14rem;
+  }
 }
 @media (max-width: 550px) {
   .header-section {
@@ -767,7 +770,17 @@ line-height: 168.8%;
     transform: translateX(-50%);
     bottom: -10px;
   }
+    .destacado-endesa {
+    gap: 4rem;
+  }
 }
+
+@media (max-width: 550px) {
+  .destacado-endesa {
+    gap: 4rem;
+  }
+}
+
 .bloque-bosque {
   background-color: var(--accent-color);
   color: white;
@@ -896,6 +909,10 @@ line-height: 168.8%;
 @media (max-width: 768px) {
   .bosque-row {
     flex-direction: column;
+  }
+
+    .bosque-row:last-of-type {
+    padding-bottom: 2rem;
   }
 
   .col-derecha {
