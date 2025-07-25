@@ -124,7 +124,7 @@ opacity: 1;
   text-shadow: 0 8px 17px rgba(0, 0, 0, 0.50);
 }
 
-@media (min-width: 1600px) {
+@media (min-width: 1980px) {
     .header-text {
     margin-top: 12rem;
   }
