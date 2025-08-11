@@ -1,4 +1,4 @@
-:root {
+.flecha:root {
   --header-height: 50px;
   --bg-color: #000;
   --text-color: #fff;
@@ -440,7 +440,7 @@ opacity: 1;
 
 .flecha {
   position: absolute;
-  right: -50%;
+  right: -40%;
   top: 50%;
   transform: translateY(-50%);
   font-size: 1.5rem;
@@ -672,4 +672,5 @@ color: var(--accent-color);
 .timeline-right .links-endesa {
 color: var(--text-color);
 }
+
 
