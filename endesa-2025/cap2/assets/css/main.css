@@ -124,7 +124,7 @@ opacity: 1;
 
 @media (max-width: 768px) {
   .header-section {
-    background: url(https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap2/assets/img/endesa1.jpg) left bottom / cover no-repeat;
+    background: url('https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap2/assets/img/endesa1.jpg') left bottom / cover no-repeat;
   }
   .header-text__title {
     font-size: 28px;
@@ -672,6 +672,7 @@ color: var(--accent-color);
 .timeline-right .links-endesa {
 color: var(--text-color);
 }
+
 
 
 
