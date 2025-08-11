@@ -1,4 +1,4 @@
-.flecha:root {
+:root {
   --header-height: 50px;
   --bg-color: #000;
   --text-color: #fff;
@@ -672,5 +672,6 @@ color: var(--accent-color);
 .timeline-right .links-endesa {
 color: var(--text-color);
 }
+
 
 
