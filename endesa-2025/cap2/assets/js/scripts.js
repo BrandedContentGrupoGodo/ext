@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Activar sonido con primer clic (obligatorio por políticas de navegador)
   const activateAudio = () => {
     audio.muted = false;
-    audio.volume = 1;
+    audio.volume = 0.2;
     audio.play().catch(err => console.warn("Error de autoplay:", err));
     toggle.textContent = "🔊";
     toggle.classList.remove("pulse");
@@ -136,3 +136,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
