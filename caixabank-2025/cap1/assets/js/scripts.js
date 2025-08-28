@@ -82,3 +82,4 @@ lightbox.addEventListener('click', (e) => {
   }
 });
 
+
