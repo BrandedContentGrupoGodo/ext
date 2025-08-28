@@ -1,7 +1,7 @@
 // Scroll suave
     document.querySelector(".hero__cta").addEventListener("click", (e) => {
       e.preventDefault();
-      document.querySelector(".reportaje").scrollIntoView({
+      document.querySelector("#video-section").scrollIntoView({
         behavior: "smooth"
       });
     });
@@ -81,3 +81,4 @@ lightbox.addEventListener('click', (e) => {
     lightboxImg.src = '';
   }
 });
+
