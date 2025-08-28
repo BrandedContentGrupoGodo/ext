@@ -142,6 +142,7 @@
 
     .hero__cta:hover {
       opacity: 1;
+      color: #25447A!important;
     }
 
     /* Reportaje */
@@ -590,4 +591,5 @@ button:focus {
   opacity: 0;
 
 }
+
 
