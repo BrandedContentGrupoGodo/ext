@@ -78,7 +78,7 @@
 
     /* Hero dentro del header */
     .hero {
-      background: url("../img/fondo-cabecera.png") no-repeat center/cover;
+      background: url("https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap1/assets/img/fondo-cabecera.png") no-repeat center/cover;
       display: grid;
       grid-template-columns: 1fr 1fr;
       flex: 1;
@@ -590,3 +590,4 @@ button:focus {
   opacity: 0;
 
 }
+
