@@ -414,7 +414,7 @@
 .highlight {
   position: relative;
   width: 100%;
-  height: 100vh; /* ocupa toda la altura de la pantalla */
+  height: 60vh; /* ocupa toda la altura de la pantalla */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -447,6 +447,11 @@
   letter-spacing: -1px;
   padding: 1rem;
   border-radius: 7px;
+}
+
+.image-quote-bottom {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 .image-quote-bottom__wrapper {
@@ -583,4 +588,5 @@ button:focus {
 
 .no-show {
   opacity: 0;
+
 }
