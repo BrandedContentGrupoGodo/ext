@@ -626,7 +626,7 @@ button:focus {
 .fb_iframe_widget {
     display: inline-block;
     position: relative;
-    padding-bottom: 0.8rem;
+    padding-top: 0.8rem;
     color: white;
 }
 .fb-xfbml-parse-ignore {
@@ -644,6 +644,7 @@ button:focus {
 }
 
 }
+
 
 
 
