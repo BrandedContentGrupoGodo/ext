@@ -510,6 +510,7 @@
   width:100%;
   margin-top:0;
   max-height:670px;
+    min-height: 400px;
 }
   .iframeQualifio iframe{
     width:100%;
@@ -518,6 +519,7 @@
     border: 1px solid var(--red-color)!important;
     padding: 20px;
     margin-bottom: 60px;
+      min-height: 400px;
   }
   .iframeQualifio span {
     font-style:normal;
@@ -648,6 +650,7 @@ button:focus {
 .fb-share-button {
   color: white!important;
 }
+
 
 
 
