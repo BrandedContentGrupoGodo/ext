@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <div class="body-fira">
+
+        <a class="bc-skip-link" href="#contenido-principal">Saltar al contenido</a>
+
+        <header class="bc-hero" role="banner">
+            <div class="bc-hero__container">
+                <p class="bc-hero__collab" aria-label="En colaboración con Fira de Barcelona">
+                En colaboración con Fira de Barcelona
+                </p>
+
+                <div class="bc-hero__text-block">
+                <h1 class="bc-hero__title">Barcelona connection</h1>
+                <p class="bc-hero__subtitle">Un videopódcast de Fira de Barcelona</p>
+                <a class="bc-hero__cta" href="#episodio-1" id="bc-scroll-trigger">
+                    Ver primer episodio
+                    <svg width="18" height="18" viewBox="0 0 24 24" role="img" aria-label="Ir al primer episodio" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                    <path d="M12 5c.552 0 1 .448 1 1v10.586l3.293-3.293a1 1 0 0 1 1.414 1.414l-5 5a.997.997 0 0 1-1.414 0l-5-5A1 1 0 0 1 7.707 13.293L11 16.586V6c0-.552.448-1 1-1z"/>
+                    </svg>
+                </a>
+                </div>
+            </div>
+
+            <figure class="bc-hero__image-wrap" aria-hidden="true">
+                <img
+                class="bc-hero__image"
+                src="assets/img/fira-cabecera.png"
+                alt=""
+                loading="eager"
+                width="1920"
+                height="800"
+                />
+            </figure>
+
+            <div class="bc-hero__container">
+                <p class="bc-hero__intro" id="intro-proyecto">
+                Barcelona no es solo un territorio: es una actitud. Un espacio de conversación pausada donde las ideas, la tecnología y la cultura se encuentran para imaginar la ciudad del mañana.
+                </p>
+            </div>
+        </header>
+
+        <div id="contenido-principal" class="bc-main" role="main">
+            <!-- Ancla del primer episodio para el scroll -->
+            <section id="episodio-1" class="bc-episode-anchor" aria-labelledby="episodio-1-titulo">
+
+                <!-- Episodio 1 - Activo -->
+                <div class="episode-card">
+                <!-- Imagen izquierda -->
+                <div class="episode-image">
+                    <img src="assets/img/fira-cap1.png" alt="Episodio 01 con Teresa Helbig">
+                </div>
+
+                <!-- Contenido derecho -->
+                <div class="episode-content active">
+                    <h2 id="episodio-1-titulo">Episodio 01 – El arte de vestir un sí</h2>
+                    <hr>
+                    <h3>Moda nupcial con Teresa Helbig</h3>
+                    <p>
+                    Una conversación sobre la belleza, la memoria y la emoción detrás de la moda nupcial. 
+                    Teresa Helbig nos habla de las novias del futuro y de Barcelona como escenario de elegancia, 
+                    creatividad y diseño con alma.
+                    </p>
+                    <a href="https://example.com/episodio01" target="_blank" class="episode-btn">Ver episodio</a>
+                </div>
+                </div>
+            </section>
+
+            <!-- Episodio 2 - Próximamente -->
+            <section id="episodio-2" aria-labelledby="episodio-2-titulo">
+                <div class="episode-card">
+                    <!-- Imagen izquierda -->
+                    <div class="episode-image">
+                        <img src="assets/img/fira-cap-bloq.png" alt="Episodio 02 con Elisenda Bou">
+                    </div>
+
+                    <!-- Contenido derecho -->
+                    <div class="episode-content locked">
+                        <h2 id="episodio-2-titulo">Episodio 02 – Inteligencia con sentido común</h2>
+                        <hr>
+                        <h3>Tecnología con Elisenda Bou</h3>
+                        <p>
+                        ¿Puede la inteligencia artificial ser también emocional, ética y humana? Elisenda Bou reflexiona sobre los retos y oportunidades que plantea la revolución de la IA que está cambiando nuestro mundo.
+                        </p>
+                        <button class="episode-btn disabled" disabled>Próximamente</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Episodio 3 - Próximamente -->
+            <section id="episodio-3" aria-labelledby="episodio-3-titulo">
+                <div class="episode-card">
+                    <!-- Imagen izquierda -->
+                    <div class="episode-image">
+                        <img src="assets/img/fira-cap-bloq.png" alt="Episodio 03 con Jaime Alguersuari">
+                    </div>
+
+                    <!-- Contenido derecho -->
+                    <div class="episode-content locked">
+                        <h2 id="episodio-2-titulo">Episodio 03 – Más allá del coche</h2>
+                        <hr>
+                        <h3>Movilidad con Jaime Alguersuari</h3>
+                        <p>
+                        Barcelona ha sido siempre una capital europea ligada a la industria del motor y la F1, pero también a la nueva movilidad. Jaime Alguersuari nos habla de sostenibilidad, velocidad, hábitos urbanos y el futuro de la movilidad personal y colectiva.
+                        </p>
+                        <button class="episode-btn disabled" disabled>Próximamente</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Episodio 4 - Próximamente -->
+            <section id="episodio-4" aria-labelledby="episodio-4-titulo">
+                <div class="episode-card">
+                    <!-- Imagen izquierda -->
+                    <div class="episode-image">
+                        <img src="assets/img/fira-cap-bloq.png" alt="Episodio 04 con Carme Ruscalleda">
+                    </div>
+
+                    <!-- Contenido derecho -->
+                    <div class="episode-content locked">
+                        <h2 id="episodio-4-titulo">Episodio 04 – Cocinar el territorio</h2>
+                        <hr>
+                        <h3>Alimentación con Carme Ruscalleda</h3>
+                        <p>
+                        Con una mirada que une tradición y vanguardia, Carme Ruscalleda nos invita a pensar la ciudad desde sus sabores, sus paisajes gastronómicos y su capacidad de alimentar cuerpo y cultura.
+                        </p>
+                        <button class="episode-btn disabled" disabled>Próximamente</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Episodio 5 - Próximamente -->
+            <section id="episodio-5" aria-labelledby="episodio-5-titulo">
+                <div class="episode-card">
+                    <!-- Imagen izquierda -->
+                    <div class="episode-image">
+                        <img src="assets/img/fira-cap-bloq.png" alt="Episodio 05 con Fernando Cucchietti">
+                    </div>
+
+                    <!-- Contenido derecho -->
+                    <div class="episode-content locked">
+                        <h2 id="episodio-4-titulo">Episodio 05 – Ciudad, datos y decisiones</h2>
+                        <hr>
+                        <h3>Smart Cities con Fernando Cucchietti</h3>
+                        <p>
+                        Las ciudades se transforman a través de los datos. Fernando Cucchietti explora cómo la inteligencia urbana puede ayudarnos a tomar mejores decisiones colectivas, más allá de la tecnología por la tecnología.
+                        </p>
+                        <button class="episode-btn disabled" disabled>Próximamente</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Episodio 6 - Próximamente -->
+            <section id="episodio-6" aria-labelledby="episodio-6-titulo">
+                <div class="episode-card">
+                    <!-- Imagen izquierda -->
+                    <div class="episode-image">
+                        <img src="assets/img/fira-cap-bloq.png" alt="Episodio 06 con Francesc Fontbona">
+                    </div>
+
+                    <!-- Contenido derecho -->
+                    <div class="episode-content locked">
+                        <h2 id="episodio-4-titulo">Episodio 06 – Barcelona, 100 años en la mirada</h2>
+                        <hr>
+                        <h3>Centenario Fira con Francesc Fontbona</h3>
+                        <p>
+                        Un viaje por el imaginario visual y cultural de Barcelona. Con motivo de la próxima celebración del Centenario de la Exposición Internacional de 1929, Francesc Fontbona repasa el legado y proyección de la ciudad a lo largo de un siglo de arte, pensamiento y transformación social.
+                        </p>
+                        <button class="episode-btn disabled" disabled>Próximamente</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Sección de cierre -->
+        <section class="bc-closing">
+            <div class="closing-image">
+                <img src="assets/img/fira-footer.png" alt="Vista de Fira Barcelona">
+            </div>
+            <div class="closing-content">
+                <h2>Conectar personas, ideas y negocios</h2>
+                <p>
+                Los recintos de Fira de Barcelona reúnen cada año 3 millones de personas en cerca de 300 eventos. En sus salones no sólo se cierran negocios, sino que se debate sobre grandes retos, se transmite conocimiento, se comparten experiencias y se avanzan soluciones y tendencias futuras en los sectores clave de nuestra sociedad. Es el lugar donde se conectan personas, empresas, territorio y sociedad para contribuir a construir un mejor futuro.
+                </p>
+                <p>
+                Por ello, en el videopódcast Barcelona Connection Fira de Barcelona abre debates en cada episodio sobre retos actuales - como la transformación digital, la sostenibilidad, la movilidad, la cultura o la alimentación - con expertos de diferentes disciplinas para entender hacia dónde evoluciona nuestro entorno.
+                </p>
+                <p>
+                El objetivo: conectarnos al presente y prepararnos para el futuro generando reflexión, compartiendo ideas y escuchando a quienes impulsan el cambio desde diferentes perspectivas.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- CRÉDITOS ============================================= -->
+        <div class="authorship-f" aria-label="Créditos del proyecto">
+            <div class="container-fluid-f">
+                <span>Coordinación: Adriana Blanco</span> |
+                <span>Diseño y maquetación: Alejandra Santander</span> |
+                <span>Vídeo: Linkvids</span> |
+                <span>Fotografía: Linkvids, Fira de Barcelona y Getty Images.</span>
+                <span>Un proyecto de Brandslab. Godó Nexus.</span>
+            </div>
+        </div>
+    </div>  
+    
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>
