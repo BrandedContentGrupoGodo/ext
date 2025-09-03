@@ -637,13 +637,15 @@ button:focus {
 }
 .blanco {
   color: #fff!important;
-      padding-top: 0.8rem;
+    padding-top: 0.8rem;
+    width: 120px;
 }
 .fb-share-button {
   color: white!important;
 }
 
 }
+
 
 
 
