@@ -348,6 +348,10 @@ button:focus {
     outline: 5px auto var(--background-color) -webkit-focus-ring-color;
 }
 
+/* estilos para que en MD se muestre el contenido sin margenes */
+.article-default.visual__story--icon .content-free-html, .article-default.visual__story--square .content-free-html, .article-default.visual__story--panoramic .content-free-html, .article-default.visual__story--free .content-free-html {
+    margin: 0 !important;
+}
 
 .fb_iframe_widget {
     display: inline-block;
@@ -369,4 +373,5 @@ button:focus {
 .fb-share-button {
   color: white!important;
 }
+
 
