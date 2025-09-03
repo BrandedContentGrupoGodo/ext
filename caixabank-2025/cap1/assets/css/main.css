@@ -619,6 +619,11 @@ button:focus {
     outline: 5px auto var(--background-color) -webkit-focus-ring-color;
 }
 
+/* ---------- MD --------- */
+.article-default.visual__story--icon .content-free-html, .article-default.visual__story--square .content-free-html, .article-default.visual__story--panoramic .content-free-html, .article-default.visual__story--free .content-free-html {
+    margin: 0 !important;
+}
+
 .no-show {
   opacity: 0;
 
@@ -643,11 +648,6 @@ button:focus {
 .fb-share-button {
   color: white!important;
 }
-
-}
-
-
-
 
 
 
