@@ -347,3 +347,24 @@ button:focus {
     outline: 1px dotted var(--background-color);
     outline: 5px auto var(--background-color) -webkit-focus-ring-color;
 }
+
+
+.fb_iframe_widget {
+    display: inline-block;
+    position: relative;
+    padding-top: 0.8rem;
+    color: white;
+}
+.fb-xfbml-parse-ignore {
+  color: white!important;
+}
+._6a ._6b {
+  color: white!important;
+}
+.blanco {
+  color: #fff!important;
+      padding-top: 0.8rem;
+}
+.fb-share-button {
+  color: white!important;
+}
