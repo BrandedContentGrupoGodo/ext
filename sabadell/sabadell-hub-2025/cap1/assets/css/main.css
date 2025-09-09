@@ -343,7 +343,7 @@ width: 100%;
   padding-right: 26px;
 }
 .hero__content {
-    padding: 1rem 2 rem;
+    padding: 1rem 2rem;
 }
 }
 
@@ -549,4 +549,5 @@ button:focus {
   opacity: 0;
 
 }
+
 
