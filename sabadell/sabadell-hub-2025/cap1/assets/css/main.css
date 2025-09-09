@@ -342,7 +342,10 @@ width: 100%;
   padding-left: 26px;
   padding-right: 26px;
 }
-
+.hero__content {
+    padding: 1rem 2 rem;
+}
+}
 
 .quote-section {
   display: grid;
@@ -546,3 +549,4 @@ button:focus {
   opacity: 0;
 
 }
+
