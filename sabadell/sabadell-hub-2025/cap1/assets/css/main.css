@@ -333,6 +333,17 @@ width: 100%;
   }
 }
 
+@media (max-width: 550px) {
+.parrafos-caixa {
+  padding-left: 26px;
+  padding-right: 26px;
+}
+.reportaje h2 {
+  padding-left: 26px;
+  padding-right: 26px;
+}
+
+
 .quote-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -533,4 +544,5 @@ button:focus {
 
 .no-show {
   opacity: 0;
+
 }
