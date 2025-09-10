@@ -305,6 +305,7 @@ line-height: 168.8%;
   margin: auto;
   text-align: center;
   margin-bottom: 100px;
+  padding: 1rem; 
 }
 
 .destacdo-final p {
@@ -373,3 +374,4 @@ line-height: 118.8%; /* 42.768px */
     text-decoration: none;
     box-shadow: none;
   }
+
