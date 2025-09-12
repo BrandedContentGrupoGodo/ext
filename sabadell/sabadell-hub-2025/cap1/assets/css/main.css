@@ -104,7 +104,7 @@ padding-bottom: 2rem;
 }
 
 .hero__title {
-  font-size: clamp(25px, 4vw, 38px);
+  font-size: clamp(25px, 4vw, 38px)!important;
   font-style: normal;
   font-style: normal;
   font-weight: 400;
@@ -114,7 +114,7 @@ padding-bottom: 2rem;
 }
 
 .subtitular {
-  font-size: clamp(17px, 2.5vw, 24px);
+  font-size: clamp(17px, 2.5vw, 24px)!important;
   font-family: var(--font-sans);
   font-style: normal;
   font-weight: 400;
@@ -178,7 +178,7 @@ padding-bottom: 2rem;
   margin:0 auto;
   padding: 16px;
   margin-top: 2rem;
-  font-size: clamp(18px, 2.5vw, 24px);
+  font-size: clamp(18px, 2.5vw, 24px)!important;
   font-style: normal;
   font-weight: 700;
   line-height: 158.8%;
@@ -224,7 +224,7 @@ padding-bottom: 2rem;
 .highlight__content p {
   color: var(--color-texto);
   font-family: var(--font-serif);
-  font-size: clamp(1.5rem, 2vw, 2.5rem);
+  font-size: clamp(1.5rem, 2vw, 2.5rem)!important;
   font-style: normal;
   font-weight: 800;
   line-height: 120%;
@@ -254,7 +254,7 @@ padding-bottom: 2rem;
 
 .featured__caption {
   margin-top: 0.5rem;
-  font-size: clamp(14px, 1.8vw, 12px);
+  font-size: clamp(14px, 1.8vw, 12px)!important;
   color: var(--color-principal);
 }
 
@@ -280,7 +280,7 @@ padding-bottom: 2rem;
 .highlight__content-blanco p {
   color: var(--color-principal);
   font-family: var(--font-serif);
-  font-size: clamp(1.5rem, 2vw, 2.5rem);
+  font-size: clamp(1.5rem, 2vw, 2.5rem)!important;
   font-style: normal;
   font-weight: 800;
   line-height: 120%;
@@ -313,7 +313,7 @@ padding-bottom: 2rem;
 .despiece__content p {
   color: var(--color-texto);
   font-family: var(--font-serif);
-  font-size: clamp(18px, 2.5vw, 20px);
+  font-size: clamp(18px, 2.5vw, 20px)!important;
   font-style: normal;
   font-weight: 700;
   line-height: 168.8%;
@@ -374,7 +374,7 @@ padding-bottom: 2rem;
 }
 
 .quote-section__text blockquote {
-  font-size: clamp(1.5rem, 2vw, 2.5rem);
+  font-size: clamp(1.5rem, 2vw, 2.5rem)!important;
   font-style: normal;
   font-weight: 800;
   line-height: 120%;
@@ -421,7 +421,7 @@ padding-bottom: 2rem;
 }
 
 .quote-card__quote {
-  font-size: clamp(1.3rem, 2vw, 1.9rem);
+  font-size: clamp(1.3rem, 2vw, 1.9rem)!important;
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
@@ -435,7 +435,7 @@ padding-bottom: 2rem;
 }
 
 .quote-card__role {
-  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  font-size: clamp(0.9rem, 1.5vw, 1rem)!important;
   font-style: normal;
   font-weight: 400;
   line-height: 120%; /* 16.8px */
@@ -550,6 +550,7 @@ button:focus {
   opacity: 0;
 
 }
+
 
 
 
