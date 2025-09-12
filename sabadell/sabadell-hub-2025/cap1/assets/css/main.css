@@ -193,6 +193,7 @@ padding-bottom: 2rem;
   font-style: normal;
   font-weight: 400;
   line-height: 168.8%; 
+  font-size: 18px;
 }
 
 .parrafos-caixa a {
@@ -551,6 +552,7 @@ button:focus {
   opacity: 0;
 
 }
+
 
 
 
