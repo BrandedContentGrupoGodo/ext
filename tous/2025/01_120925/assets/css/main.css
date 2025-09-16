@@ -125,12 +125,15 @@
 }
 
 .hero__img--left {
-  left: -28px;
+  /*left: -28px;*/
+  left: 111px;
 }
 
 .hero__img--right {
-  right: 168px;
-  top: 96px;
+  right: 298px;
+  top: 143px;
+  /*right: 168px;
+  top: 96px;*/
   width: 39px;
 }
 
@@ -487,7 +490,7 @@
 /* ---------- CRÉDITOS ---------------------------------- */
 .authorship-f {
   color: #888;
-  font-size: 0.9em;
+  font-size: 1em;
   text-align: center;
   padding-bottom: 15px;
   margin-top: 10px;
@@ -532,6 +535,7 @@ button:focus {
     outline: 1px dotted var(--background-color);
     outline: 5px auto var(--background-color) -webkit-focus-ring-color;
 }
+
 
 
 
