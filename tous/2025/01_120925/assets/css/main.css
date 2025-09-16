@@ -203,7 +203,7 @@
   align-items: flex-start; /* texto arriba */
   justify-content: center;
   padding: 2rem 1rem;
-  background-image: url("../img/tous-fondo.png");
+  background-image: url("https://brandedcontentgrupogodo.github.io/ext/tous/2025/01_120925/assets/img/tous-fondo.png");
   background-size: cover;
   background-position: bottom; /* fija la parte inferior */
   background-repeat: no-repeat;
@@ -532,5 +532,6 @@ button:focus {
     outline: 1px dotted var(--background-color);
     outline: 5px auto var(--background-color) -webkit-focus-ring-color;
 }
+
 
 
