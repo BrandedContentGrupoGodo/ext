@@ -110,17 +110,20 @@ html { scroll-behavior: smooth; }
   max-width: 450px;
 }
 .alt-row__title {
-  font-size: clamp(22px, 3.2vw, 34px);
-  font-weight: 600;
+  font-size: clamp(22px, 3.2vw, 32px);
+  font-weight: 700;
   line-height: 1.2;
   margin-bottom: 10px;
+  letter-spacing: -1px;
 }
 .alt-row__kicker {
   font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
   opacity: 0.9;
   margin-bottom: 8px;
+}
+.caps {
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 .alt-row__desc {
   font-size: 16px;
@@ -420,9 +423,9 @@ html { scroll-behavior: smooth; }
 .impact__media img { width: 100%; max-width: 520px; height: auto; display: block; }
 @media (min-width: 900px) { .impact__grid { grid-template-columns: 1fr 1fr; padding-bottom: 2rem;} }
 .impact__equivalences-title { text-align: center; margin: clamp(24px, 5vw, 48px) 0 clamp(12px, 3vw, 24px); font-weight: 800; text-transform: uppercase; color: var(--bc-color-text); }
-.impact__equivalences { display: grid; grid-template-columns: 1fr; gap: clamp(12px, 3vw, 24px); }
+.impact__equivalences { display: grid; grid-template-columns: 1fr; gap: clamp(12px, 3vw, 24px); align-items: stretch; }
 @media (min-width: 900px) { .impact__equivalences { grid-template-columns: repeat(3, 1fr); } }
-.equivalence__card { background: #FAFAFA; border-radius: 12px; padding: 18px; text-align: center; }
+.equivalence__card { background: #FAFAFA; border-radius: 12px; padding: 18px; text-align: center; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; }
 .equivalence__card img { width: 64px; height: 64px; object-fit: contain; display: inline-block; margin-bottom: 8px; }
 .equivalence__card p { color: var(--bc-color-text); }
 .impact__disclaimer { text-align: center; margin-top: clamp(20px, 4vw, 32px); font-size: 0.9em; color: #666; }
@@ -475,5 +478,3 @@ button:focus {
     outline: 1px dotted var(--background-color);
     outline: 5px auto var(--background-color) -webkit-focus-ring-color;
 }
-
-
