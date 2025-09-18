@@ -177,7 +177,7 @@ width: 100%;
   margin:0 auto;
   padding: 16px;
   margin-top: 2rem;
-  font-size: clamp(18px, 2.5vw, 24px);
+  font-size: clamp(20px, 2.5vw, 24px);
   font-style: normal;
   font-weight: 700;
   line-height: 158.8%;
@@ -500,7 +500,7 @@ width: 100%;
 /* ---------- CRÉDITOS ---------- */
 .authorship-f {
   color: #C9C9C9;
-  font-size: 0.8em;
+  font-size: 0.9em;
   text-align: center;
   padding-bottom: 20px;
   margin-top: 20px;
@@ -547,4 +547,5 @@ button:focus {
 
 .no-show {
   opacity: 0;
+
 }
