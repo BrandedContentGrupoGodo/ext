@@ -282,7 +282,7 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 4rem auto 2rem;
   padding: 1rem;
 }
 
@@ -654,4 +654,5 @@ button:focus {
 .fb-share-button {
   color: white!important;
 }
+
 
