@@ -262,9 +262,10 @@
 @media (max-width: 768px) {
   .image-quote__text {
     font-size: 22px;
-    max-width: 280px;
+    max-width: 350px;
     right: 1rem;
     top: 1rem;
+    color:#fff;
   }
 }
 
@@ -669,6 +670,7 @@ button:focus {
 .fb-share-button {
   color: white!important;
 }
+
 
 
 
