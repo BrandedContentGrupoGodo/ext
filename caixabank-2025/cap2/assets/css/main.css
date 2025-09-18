@@ -168,6 +168,7 @@
       .hero {
         grid-template-columns: 1fr;
         text-align: center;
+        grid-template-areas: "col1" "col2";
       }
     }
 
@@ -272,9 +273,10 @@
 @media (max-width: 768px) {
   .image-quote__text {
     font-size: 22px;
-    max-width: 280px;
+    max-width: 320px;
     right: 1rem;
     top: 1rem;
+    z-index: 3;
   }
 }
 /* Overlay negro solo en móvil para mejorar legibilidad del texto */
@@ -667,6 +669,7 @@ button:focus {
 .fb-share-button {
   color: white!important;
 }
+
 
 
 
