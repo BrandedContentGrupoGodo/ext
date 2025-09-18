@@ -228,7 +228,7 @@
 .parrafos-caixa {
   max-width:63ch; 
   margin:0 auto;
-  padding: 16px;
+  padding: 16px 32px;
   margin-bottom: 25px;
   font-style: normal;
   font-weight: 400;
@@ -265,6 +265,7 @@
   letter-spacing: -2px;
   padding: 0.5rem 1rem; /* opcional */
   border-radius: 6px;   /* opcional */
+    z-index: 2;
 }
 
 /* Responsivo: ajustar tipografía en pantallas pequeñas */
@@ -275,6 +276,18 @@
     right: 1rem;
     top: 1rem;
   }
+}
+/* Overlay negro solo en móvil para mejorar legibilidad del texto */
+@media (max-width: 768px) {
+  .image-quote__wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+    pointer-events: none;
+  }
+  
 }
 
 .gallery-container {
@@ -654,5 +667,6 @@ button:focus {
 .fb-share-button {
   color: white!important;
 }
+
 
 
