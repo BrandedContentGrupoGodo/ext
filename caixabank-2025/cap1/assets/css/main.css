@@ -266,6 +266,7 @@
     right: 1rem;
     top: 1rem;
     color:#fff;
+    z-index: 3;
   }
 }
 
@@ -495,6 +496,7 @@
     bottom: 1rem;
     left: 1rem;
       color:#fff;
+    z-index:3;
   }
 }
 /* Overlay negro solo en móvil para mejorar legibilidad del texto */
@@ -670,6 +672,7 @@ button:focus {
 .fb-share-button {
   color: white!important;
 }
+
 
 
 
