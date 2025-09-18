@@ -253,7 +253,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: 93%; /* 33.48px */
-  letter-spacing: -2px;
+  letter-spacing: -1px;
   padding: 0.5rem 1rem; /* opcional */
   border-radius: 6px;   /* opcional */
 }
@@ -672,6 +672,7 @@ button:focus {
 .fb-share-button {
   color: white!important;
 }
+
 
 
 
