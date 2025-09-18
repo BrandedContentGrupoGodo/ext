@@ -219,7 +219,7 @@
 .parrafos-caixa {
   max-width:63ch; 
   margin:0 auto;
-  padding: 16px;
+  padding: 16px 32px;
   margin-bottom: 25px;
   font-style: normal;
   font-weight: 400;
@@ -246,7 +246,7 @@
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
-  max-width: 420px;
+  max-width: 650px;
   color: #222;
   font-family: "Crimson Text", serif;
    font-size: clamp(1.8rem, 2.5vw, 3rem);
@@ -473,7 +473,7 @@
   position: absolute;
   bottom: 1.5rem;
   left: 1.5rem;
-  max-width: 380px;
+  max-width: 460px;
   color: #fff;
   font-family: var(--font-serif);
   font-size: clamp(1.8rem, 2.5vw, 3rem);
@@ -483,6 +483,7 @@
   letter-spacing: -1px;
   padding: 0.5rem 1rem;
   border-radius: 7px;
+  z-index: 2; 
 }
 
 /* Responsivo */
@@ -492,7 +493,20 @@
     max-width: 90%;
     bottom: 1rem;
     left: 1rem;
+      color:#fff;
   }
+}
+/* Overlay negro solo en móvil para mejorar legibilidad del texto */
+@media (max-width: 768px) {
+  .image-quote__wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+    pointer-events: none;
+  }
+  
 }
 
 /* QUALIFIO */
@@ -655,6 +669,7 @@ button:focus {
 .fb-share-button {
   color: white!important;
 }
+
 
 
 
