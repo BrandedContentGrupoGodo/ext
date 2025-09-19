@@ -57,7 +57,7 @@ const historias = [
     nombre: "Sergio",
     frase: "Los rivales representan lo mejor de mí",
     imagen: "https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/01_09-07-25/assets/img/cap2.png",
-    enlace: "https://www.lavanguardia.com/deportes/20250909/11009017/elena-congost-atleta-perdio-medalla-guia-constelaciones-streaming-brl.html"
+    enlace: "https://www.lavanguardia.com/deportes/20250922/11076618/sergio-garrote-hand-bike-espanol-campeon-paralimpico-juega-vida-entrenamiento-leyenda-deporte-constelaciones-streaming-brl.html"
   },
   {
     nombre: "Nico",
