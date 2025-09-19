@@ -54,9 +54,10 @@ const historias = [
     enlace: "https://www.mundodeportivo.com/atletismo/20250908/1002525462/elena-congost-atleta-perdio-medalla-guia-constelaciones-streaming-brl.html"
   },
   {
-    nombre: "Clara",
-    frase: "Donde otros ven límites, ella respira profundo.",
-    imagen: "https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/01_09-07-25/assets/img/locked.png"
+    nombre: "Sergio",
+    frase: "Los rivales representan lo mejor de mí",
+    imagen: "https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/01_09-07-25/assets/img/cap2.png",
+    enlace: "https://www.mundodeportivo.com/ciclismo/20250922/1002534889/sergio-garrote-hand-bike-espanol-campeon-paralimpico-juega-vida-entrenamiento-leyenda-deporte-constelaciones-streaming-brl.html"
   },
   {
     nombre: "Nico",
@@ -86,14 +87,14 @@ historias.forEach(({ nombre, frase, imagen, enlace }, i) => {
   const card = document.createElement('div');
   card.className = 'card';
 
-  if (i === 0) {
-    // Primera historia desbloqueada
+  if (i === 0 || i === 1) {
+    // Primera y segunda historia desbloqueadas
     card.innerHTML = `
       <img src="${imagen}" alt="Retrato de ${nombre}, atleta paralímpico">
       <div class="card-content">
         <h2>${nombre}</h2>
         <p><em>“${frase}”</em></p>
-        <a href="${enlace}" target="_blank" rel="noopener" class="btn">Ver historia →</a>
+        ${enlace ? `<a href="${enlace}" target="_blank" rel="noopener" class="btn">Ver historia →</a>` : ""}
       </div>
     `;
   } else {
@@ -121,4 +122,3 @@ historias.forEach(({ nombre, frase, imagen, enlace }, i) => {
     delay: i * 0.05
   });
 });
-
