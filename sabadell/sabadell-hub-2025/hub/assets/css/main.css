@@ -161,28 +161,15 @@
   padding: 5rem 2rem;
   counter-increment: capitulo;
   border-top: 3px solid var(--color-principal);
-  border-image: linear-gradient(to right, var(--color-principal), var(--color-principal));
-  border-image-slice: 1;
+  border-right: 3px solid var(--color-principal);
   overflow: visible;
 }
-/* Capítulo 1: quitar borde derecho para que el codo se vea */
-.capitulo:nth-child(1) {
-  border-top: 3px solid var(--color-principal);
-  border-right: none;
-}
-
-/* Capítulo 2: quitar borde izquierdo para que los codos se vean */
-.capitulo:nth-child(2) {
-  border-top: 3px solid var(--color-principal);
-  border-left: none; /* quitar borde recto donde van los codos */
-  border-bottom: none;
-}
 .capitulo:first-of-type {
-  border-top:none;
+  border-top: none;
 }
 .capitulo::before,
 .capitulo::after {
-  z-index: 2; /* solo para ellos */
+  z-index: 2;
   pointer-events: auto;
 }
 
@@ -220,7 +207,6 @@
 
 /* Alternancia zigzag */
 .capitulo:nth-child(odd) {
-  border-right: 3px solid var(--color-principal);
   padding-left: 0;
 }
 .capitulo:nth-child(odd)::before {
@@ -229,6 +215,8 @@
 }
 .capitulo:nth-child(even) {
   border-left: 3px solid var(--color-principal);
+  border-right: none;
+  border-top: 3px solid var(--color-principal);
   padding-right: 0;
 }
 .capitulo:nth-child(even)::before {
@@ -244,13 +232,9 @@
   position: relative;
   z-index: 0;
 }
-
-/* Impares: texto a la izquierda, video a la derecha */
 .capitulo:nth-child(odd) .contenido {
   flex-direction: row;
 }
-
-/* Pares: video a la izquierda, texto a la derecha */
 .capitulo:nth-child(even) .contenido {
   flex-direction: row-reverse;
 }
@@ -263,16 +247,14 @@
   margin-top: 1rem;
   color: #fff;
   font-size: 1.8rem;
-  font-style: normal;
   font-weight: 600;
   line-height: 120%;
-  margin-bottom: 1rem; 
+  margin-bottom: 1rem;
 }
 .capitulo .texto p {
-  font-style: normal;
   font-weight: 400;
   line-height: 120%;
-  margin-bottom: 1rem; 
+  margin-bottom: 1rem;
 }
 .capitulo .btn {
   margin-top: 1rem;
@@ -280,7 +262,6 @@
   border: none;
   background: var(--color-principal);
   color: #fff;
-  font-style: normal;
   font-weight: 400;
   line-height: 127.075%;
   letter-spacing: 1.65px;
@@ -295,7 +276,7 @@
 .capitulo .video {
   flex: 1;
 }
-.capitulo .video video{
+.capitulo .video video {
   width: 100%;
   height: 100%;
   aspect-ratio: 16 / 9;
@@ -303,14 +284,7 @@
   position: relative;
   z-index: 1;
 }
-/* .capitulo .video iframe {
-  width: 100%;
-  height: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: 27px;
-  position: relative;
-  z-index: 1;
-} */
+
 /* Galería */
 .capitulo .galeria {
   display: grid;
@@ -324,26 +298,20 @@
   border-radius: 17px;
 }
 
-/* ================= Capítulos 1 y 2 con codos ================= */
-.capitulo:nth-child(1) {
-  border-right: 3px solid var(--color-principal);
-  border-left: none;
-}
-.capitulo:nth-child(2) {
-  border-left: 3px solid var(--color-principal);
-  border-right: none;
-}
-
-/* Pseudo-elementos para codos */
-.capitulo .corner {
+/* Codos y rellenos */
+.capitulo .corner,
+.capitulo .corner-fill,
+.capitulo .corner-fill-top,
+.capitulo .corner-fill-bottom,
+.capitulo .corner-fill-right {
   position: absolute;
-  width: 30px;
-  height: 30px;
   background: transparent;
   z-index: 5;
 }
-
-/* Capítulo 1: codo inferior derecha */
+.capitulo .corner {
+  width: 30px;
+  height: 30px;
+}
 .capitulo:nth-child(1) .corner.right-bottom {
   bottom: -3px;
   right: -2px;
@@ -351,8 +319,14 @@
   border-bottom: 3px solid var(--color-principal);
   border-bottom-right-radius: 30px;
 }
-
-/* Capítulo 2: codo superior izquierda */
+.capitulo:nth-child(1) .corner-fill {
+  width: 30px;
+  height: 30px;
+  bottom: -3px;
+  right: -3px;
+  background: var(--color-secundario);
+  z-index: 3;
+}
 .capitulo:nth-child(2) .corner.left-top {
   top: -2px;
   left: -3px;
@@ -360,8 +334,6 @@
   border-top: 3px solid var(--color-principal);
   border-top-left-radius: 30px;
 }
-
-/* Capítulo 2: codo inferior izquierda */
 .capitulo:nth-child(2) .corner.left-bottom {
   bottom: -3px;
   left: -2px;
@@ -369,12 +341,60 @@
   border-bottom: 3px solid var(--color-principal);
   border-bottom-left-radius: 30px;
 }
+.capitulo:nth-child(2) .corner-fill-top {
+  width: 30px;
+  height: 30px;
+  top: -3px;
+  left: -3px;
+  background: var(--color-secundario);
+  z-index: 3;
+}
+.capitulo:nth-child(2) .corner-fill-bottom {
+  width: 30px;
+  height: 30px;
+  bottom: -3px;
+  left: -3px;
+  background: var(--color-secundario);
+  z-index: 3;
+}
+.capitulo:nth-child(3) {
+  border-top: none;
+  border-right: none;
+}
+.capitulo:nth-child(3) .corner.right-top {
+  top: 0;
+  right: -3px;
+  border-top: 3px solid var(--color-principal);
+  border-right: 3px solid var(--color-principal);
+  border-top-right-radius: 30px;
+}
+.capitulo:nth-child(3) .corner.right-bottom {
+  bottom: -3px;
+  right: -3px;
+  border-bottom: 3px solid var(--color-principal);
+  border-right: 3px solid var(--color-principal);
+  border-bottom-right-radius: 30px;
+}
+.capitulo:nth-child(3) .corner-fill-top {
+  top: 0;
+  left: 27px;
+  right: 27px;
+  height: 3px;
+  background: var(--color-principal);
+}
+.capitulo:nth-child(3) .corner-fill-right {
+  top: 27px;
+  bottom: 27px;
+  right: -3px;
+  width: 3px;
+  background: var(--color-principal);
+}
 
-/* ================= Capítulos 3 en adelante: timeline central ================= */
-.capitulo:nth-child(n+3) {
+/* Capítulos 4 en adelante: timeline central */
+.capitulo:nth-child(n+4) {
   border-right: 3px solid var(--color-principal);
   border-left: none;
-  border-top: 3px solid var(--color-principal);
+  border-top: none;
   padding-left: 0;
   text-align: center;
   position: relative;
@@ -386,163 +406,47 @@
   padding-top: 3rem;
   padding-bottom: 2rem;
 }
-
-.capitulo:nth-child(n+4) {
+/* primer capítulo bloqueado */
+.capitulo:nth-child(4) {
+  margin-top: 3rem;
+  border-top: 3px solid var(--color-principal);
+  border-right: 3px solid var(--color-principal);
+  border-top-right-radius: 30px;
+  border-left: none;
+  /* El borde superior va hacia la derecha con el codo arriba a la derecha */
+  position: relative;
+}
+.capitulo:nth-child(n+5) {
   border-top: none;
 }
-
-.capitulo:nth-child(n+3)::before {
+.capitulo:nth-child(n+4)::before {
   display: none;
-  background: var(--color-secundario);
-  left: 50%;
-  transform: translateX(-50%);
 }
-
-.capitulo:nth-child(n+3)::after {
-  left: 50%;
-  transform: translateX(-50%);
+.capitulo:nth-child(n+4)::after {
+  right: 50%;
+  transform: translateX(50%);
   color: var(--color-secundario);
 }
-
-/* Contenido centrado debajo del número */
-.capitulo:nth-child(n+3) .contenido {
+.capitulo:nth-child(n+4) .contenido {
   flex-direction: column;
   align-items: center;
   text-align: center;
   gap: 1.5rem;
   margin-top: 1.5rem;
 }
-
-/* Capítulo 1: relleno entre borde y codo inferior derecha */
-.capitulo:nth-child(1) .corner-fill {
+/* Dibujar el codo arriba a la derecha */
+.capitulo:nth-child(4)::before {
+  content: "";
   position: absolute;
-  width: 30px;    /* igual que el tamaño del codo */
-  height: 30px;
-  bottom: -3px;
-  right: -3px;
-  background: var(--color-secundario); /* color del borde */
-  z-index: 3; /* detrás de la curva */
-}
-
-/* Capítulo 2: relleno superior izquierda */
-.capitulo:nth-child(2) .corner-fill-top {
-  position: absolute;
-  width: 30px;
-  height: 30px;
   top: -3px;
-  left: -3px;
-  background: var(--color-secundario);
-  z-index: 3;
-}
-
-/* Capítulo 2: relleno inferior izquierda */
-.capitulo:nth-child(2) .corner-fill-bottom {
-  position: absolute;
+  right: 0;
   width: 30px;
   height: 30px;
-  bottom: -3px;
-  left: -3px;
-  background: var(--color-secundario);
-  z-index: 3;
+  border-top: 3px solid var(--color-principal);
+  border-right: 3px solid var(--color-principal);
+  border-top-right-radius: 30px;
+  background: transparent;
 }
-
-
-
-
-/* Responsive */
-@media (max-width: 768px) {
-  .capitulo {
-    border-top: 0;
-    padding: 0 2rem;
-
-  }
-  .capitulo .contenido {
-    flex-direction: column!important;
-    border-left: 3px solid var(--color-principal);
-    border-right: none;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-top: 2rem;
-  }
-  /* Número circular siempre a la izquierda */
-  .capitulo::before {
-    right: auto;
-    top: auto;
-  }
-
-  /* Palabra al lado del círculo, siempre a la derecha del número */
-  .capitulo::after {
-    left: 4rem;
-    top: 0.5rem;
-  }
-  .capitulo:nth-child(odd) {
-      border-right: none;
-      padding-left: 2rem;
-  }
-  .capitulo:nth-child(even) {
-      border-right: none;
-      padding-left: 2rem;
-      border-left: none;
-      padding-right: 2rem;
-      border-top: none;
-  }
-  
-  .capitulo:nth-child(odd)::before {
-    left: 2rem;
-  }
-  .capitulo:nth-child(even)::before {
-      right: 100%;
-      margin-right: -3.2rem;
-  }
-
-  /* Contenido en columna */
-  .capitulo .contenido {
-    flex-direction: column;
-  }
-
-  /* Quitar inversión de pares */
-  .capitulo:nth-child(even) .contenido,
-  .capitulo:nth-child(odd) .contenido {
-    flex-direction: column;
-  }
-  .capitulo .galeria {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    padding-top: 3rem;
-    border-left: 3px solid var(--color-principal);
-    margin-top: 0;
-    padding-left: 1rem;
-    padding-bottom: 2rem;
-  }
-
-  .capitulo:nth-child(n+3) {
-    max-width: 100%;
-    border-top: none;
-    border-left: 3px solid var(--color-principal);
-    border-right: none;
-    margin-left: 2rem;
-    align-items: flex-start;
-    padding-left: 0!important;
-  }
-
-  .bloqueado-timeline .bullet {
-    margin-right: 0;
-    margin-left: -0.7rem;
-  }
-
-  .capitulo.bloqueado-timeline .bloqueado {
-    flex-direction: row;
-  }
-
-  .capitulo.bloqueado-timeline .bloqueado .bullet {
-    order: -1;  /* 👈 El bullet se va al inicio */
-  }
-  .corner-fill, .corner, .corner-fill-top, .corner-fill-bottom {
-    display: none;
-  }
-}
-
-
 
 /* Capítulos bloqueados timeline */
 .bloqueado-timeline {
@@ -564,6 +468,88 @@
   border: 2px solid #003F94;
   margin-right: -0.6rem;
 }
+
+.border-top-right {
+  border-top: 3px solid var(--color-principal)!important;
+  z-index: 5;
+  width: 47.5%;
+  position: absolute;
+  right: 27px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .capitulo {
+    border-top: 0;
+    padding: 0 2rem;
+  }
+  .capitulo .contenido {
+    flex-direction: column !important;
+    border-left: 3px solid var(--color-principal);
+    border-right: none;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 2rem;
+  }
+  .capitulo::before {
+    right: auto;
+    top: auto;
+  }
+  .capitulo::after {
+    left: 4rem;
+    top: 0.5rem;
+  }
+  .capitulo:nth-child(odd),
+  .capitulo:nth-child(even) {
+    border-right: none;
+    padding-left: 2rem;
+    border-left: none;
+    padding-right: 2rem;
+    border-top: none;
+  }
+  .capitulo:nth-child(odd)::before {
+    left: 2rem;
+  }
+  .capitulo:nth-child(even)::before {
+    right: 100%;
+    margin-right: -3.2rem;
+  }
+  .capitulo .galeria {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding-top: 3rem;
+    border-left: 3px solid var(--color-principal);
+    margin-top: 0;
+    padding-left: 1rem;
+    padding-bottom: 2rem;
+  }
+  .capitulo:nth-child(n+4) {
+    max-width: 100%;
+    border-top: none;
+    border-left: 3px solid var(--color-principal);
+    border-right: none;
+    margin-left: 2rem;
+    align-items: flex-start;
+    padding-left: 0 !important;
+  }
+  .bloqueado-timeline .bullet {
+    margin-right: 0;
+    margin-left: -0.7rem;
+  }
+  .capitulo.bloqueado-timeline .bloqueado {
+    flex-direction: row;
+  }
+  .capitulo.bloqueado-timeline .bloqueado .bullet {
+    order: -1;
+  }
+  .corner-fill, .corner, .corner-fill-top, .corner-fill-bottom, .capitulo:nth-child(3) .corner-fill-right {
+    display: none;
+  }
+  .border-top-right {
+  display: none;
+}
+}
+
 
 /* ---------- Lightbox ---------- */
 .lightbox {
