@@ -54,13 +54,12 @@
   overflow: hidden;
   width: 100%;
   height: 100vh;
-  background: url('https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap2/assets/img/endesa1.jpg') center bottom /cover no-repeat;
-  color: var(--text-color-dark);
+  background: url('https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap3/assets/img/endesa1.jpg') right bottom /cover no-repeat;
   display: flex;
   align-items: flex-start;
-  justify-content: flex-end;
+  justify-content: flex-start;
   text-align: left;
-  padding: 0 11rem;
+  padding: 0 3rem;
 }
 .header-section::before {
 content: '';
@@ -86,7 +85,7 @@ opacity: 1;
   margin-top: 2rem;
   position: relative;
   z-index: 2;
-  text-shadow: 0px 2px 15px rgb(255 255 255 / 77%);
+  text-shadow: 0px 2px 15px rgba(0, 0, 0);
 }
 
 .header-text > * {
@@ -96,6 +95,7 @@ opacity: 1;
 }
 
 .header-text__pretitle {
+  color: var(--text-color);
   font-family: var(--font-sans);
   font-size: 12px;
   font-weight: 700;
@@ -106,6 +106,7 @@ opacity: 1;
 }
 
 .header-text__title {
+  color: var(--text-color);
   font-family: var(--font-serif);
   font-size: 40px;
   font-weight: 400;
@@ -114,6 +115,7 @@ opacity: 1;
 }
 
 .header-text__subtitle {
+  color: var(--text-color);
   max-width: 500px;
   font-family: var(--font-sans);
   font-size: 18px;
@@ -124,7 +126,7 @@ opacity: 1;
 
 @media (max-width: 768px) {
   .header-section {
-    background: url('https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap2/assets/img/endesa1.jpg') left bottom / cover no-repeat;
+    background: url('https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap3/assets/img/endesa1-mobile.jpg') left bottom / cover no-repeat;
   }
   .header-text__title {
     font-size: 28px;
@@ -199,8 +201,9 @@ opacity: 1;
 
 .timeline-section {
   background-color: var(--accent-color);
+  background: url('https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap3/assets/img/fondo-endesa.jpg') right bottom/cover no-repeat;
   color: var(--text-color);
-  padding: 4rem 2rem;
+  padding: 5rem 2rem;
 }
 
 .timeline-container {
@@ -208,8 +211,9 @@ opacity: 1;
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: space-between;
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: auto;
+  align-items: center;
 }
 
 .timeline-left {
@@ -258,6 +262,7 @@ opacity: 1;
   font-family: var(--font-sans);
   font-size: 1rem;
   margin: 0.2rem 0 0;
+  max-width:320px;
 }
 
 .timeline-right {
@@ -560,13 +565,13 @@ opacity: 1;
 .bloque-bosque {
 position: relative;
   width: 100%;
-  background: url('https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap2/assets/img/fondo-endesa.jpg') center/cover no-repeat;
-background-attachment: fixed; /* opcional, efecto parallax */
+  background: url('https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap3/assets/img/fondo-endesa.jpg') right bottom/cover no-repeat;
   color: white;
   padding: 5rem 1.5rem; /* más alto que antes */
   font-family: var(--font-sans);
   margin-top: 2rem;
-  overflow-x: hidden;
+  text-align: center;
+  margin: auto;
 }
 
 .bosque-titulo {
@@ -578,61 +583,298 @@ background-attachment: fixed; /* opcional, efecto parallax */
   color: white;
 }
 
-/* Tabla */
-.tabla-especies table {
-  width: 80%;
-  border-collapse: collapse; /* Une los bordes */
+.hogar-cajas-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  max-width: 740px;
+  text-align: center;
+  align-items: center;
+  justify-items: center;
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hogar-caja {
+    background: #214068;
+    border: 1px solid #4F8FE0;
+    border-radius: 12px;
+    padding: 1.5rem 1.2rem;
+    box-sizing: border-box;
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+}
+.hogar-caja p {
+  font-family: var(--font-sans);
+    margin: 0;
+    color: var(--text-color);
+    font-size: 1rem;
+    text-align: center;
+}
+@media (max-width: 700px) {
+    .hogar-cajas-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+.map-info-section {
+  color: var(--text-color);
+  padding: 4rem 2rem;
+}
+
+.map-info-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: space-between;
+  max-width: 1280px;
   margin: auto;
 }
 
-.tabla-especies th,
-.tabla-especies td {
-  padding: 1rem;
-  text-align: left;
-  border-bottom: 1px solid #5DA7B2;
+.map-info-text {
+  flex: 1;
+  min-width: 280px;
+  font-family: var(--font-sans);
+}
+.map-info-text p:first-of-type {
+  font-size: 5rem;
+}
+.map-info-text p:last-of-type {
+  max-width: 280px;
+}
+.map-wrapper {
+  flex: 1;
+  min-width: 280px;
+  position: relative;
 }
 
-/* Cabecera */
-.tabla-especies th {
+#mapa-svg {
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+.map-divider {
+  border-top: 1px solid #DDD6CC;
+  margin-top: 4rem;
+  padding-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.map-column {
+  flex: 1;
+  min-width: 280px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 168.8%;
+}
+
+.map-column h3 {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.map-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.map-content img {
+max-width: 100%;
+}
+
+.map-title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 90%;
+  max-width: 150px;
+  line-height: 1.2;
+}
+
+.region-hover {
+  position: absolute;
+  z-index: 5;
+  cursor: pointer;
+}
+
+/* Ajusta estas coordenadas según la posición real del mapa */
+.region-hover.azul {
+  top: 30%;
+  left: 10%;
+  width: 20%;
+  height: 20%;
+}
+
+.region-hover.naranja {
+  bottom: 20%;
+  right: 10%;
+  width: 20%;
+  height: 20%;
+}
+/* Estilos generales para todas las cajas */
+.map-box {
+  position: absolute;
+  border-radius: 8px;
+  overflow: hidden; /* Para que los fondos de título y texto se vean bien */
+  max-width: 200px;
+  color: white;
+  font-family: var(--font-sans);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Titulares */
+.map-box h3 {
+  margin: 0;
+  padding: 0.5rem;
   font-weight: bold;
+  font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+  line-height: 168.8%;
 }
 
-/* Tercera columna destacada */
-.tabla-especies td:nth-child(3),
-.tabla-especies th:nth-child(3) {
-  background-color: #4A8192;
-  color: #00E087; 
-}
-/* primera columna bold */
-.tabla-especies td:nth-child(1),
-.tabla-especies th:nth-child(1) {
-  font-weight: 800;
+/* Texto */
+.map-box p {
+  margin: 0;
+  padding: 0.75rem;
+  font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 168.8%;
 }
 
-/* Responsive */
+/* Caja Azul - Población estable */
+.map-box.azul h3 {
+  background-color: #6D94AA;
+}
+
+.map-box.azul p {
+  background-color: #4B5C86;
+  font-size: 0.8rem;
+}
+
+/* Caja Naranja - Reintroducción */
+.map-box.naranja h3 {
+  background-color: #D48076;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.map-box.naranja p {
+  background-color: #214068 ;
+  font-size: 0.8rem;
+}
+
+.map-box.azul {
+  top: 20%;
+  left: 10%;
+}
+
+.map-box.naranja {
+  top: -30%;
+  right: 40%;
+}
+
+.map-box.show {
+  opacity: 1;
+}
+
+
+
 @media (max-width: 768px) {
-  .tabla-especies table,
-  .tabla-especies thead,
-  .tabla-especies tbody,
-  .tabla-especies th,
-  .tabla-especies td,
-  .tabla-especies tr {
-    display: block;
-    width: 100%;
+  .map-info-container {
+    flex-direction: column;
+  }
+  .map-divider {
+    flex-direction: column;
+  }
+    .map-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
-  .tabla-especies tr {
-    margin-bottom: 1rem;
-    border-bottom: 2px solid rgba(255,255,255,0.2);
+  .map-title {
+    max-width: none;
   }
 
-  .tabla-especies td {
-    padding: 0.5rem;
-    border-bottom: none;
-  }
 }
 
-
+.timeline-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    font-family: var(--font-sans);
+}
+.timeline-stat-item {
+    display: flex;
+    align-items: center;
+    border-radius: 1rem;
+    padding: 1.2rem 1rem;
+}
+.timeline-stat-icon {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+}
+.timeline-stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    min-width: 2.5em;
+    text-align: center;
+}
+.timeline-stat-text {
+    font-size: 1rem;
+    color: #fff;
+    flex: 1;
+    margin-left: 0.5rem;
+}
+@media (max-width: 600px) {
+    .timeline-stats {
+        max-width: 100%;
+        gap: 1.2rem;
+    }
+    .timeline-stat-item {
+        padding: 0.8rem 0.5rem;
+        gap: 0.7rem;
+    }
+    .timeline-stat-icon {
+        width: 36px;
+        height: 36px;
+    }
+    .timeline-stat-number {
+        font-size: 1.6rem;
+        min-width: 2em;
+    }
+    .timeline-stat-text {
+        font-size: 1rem;
+    }
+}
 /* estilos para que en LV se muestre el contenido sin margenes */
 .wallpaper-inverted-ad{
     display: none!important;
