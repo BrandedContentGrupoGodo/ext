@@ -1,0 +1,317 @@
+:root {
+  --header-height: 50px;
+  --bg-color: #000;
+  --text-color: #fff;
+  --text-color-dark:#214068;
+  --accent-color:#325D94;
+  --accent-color-2:#006DFF;
+  --star-glow: rgba(255, 255, 255, 0.15);
+  --font-sans: "Albert Sans", sans-serif;
+  --font-serif: "Bacasime Antique", serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- ESTILOS LANDING -------------------------------------- */
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.header-section.loaded {
+  opacity: 1;
+  transition: opacity 1.4s ease;
+}
+
+.header-section {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  background: url('https://brandedcontentgrupogodo.github.io/ext/endesa-2025/evento/assets/img/endesa1.jpg') right bottom /cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  padding: 0 3rem;
+}
+.header-section::before {
+content: '';
+position: absolute;
+inset: 0;
+background: inherit;
+filter: blur(20px);
+transform: scale(1.2);
+opacity: 0;
+z-index: 1;
+pointer-events: none;
+}
+
+.header-section.loaded::before {
+transition: all 2s ease;
+filter: blur(0);
+transform: scale(1);
+opacity: 1;
+}
+
+.header-text {
+  max-width: 1100px;
+  margin-top: 2rem;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0px 2px 15px rgba(0, 0, 0);
+  text-align: center;
+}
+
+.header-text > * {
+  opacity: 0;
+  transform: translateY(20px);
+  filter: blur(6px);
+}
+
+.header-text__pretitle {
+  color: var(--text-color);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 127.075%;
+  letter-spacing: 1.32px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.header-text__title {
+  color: var(--text-color);
+  font-family: var(--font-serif);
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 80%;
+  margin-bottom: 1rem;
+}
+
+.header-text__subtitle {
+  max-width: 1000px;
+  margin: auto;
+  color: var(--text-color);
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 108.8%;
+  
+}
+
+@media (max-width: 768px) {
+  .header-section {
+    background: url('https://brandedcontentgrupogodo.github.io/ext/endesa-2025/evento/assets/img/endesa1-mobile.jpg') left bottom / cover no-repeat;
+  }
+  .header-text__title {
+    font-size: 28px;
+  }
+  .header-text__subtitle {
+    font-size: 16px;
+  }
+}
+@media (max-width: 550px) {
+  .header-section {
+    padding: 2rem;
+  }
+}
+
+.destacado-endesa {
+  background-color: var(--accent-color-2);
+  color: var(--text-color);
+  padding: 2rem;
+  text-align: center;
+  font-family: var(--font-serif);
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 138.8%;
+  margin: auto;
+  padding: 5rem 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.destacado-endesa p {
+  max-width: 1000px;
+  margin: auto;
+  padding: 0 16px;
+  text-align: left;
+}
+
+.video-endesa {
+  height: 100vh;
+  padding: 2rem;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+@media (max-width: 600px) {
+  .video-endesa {
+    height: 60vh;
+  }
+}
+
+.full-image {
+  max-width: 100%;
+}
+.full-image img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  display: block;
+   max-width: 100%;
+}
+.full-image-alimento {
+  width: 100%;
+}
+
+.full-image-alimento img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  max-width: 100%;
+}
+
+/* Por defecto: ocultamos mobile, mostramos desktop */
+.img-mobile {
+  display: none !important;
+}
+
+.img-desktop {
+  display: block !important;
+}
+
+@media (max-width: 550px) {
+.full-image img {
+  width: 100%;
+  height: 60vh;
+}
+  .img-desktop {
+    display: none !important;
+  }
+
+  .img-mobile {
+    display: block !important;
+  }
+}
+
+.image-caption {
+  color: #6D94AA;
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 168.8%;
+  margin-top: 0.75rem;
+  max-width: 1200px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.parrafos-normal {
+  padding: 3.5rem 0;
+}
+.parrafos-normal h2 {
+  max-width: 600px;
+  margin: auto;
+  padding: 50px 16px 10px;
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 300;
+  color: var(--text-color-dark);
+}
+
+.parrafos-normal p {
+  max-width: 600px;
+  margin: auto;
+  padding: 30px 16px;
+  color: var(--text-color-dark);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 168.8%;
+
+}
+
+
+/* ---------- CRÉDITOS ---------------------------------- */
+.authorship-f {
+  color: #888;
+  font-size: .8em;
+  text-align: center;
+  padding-bottom: 30px;
+  font-family: var(--font-sans);
+}
+
+.container-fluid-f {
+  width: calc(100% - 40px);
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+
+/* estilos para que en LV se muestre el contenido sin margenes */
+.wallpaper-inverted-ad{
+    display: none!important;
+  }
+  
+  .visual-article-free .col-12 {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    margin-top: 0 !important;
+  }
+  .content-free-html {
+    margin:0 !important;
+  }
+  .container-fluid {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+  .visual__story--free .content-free-html {
+    margin: 0px !important;
+  }
+  .row>* {
+    padding-right: 0!important;
+    padding-left: 0!important;
+    margin-top: 0!important;
+  }
+  .article-default a:hover {
+    text-decoration: none;
+    box-shadow: none;
+  }
+button:focus {
+    outline: 1px dotted var(--background-color);
+    outline: 5px auto var(--background-color) -webkit-focus-ring-color;
+}
+.links-endesa {
+color: var(--accent-color);
+}
+.timeline-right .links-endesa {
+color: var(--text-color);
+}
