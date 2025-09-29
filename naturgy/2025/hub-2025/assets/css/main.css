@@ -429,7 +429,7 @@ html { scroll-behavior: smooth; }
 .equivalence__card img { width: 64px; height: 64px; object-fit: contain; display: inline-block; margin-bottom: 8px; }
 .equivalence__card p { color: var(--bc-color-text); }
 .equivalence__card.blue { background-color: #314552; color: #FFFFFF; max-width: 300px; text-align: center; margin: auto;}
-.equivalence__card.blue p { color: #FFFFFF;}
+.equivalence__card.blue p { color: #FFFFFF; font-size: 1.3em;}
 .impact__disclaimer { text-align: center; margin-top: clamp(20px, 4vw, 32px); font-size: 0.9em; color: #666; }
 
 /* ---------- CRÉDITOS ---------------------------------- */
@@ -480,4 +480,5 @@ button:focus {
     outline: 1px dotted var(--background-color);
     outline: 5px auto var(--background-color) -webkit-focus-ring-color;
 }
+
 
