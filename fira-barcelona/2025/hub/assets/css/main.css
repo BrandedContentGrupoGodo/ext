@@ -238,7 +238,7 @@
   justify-content: center;
 }
 
-.episode-content.active-fira {
+.episode-content.activo-fira {
   background: var(--bg-active);
   color: var(--bc-color-text);
   border-top-right-radius: var(--bc-radius-pills);
@@ -339,7 +339,7 @@
     border-radius: var(--border-radius-cap) var(--border-radius-cap) 0 0;
   }
 
-  .episode-content.active-fira,
+  .episode-content.activo-fira,
   .episode-content.upcoming {
     border-radius: 0 0 var(--border-radius-cap) var(--border-radius-cap);
   }
@@ -466,3 +466,4 @@ button:focus {
     outline: 1px dotted var(--background-color);
     outline: 5px auto var(--background-color) -webkit-focus-ring-color;
 }
+
