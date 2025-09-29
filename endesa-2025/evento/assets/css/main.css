@@ -107,7 +107,8 @@ opacity: 1;
 
 @media (max-width: 768px) {
   .header-section {
-    background: url('https://brandedcontentgrupogodo.github.io/ext/endesa-2025/evento/assets/img/endesa1-mobile.jpg') left bottom / cover no-repeat;
+    height: 90vh;
+    background: url('https://brandedcontentgrupogodo.github.io/ext/endesa-2025/evento/assets/img/endesa1-mobile.jpg') center / cover no-repeat;
   }
   .header-text__title {
     font-size: 28px;
@@ -316,3 +317,4 @@ color: var(--accent-color);
 color: var(--text-color);
 
 }
+
