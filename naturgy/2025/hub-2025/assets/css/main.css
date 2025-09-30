@@ -439,9 +439,10 @@ html { scroll-behavior: smooth; }
 .authorship-f {
   background-color: var(--bc-color-bg);
   color: #888;
-  font-size: 0.9em;
+  font-size: 0.8em;
   text-align: center;
   padding-bottom: 15px;
+  padding-top: 2rem;
 }
 
 .container-fluid-f {
@@ -483,6 +484,7 @@ button:focus {
     outline: 1px dotted var(--background-color);
     outline: 5px auto var(--background-color) -webkit-focus-ring-color;
 }
+
 
 
 
