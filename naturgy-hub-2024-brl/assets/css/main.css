@@ -75,7 +75,7 @@ html { scroll-behavior: smooth; }
 /* ---------- SECCIÓN ALTERNADA CON FONDO ----------- */
 .alt-section--bg {
   background-color: var(--bc-color-bg);
-  background-image: url(../img/naturgy-hilo-verde.svg);
+  background-image: url(https://brandedcontentgrupogodo.github.io/ext/naturgy/2025/hub-2025/assets/img/naturgy-hilo-verde.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain; /* no se corta, mantiene proporción */
@@ -482,6 +482,7 @@ button:focus {
     outline: 1px dotted var(--background-color);
     outline: 5px auto var(--background-color) -webkit-focus-ring-color;
 }
+
 
 
 
