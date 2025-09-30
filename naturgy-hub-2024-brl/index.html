@@ -1,224 +1,261 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Webfont -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amiko:wght@400;700&display=swap" rel="stylesheet">
-
-    <!-- jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-    <!-- Wow.js -->
-    <script src="https://brandedcontentgrupogodo.github.io/ext/sabadell/godo2024/sabadell-barcelona-open-brl/assets/js/wow.min.js"></script>
-
-    <!-- CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiko:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://www.tiktok.com" crossorigin>
+    <link rel="preconnect" href="https://www.instagram.com" crossorigin>
+    
     <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="https://brandedcontentgrupogodo.github.io/ext/sabadell/godo2024/sabadell-barcelona-open-brl/assets/css/animate.css">
-  </head>
-  <body>
-    <main>
-      <article>
-        <section class="content-wrapper">
-          <div class="text-content">
-            <p class="small-text">Un proyecto de Grupo Godó y Naturgy</p>
-            <p class="small-text">#buenahuella</p>
-            <h1>La sorpresa de cuatro famosos al descubrir trabajos que pueden cambiar el mundo</h1>
-            <p class="subtitle">
-              Somos, y en el siglo XXI más que nunca, la huella que dejamos a nuestro paso, y de ella depende nuestro futuro.
-              Por eso, nos embarcamos en un viaje transformador con cuatro paradas de la mano de cuatro rostros reconocidos
-              que se visten un traje diferente y anónimo: el de las personas que ponen toda su energía en cambiar el mundo.
-            </p>
-          </div>
-          <div class="video-grid">
-            <!-- Videos con lazy loading y compresión -->
-            <video class="custom-video" src="https://brandedcontentgrupogodo.github.io/ext/naturgy-hub-2024-brl/assets/img/naturgy-cap1.mp4" loop autoplay muted loading="lazy"></video>
-            <video class="custom-video" src="https://brandedcontentgrupogodo.github.io/ext/naturgy-hub-2024-brl/assets/img/naturgy-cap2.mp4" loop autoplay muted loading="lazy"></video>
-            <video class="custom-video" src="https://brandedcontentgrupogodo.github.io/ext/naturgy-hub-2024-brl/assets/img/naturgy-cap3.mp4" loop autoplay muted loading="lazy"></video>
-            <video class="custom-video" src="https://brandedcontentgrupogodo.github.io/ext/naturgy-hub-2024-brl/assets/img/naturgy-cap4.mp4" loop autoplay muted loading="lazy"></video>
-          </div>
+</head>
+<body>
+    <div class="body-naturgy">
+        <section class="hero-naturgy">
+           <div class="video-bg" aria-hidden="true">
+               <video class="video-bg__media" autoplay muted loop playsinline>
+                   <source src="assets/img/naturgy-hero.mp4" type="video/mp4">
+               </video>
+           </div>
+           <div class="hero__content">
+            <p class="hero__intro">un proyecto de grupo godó y Naturgy</p>
+            <p class="hero__intro">Un auténtico viaje de investigación para descubrir la verdad del gas verde</p>
+           </div>
         </section>
 
-        <!-- Capítulos -->
-        <section class="chapter-section mt-4">
-          <div class="chapter-grid">
-            <!-- Chapter 1 -->
-            <div class="chapter">
-              <img src="https://brandedcontentgrupogodo.github.io/ext/naturgy-hub-2024-brl/assets/img/naturgy-cap1-link.jpg" alt="Jesús Castro en la posidonia"
-                   class="chapter-image"
-                   srcset="https://brandedcontentgrupogodo.github.io/ext/naturgy-hub-2024-brl/assets/img/naturgy-cap1-link-small.jpg 480w,
-                   https://brandedcontentgrupogodo.github.io/ext/naturgy-hub-2024-brl/assets/img/naturgy-cap1-link-medium.jpg 800w,
-                   https://brandedcontentgrupogodo.github.io/ext/naturgy-hub-2024-brl/assets/img/naturgy-cap1-link-large.jpg 1200w"
-                   sizes="(max-width: 600px) 480px, 
-                          (max-width: 900px) 800px, 
-                          1200px"
-                   loading="lazy">
-              <p class="chapter-title"><strong>Capítulo 1.</strong></p>
-              <p class="chapter-description">Viaje de película con Jesús Castro al pulmón del Mediterráneo, la posidonia que salva nuestras playas</p>
-              <a href="https://www.lavanguardia.com/vida/20240916/9908534/viaje-pelicula-jesus-castro-pulmon-mediterraneo-posidonia-playas-brl.html" class="chapter-button" target="_blank" aria-label="Ver contenido del capítulo 1">
-                Ver contenido <img src="https://brandedcontentgrupogodo.github.io/ext/naturgy-hub-2024-brl/assets/img/arrow-icon.svg" alt="Ver contenido" loading="lazy">
-              </a>
+        <section class="alt-section alt-section--bg">
+            <div class="alt-section__inner">
+                <!-- Cap1 ======================== -->
+                <div class="alt-row">
+                    <div class="alt-row__media">
+                        <img src="assets/img/naturgy-cap1.jpg" alt="Imagen descriptiva 1">
+                    </div>
+                    <div class="alt-row__content">
+                        <h2 class="alt-row__title">Capítulo 1. GENERACIÓN</h2>
+                        <p class="alt-row__kicker">Con Manel Pascual, ganadero</p>
+                        <p class="alt-row__desc">Así se transforman los residuos en energía limpia en una granja de cerdos</p>
+                        <a href="https://www.lavanguardia.com/vida/20251009/11045132/asi-transforman-excrementos-cerdo-energia-limpia-granja-lleida-naturgy-brl.html" class="btn btn--primary">
+                            <span>Ver capítulo</span>
+                            <svg class="btn__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <!-- Cap2 ======================== -->
+                <div class="alt-row alt-row--reverse">
+                    <div class="alt-row__media">
+                        <img src="assets/img/naturgy-cap2-off.jpg" alt="Imagen descriptiva 2">
+                    </div>
+                    <div class="alt-row__content opacity-6">
+                        <h2 class="alt-row__title">Capítulo 2. DISTRIBUCIÓN</h2>
+                        <p class="alt-row__kicker">Con Xavier Flotats, Profesor Emérito de la UPC y experto en gas verde</p>
+                        <p class="alt-row__desc">¿Qué sucede realmente en una planta de biometano? Así se obtiene un gas verde listo para su uso</p>
+                        <p class="alt-row__kicker caps">Próximamente</p>
+                        <!-- <a href="#" class="btn btn--primary">
+                            <span>Leer historia</span>
+                            <svg class="btn__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a> -->
+                    </div>
+                </div>
+                <!-- Cap3 ======================== -->
+                <div class="alt-row">
+                    <div class="alt-row__media">
+                        <img src="assets/img/naturgy-cap3-off.jpg" alt="Imagen descriptiva 3">
+                    </div>
+                    <div class="alt-row__content opacity-6">
+                        <h2 class="alt-row__title">Capítulo 3. CONSUMO FINAL</h2>
+                        <p class="alt-row__kicker">Robert Gauxax, responsable Finca Habitada de Nedgia, grupo Naturgy</p>
+                        <p class="alt-row__desc">¿Cómo llega el gas verde a nuestros hogares? El futuro se construye ahora</p>
+                        <p class="alt-row__kicker caps">Próximamente</p>
+                        <!-- <a href="#" class="btn btn--primary">
+                            <span>Ver detalles</span>
+                            <svg class="btn__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a> -->
+                    </div>
+                </div>
             </div>
-            
-            <!-- Chapter 2 -->
-            <div class="chapter">
-              <img src="https://brandedcontentgrupogodo.github.io/ext/naturgy-hub-2024-brl/assets/img/naturgy-cap2-link.jpg" alt="Sebastián Gallego en Valencia" 
-                   class="chapter-image"
-                   srcset="https://brandedcontentgrupogodo.github.io/ext/naturgy-hub-2024-brl/assets/img/naturgy-cap2-link-small.jpg 480w,
-                   https://brandedcontentgrupogodo.github.io/ext/naturgy-hub-2024-brl/assets/img/naturgy-cap2-link-medium.jpg 800w,
-                   https://brandedcontentgrupogodo.github.io/ext/naturgy-hub-2024-brl/assets/img/naturgy-cap2-link-large.jpg 1200w"
-                   sizes="(max-width: 600px) 480px, 
-                          (max-width: 900px) 800px, 
-                          1200px"
-                   loading="lazy">
-              <p class="chapter-title"><strong>Capítulo 2.</strong></p>
-              <p class="chapter-description">Sebastián Gallego descubre el secreto de la cerveza artesanal en un lugar único de Valencia</p>
-              <a href="https://external-link-2.com" class="chapter-button" target="_blank" aria-label="Ver contenido del capítulo 2">
-                Ver contenido <img src="https://brandedcontentgrupogodo.github.io/ext/naturgy-hub-2024-brl/assets/img/arrow-icon.svg" alt="Ver contenido" loading="lazy">
-              </a>
-            </div>
-        
-            <!-- Chapter 3 (locked) -->
-            <div class="chapter locked">
-              <img src="https://brandedcontentgrupogodo.github.io/ext/naturgy-hub-2024-brl/assets/img/naturgy-cap3-link.jpg" alt="Capítulo 3 bloqueado"
-                   class="chapter-image"
-                   srcset="https://brandedcontentgrupogodo.github.io/ext/naturgy-hub-2024-brl/assets/img/naturgy-cap3-link-small.jpg 480w,
-                   https://brandedcontentgrupogodo.github.io/ext/naturgy-hub-2024-brl/assets/img/naturgy-cap3-link-medium.jpg 800w,
-                   https://brandedcontentgrupogodo.github.io/ext/naturgy-hub-2024-brl/assets/img/naturgy-cap3-link-large.jpg 1200w"
-                   sizes="(max-width: 600px) 480px, 
-                          (max-width: 900px) 800px, 
-                          1200px"
-                   loading="lazy">
-              <p class="chapter-title"><strong>Capítulo 3.</strong></p>
-              <p class="chapter-description">Disponible próximamente.</p>
-            </div>
-        
-            <!-- Chapter 4 (locked) -->
-            <div class="chapter locked">
-              <img src="https://brandedcontentgrupogodo.github.io/ext/naturgy-hub-2024-brl/assets/img/naturgy-cap4-link.jpg" alt="Capítulo 4 bloqueado"
-                   class="chapter-image"
-                   srcset="https://brandedcontentgrupogodo.github.io/ext/naturgy-hub-2024-brl/assets/img/naturgy-cap4-link-small.jpg 480w,
-                   https://brandedcontentgrupogodo.github.io/ext/naturgy-hub-2024-brl/assets/img/naturgy-cap4-link-medium.jpg 800w,
-                   https://brandedcontentgrupogodo.github.io/ext/naturgy-hub-2024-brl/assets/img/naturgy-cap4-link-large.jpg 1200w"
-                   sizes="(max-width: 600px) 480px, 
-                          (max-width: 900px) 800px, 
-                          1200px"
-                   loading="lazy">
-              <p class="chapter-title"><strong>Capítulo 4.</strong></p>
-              <p class="chapter-description">Disponible próximamente.</p>
-            </div>
-          </div>
         </section>
-        
-        <section>
-          <div class="contenedor-principal pt-3 pb-3 mt-4 mb-4">
-            <!-- Parte Izquierda -->
-            <div class="izquierda pb-4 mb-4">
-              <div>
-                <!-- Usa un alt más descriptivo si es necesario -->
-                <img src="https://brandedcontentgrupogodo.github.io/ext/naturgy-hub-2024-brl/assets/img/logo-buena-huella.svg" alt="Logo Buena Huella" class="logo" loading="lazy">
-                <h2>Naturgy comprometida con el medioambiente</h2>
-              </div>
-              <div>
-                <p class="pb-3">
-                  La compañía no solo compensa su impacto directo en el medio, sino también el de sus acciones de comunicación. 
-                  Lo hace desde 2022 a través de su proyecto #BuenaHuella, con un plan para compensar, mediante la reforestación, 
-                  las emisiones generadas en la producción y difusión de sus contenidos editoriales. La iniciativa, que es pionera, 
-                  aglutina a los principales grupos editoriales del país bajo un mismo fin: medir, reducir y neutralizar la huella 
-                  de carbono generada en la producción y distribución de los contenidos de branded content y publicidad nativa.
-                </p>
-                <p>
-                  Una acción clave en este plan de compensación es el Bosque Fundación Naturgy, un espacio de siete hectáreas en la 
-                  Comunidad de Madrid, recuperado por la Fundación tras un incendio forestal en 2019, que hoy cuenta con más de 
-                  7.000 tipos de especies autóctonas. Con un periodo de desarrollo y mantenimiento de cincuenta años, este proyecto 
-                  se traduce en la absorción de 2.220 toneladas de CO<sub>2</sub> para compensar la huella de carbono tanto de Naturgy como 
-                  de sus clientes.
-                </p>
-              </div>
+<!--
+        <section class="social-carousel">
+            <div class="social-carousel__inner">
+                <h2 class="social-carousel__title">EL HILO VERDE NO TERMINA AQUÍ. COMPARTE Y AYÚDANOS A TEJER UN FUTURO MÁS LIMPIO</h2>
+                <div class="social-carousel__viewport">
+                    <div class="social-carousel__track">
+                        <div class="social-slide">
+                            <div class="embed-pair">
+                                <div class="embed embed--tiktok" data-tiktok-url="https://www.tiktok.com/@lavanguardia/video/7549875322238274839"></div>
+                                <div class="embed embed--instagram" data-instgrm-permalink="https://www.instagram.com/p/DObo3ghiOZM/"></div>
+                            </div>
+                        </div>
+                        <div class="social-slide">
+                            <div class="embed-pair">
+                                <div class="embed embed--tiktok" data-tiktok-url="https://www.tiktok.com/@lavanguardia/video/7550238116804562198"></div>
+                                <div class="embed embed--instagram" data-instgrm-permalink="https://www.instagram.com/p/DOO4-QZiOzB/"></div>
+                            </div>
+                        </div>
+                        <div class="social-slide">
+                            <div class="embed-pair">
+                                <div class="embed embed--tiktok" data-tiktok-url="https://www.tiktok.com/@lavanguardia/video/7547718402371013910"></div>
+                                <div class="embed embed--instagram" data-instgrm-permalink="https://www.instagram.com/p/DOamdi1iCHL/"></div>
+                            </div>
+                        </div>
+                        <div class="social-slide">
+                            <div class="embed-pair">
+                                <div class="embed embed--tiktok" data-tiktok-url="https://www.tiktok.com/@lavanguardia/video/7547697146976423190"></div>
+                                <div class="embed embed--instagram" data-instgrm-permalink="https://www.instagram.com/p/DOnThbrCNo8/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="social-carousel__nav">
+                    <button class="social-btn social-btn--prev" aria-label="Anterior">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <button class="social-btn social-btn--next" aria-label="Siguiente">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                </div>
             </div>
+        </section>-->
 
-            <!-- Parte Derecha -->
-            <div class="derecha">
-              <div class="imagenes-centrales">
-                <h3>Desplazamientos <br>sostenibles</h3> <!-- Usa <br> para saltos de línea si es intencional -->
-                <h3>Energía</h3>
-              </div>
-              <hr>
-        
-              <div class="icono-parrafo">
-                <img src="https://brandedcontentgrupogodo.github.io/ext/naturgy-hub-2024-brl/assets/img/1.svg" alt="Icono 1 - Minimizar viajes" class="icono">
-                <p>Minimizar los viajes y traslados. Optar por videoconferencias siempre que sea posible</p>
-              </div>
-              <hr>
-              <div class="bullets">
-                <div class="desplazamientos">
-                  <div class="icono-parrafo">
-                    <img src="https://brandedcontentgrupogodo.github.io/ext/naturgy-hub-2024-brl/assets/img/2.svg" alt="Icono 2 - Traslados largos" class="icono">
-                    <p>Traslados largos: Priorizar el tren vs avión</p>
-                  </div>
-                  <hr>
-                  <div class="icono-parrafo">
-                    <img src="https://brandedcontentgrupogodo.github.io/ext/naturgy-hub-2024-brl/assets/img/4.svg" alt="Icono 4 - Traslados cortos" class="icono">
-                    <p>Traslados cortos: priorizar el transporte público, la bicicleta o el patinete, carsharing</p>
-                  </div>
-                  <hr>
-                  <div class="icono-parrafo">
-                    <img src="https://brandedcontentgrupogodo.github.io/ext/naturgy-hub-2024-brl/assets/img/6.svg" alt="Icono 6 - Opciones eléctricas" class="icono">
-                    <p>Priorizar opciones eléctricas o híbridas para taxis y mensajería</p>
-                  </div>
+        <section class="brand-section">
+            <div class="brand-section__inner">
+                <div class="brand-section__logo">
+                    <img src="assets/img/logo-buena-huella.png" alt="Logo Buena Huella" loading="lazy">
+                </div>
+                <h2 class="alt-row__title brand-section__title">Naturgy compensa no solo su actividad, sino también el impacto de su comunicación. Desde 2022, lo hace a través del proyecto #BuenaHuella</h2>
+                <p class="brand-section__text">La compañía no solo compensa su impacto directo en el medio, sino también el de sus acciones de comunicación. Lo hace desde 2022 a través de su proyecto #BuenaHuella, con un plan para compensar, mediante la reforestación, las emisiones generadas en la producción y difusión de sus contenidos editoriales. La iniciativa, que es pionera, aglutina a los principales grupos editoriales del país bajo un mismo fin: medir, reducir y neutralizar la huella de carbono generada en la producción y distribución de los contenidos de branded content y publicidad nativa.</p>
+            </div>
+        </section>
+
+        <section class="actions-carousel">
+            <div class="actions-carousel__inner">
+                <h2 class="actions-carousel__title">acciones sostenibles</h2>
+                <div class="actions-carousel__viewport">
+                    <div class="actions-carousel__track">
+                        <div class="action-slide">
+                            <div class="action-card">
+                                <img class="action-card__icon" src="assets/img/icon-1.png" alt="acciones sostenibles" loading="lazy">
+                                <p class="action-card__text">Webs más eficientes y ligeras</p>
+                            </div>
+                        </div>
+                        <div class="action-slide">
+                            <div class="action-card">
+                                <img class="action-card__icon" src="assets/img/icon-2.png" alt="acciones sostenibles" loading="lazy">
+                                <p class="action-card__text">Videollamadas en lugar de reuniones presenciales</p>
+                            </div>
+                        </div>
+                        <div class="action-slide">
+                            <div class="action-card">
+                                <img class="action-card__icon" src="assets/img/icon-3.png" alt="acciones sostenibles" loading="lazy">
+                                <p class="action-card__text">Tren en lugar de avión</p>
+                            </div>
+                        </div>
+                        <div class="action-slide">
+                            <div class="action-card">
+                                <img class="action-card__icon" src="assets/img/icon-4.png" alt="acciones sostenibles" loading="lazy">
+                                <p class="action-card__text">Transporte público o patinete</p>
+                            </div>
+                        </div>
+                        <div class="action-slide">
+                            <div class="action-card">
+                                <img class="action-card__icon" src="assets/img/icon-5.png" alt="acciones sostenibles" loading="lazy">
+                                <p class="action-card__text">Apagar luces y equipos tras la jornada</p>
+                            </div>
+                        </div>
+                        <div class="action-slide">
+                            <div class="action-card">
+                                <img class="action-card__icon" src="assets/img/icon-6.png" alt="Icono acción 6" loading="lazy">
+                                <p class="action-card__text">Uso de LED y detectores de presencia</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="actions-carousel__nav">
+                    <button class="actions-btn actions-btn--prev" aria-label="Anterior">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <button class="actions-btn actions-btn--next" aria-label="Siguiente">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="impact-section">
+            <div class="impact__inner">
+                <h2 class="impact__title">¿Qué impacto ha generado este proyecto?</h2>
+                <p class="impact__subtitle">Desglose de emisiones y cómo se han compensado</p>
+                <div>
+                    <div class="equivalence__card blue">
+                        <p>Emisiones generadas</p>
+                        <p><strong>286,55</strong> Kg CO<sub>2</sub> eq</p>
+                    </div>
                 </div>
 
-                <div class="energia">
-                  <div class="icono-parrafo">
-                    <img src="https://brandedcontentgrupogodo.github.io/ext/naturgy-hub-2024-brl/assets/img/3.svg" alt="Icono 3 - Reducir consumo eléctrico" class="icono">
-                    <p>Establecer mecanismos que contribuyan a reducir el consumo de electricidad en las oficinas</p>
-                  </div>
-                  <hr>
-                  <div class="icono-parrafo">
-                    <img src="https://brandedcontentgrupogodo.github.io/ext/naturgy-hub-2024-brl/assets/img/5.svg" alt="Icono 5 - Ineficiencias energéticas" class="icono">
-                    <p>Identificar ineficiencias energéticas o consumos excesivos de energía y establecer acciones para corregirlo</p>
-                  </div>
-                  <hr>
-                  <div class="icono-parrafo">
-                    <img src="https://brandedcontentgrupogodo.github.io/ext/naturgy-hub-2024-brl/assets/img/7.svg" alt="Icono 7 - Iluminación eficiente" class="icono">
-                    <p>Utilizar iluminación led o de bajo consumo, así como detectores de presencia</p>
-                  </div>
-                  <hr>
-                  <div class="icono-parrafo">
-                    <img src="https://brandedcontentgrupogodo.github.io/ext/naturgy-hub-2024-brl/assets/img/9.svg" alt="Icono 9 - Optimización web" class="icono">
-                    <p>Optimización de diseños web: uso de tipografías, imágenes y recursos multimedia de menor consumo y mayor eficiencia en el desarrollo</p>
-                  </div>
+                <div class="impact__grid">
+                    <div class="impact__col">
+                            <h3 class="impact__heading">Emisiones por <strong>creatividad</strong></h3>
+                            <div class="impact__media">
+                            <img src="assets/img/impacto-creatividad.png" alt="Gráfico emisiones por creatividad" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="impact__col">
+                        <h3 class="impact__heading">Emisiones por <strong>categoría</strong></h3>
+                        <div class="impact__media">
+                            <img src="assets/img/impacto-categoria.png" alt="Gráfico emisiones por categoría" loading="lazy">
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <hr>
-              <div class="icono-parrafo">
-                <img src="https://brandedcontentgrupogodo.github.io/ext/naturgy-hub-2024-brl/assets/img/8.svg" alt="Icono 8 - Apagar luces" class="icono">
-                <p>Apagar las luces y los equipos al finalizar la jornada laboral</p>
-              </div>
+
+                <h3 class="impact__equivalences-title">Equivalencias</h3>
+
+                <div class="impact__equivalences">
+                    <div class="equivalence">
+                        <div class="equivalence__card">
+                            <img src="assets/img/equiv-1.png" alt="Equivalencia 1" loading="lazy">
+                            <p><strong>4 viajes</strong> Madrid–Barcelona
+                                en avión</p>
+                        </div>
+                    </div>
+                    <div class="equivalence">
+                        <div class="equivalence__card">
+                            <img src="assets/img/equiv-2.png" alt="Equivalencia 2" loading="lazy">
+                            <p><strong>14 árboles</strong> absorbiendo CO<sub>2</sub> durante un año</p>
+                        </div>
+                    </div>
+                    <div class="equivalence">
+                        <div class="equivalence__card">
+                            <img src="assets/img/equiv-3.png" alt="Equivalencia 3" loading="lazy">
+                            <p><strong>0,1 hogares</strong> consumiendo
+                                energía durante un año</p>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="impact__disclaimer">*Estas son las medidas del Grupo Godó aplicadas durante el rodaje para reducir sus emisiones de CO<sub>2</sub></p>
             </div>
-          </div>
-          <div class="fuente pb-4">
-            <p>· La huella de carbono es la cantidad total de emisiones de gases de efecto invernadero (GEI) generadas y liberadas a la atmósfera por nuestra actividad (principalmente dióxido de carbono (CO<sub>2</sub>) y metano (CH<sub>4</sub>))</p>
-            <p>· Estas son las medidas del Grupo Godó aplicadas durante el rodaje para reducir sus emisiones de CO<sub>2</sub></p>
-          </div>
         </section>
 
-        <!-- INICIO créditos -->
-        <div class="authorship-f-1 pb-4 pt-3">				
-          <div class="container-fluid-f-1">
-              <h4 class="creditos">Créditos</h4>
-              <span class="d-inline-block-f-1">Coordinación y redacción: Andrea Valladolid</span> | 
-              <span class="d-inline-block-f-1">Diseño y maquetación: Alejandra Santander</span> | 
-              <span class="d-inline-block-f-1">Fotografía y vídeo: The Lemon Juice Films</span>.
-              <span class="d-inline-block-f-1">Un proyecto de Brandslab. Godó Vertical Media.</span>
-          </div>
+
+        <!-- CRÉDITOS ============================================= -->
+        <div class="authorship-f" aria-label="Créditos del proyecto">
+            <div class="container-fluid-f">
+                <span>Coordinación: Andrea Valladolid</span> |
+                <span>Diseño y maquetación: Alejandra Santander</span> |
+                <span>Vídeo y fotografía: The Lemon Juice Films</span> |
+                <span>Arena y Havas Play: Annabel Carbonell, Aina Sánchez y Mireia Martí </span> |
+                <span>Naturgy: Mireia Pousa, Eva Quílez y Carme Selva.</span>
+                <span>Un proyecto de Brandslab. Godó Nexus.</span>
+            </div>
         </div>
-      </article>
-    </main>
-    <script src="https://brandedcontentgrupogodo.github.io/ext/naturgy-hub-2024-brl/assets/js/script.js"></script> 
-  </body>
+    </div>  
+    
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
+</body>
 </html>
