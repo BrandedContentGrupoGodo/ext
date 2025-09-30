@@ -49,7 +49,7 @@ html { scroll-behavior: smooth; }
 .video-bg {
   position: absolute;
   inset: 0;
-  z-index: -1;
+  z-index: 1;
   overflow: hidden;
   background: #000; /* franjas al usar contain */
 }
@@ -173,7 +173,8 @@ html { scroll-behavior: smooth; }
 .hero__content {
   max-width: var(--bc-max-content);
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0;
+z-index: 2;
 }
 .hero__intro {
   font-size: var(--bc-hero-subtitle);
@@ -482,6 +483,7 @@ button:focus {
     outline: 1px dotted var(--background-color);
     outline: 5px auto var(--background-color) -webkit-focus-ring-color;
 }
+
 
 
 
