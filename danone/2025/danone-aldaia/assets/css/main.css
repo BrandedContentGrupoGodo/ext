@@ -1432,10 +1432,6 @@ html, body {
   .content-free-html {
     margin:0 !important;
   }
-  .container-fluid {
-    padding-right: 0 !important;
-    padding-left: 0 !important;
-  }
   .visual__story--free .content-free-html {
     margin: 0px !important;
   }
