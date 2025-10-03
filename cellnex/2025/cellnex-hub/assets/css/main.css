@@ -232,7 +232,7 @@
   align-items: center;
   gap: 0.6em;
   background: var(--cellnex-green);
-  color: var(--cellnex-grey);
+  color: var(--text-color);
   border: 2px solid var(--cellnex-green);
   border-radius: var(--button-radius);
   padding: 12px 28px;
@@ -334,11 +334,16 @@
 }
 
 .cellnex-hub-container .capitulo-lock-overlay .lock-icon {
-  font-size: 2rem;
   margin-bottom: 10px;
-  color: var(--cellnex-green);
-  text-shadow: 0 0 10px rgba(121, 165, 43, 0.5);
   filter: brightness(1.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cellnex-hub-container .capitulo-lock-overlay .lock-icon svg {
+  width: 30px;
+  height: 39px;
 }
 
 .cellnex-hub-container .capitulo-lock-overlay .lock-text {
@@ -459,8 +464,11 @@
       border-radius: 8px;
   }
   .cellnex-hub-container .capitulo-lock-overlay .lock-icon {
-      font-size: 1.5rem;
       margin-bottom: 8px;
+  }
+  .cellnex-hub-container .capitulo-lock-overlay .lock-icon svg {
+      width: 36px;
+      height: 47px;
   }
   .cellnex-hub-container .capitulo-lock-overlay .lock-text {
       font-size: 0.9rem;
