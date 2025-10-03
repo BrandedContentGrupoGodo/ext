@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://brandedcontentgrupogodo.github.io">
+    
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <div class="body-cellnex">
+
+        <header class="main-header-cellnex" aria-label="Cabecera principal">
+            <div class="header-video-circle" aria-label="Vídeo de cabecera">
+                <video src="assets/img/cellnex-cabecera.mp4" autoplay loop muted playsinline preload="metadata" aria-label="Vídeo de cabecera"></video>
+            </div>
+            <div class="header-collab" aria-label="Colaboración">
+                en colaboración con Cellnex
+            </div>
+            <h1 class="header-title">Connecting the dots</h1>
+            <div class="header-subtitle">Un videopodcast sobre cómo las conexiones invisibles lo hacen todo posible</div>
+            <div class="header-btn-wrap">
+                <a href="#capitulos" class="cellnex-btn" aria-label="Ver capítulos">
+                    Ver capítulos
+                    <span class="btn-icon" aria-hidden="true">
+                        <!-- Icono: flecha hacia abajo SVG -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="8" viewBox="0 0 17 8" fill="none">
+                            <path d="M11.9861 1.96694C12.1844 1.78028 12.4938 1.78036 12.692 1.96711C12.9078 2.17041 12.9078 2.51351 12.6919 2.71676L8.99793 6.19466C8.93237 6.25676 8.8544 6.30605 8.76851 6.33968C8.68262 6.37331 8.59052 6.39063 8.4975 6.39063C8.40447 6.39063 8.31237 6.37331 8.22649 6.33968C8.1406 6.30605 8.06263 6.25676 7.99706 6.19466L4.30111 2.71672C4.0852 2.51354 4.08518 2.17042 4.30107 1.96723C4.49921 1.78076 4.80826 1.78074 5.00641 1.9672L8.49644 5.25132L11.9861 1.96694Z" fill="currentColor"/>
+                          </svg>
+                    </span>
+                </a>
+            </div>
+        </header>
+
+        <main id="capitulos" class="capitulos-section" aria-label="Capítulos">
+            <!-- 
+            INSTRUCCIONES PARA DESBLOQUEAR CAPÍTULOS:
+            1. Para desbloquear un capítulo, simplemente elimina la clase "locked" de la sección correspondiente
+            2. También elimina el div con clase "capitulo-lock-overlay" de ese capítulo
+            3. Ejemplo para desbloquear Capítulo 2:
+               - Cambiar: <section class="capitulo-block locked" ...>
+               - Por: <section class="capitulo-block" ...>
+               - Eliminar: <div class="capitulo-lock-overlay">...</div>
+            -->
+            <!-- Capítulo 1 -->
+            <section class="capitulo-block" aria-labelledby="capitulo1-titulo">
+                <div class="capitulo-video-wrap">
+                    <video src="assets/img/cellnex-1.mp4" autoplay loop muted playsinline preload="none" loading="lazy" aria-label="Vídeo Capítulo 1"></video>
+                    <div class="capitulo-overlay">
+                        <div class="capitulo-overlay-content">
+                            <div class="capitulo-num">Capítulo 1</div>
+                            <h2 class="capitulo-titulo" id="capitulo1-titulo">Energy Blackout</h2>
+                            <div class="capitulo-desc">¿Qué ocurre cuando todo se apaga?</div>
+                            <a href="https://www.cellnex.com" target="_blank" rel="noopener noreferrer" class="capitulo-link-btn" aria-label="Ver más sobre Capítulo 1">
+                                Ver episodio completo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <hr class="capitulo-separator" aria-hidden="true" />
+
+            <!-- Capítulo 2 -->
+            <section class="capitulo-block locked" aria-labelledby="capitulo2-titulo">
+                <div class="capitulo-video-wrap">
+                    <video src="assets/img/cellnex-2.mp4" autoplay loop muted playsinline preload="none" loading="lazy" aria-label="Vídeo Capítulo 2"></video>
+                    <div class="capitulo-overlay">
+                        <div class="capitulo-overlay-content">
+                            <div class="capitulo-num">Capítulo 2</div>
+                            <h2 class="capitulo-titulo" id="capitulo2-titulo">Transportation</h2>
+                            <div class="capitulo-desc">¿Cómo seguimos en movimiento sin perder la señal?</div>
+                            <a href="https://www.cellnex.com" target="_blank" rel="noopener noreferrer" class="capitulo-link-btn" aria-label="Ver más sobre Capítulo 2">
+                                Ver episodio completo
+                            </a>
+                        </div>
+                    </div>
+                    <div class="capitulo-lock-overlay">
+                        <div class="lock-icon">🔒</div>
+                        <div class="lock-text">Próximamente</div>
+                        <div class="lock-subtext">Este capítulo se desbloqueará pronto</div>
+                    </div>
+                </div>
+            </section>
+            <hr class="capitulo-separator" aria-hidden="true" />
+
+            <!-- Capítulo 3 -->
+            <section class="capitulo-block locked" aria-labelledby="capitulo3-titulo">
+                <div class="capitulo-video-wrap">
+                    <video src="assets/img/cellnex-3.mp4" autoplay loop muted playsinline preload="none" loading="lazy" aria-label="Vídeo Capítulo 3"></video>
+                    <div class="capitulo-overlay">
+                        <div class="capitulo-overlay-content">
+                            <div class="capitulo-num">Capítulo 3</div>
+                            <h2 class="capitulo-titulo" id="capitulo3-titulo">Sharing</h2>
+                            <div class="capitulo-desc">¿Por qué compartir red es clave para avanzar?</div>
+                            <a href="https://www.cellnex.com" target="_blank" rel="noopener noreferrer" class="capitulo-link-btn" aria-label="Ver más sobre Capítulo 3">
+                                Ver episodio completo
+                            </a>
+                        </div>
+                    </div>
+                    <div class="capitulo-lock-overlay">
+                        <div class="lock-icon">🔒</div>
+                        <div class="lock-text">Próximamente</div>
+                        <div class="lock-subtext">Este capítulo se desbloqueará pronto</div>
+                    </div>
+                </div>
+            </section>
+            <hr class="capitulo-separator" aria-hidden="true" />
+
+            <!-- Capítulo 4 -->
+            <section class="capitulo-block locked" aria-labelledby="capitulo4-titulo">
+                <div class="capitulo-video-wrap">
+                    <video src="assets/img/cellnex-4.mp4" autoplay loop muted playsinline preload="none" loading="lazy" aria-label="Vídeo Capítulo 4"></video>
+                    <div class="capitulo-overlay">
+                        <div class="capitulo-overlay-content">
+                            <div class="capitulo-num">Capítulo 4</div>
+                            <h2 class="capitulo-titulo" id="capitulo4-titulo">Venues & In-building</h2>
+                            <div class="capitulo-desc">¿Cómo se conecta una multitud?</div>
+                            <a href="https://www.cellnex.com" target="_blank" rel="noopener noreferrer" class="capitulo-link-btn" aria-label="Ver más sobre Capítulo 4">
+                                Ver episodio completo
+                            </a>
+                        </div>
+                    </div>
+                    <div class="capitulo-lock-overlay">
+                        <div class="lock-icon">🔒</div>
+                        <div class="lock-text">Próximamente</div>
+                        <div class="lock-subtext">Este capítulo se desbloqueará pronto</div>
+                    </div>
+                </div>
+            </section>
+            <hr class="capitulo-separator" aria-hidden="true" />
+
+            <!-- Capítulo 5 -->
+            <section class="capitulo-block locked" aria-labelledby="capitulo5-titulo">
+                <div class="capitulo-video-wrap">
+                    <video src="assets/img/cellnex-5.mp4" autoplay loop muted playsinline preload="none" loading="lazy" aria-label="Vídeo Capítulo 5"></video>
+                    <div class="capitulo-overlay">
+                        <div class="capitulo-overlay-content">
+                            <div class="capitulo-num">Capítulo 5</div>
+                            <h2 class="capitulo-titulo" id="capitulo5-titulo">Sustainability</h2>
+                            <div class="capitulo-desc">¿Se puede construir conexión sin dejar huella?</div>
+                            <a href="https://www.cellnex.com" target="_blank" rel="noopener noreferrer" class="capitulo-link-btn" aria-label="Ver más sobre Capítulo 5">
+                                Ver episodio completo
+                            </a>
+                        </div>
+                    </div>
+                    <div class="capitulo-lock-overlay">
+                        <div class="lock-icon">🔒</div>
+                        <div class="lock-text">Próximamente</div>
+                        <div class="lock-subtext">Este capítulo se desbloqueará pronto</div>
+                    </div>
+                </div>
+            </section>
+            <hr class="capitulo-separator" aria-hidden="true" />
+
+            <!-- Capítulo 6 -->
+            <section class="capitulo-block locked" aria-labelledby="capitulo6-titulo">
+                <div class="capitulo-video-wrap">
+                    <video src="assets/img/cellnex-6.mp4" autoplay loop muted playsinline preload="none" loading="lazy" aria-label="Vídeo Capítulo 6"></video>
+                    <div class="capitulo-overlay">
+                        <div class="capitulo-overlay-content">
+                            <div class="capitulo-num">Capítulo 6</div>
+                            <h2 class="capitulo-titulo" id="capitulo6-titulo">City Centres</h2>
+                            <div class="capitulo-desc">¿Qué conecta el corazón de una ciudad?</div>
+                            <a href="https://www.cellnex.com" target="_blank" rel="noopener noreferrer" class="capitulo-link-btn" aria-label="Ver más sobre Capítulo 6">
+                                Ver episodio completo
+                            </a>
+                        </div>
+                    </div>
+                    <div class="capitulo-lock-overlay">
+                        <div class="lock-icon">🔒</div>
+                        <div class="lock-text">Próximamente</div>
+                        <div class="lock-subtext">Este capítulo se desbloqueará pronto</div>
+                    </div>
+                </div>
+            </section>
+            <!-- No separator after el último capítulo -->
+
+            <div class="cellnex-logo-wrap" aria-label="Logo Cellnex">
+                <img src="assets/img/cellnex-logo.svg" alt="Logo Cellnex" class="cellnex-logo-img" loading="lazy" />
+            </div>
+        </main>
+
+        <!-- CRÉDITOS ============================================= -->
+        <div class="authorship-f" aria-label="Créditos del proyecto">
+            <div class="container-fluid-f">
+                <span>Coordinación: Helena Moreno</span> |
+                <span>Diseño y maquetación: Alejandra Santander</span> |
+                <span>Vídeo: Getty Images</span>.
+                <span>Un proyecto de Brandslab. Godó Nexus</span>
+            </div>
+        </div>
+    </div>  
+    
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" async></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/Observer.min.js" async></script>
+    <script src="https://brandedcontentgrupogodo.github.io/ext/danacol01/assets/js/lenis1.js" async></script>
+    <script src="assets/js/scripts.js" defer></script>
+</body>
+</html>
