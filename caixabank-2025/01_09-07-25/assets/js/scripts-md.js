@@ -60,9 +60,10 @@ const historias = [
     enlace: "https://www.mundodeportivo.com/ciclismo/20250922/1002534889/sergio-garrote-hand-bike-espanol-campeon-paralimpico-juega-vida-entrenamiento-leyenda-deporte-constelaciones-streaming-brl.html"
   },
   {
-    nombre: "Nico",
-    frase: "No escuchas su zancada. Pero vibra en cada meta.",
-    imagen: "https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/01_09-07-25/assets/img/locked.png"
+    nombre: "Toni Ponce",
+    frase: "La medalla de oro son mis hijos",
+    imagen: "https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/01_09-07-25/assets/img/cap3.png",
+    enlace: "https://www.mundodeportivo.com/natacion/20251006/1002542064/toni-ponce-campeon-nada-hijos-promesa-madre-natacion-paralimpico-constelaciones-streaming-brl.html"
   },
   {
     nombre: "Luna",
@@ -87,8 +88,8 @@ historias.forEach(({ nombre, frase, imagen, enlace }, i) => {
   const card = document.createElement('div');
   card.className = 'card';
 
-  if (i === 0 || i === 1) {
-    // Primera y segunda historia desbloqueadas
+  if (i === 0 || i === 1 || i === 2) {
+    // Primera, segunda y tercera historia desbloqueadas
     card.innerHTML = `
       <img src="${imagen}" alt="Retrato de ${nombre}, atleta paralímpico">
       <div class="card-content">
