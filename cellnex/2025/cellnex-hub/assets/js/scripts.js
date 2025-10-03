@@ -1,5 +1,8 @@
-// Inicializar Lenis solo cuando el DOM esté listo
+// Inicializar Lenis solo cuando el DOM esté listo y solo para el contenedor Cellnex
 document.addEventListener('DOMContentLoaded', function() {
+  const cellnexContainer = document.querySelector('.cellnex-hub-container');
+  if (!cellnexContainer) return;
+  
   const lenis = new Lenis({ 
     smooth: true,
     duration: 1.2,
@@ -29,11 +32,14 @@ const pointsData = {
 
 // Inicializar funcionalidad interactiva cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', function() {
-  // Seleccionar elementos
-  const hotspots = document.querySelectorAll('.hotspot');
-  const infoPanel = document.getElementById('infoPanel');
-  const infoContent = document.getElementById('infoContent');
-  const closePanel = document.getElementById('closePanel');
+  const cellnexContainer = document.querySelector('.cellnex-hub-container');
+  if (!cellnexContainer) return;
+  
+  // Seleccionar elementos solo dentro del contenedor Cellnex
+  const hotspots = cellnexContainer.querySelectorAll('.hotspot');
+  const infoPanel = cellnexContainer.querySelector('#infoPanel');
+  const infoContent = cellnexContainer.querySelector('#infoContent');
+  const closePanel = cellnexContainer.querySelector('#closePanel');
 
 // Función para abrir el panel con información
 function openInfoPanel(pointNumber, hotspotElement) {
