@@ -60,11 +60,18 @@ html {
     text-decoration: none;
     box-shadow: none;
 }
-  /* body.wf-editor, body.cms {
+
+/* Estilos específicos para CMS Xalok */
+body.cms .body-honda,
+body.wf-editor .body-honda {
     font-size: 16px !important;
-  } */
+    line-height: 1.6 !important;
+}
+
+/* Asegurar que el contenido se muestre correctamente en el CMS */
 .article-default.visual__story--free .content-free-html {
     margin: 0 !important;
+    padding: 0 !important;
 }
 
 .article-default a:hover {
@@ -75,6 +82,20 @@ html {
 }
 .no-show {
     display: none;
+}
+
+/* Forzar visibilidad de elementos en CMS */
+.cms .body-honda,
+.wf-editor .body-honda {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Asegurar que los videos se reproduzcan en CMS */
+.cms video,
+.wf-editor video {
+    pointer-events: auto !important;
+    visibility: visible !important;
 }
 
 .body-honda {
@@ -458,6 +479,24 @@ html {
     margin-top: 50px;
     margin-bottom: 100px;
     width: max-content;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Asegurar que el carrusel funcione en CMS */
+.cms .marquee-gallery,
+.wf-editor .marquee-gallery {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+}
+
+.cms .marquee-gallery-wrapper,
+.wf-editor .marquee-gallery-wrapper {
+    overflow: hidden !important;
+    position: relative !important;
+    width: 100% !important;
 }
 .image-marquee {
     display: inline-block;
@@ -793,4 +832,61 @@ html.lenis {
     /* .authorship-f {
         font-size: 5em;
     } */
+}
+
+/* Estilos adicionales para CMS Xalok */
+@media (max-width: 768px) {
+    .cms .hero-honda,
+    .wf-editor .hero-honda {
+        flex-direction: column !important;
+        height: auto !important;
+        min-height: 100vh !important;
+    }
+    
+    .cms .hero__content,
+    .wf-editor .hero__content {
+        padding: 20px 16px !important;
+    }
+    
+    .cms .marquee-gallery,
+    .wf-editor .marquee-gallery {
+        margin-top: 20px !important;
+        margin-bottom: 50px !important;
+    }
+    
+    .cms .image-marquee img,
+    .wf-editor .image-marquee img {
+        height: 200px !important;
+    }
+}
+
+/* Asegurar que los elementos interactivos funcionen en CMS */
+.cms .interactive-image,
+.wf-editor .interactive-image {
+    height: 60vh !important;
+    min-height: 400px !important;
+}
+
+.cms .dot,
+.wf-editor .dot {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+
+/* Forzar visibilidad de elementos críticos en CMS */
+.cms .body-honda *,
+.wf-editor .body-honda * {
+    visibility: visible !important;
+}
+
+.cms .body-honda .wow,
+.wf-editor .body-honda .wow {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Asegurar que las animaciones CSS funcionen en CMS */
+.cms .animate__animated,
+.wf-editor .animate__animated {
+    animation-fill-mode: both !important;
 }
