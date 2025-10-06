@@ -283,6 +283,18 @@
             if (playOverlay) playOverlay.style.opacity = '1';
           });
 
+          // Hover para reproducir automáticamente
+          item.addEventListener('mouseenter', () => {
+            video.play().catch(err => console.log('Error al reproducir vídeo:', err));
+            if (playOverlay) playOverlay.style.opacity = '0';
+          });
+
+          // Quitar hover para pausar
+          item.addEventListener('mouseleave', () => {
+            video.pause();
+            if (playOverlay) playOverlay.style.opacity = '1';
+          });
+
           // Manejar errores de carga
           video.addEventListener('error', (e) => {
             console.warn(`Error al cargar vídeo de formación ${index + 1}:`, e);
