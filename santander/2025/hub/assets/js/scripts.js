@@ -245,12 +245,37 @@
           
           if (!video) return;
 
+          // Cargar vídeo diferidamente cuando esté visible
+          function loadVideo() {
+            const videoSrc = video.getAttribute('data-src');
+            if (videoSrc && !video.src) {
+              video.src = videoSrc;
+              video.load();
+            }
+          }
+
+          // Cargar vídeo cuando entre en vista
+          const videoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                loadVideo();
+                videoObserver.unobserve(video);
+              }
+            });
+          }, { threshold: 0.1 });
+
+          videoObserver.observe(video);
+
           // Manejar clic en el vídeo
           item.addEventListener('click', (e) => {
             // No hacer nada si se hace clic en el enlace
             if (e.target.closest('.formation__link')) return;
             
             e.preventDefault();
+            // Asegurar que el vídeo esté cargado antes de reproducir
+            if (!video.src) {
+              loadVideo();
+            }
             if (video.paused) {
               video.play().catch(err => console.log('Error al reproducir vídeo:', err));
               if (playOverlay) playOverlay.style.opacity = '0';
@@ -264,6 +289,10 @@
           item.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') {
               e.preventDefault();
+              // Asegurar que el vídeo esté cargado antes de reproducir
+              if (!video.src) {
+                loadVideo();
+              }
               if (video.paused) {
                 video.play().catch(err => console.log('Error al reproducir vídeo:', err));
                 if (playOverlay) playOverlay.style.opacity = '0';
@@ -285,6 +314,10 @@
 
           // Hover para reproducir automáticamente
           item.addEventListener('mouseenter', () => {
+            // Asegurar que el vídeo esté cargado antes de reproducir
+            if (!video.src) {
+              loadVideo();
+            }
             video.play().catch(err => console.log('Error al reproducir vídeo:', err));
             if (playOverlay) playOverlay.style.opacity = '0';
           });
