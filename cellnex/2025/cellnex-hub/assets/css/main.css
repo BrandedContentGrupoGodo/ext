@@ -205,9 +205,9 @@
 
 .cellnex-hub-container .capitulo-num {
   font-size: 1.3rem;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--cellnex-green);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.2rem;
   letter-spacing: 0.04em;
 }
 
