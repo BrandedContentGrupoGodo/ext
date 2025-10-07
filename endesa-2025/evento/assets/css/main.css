@@ -312,10 +312,12 @@ button:focus {
 }
 .links-endesa {
 color: var(--accent-color);
+      text-decoration: underline;
 }
 .timeline-right .links-endesa {
 color: var(--text-color);
 
 }
+
 
 
