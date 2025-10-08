@@ -1,569 +1,242 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="assets/css/main.css">
+  <!-- Fuentes -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://brandedcontentgrupogodo.github.io/ext/sabadell/sabadell-hub-2025/hub/assets/css/main-cap6.css">
 </head>
 <body>
-    <div class="body-santander">
-
-        <!-- HERO ============================================= -->
-        <section class="hero" role="banner" aria-label="Sección principal">
-            <div class="hero__container">
-                <!-- Texto de colaboración -->
-                <p class="hero__collaboration" aria-label="Colaboración con Banco Santander">
-                    EN COLABORACIÓN CON BANCO SANTANDER
-                </p>
-                
-                <!-- Imagen principal -->
-                <div class="hero__image-container">
-                    <img 
-                        src="assets/img/aprender-cambia-todo.svg" 
-                        alt="Aprender cambia todo" 
-                        class="hero__image"
-                        loading="eager"
-                    >
-                </div>
-                
-                <!-- Subtítulo principal -->
-                <h1 class="hero__subtitle">
-                    Un proyecto que refuerza el compromiso de Banco Santander con el aprendizaje como motor de transformación. Aprender y seguir formándonos es clave para adaptarnos, crecer y liderar el cambio
-                </h1>
-                
-                <!-- Grid de vídeos -->
-                <div class="hero__videos" role="region" aria-label="Vídeos destacados">
-                    <div class="hero__video hero__video--large" tabindex="0" role="button" aria-label="Vídeo principal">
-                        <video 
-                            class="hero__video-element"
-                            autoplay 
-                            muted 
-                            loop 
-                            playsinline
-                            preload="auto"
-                            aria-label="Vídeo principal sobre aprendizaje"
-                        >
-                            <source src="assets/img/video-1-santander.mp4" type="video/mp4">
-                            Tu navegador no soporta el elemento de vídeo.
-                        </video>
-                    </div>
-                    <div class="hero__video hero__video--medium" tabindex="0" role="button" aria-label="Vídeo secundario 1">
-                        <video 
-                            class="hero__video-element"
-                            autoplay 
-                            muted 
-                            loop 
-                            playsinline
-                            preload="auto"
-                            aria-label="Vídeo secundario sobre formación"
-                        >
-                            <source src="assets/img/video-1-santander.mp4" type="video/mp4">
-                            Tu navegador no soporta el elemento de vídeo.
-                        </video>
-                    </div>
-                    <div class="hero__video hero__video--medium" tabindex="0" role="button" aria-label="Vídeo secundario 2">
-                        <video 
-                            class="hero__video-element"
-                            autoplay 
-                            muted 
-                            loop 
-                            playsinline
-                            preload="auto"
-                            aria-label="Vídeo secundario sobre crecimiento"
-                        >
-                            <source src="assets/img/video-1-santander.mp4" type="video/mp4">
-                            Tu navegador no soporta el elemento de vídeo.
-                        </video>
-                    </div>
-                    <div class="hero__video hero__video--large" tabindex="0" role="button" aria-label="Vídeo destacado">
-                        <video 
-                            class="hero__video-element"
-                            autoplay 
-                            muted 
-                            loop 
-                            playsinline
-                            preload="auto"
-                            aria-label="Vídeo destacado sobre transformación"
-                        >
-                            <source src="assets/img/video-1-santander.mp4" type="video/mp4">
-                            Tu navegador no soporta el elemento de vídeo.
-                        </video>
-                    </div>
-                </div>
-                
-                <!-- Subtítulo secundario -->
-                <h2 class="hero__subtitle-secondary">
-                    Un lugar para aprender cosas nuevas, adaptarse y seguir creciendo en un mundo donde el trabajo está en constante cambio. Porque el futuro se construye poco a poco, sumando nuevas habilidades
-                </h2>
-                
-                <!-- Flecha y texto de scroll -->
-                <div class="hero__scroll-indicator" role="button" tabindex="0" aria-label="Desplazarse hacia abajo">
-                    <svg class="hero__arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                        <path d="M7 10L12 15L17 10" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <p class="hero__scroll-text">Haz scroll para descubrir más</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Silvia Leal ============================================= -->
-        <section class="formation" role="region" aria-label="Sección de formación">
-            <div class="formation__container">
-                <!-- Títulos -->
-                <div class="formation__header">
-                    <h2 class="formation__title">Prepárate hoy para el trabajo del mañana con Silvia Leal</h2>
-                    <h3 class="formation__subtitle">¿Sabes qué es el reskilling y upskilling? ¿Y si la inteligencia artificial fuera tu aliada para dar el siguiente paso en tu carrera? Silvia Leal, experta en IA y Tendencias del futuro, responde a esta y otras preguntas que te ayudarán a definir tu futuro profesional.</h3>
-                </div>
-
-                <!-- Carrusel de vídeos -->
-                <div class="formation__carousel-container">
-                    <button class="formation__arrow formation__arrow--prev" aria-label="Vídeos anteriores" disabled>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                            <path d="M15 18L9 12L15 6" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-
-                    <div class="formation__carousel" role="region" aria-label="Carrusel de vídeos de formación">
-                        <div class="formation__carousel-track">
-                            <!-- Vídeo 1 - Desbloqueado -->
-                            <div class="formation__video-item formation__video-item--unlocked" tabindex="0" role="button" aria-label="Vídeo de formación 1">
-                                <div class="formation__video-container">
-                                    <video 
-                                        class="formation__video"
-                                        muted 
-                                        controls
-                                        loop 
-                                        playsinline
-                                        preload="auto"
-                                        aria-label="Vídeo de formación sobre habilidades digitales"
-                                    >
-                                        <source src="assets/img/santander-1.mp4" type="video/mp4">
-                                        Tu navegador no soporta el elemento de vídeo.
-                                    </video>
-                                    <div class="formation__play-overlay">
-                                        <svg class="formation__play-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                            <path d="M8 5V19L19 12L8 5Z" fill="white" stroke="white" stroke-width="1"/>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="formation__content">
-                                    <p class="formation__description">Carreras emergentes: estos serán los empleos más demandados en 2030</p>
-                                    <a href="https://www.santander.com" target="_blank" rel="noopener noreferrer" class="formation__link">
-                                        Leer historia completa
-                                        <svg class="formation__link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                            <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!-- Vídeo 2 - Desbloqueado -->
-                            <div class="formation__video-item formation__video-item--unlocked" tabindex="0" role="button" aria-label="Vídeo de formación 2">
-                                <div class="formation__video-container">
-                                    <video 
-                                        class="formation__video"
-                                        muted 
-                                        loop 
-                                        playsinline
-                                        preload="auto"
-                                        aria-label="Vídeo de formación sobre liderazgo"
-                                    >
-                                        <source src="assets/img/santander-2.mp4" type="video/mp4">
-                                        Tu navegador no soporta el elemento de vídeo.
-                                    </video>
-                                    <div class="formation__play-overlay">
-                                        <svg class="formation__play-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                            <path d="M8 5V19L19 12L8 5Z" fill="white" stroke="white" stroke-width="1"/>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="formation__content">
-                                    <p class="formation__description">La IA en el empleo: ¿Amenaza o gran oportunidad?</p>
-                                    <a href="https://www.santander.com" target="_blank" rel="noopener noreferrer" class="formation__link">
-                                        Leer historia completa
-                                        <svg class="formation__link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                            <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!-- Vídeo 3 - Bloqueado -->
-                            <div class="formation__video-item formation__video-item--locked" tabindex="0" role="button" aria-label="Vídeo de formación 3 - Bloqueado">
-                                <div class="formation__video-container">
-                                    <img 
-                                        src="assets/img/cap-3-off.jpg" 
-                                        alt="Hard y soft skills del futuro: las competencias más valoradas para encontrar trabajo" 
-                                        class="formation__locked-image"
-                                    >
-                                </div>
-                                <div class="formation__content">
-                                    <p class="formation__description formation__description--locked">Hard y soft skills del futuro: las competencias más valoradas para encontrar trabajo</p>
-                                </div>
-                            </div>
-
-                            <!-- Vídeo 4 - Bloqueado -->
-                            <div class="formation__video-item formation__video-item--locked" tabindex="0" role="button" aria-label="Vídeo de formación 4 - Bloqueado">
-                                <div class="formation__video-container">
-                                    <img 
-                                        src="assets/img/cap-3-off.jpg" 
-                                        alt="Sostenibilidad y responsabilidad social corporativa" 
-                                        class="formation__locked-image"
-                                    >
-                                </div>
-                                <div class="formation__content">
-                                    <p class="formation__description formation__description--locked">Sostenibilidad y responsabilidad social corporativa</p>
-                                </div>
-                            </div>
-
-                            <!-- Vídeo 5 - Bloqueado -->
-                            <div class="formation__video-item formation__video-item--locked" tabindex="0" role="button" aria-label="Vídeo de formación 5 - Bloqueado">
-                                <div class="formation__video-container">
-                                    <img 
-                                        src="assets/img/cap-3-off.jpg" 
-                                        alt="Finanzas personales y planificación del futuro" 
-                                        class="formation__locked-image"
-                                    >
-                                </div>
-                                <div class="formation__content">
-                                    <p class="formation__description formation__description--locked">Finanzas personales y planificación del futuro</p>
-                                </div>
-                            </div>
-
-                            <!-- Vídeo 6 - Bloqueado -->
-                            <div class="formation__video-item formation__video-item--locked" tabindex="0" role="button" aria-label="Vídeo de formación 6 - Bloqueado">
-                                <div class="formation__video-container">
-                                    <img 
-                                        src="assets/img/cap-3-off.jpg" 
-                                        alt="Emprendimiento y creación de nuevas oportunidades" 
-                                        class="formation__locked-image"
-                                    >
-                                </div>
-                                <div class="formation__content">
-                                    <p class="formation__description formation__description--locked">Emprendimiento y creación de nuevas oportunidades</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <button class="formation__arrow formation__arrow--next" aria-label="Siguientes vídeos">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                            <path d="M9 18L15 12L9 6" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- DATOS ============================================= -->
-        <section class="data" role="region" aria-label="Sección de datos estadísticos">
-            <div class="data__background">
-                <img 
-                    src="assets/img/fondo-santander.svg" 
-                    alt="Fondo de datos" 
-                    class="data__bg-image"
-                >
-            </div>
-            <div class="data__container">
-
-                <!-- Bloque derecho con porcentaje principal -->
-                <div class="data__main-stat">
-                    <div class="data__main-content">
-                        <div class="data__main-text">
-                            <span class="data__prefix">El</span>
-                            <span class="data__percentage" data-target="73">0%</span>
-                        </div>
-                        <p class="data__description">
-                            de los encuestados cree que la formación continua será esencial para mantenerse en el mercado laboral
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Bloque izquierdo con barras -->
-                <div class="data__bars-container">
-                    <div class="data__bars">
-                        <!-- Barra 1 - Rojo claro (más corta) -->
-                        <div class="data__bar data__bar--light" data-height="160">
-                            <div class="data__bar-content">
-                                <div class="data__bar-text">
-                                    <span class="data__bar-prefix">El</span>
-                                    <span class="data__bar-percentage" data-target="25">0%</span>
-                                </div>
-                                <p class="data__bar-description">se plantearía optar por la formación práctica y/o un entorno autodidacta</p>
-                            </div>
-                        </div>
-
-                        <!-- Barra 2 - Rojo medio (altura media) -->
-                        <div class="data__bar data__bar--medium" data-height="220">
-                            <div class="data__bar-content">
-                                <div class="data__bar-text">
-                                    <span class="data__bar-prefix">El</span>
-                                    <span class="data__bar-percentage" data-target="39">0%</span>
-                                </div>
-                                <p class="data__bar-description">se plantearía estudiar una carrera diferente a la que eligió</p>
-                            </div>
-                        </div>
-
-                        <!-- Barra 3 - Rojo oscuro (más alta) -->
-                        <div class="data__bar data__bar--dark" data-height="300">
-                            <div class="data__bar-content">
-                                <div class="data__bar-text">
-                                    <span class="data__bar-prefix">El</span>
-                                    <span class="data__bar-percentage" data-target="61">0%</span>
-                                </div>
-                                <p class="data__bar-description">cree que la inteligencia artificial será el área más demandada en los próximos 5 años</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Texto pequeño debajo -->
-                    <p class="data__footer-text">
-                        *Según el informe 'Habilidades de futuro' elaborado por Santander y Llorente y Cuenca
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- FORMACIÓN 2 ============================================= -->
-        <section class="formation formation--second" role="region" aria-label="Segunda sección de formación">
-            <div class="formation__container">
-                <!-- Títulos -->
-                <div class="formation__header">
-                    <h2 class="formation__title">Historias reales de quienes decidieron cambiar</h2>
-                    <h3 class="formation__subtitle">Descubre la historia de Carlos, Candela, Juan, María, Alberto y Alba. Seis personas que se atrevieron a cambiar el rumbo de su vida laboral.</h3>
-                </div>
-
-                <!-- Carrusel de vídeos -->
-                <div class="formation__carousel-container">
-                    <button class="formation__arrow formation__arrow--prev" aria-label="Vídeos anteriores" disabled>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                            <path d="M15 18L9 12L15 6" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-
-                    <div class="formation__carousel" role="region" aria-label="Carrusel de habilidades del futuro">
-                        <div class="formation__carousel-track">
-                            <!-- Vídeo 1 - Desbloqueado -->
-                            <div class="formation__video-item formation__video-item--unlocked" tabindex="0" role="button" aria-label="Vídeo de habilidades 1">
-                                <div class="formation__video-container">
-                                    <video 
-                                        class="formation__video"
-                                        muted 
-                                        loop 
-                                        playsinline
-                                        preload="none"
-                                        data-src="assets/img/video-1-santander.mp4"
-                                        aria-label="Vídeo sobre inteligencia artificial"
-                                    >
-                                        Tu navegador no soporta el elemento de vídeo.
-                                    </video>
-                                    <div class="formation__play-overlay">
-                                        <svg class="formation__play-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                            <path d="M8 5V19L19 12L8 5Z" fill="white" stroke="white" stroke-width="1"/>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="formation__content">
-                                    <p class="formation__description">Inteligencia Artificial y Machine Learning: el futuro de la automatización</p>
-                                    <a href="https://www.santander.com" target="_blank" rel="noopener noreferrer" class="formation__link">
-                                        Leer historia completa
-                                        <svg class="formation__link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                            <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!-- Vídeo 2 - Desbloqueado -->
-                            <div class="formation__video-item formation__video-item--unlocked" tabindex="0" role="button" aria-label="Vídeo de habilidades 2">
-                                <div class="formation__video-container">
-                                    <video 
-                                        class="formation__video"
-                                        muted 
-                                        loop 
-                                        playsinline
-                                        preload="none"
-                                        data-src="assets/img/video-1-santander.mp4"
-                                        aria-label="Vídeo sobre ciberseguridad"
-                                    >
-                                        Tu navegador no soporta el elemento de vídeo.
-                                    </video>
-                                    <div class="formation__play-overlay">
-                                        <svg class="formation__play-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                            <path d="M8 5V19L19 12L8 5Z" fill="white" stroke="white" stroke-width="1"/>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="formation__content">
-                                    <p class="formation__description">Ciberseguridad: protegiendo el mundo digital</p>
-                                    <a href="https://www.santander.com" target="_blank" rel="noopener noreferrer" class="formation__link">
-                                        Leer historia completa
-                                        <svg class="formation__link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                            <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!-- Vídeo 3 - Bloqueado -->
-                            <div class="formation__video-item formation__video-item--locked" tabindex="0" role="button" aria-label="Vídeo de habilidades 3 - Bloqueado">
-                                <div class="formation__video-container">
-                                    <img 
-                                        src="assets/img/cap-3-off.jpg" 
-                                        alt="Análisis de datos y Big Data - Bloqueado" 
-                                        class="formation__locked-image"
-                                    >
-                                </div>
-                                <div class="formation__content">
-                                    <p class="formation__description formation__description--locked">Análisis de datos y Big Data: transformando información en decisiones</p>
-                                </div>
-                            </div>
-
-                            <!-- Vídeo 4 - Bloqueado -->
-                            <div class="formation__video-item formation__video-item--locked" tabindex="0" role="button" aria-label="Vídeo de habilidades 4 - Bloqueado">
-                                <div class="formation__video-container">
-                                    <img 
-                                        src="assets/img/cap-3-off.jpg" 
-                                        alt="Desarrollo de software y programación - Bloqueado" 
-                                        class="formation__locked-image"
-                                    >
-                                </div>
-                                <div class="formation__content">
-                                    <p class="formation__description formation__description--locked">Desarrollo de software y programación: construyendo el futuro digital</p>
-                                </div>
-                            </div>
-
-                            <!-- Vídeo 5 - Bloqueado -->
-                            <div class="formation__video-item formation__video-item--locked" tabindex="0" role="button" aria-label="Vídeo de habilidades 5 - Bloqueado">
-                                <div class="formation__video-container">
-                                    <img 
-                                        src="assets/img/cap-3-off.jpg" 
-                                        alt="Marketing digital y e-commerce - Bloqueado" 
-                                        class="formation__locked-image"
-                                    >
-                                </div>
-                                <div class="formation__content">
-                                    <p class="formation__description formation__description--locked">Marketing digital y e-commerce: conectando con el consumidor del futuro</p>
-                                </div>
-                            </div>
-
-                            <!-- Vídeo 6 - Bloqueado -->
-                            <div class="formation__video-item formation__video-item--locked" tabindex="0" role="button" aria-label="Vídeo de habilidades 6 - Bloqueado">
-                                <div class="formation__video-container">
-                                    <img 
-                                        src="assets/img/cap-3-off.jpg" 
-                                        alt="Sostenibilidad y economía verde - Bloqueado" 
-                                        class="formation__locked-image"
-                                    >
-                                </div>
-                                <div class="formation__content">
-                                    <p class="formation__description formation__description--locked">Sostenibilidad y economía verde: construyendo un futuro responsable</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <button class="formation__arrow formation__arrow--next" aria-label="Siguientes vídeos">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                            <path d="M9 18L15 12L9 6" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- DATOS 2 ============================================= -->
-        <section class="data data--second" role="region" aria-label="Segunda sección de datos estadísticos">
-            <div class="data__background">
-                <img 
-                    src="assets/img/fondo-santander2.svg" 
-                    alt="Fondo de datos" 
-                    class="data__bg-image"
-                >
-            </div>
-            <div class="data__container data__container--second">
-
-                <!-- Bloque izquierdo con barras horizontales -->
-                <div class="data__bars-container data__bars-container--horizontal">
-                    <div class="data__bars data__bars--horizontal">
-                        <!-- Barra 1 -->
-                        <div class="data__bar data__bar--horizontal data__bar--light">
-                            <div class="data__bar-content data__bar-content--horizontal">
-                                <div class="data__bar-image">
-                                    <img src="assets/img/dato-1.svg" alt="Automatización" class="data__bar-img">
-                                </div>
-                                <div class="data__bar-text data__bar-text--horizontal">
-                                    <p class="data__bar-description data__bar-description--horizontal">
-                                        El <strong>38%</strong> de los encuestados sienten que la formación recibida no los ha preparado adecuadamente para el mercado laboral
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Barra 2 -->
-                        <div class="data__bar data__bar--horizontal data__bar--medium">
-                            <div class="data__bar-content data__bar-content--horizontal">
-                                <div class="data__bar-image">
-                                    <img src="assets/img/dato-2.svg" alt="Reciclaje profesional" class="data__bar-img">
-                                </div>
-                                <div class="data__bar-text data__bar-text--horizontal">
-                                    <p class="data__bar-description data__bar-description--horizontal">
-                                        El <strong>43%</strong> piensa que las empresas deberían ser las responsables de la formación continua de sus empleados
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Barra 3 -->
-                        <div class="data__bar data__bar--horizontal data__bar--dark">
-                            <div class="data__bar-content data__bar-content--horizontal">
-                                <div class="data__bar-image">
-                                    <img src="assets/img/dato-3.svg" alt="Cambio de sector" class="data__bar-img">
-                                </div>
-                                <div class="data__bar-text data__bar-text--horizontal">
-                                    <p class="data__bar-description data__bar-description--horizontal">
-                                         <strong>Siete de cada diez</strong> creen que las próximas generaciones trabajarán en profesiones que aún no existen
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Bloque derecho con porcentaje principal -->
-                <div class="data__main-stat">
-                    <div class="data__main-content">
-                        <div class="data__main-text">
-                            <span class="data__prefix">El</span>
-                            <span class="data__percentage" data-target="81">0%</span>
-                        </div>
-                        <p class="data__description">
-                            de las personas quiere seguir aprendiendo
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CRÉDITOS ============================================= -->
-        <div class="authorship-f" aria-label="Créditos del proyecto">
-            <div class="container-fluid-f">
-                <span>Coordinación: Silvia Resola</span> |
-                <span>Diseño y maquetación: Alejandra Santander</span> |
-                <span>Vídeo y fotografía: Getty Images.</span>
-                <span>Un proyecto de Brandslab. Godó Nexus.</span>
-            </div>
+  <div class="body-sabadell">
+    <!-- HERO con video de fondo -->
+    <section class="hero">
+        <video src="https://brandedcontentgrupogodo.github.io/ext/sabadell/sabadell-hub-2025/hub/assets/img/video-cabecera-sabadel-2025.mp4" autoplay muted loop playsinline></video>
+        <div class="hero-content">
+            <p class="collab">En colaboración con banco sabadell</p>
+            <h1>Más allá del <i>pitch:</i><br> un viaje de la idea al éxito</h1>
+            <p>Emprender no es un destino, sino un viaje<br>Acompáñanos a recorrer las distintas fases de una startup</p>
         </div>
-    </div>  
-    
+    </section>
+
+    <!-- NAV -->
+    <div class="nav-sabadell">
+      <a href="#cap1">NeuralTrust</a>
+      <a href="#cap2">Plesh</a>
+      <a href="#cap3">Sycai Medical</a>
+      <a href="#cap4">Ocean Ecostructures</a>
+      <a href="#cap5">Dost</a>
+      <a class="bloqueado">Remuner <img src="https://brandedcontentgrupogodo.github.io/ext/sabadell/sabadell-hub-2025/hub/assets/img/candado-bloq.svg" alt="bloqueado" class="icono"></a>
+      <a class="bloqueado">Incapto <img src="https://brandedcontentgrupogodo.github.io/ext/sabadell/sabadell-hub-2025/hub/assets/img/candado-bloq.svg" alt="bloqueado" class="icono"></a>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+    <div class="main-sabadell">
+      <!-- Capítulo 1 -->
+      <section class="capitulo" id="cap1" data-label="NeuralTrust">
+        <div class="contenido">
+          <div class="texto">
+            <h2>Capítulo 1: ¿Cuándo decides emprender?</h2>
+            <p>“Para alcanzar el éxito tienes que querer complicarte un poco la vida sintiendo que eso que estás haciendo es lo mejor para ti” (Alejandro Domingo, Co-Founder y COO)</p>
+            <button class="btn" onclick="window.open('https://www.lavanguardia.com/economia/20250909/11025821/neuraltrust-emprendimiento-ciberseguridad-inteligencia-artificial-mas-alla-del-pitch-banco-sabadell-brl.html?utm_source=hub&utm_medium=branded&utm_campaign=sabadell&utm_content=neuraltrust','_blank')">Ver contenido</button>
+          </div>
+          <div class="video">
+            <video src="https://brandedcontentgrupogodo.github.io/ext/sabadell/sabadell-hub-2025/hub/assets/img/cap1.mp4" muted loop playsinline autoplay></video>
+            <!-- <iframe 
+                src="https://www.youtube.com/embed/VIDEO_ID" 
+                title="Video capítulo 1" 
+                frameborder="0" 
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe> -->
+          </div>
+        </div>
+        <div class="galeria">
+          <img src="https://brandedcontentgrupogodo.github.io/ext/sabadell/sabadell-hub-2025/hub/assets/img/galeria1.png" alt="NeuralTrust Sabadell 1">
+          <img src="https://brandedcontentgrupogodo.github.io/ext/sabadell/sabadell-hub-2025/hub/assets/img/galeria2.png" alt="NeuralTrust Sabadell 2">
+          <img src="https://brandedcontentgrupogodo.github.io/ext/sabadell/sabadell-hub-2025/hub/assets/img/galeria3.png" alt="NeuralTrust Sabadell 3">
+          <img src="https://brandedcontentgrupogodo.github.io/ext/sabadell/sabadell-hub-2025/hub/assets/img/galeria4.png" alt="NeuralTrust Sabadell 4">
+        </div>
+        <!-- Curva inferior derecha apuntando hacia arriba -->
+         <div class="corner-fill"></div>
+        <div class="corner right-bottom"></div>
+      </section>
+
+      <!-- Capítulo 2 -->
+      <section class="capitulo" id="cap2" data-label="Plesh">
+        <div class="contenido">
+          <div class="texto">
+            <h2>Capítulo 2: ¿Cuándo supiste que tu idea de negocio funcionaría?</h2>
+            <p>“A todos los que quieran emprender les diría que tienen que tener resiliencia porque es un reto enorme” (Jaume Betrian, Founder y CEO)</p>
+            <button class="btn" onclick="window.open('https://www.lavanguardia.com/economia/20250918/11061033/plesh-emprendimiento-chocolatinas-snacks-mas-alla-del-pitch-banco-sabadell-brl.html?utm_source=hub&utm_medium=branded&utm_campaign=sabadell&utm_content=plesh','_blank')">Ver contenido</button>
+          </div>
+          <div class="video">
+            <video src="https://brandedcontentgrupogodo.github.io/ext/sabadell/sabadell-hub-2025/hub/assets/img/cap2.mp4" muted loop playsinline autoplay></video>
+          <!-- <iframe 
+            src="https://www.youtube.com/embed/VIDEO_ID" 
+            title="Video capítulo 1" 
+            frameborder="0" 
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe> -->
+        </div>
+        </div>
+        <div class="galeria">
+          <img src="https://brandedcontentgrupogodo.github.io/ext/sabadell/sabadell-hub-2025/hub/assets/img/galeria5.png" alt="Plesh Sabadell 5">
+          <img src="https://brandedcontentgrupogodo.github.io/ext/sabadell/sabadell-hub-2025/hub/assets/img/galeria6.png" alt="Plesh Sabadell 6">
+          <img src="https://brandedcontentgrupogodo.github.io/ext/sabadell/sabadell-hub-2025/hub/assets/img/galeria7.png" alt="Plesh Sabadell 7">
+          <img src="https://brandedcontentgrupogodo.github.io/ext/sabadell/sabadell-hub-2025/hub/assets/img/galeria8.png" alt="Plesh Sabadell 8">
+        </div>
+        
+        <!-- Curvas -->
+         <div class="corner-fill-top"></div>
+         <div class="corner left-top"></div>
+         <div class="corner-fill-bottom"></div>
+        <div class="corner left-bottom"></div>
+      </section>
+
+      <!-- Capítulo 3 -->
+      <section class="capitulo" id="cap3" data-label="Sycai Medical">
+        <div class="contenido">
+          <div class="texto">
+            <h2>Capítulo 3: ¿España es un buen país para desarrollar tu startup?</h2>
+            <p>"Estar abierto a nuevas oportunidades te acerca más rápido a tus objetivos" (Sara Toledano, Co-Founder y CEO)</p>
+            <button class="btn" onclick="window.open('https://www.lavanguardia.com/economia/20250925/11088252/sycai-medical-emprendimiento-inteligencia-artificial-deteccion-lesiones-precancerosas-mas-alla-del-pitch-banco-sabadell-brl.html?utm_source=hub&utm_medium=branded&utm_campaign=sabadell&utm_content=sycai','_blank')">Ver contenido</button>
+          </div>
+          <div class="video">
+            <video src="https://brandedcontentgrupogodo.github.io/ext/sabadell/sabadell-hub-2025/hub/assets/img/cap3.mp4" muted loop playsinline autoplay></video>
+          </div>
+        </div>
+        <div class="galeria">
+          <img src="https://brandedcontentgrupogodo.github.io/ext/sabadell/sabadell-hub-2025/hub/assets/img/galeria9.png" alt="Sycai Medical Sabadell 1">
+          <img src="https://brandedcontentgrupogodo.github.io/ext/sabadell/sabadell-hub-2025/hub/assets/img/galeria10.png" alt="Sycai Medical Sabadell 2">
+          <img src="https://brandedcontentgrupogodo.github.io/ext/sabadell/sabadell-hub-2025/hub/assets/img/galeria11.png" alt="Sycai Medical Sabadell 3">
+          <img src="https://brandedcontentgrupogodo.github.io/ext/sabadell/sabadell-hub-2025/hub/assets/img/galeria12.png" alt="Sycai Medical Sabadell 4">
+        </div>
+        
+        <!-- Esquinas derechas redondeadas con continuidad -->
+        <div class="corner-fill-top"></div>
+        <div class="corner right-top"></div>
+        <div class="corner-fill-right"></div>
+        <div class="corner right-bottom"></div>
+        <div class="corner-fill"></div>
+      </section>
+
+      <!-- Capítulo 4 -->
+      <section class="capitulo" id="cap4" data-label="Ocean Ecostructures">
+        <div class="contenido">
+          <div class="texto">
+            <h2>Capítulo 4: ¿Cómo empiezas a financiarte?</h2>
+            <p>"Existe un perfil de inversor dispuesto a apostar por iniciativas disruptivas como la nuestra" (Mireia de Mas, Co-Founder y COO)</p>
+            <button class="btn" onclick="window.open('https://www.lavanguardia.com/economia/20251002/11110816/ocean-ecostructures-emprendimiento-ecosistemas-marinos-mas-alla-del-pitch-banco-sabadell-brl.html?utm_source=hub&utm_medium=branded&utm_campaign=sabadell&utm_content=ocean','_blank')">Ver contenido</button>
+          </div>
+          <div class="video">
+            <video src="https://brandedcontentgrupogodo.github.io/ext/sabadell/sabadell-hub-2025/hub/assets/img/cap4.mp4" muted loop playsinline autoplay></video>
+        </div>
+        </div>
+        <div class="galeria">
+          <img src="https://brandedcontentgrupogodo.github.io/ext/sabadell/sabadell-hub-2025/hub/assets/img/galeria13.png" alt="Ocean Ecostructures Sabadell 13">
+          <img src="https://brandedcontentgrupogodo.github.io/ext/sabadell/sabadell-hub-2025/hub/assets/img/galeria14.png" alt="Ocean Ecostructures Sabadell 14">
+          <img src="https://brandedcontentgrupogodo.github.io/ext/sabadell/sabadell-hub-2025/hub/assets/img/galeria15.png" alt="Ocean Ecostructures Sabadell 15">
+          <img src="https://brandedcontentgrupogodo.github.io/ext/sabadell/sabadell-hub-2025/hub/assets/img/galeria16.png" alt="Ocean Ecostructures Sabadell 16">
+        </div>
+        
+        <!-- Curvas -->
+         <div class="corner-fill-top"></div>
+         <div class="corner left-top"></div>
+         <div class="corner-fill-top-center"></div>
+         <div class="corner-fill-top-right"></div>
+         <div class="corner-fill-top-right-bottom"></div>
+         <div class="corner-fill-bottom"></div>
+        <div class="corner left-bottom"></div>
+      </section>
+
+      <!-- Capítulo 5 -->
+      <section class="capitulo" id="cap5" data-label="Dost">
+        <div class="contenido">
+          <div class="texto">
+            <h2>Capítulo 5: ¿Cómo logras tu primer cliente?</h2>
+            <p>"El primer cliente valida tu propuesta de valor y te abre las puertas del mercado" (Dost Team)</p>
+            <button class="btn" onclick="window.open('https://www.lavanguardia.com/economia/20251010/dost-emprendimiento-mas-alla-del-pitch-banco-sabadell-brl.html?utm_source=hub&utm_medium=branded&utm_campaign=sabadell&utm_content=dost','_blank')">Ver contenido</button>
+          </div>
+          <div class="video">
+            <video src="https://brandedcontentgrupogodo.github.io/ext/sabadell/sabadell-hub-2025/hub/assets/img/cap5.mp4" muted loop playsinline autoplay></video>
+          </div>
+        </div>
+        <div class="galeria">
+          <img src="https://brandedcontentgrupogodo.github.io/ext/sabadell/sabadell-hub-2025/hub/assets/img/galeria17.png" alt="Dost Sabadell 17">
+          <img src="https://brandedcontentgrupogodo.github.io/ext/sabadell/sabadell-hub-2025/hub/assets/img/galeria18.png" alt="Dost Sabadell 18">
+          <img src="https://brandedcontentgrupogodo.github.io/ext/sabadell/sabadell-hub-2025/hub/assets/img/galeria19.png" alt="Dost Sabadell 19">
+          <img src="https://brandedcontentgrupogodo.github.io/ext/sabadell/sabadell-hub-2025/hub/assets/img/galeria20.png" alt="Dost Sabadell 20">
+        </div>
+        
+        <!-- Curvas -->
+        <div class="corner-fill-top"></div>
+        <div class="corner right-top"></div>
+        <div class="corner-fill-right"></div>
+        <div class="corner right-bottom"></div>
+        <div class="corner-fill"></div>
+      </section>
+
+      <!-- Capítulo 6 bloqueado -->
+      <section class="capitulo bloqueado-timeline" data-numero="6">
+        <div class="bloqueado">
+          <span>Remuner</span>
+          <img src="https://brandedcontentgrupogodo.github.io/ext/sabadell/sabadell-hub-2025/hub/assets/img/candado-bloq-timeline.svg" alt="icono candado">
+          <span>14/10/2025</span>
+          <div class="bullet"></div>
+        </div>
+        
+        <!-- Borde superior derecho con codo -->
+        <div class="corner-fill-top"></div>
+        <div class="corner right-top"></div>
+        <div class="corner-fill-top-square"></div>
+        <div class="corner-fill-right"></div>
+        
+      </section>
+
+      <!-- Capítulo 7 bloqueado -->
+      <section class="capitulo bloqueado-timeline" data-numero="7">
+        <div class="bloqueado">
+          <span>Incapto</span>
+          <img src="https://brandedcontentgrupogodo.github.io/ext/sabadell/sabadell-hub-2025/hub/assets/img/candado-bloq-timeline.svg" alt="icono candado">
+          <span>23/10/2025</span>
+          <div class="bullet"></div>
+        </div>
+        
+        <!-- Línea vertical derecha continúa -->
+        <div class="corner-fill-right"></div>
+      </section>
+    </div>
+
+    <div class="logo-sabadell">
+      <img src="https://brandedcontentgrupogodo.github.io/ext/sabadell/sabadell-hub-2025/hub/assets/img/logo-sabadell-bstartup.svg" alt="Sabadell BStartup">
+    </div>
+
+
+    <!-- CRÉDITOS -->
+    <div class="authorship-f" aria-label="Créditos del proyecto">
+      <div class="container-fluid-f">
+        <span>Coordinación: Helena Moreno</span> |
+        <span>Diseño y maquetación: Alejandra Santander</span> |
+        <span>Vídeo y fotografía: Linkvids.</span>
+        <span>Un proyecto de Brandslab. Godó Nexus</span>
+      </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+      <button id="cerrar">×</button>
+      <img src="" alt="imagen ampliada">
+    </div>
+  </div>
+  
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script src="assets/js/scripts.js"></script>
+  <script src="assets/js/scripts.js"></script>
 </body>
 </html>
