@@ -1,0 +1,835 @@
+/* ===========================
+   VARIABLES Y BASE
+   =========================== */
+   :root {
+    --color-principal: #006DFF;
+    --color-secundario: #080A0D;
+    --color-texto: #333;
+    --color-bloqueado: #86A8D5;
+    --spacing: 2rem;
+    --radio-borde: 27px;
+  }
+  
+  /* Reset mínimo y tipografía */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .body-sabadell {
+    font-family: "Open Sans", sans-serif;
+    background: var(--color-secundario);
+    color: var(--color-texto);
+    overflow-x: hidden;
+  }
+  
+  /* ================= HERO ================= */
+  .hero {
+    position: relative;
+    height: 85vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+  }
+  /* Velo negro semi-transparente */
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.315); /* negro con 50% de opacidad */
+    z-index: 1; /* detrás del contenido pero encima del video */
+  }
+  .hero video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  
+  }
+  .hero-content {
+    max-width: 800px;
+    padding: 1rem;
+    z-index: 2;
+  }
+  .hero-content .collab {
+    font-size: 0.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 127.075%; /* 15.249px */
+    letter-spacing: 1.32px;
+    text-transform: uppercase;
+    padding-bottom: 0.5rem;
+  }
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+  }
+  .hero p {
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 108.8%;
+  }
+  
+  /* ================= NAV ================= */
+  .nav-sabadell {
+    background: var(--color-principal);
+    display: flex;
+    gap: 1rem;
+    padding: 0.5rem 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    overflow-x: auto;           /* scroll horizontal */
+    white-space: nowrap;        /* evita que los enlaces hagan wrap */
+    -webkit-overflow-scrolling: touch; /* suaviza el scroll en iOS */
+    justify-content: space-around; /* para que los enlaces queden alineados a la izquierda */
+  }
+  
+  .nav-sabadell a {
+    color: #fff;
+    font-size: 0.9rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+    display: inline-flex;       /* inline-flex para scroll horizontal */
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.25rem 0.5rem;
+    transition:
+      opacity 0.5s;
+  }
+  
+  .nav-sabadell a.bloqueado {
+    color: #74B0FF;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+  
+  .nav-sabadell img.icono {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .nav-sabadell a.activo {
+    border-bottom: 2px solid #fff;
+  }
+  
+  .nav-sabadell a:hover {
+    opacity: 0.8;
+  }
+  
+  /* ===========================
+     LAYOUT PRINCIPAL
+     =========================== */
+  .main-sabadell {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 0;
+  }
+  
+  @media (max-width: 768px) {
+    .main-sabadell {
+      padding: 5rem 0;
+    }
+  }
+  
+  .timeline {
+    max-width: 1000px;
+    margin: 0 auto;
+    counter-reset: capitulo;
+    position: relative;
+    padding: 2rem;
+  }
+  
+  /* Capítulo básico */
+  .capitulo {
+    position: relative;
+    padding: 5rem 2rem;
+    counter-increment: capitulo;
+    border-top: 3px solid var(--color-principal);
+    border-right: 3px solid var(--color-principal);
+    overflow: visible;
+  }
+  .capitulo:first-of-type {
+    border-top: none;
+  }
+  .capitulo::before,
+  .capitulo::after {
+    z-index: 2;
+    pointer-events: auto;
+  }
+  
+  /* Número circular */
+  .capitulo::before {
+    content: counter(capitulo, upper-roman);
+    position: absolute;
+    top: 1rem;
+    border-radius: 50%;
+    height: 2rem;
+    width: 2rem;
+    background: var(--color-principal);
+    border: 3px solid #fff;
+    color: white;
+    text-align: center;
+    line-height: 2rem;
+    font-weight: bold;
+    z-index: 10;
+  }
+  
+  /* Palabra al lado del círculo */
+  .capitulo::after {
+    content: attr(data-label);
+    position: absolute;
+    top: 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+  }
+  
+  /* Alternancia de posición de la palabra */
+  .capitulo:nth-child(odd)::after {
+    right: 2rem;
+  }
+  
+  /* Alternancia zigzag */
+  .capitulo:nth-child(odd) {
+    padding-left: 0;
+  }
+  .capitulo:nth-child(odd)::before {
+    left: 100%;
+    margin-left: -1rem;
+  }
+  .capitulo:nth-child(even) {
+    border-left: 3px solid var(--color-principal);
+    border-right: none;
+    border-top: 3px solid var(--color-principal);
+    padding-right: 0;
+  }
+  .capitulo:nth-child(even)::before {
+    right: 100%;
+    margin-right: -1rem;
+  }
+  
+  /* Layout interno */
+  .capitulo .contenido {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    position: relative;
+    z-index: 0;
+  }
+  .capitulo:nth-child(odd) .contenido {
+    flex-direction: row;
+  }
+  .capitulo:nth-child(even) .contenido {
+    flex-direction: row-reverse;
+  }
+  
+  .capitulo .texto {
+    flex: 1;
+    color: #fff;
+  }
+  .capitulo .texto h2 {
+    margin-top: 1rem;
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 120%;
+    margin-bottom: 1rem;
+  }
+  .capitulo .texto p {
+    font-weight: 400;
+    line-height: 120%;
+    margin-bottom: 1rem;
+  }
+  .capitulo .btn {
+    margin-top: 1rem;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    background: var(--color-principal);
+    color: #fff;
+    font-weight: 400;
+    line-height: 127.075%;
+    letter-spacing: 1.65px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: opacity 0.5s;
+  }
+  .capitulo .btn:hover {
+    opacity: 0.9;
+  }
+  
+  .capitulo .video {
+    flex: 1;
+  }
+  .capitulo .video video {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 27px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Galería */
+  .capitulo .galeria {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 5rem;
+  }
+  .capitulo .galeria img {
+    width: 100%;
+    cursor: pointer;
+    border-radius: 17px;
+  }
+  
+  /* Codos y rellenos */
+  .capitulo .corner,
+  .capitulo .corner-fill,
+  .capitulo .corner-fill-top,
+  .capitulo .corner-fill-bottom,
+  .capitulo .corner-fill-right {
+    position: absolute;
+    background: transparent;
+    z-index: 5;
+  }
+  .capitulo .corner {
+    width: 30px;
+    height: 30px;
+  }
+  .capitulo:nth-child(1) .corner.right-bottom {
+    bottom: -3px;
+    right: -2px;
+    border-right: 3px solid var(--color-principal);
+    border-bottom: 3px solid var(--color-principal);
+    border-bottom-right-radius: 30px;
+  }
+  .capitulo:nth-child(1) .corner-fill {
+    width: 30px;
+    height: 30px;
+    bottom: -3px;
+    right: -3px;
+    background: var(--color-secundario);
+    z-index: 3;
+  }
+  .capitulo:nth-child(2) .corner.left-top {
+    top: -2px;
+    left: -3px;
+    border-left: 3px solid var(--color-principal);
+    border-top: 3px solid var(--color-principal);
+    border-top-left-radius: 30px;
+  }
+  .capitulo:nth-child(2) .corner.left-bottom {
+    bottom: -3px;
+    left: -2px;
+    border-left: 3px solid var(--color-principal);
+    border-bottom: 3px solid var(--color-principal);
+    border-bottom-left-radius: 30px;
+  }
+  .capitulo:nth-child(2) .corner-fill-top {
+    width: 30px;
+    height: 30px;
+    top: -3px;
+    left: -3px;
+    background: var(--color-secundario);
+    z-index: 3;
+  }
+  .capitulo:nth-child(2) .corner-fill-bottom {
+    width: 30px;
+    height: 30px;
+    bottom: -3px;
+    left: -3px;
+    background: var(--color-secundario);
+    z-index: 3;
+  }
+  .capitulo:nth-child(3) {
+    border-top: none;
+    border-right: none;
+  }
+  .capitulo:nth-child(3) .corner.right-top {
+    top: 0;
+    right: -3px;
+    border-top: 3px solid var(--color-principal);
+    border-right: 3px solid var(--color-principal);
+    border-top-right-radius: 30px;
+  }
+  .capitulo:nth-child(3) .corner.right-bottom {
+    bottom: -3px;
+    right: -3px;
+    border-bottom: 3px solid var(--color-principal);
+    border-right: 3px solid var(--color-principal);
+    border-bottom-right-radius: 30px;
+  }
+  .capitulo:nth-child(3) .corner-fill-top {
+    top: 0;
+    left: 27px;
+    right: 27px;
+    height: 3px;
+    background: var(--color-principal);
+  }
+  .capitulo:nth-child(3) .corner-fill-right {
+    top: 27px;
+    bottom: 27px;
+    right: -3px;
+    width: 3px;
+    background: var(--color-principal);
+  }
+  
+  .capitulo:nth-child(4) .corner.left-top {
+    top: -3px;
+    left: -3px;
+    border-left: 3px solid var(--color-principal);
+    border-top: 3px solid var(--color-principal);
+    border-top-left-radius: 30px;
+  }
+  .capitulo:nth-child(4) .corner.left-bottom {
+    bottom: -3px;
+    left: -2px;
+    border-left: 3px solid var(--color-principal);
+    border-bottom: 3px solid var(--color-principal);
+    border-bottom-left-radius: 30px;
+  }
+  .capitulo:nth-child(4) .corner-fill-top {
+    width: 30px;
+    height: 30px;
+    top: -3px;
+    left: -3px;
+    background: var(--color-secundario);
+    z-index: 5;
+    border-radius: 0 0 30px 0;
+  }
+  .capitulo:nth-child(4) .corner-fill-top-right {
+    width: 30px;
+    height: 30px;
+    top: -3px;
+    right: -3px;
+    background: var(--color-secundario);
+    z-index: 3;
+    border-radius: 0 0 0 30px;
+    position: absolute;
+  }
+  .capitulo:nth-child(4) .corner-fill-top-center {
+    top: -3px;
+    left: 27px;
+    right: 27px;
+    height: 3px;
+    background: var(--color-secundario);
+    z-index: 5;
+  }
+  .capitulo:nth-child(4) .corner-fill-top-right-bottom {
+    width: 30px;
+    height: 30px;
+    top: -3px;
+    right: -3px;
+    background: var(--color-secundario);
+    z-index: 4;
+    border-radius: 0 0 0 30px;
+  }
+  .capitulo:nth-child(4) .corner-fill-bottom {
+    width: 30px;
+    height: 30px;
+    bottom: -3px;
+    left: -3px;
+    background: var(--color-secundario);
+    z-index: 3;
+  }
+  /* .capitulo:nth-child(4) {
+    border-top: 3px solid var(--color-principal);
+    border-right: 3px solid var(--color-principal);
+    border-top-right-radius: 30px;
+    border-left: none;
+  } */
+  
+  /* Capítulo 5 - Desbloqueado con diseño lado derecho */
+  .capitulo:nth-child(5) {
+    border-top: none;
+    border-right: none;
+  }
+  .capitulo:nth-child(5) .corner.right-top {
+    top: 0;
+    right: -3px;
+    border-top: 3px solid var(--color-principal);
+    border-right: 3px solid var(--color-principal);
+    border-top-right-radius: 30px;
+  }
+  .capitulo:nth-child(5) .corner.right-bottom {
+    bottom: -3px;
+    right: -3px;
+    border-bottom: 3px solid var(--color-principal);
+    border-right: 3px solid var(--color-principal);
+    border-bottom-right-radius: 30px;
+  }
+  .capitulo:nth-child(5) .corner-fill-top {
+    top: 0;
+    left: 27px;
+    right: 27px;
+    height: 3px;
+    background: var(--color-principal);
+  }
+  .capitulo:nth-child(5) .corner-fill-right {
+    top: 27px;
+    bottom: 27px;
+    right: -3px;
+    width: 3px;
+    background: var(--color-principal);
+  }
+  .capitulo:nth-child(5) .corner-fill {
+    width: 30px;
+    height: 30px;
+    bottom: -3px;
+    right: -3px;
+    background: var(--color-secundario);
+    z-index: 3;
+  }
+  
+  /* Capítulos 6 en adelante: timeline central (bloqueados) */
+  .capitulo:nth-child(n+6) {
+    border-right: 3px solid var(--color-principal);
+    border-left: none;
+    border-top: none;
+    padding-left: 0;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    max-width: 50%;
+    padding-right: 0;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+  }
+  /* primer capítulo bloqueado (ahora es el 6) */
+  .capitulo:nth-child(6) {
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    position: relative;
+  }
+  /* Línea horizontal superior (del lado derecho hacia fuera) */
+  .capitulo:nth-child(6) .corner-fill-top {
+    position: absolute;
+    top: 0;
+    left: auto;
+    right: -527px;
+    width: 527px;
+    height: 3px;
+    background: var(--color-principal);
+    z-index: 4;
+  }
+  /* Codo superior derecho - volteado horizontalmente */
+  .capitulo:nth-child(6) .corner.right-top {
+    position: absolute;
+    top: 0;
+    right: -28px;
+    width: 30px;
+    height: 30px;
+    border-top: 3px solid var(--color-principal);
+    border-left: 3px solid var(--color-principal);
+    border-top-left-radius: 30px;
+    background: transparent;
+    z-index: 5;
+  }
+  /* Relleno para ocultar la esquina cuadrada del codo */
+  .capitulo:nth-child(6) .corner-fill-top-square {
+    position: absolute;
+    top: 0;
+    right: -28px;
+    width: 30px;
+    height: 30px;
+    background: var(--color-secundario);
+    z-index: 4;
+  }
+  /* Línea vertical derecha que baja hasta conectar con cap 7 */
+  .capitulo:nth-child(6) .corner-fill-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--color-principal);
+    z-index: 3;
+  }
+  .capitulo:nth-child(n+6)::before {
+    display: none;
+  }
+  .capitulo:nth-child(n+6)::after {
+    right: 50%;
+    transform: translateX(50%);
+    color: var(--color-secundario);
+  }
+  .capitulo:nth-child(n+6) .contenido {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  /* Capítulo 7 - línea vertical continúa */
+  .capitulo:nth-child(7) .corner-fill-right {
+    position: absolute;
+    top: 0;
+    right: -3px;
+    bottom: 0;
+    width: 3px;
+    background: var(--color-principal);
+    z-index: 5;
+  }
+  
+  /* Capítulos bloqueados timeline */
+  .bloqueado-timeline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .bloqueado-timeline .bloqueado {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--color-bloqueado);
+  }
+  .bloqueado-timeline .bullet {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #243040;
+    border: 2px solid #003F94;
+    margin-right: -0.6rem;
+  }
+  
+  .border-top-right {
+    border-top: 3px solid var(--color-principal)!important;
+    z-index: 5;
+    width: 47.5%;
+    position: absolute;
+    right: 27px;
+  }
+  
+  /* Responsive Tablets */
+  @media (max-width: 1024px) and (min-width: 769px) {
+    /* Ajustar línea horizontal del capítulo 6 para tablets */
+    .capitulo:nth-child(6) .corner-fill-top {
+      right: -250px;
+      width: 250px;
+    }
+    .main-sabadell {
+      max-width: 100%;
+      padding: 2rem 1rem;
+    }
+  }
+  
+  /* Responsive Mobile */
+  @media (max-width: 768px) {
+    .capitulo {
+      border-top: 0;
+      padding: 0 2rem;
+    }
+    .capitulo .contenido {
+      flex-direction: column !important;
+      border-left: 3px solid var(--color-principal);
+      border-right: none;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-top: 2rem;
+    }
+    .capitulo::before {
+      right: auto;
+      top: auto;
+    }
+    .capitulo::after {
+      left: 4rem;
+      top: 0.5rem;
+    }
+    .capitulo:nth-child(odd),
+    .capitulo:nth-child(even) {
+      border-right: none;
+      padding-left: 2rem;
+      border-left: none;
+      padding-right: 2rem;
+      border-top: none;
+    }
+    .capitulo:nth-child(odd)::before {
+      left: 2rem;
+    }
+    .capitulo:nth-child(even)::before {
+      right: 100%;
+      margin-right: -3.2rem;
+    }
+    .capitulo .galeria {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      padding-top: 3rem;
+      border-left: 3px solid var(--color-principal);
+      margin-top: 0;
+      padding-left: 1rem;
+      padding-bottom: 2rem;
+    }
+    .capitulo:nth-child(n+6) {
+      max-width: 100%;
+      border-top: none;
+      border-left: 3px solid var(--color-principal);
+      border-right: none;
+      margin-left: 2rem;
+      align-items: flex-start;
+      padding-left: 0 !important;
+    }
+    .bloqueado-timeline .bullet {
+      margin-right: 0;
+      margin-left: -0.7rem;
+    }
+    .capitulo.bloqueado-timeline .bloqueado {
+      flex-direction: row;
+    }
+    .capitulo.bloqueado-timeline .bloqueado .bullet {
+      order: -1;
+    }
+    .corner-fill, .corner, .corner-fill-top, .corner-fill-bottom, .capitulo:nth-child(3) .corner-fill-right, .corner-fill-top-square {
+      display: none;
+    }
+    .border-top-right {
+    display: none;
+  }
+    /* Quitar bordes derechos de capítulos 5, 6 y 7 en mobile */
+    .capitulo:nth-child(5),
+    .capitulo:nth-child(6),
+    .capitulo:nth-child(7) {
+      border-right: none !important;
+    }
+    .capitulo:nth-child(5) .corner-fill-right,
+    .capitulo:nth-child(6) .corner-fill-right,
+    .capitulo:nth-child(7) .corner-fill-right {
+      display: none;
+    }
+    /* Quitar fills específicos del capítulo 4 */
+    .capitulo:nth-child(4) .corner-fill-top,
+    .capitulo:nth-child(4) .corner-fill-top-center,
+    .capitulo:nth-child(4) .corner-fill-top-right,
+    .capitulo:nth-child(4) .corner-fill-top-right-bottom {
+      display: none;
+    }
+  }
+  
+  
+  /* ---------- Lightbox ---------- */
+  .lightbox {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  .lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: var(--radio-borde);
+  }
+  .lightbox.active {
+    display: flex;
+  }
+  #cerrar {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    color: #fff;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .logo-sabadell {
+  width: 100%;
+  max-height: 110px;
+  background-color: #fff;
+  text-align: center;
+  margin: auto;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  }
+  
+  .logo-sabadell img {
+    max-width: 100%;
+    max-height: 60px;
+  }
+  
+  
+  /* ---------- CRÉDITOS ---------- */
+  .authorship-f {
+    color: #C9C9C9;
+    font-size: 0.8em;
+    text-align: center;
+    padding-bottom: 20px;
+    margin-top: 20px;
+  }
+  
+  .container-fluid-f {
+    width: calc(100% - 40px);
+    margin-inline: auto;
+    padding-inline: 20px;
+  }
+  
+  /* ---------- Ajustes LV ---------- */
+  .wallpaper-inverted-ad {
+    display: none!important;
+  }
+  .visual-article-free .col-12 {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    margin-top: 0 !important;
+  }
+  .content-free-html {
+    margin:0 !important;
+  }
+  .container-fluid {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+  .visual__story--free .content-free-html {
+    margin: 0px !important;
+  }
+  .row>* {
+    padding-right: 0!important;
+    padding-left: 0!important;
+    margin-top: 0!important;
+  }
+  .article-default a:hover {
+    text-decoration: none;
+    box-shadow: none;
+  }
+  button:focus {
+    outline: 1px dotted var(--color-principal);
+    outline: 5px auto -webkit-focus-ring-color;
+  }
+  
+  /* ---------- Accesibilidad ---------- */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+  }
+  
