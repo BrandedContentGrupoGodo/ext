@@ -610,6 +610,7 @@
     background: #243040;
     border: 2px solid #003F94;
     margin-right: -0.6rem;
+     z-index:10;
   }
   
   .border-top-right {
@@ -833,3 +834,4 @@
     border: 0;
   }
   
+
