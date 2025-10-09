@@ -91,7 +91,6 @@
 }
 
 .cellnex-hub-container .header-subtitle {
-  margin-top: 1.2rem;
   font-size: clamp(1.1rem, 2.5vw, 1.5rem);
   color: var(--cellnex-blue);
   font-weight: 400;
