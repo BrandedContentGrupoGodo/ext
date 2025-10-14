@@ -83,7 +83,6 @@ a {
   justify-items: center;
   flex: 1;
   margin: 0 auto;
-  min-height: 600px;
 }
 
 .hero > :first-child {
@@ -105,6 +104,7 @@ a {
   height: auto;
   object-fit: contain;
   display: block;
+  opacity: 0;
 }
 
 .blend-hard {
