@@ -22,7 +22,7 @@
       /* Hero específico */
       --hero-max-width: 95rem;   /* 1520px */
       --hero-subtitle-max-width: 59.375rem; /* 950px */
-      --hero-video-height: 12.5rem; /* 200px */
+      --hero-video-height: 18.75rem; /* 300px */
       --hero-video-border-radius: 0.75rem; /* 12px */
 
       /* Breakpoints */
@@ -124,7 +124,6 @@ html { scroll-behavior: smooth; }
 .hero__video {
   height: var(--hero-video-height);
   border-radius: var(--hero-video-border-radius);
-  background: #000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -138,7 +137,15 @@ html { scroll-behavior: smooth; }
   height: 100%;
   object-fit: cover;
   border-radius: var(--hero-video-border-radius);
-  background: #000;
+}
+
+.hero__image-element {
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.hero__video:hover .hero__image-element {
+  transform: scale(1.05);
 }
 
 /* Ocultar controles nativos del vídeo */
@@ -492,6 +499,24 @@ html { scroll-behavior: smooth; }
   filter: grayscale(80%) brightness(0.8);
 }
 
+/* Icono de candado para vídeos bloqueados */
+.formation__lock-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.formation__lock-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 /* Overlay de play para vídeos desbloqueados */
 .formation__play-overlay {
   position: absolute;
@@ -842,7 +867,7 @@ html { scroll-behavior: smooth; }
 
 .data__footer-text {
   font-size: 0.75rem;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--bc-color-muted);
   text-align: center;
   margin: 0;
