@@ -13,25 +13,32 @@
     }
 
     // GSAP Animaciones
-    gsap.from(".hero__image img", {
-      x: -50,
-      opacity: 0,
-      duration: 1,
-      ease: "power2.out"
-    });
+    if (window.gsap) {
+      gsap.fromTo(".hero__image img", 
+        { x: -50, opacity: 0 },
+        { x: 0, opacity: 1, duration: 1, ease: "power2.out" }
+      );
 
-    gsap.to(".hero__title", {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      delay: 0.5,
-      ease: "power2.out"
-    });
+      gsap.to(".hero__title", {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        delay: 0.5,
+        ease: "power2.out"
+      });
 
-    gsap.fromTo(".hero__cta", 
-      {scale: 0.9, opacity: 0},
-      {scale: 1, opacity: 1, duration: 0.8, delay: 1, ease: "elastic.out(1,0.5)"}
-    );
+      gsap.fromTo(".hero__cta", 
+        {scale: 0.9, opacity: 0},
+        {scale: 1, opacity: 1, duration: 0.8, delay: 1, ease: "elastic.out(1,0.5)"}
+      );
+    } else {
+      // Fallback si GSAP no se carga
+      document.querySelectorAll('.hero__image img').forEach(img => img.style.opacity = '1');
+      const title = document.querySelector('.hero__title');
+      if (title) title.style.opacity = '1';
+      const cta = document.querySelector('.hero__cta');
+      if (cta) cta.style.opacity = '1';
+    }
 
     // Registrar ScrollTrigger si está disponible
     if (window.gsap && window.ScrollTrigger) {
