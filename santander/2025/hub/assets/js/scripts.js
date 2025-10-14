@@ -268,6 +268,41 @@
           }, 250);
         });
 
+        // Funcionalidad de swipe para móvil
+        let touchStartX = 0;
+        let touchEndX = 0;
+        let touchStartY = 0;
+        let touchEndY = 0;
+        const swipeThreshold = 50; // mínimo de 50px para considerar un swipe
+
+        track.addEventListener('touchstart', (e) => {
+          touchStartX = e.changedTouches[0].screenX;
+          touchStartY = e.changedTouches[0].screenY;
+        }, { passive: true });
+
+        track.addEventListener('touchend', (e) => {
+          touchEndX = e.changedTouches[0].screenX;
+          touchEndY = e.changedTouches[0].screenY;
+          handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+          const diffX = touchStartX - touchEndX;
+          const diffY = Math.abs(touchStartY - touchEndY);
+          
+          // Solo hacer swipe si el movimiento horizontal es mayor que el vertical
+          // Esto previene conflictos con el scroll vertical
+          if (Math.abs(diffX) > diffY && Math.abs(diffX) > swipeThreshold) {
+            if (diffX > 0) {
+              // Swipe izquierda - siguiente
+              nextSlide();
+            } else {
+              // Swipe derecha - anterior
+              prevSlide();
+            }
+          }
+        }
+
         // Inicializar carrusel
         updateCarousel();
 
