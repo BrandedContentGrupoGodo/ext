@@ -20,112 +20,40 @@
       trigger?.addEventListener('click', smoothScroll, { passive: false });
     })();
 
-    // Manejo de vídeos del hero
+    // Animación de dibujo de trazo para el SVG
     (function () {
-      const videos = document.querySelectorAll('.hero__video-element');
-      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const svgImage = document.querySelector('.hero__image--animated');
+      
+      if (!svgImage) return;
 
-      // Función para pausar todos los vídeos
-      function pauseAllVideos() {
-        videos.forEach(video => {
-          if (!video.paused) {
-            video.pause();
-          }
-        });
-      }
+      // Cargar el SVG y aplicar animación de trazo
+      fetch(svgImage.src)
+        .then(response => response.text())
+        .then(svgContent => {
+          const parser = new DOMParser();
+          const svgDoc = parser.parseFromString(svgContent, 'image/svg+xml');
+          const svg = svgDoc.querySelector('svg');
+          
+          if (!svg) return;
 
-      // Función para reanudar todos los vídeos
-      function playAllVideos() {
-        videos.forEach(video => {
-          if (video.paused) {
-            video.play().catch(e => console.log('Error al reproducir vídeo:', e));
-          }
-        });
-      }
+          // Reemplazar la imagen con el SVG inline
+          svg.classList.add('hero__svg-inline');
+          svgImage.parentNode.replaceChild(svg, svgImage);
 
-      // Manejar visibilidad de la página
-      document.addEventListener('visibilitychange', () => {
-        if (document.hidden) {
-          pauseAllVideos();
-        } else {
-          playAllVideos();
-        }
-      });
-
-      // Manejar cuando el usuario sale de la página
-      window.addEventListener('beforeunload', () => {
-        pauseAllVideos();
-      });
-
-      // Inicializar vídeos cuando estén listos
-      videos.forEach((video, index) => {
-        // Manejar errores de carga
-        video.addEventListener('error', (e) => {
-          console.warn(`Error al cargar vídeo ${index + 1}:`, e);
-          // Mostrar un placeholder si el vídeo falla
-          video.style.display = 'none';
-          const container = video.closest('.hero__video');
-          if (container) {
-            container.style.background = 'linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%)';
-            container.innerHTML = '<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #1F418E; font-weight: 500;">Vídeo no disponible</div>';
-          }
-        });
-
-        // Asegurar que los vídeos se reproduzcan automáticamente
-        video.addEventListener('loadeddata', () => {
-          if (!prefersReduced) {
-            video.play().catch(e => {
-              console.log('Autoplay bloqueado para vídeo', index + 1, e);
-            });
-          }
-        });
-
-        // Manejar clic en el contenedor del vídeo
-        const container = video.closest('.hero__video');
-        if (container) {
-          container.addEventListener('click', () => {
-            if (video.paused) {
-              video.play().catch(e => console.log('Error al reproducir vídeo:', e));
-            } else {
-              video.pause();
+          // Aplicar animación de trazo a todos los paths
+          const paths = svg.querySelectorAll('path, line, polyline, polygon, circle, ellipse, rect');
+          
+          paths.forEach((path, index) => {
+            const length = path.getTotalLength ? path.getTotalLength() : 0;
+            
+            if (length > 0) {
+              path.style.strokeDasharray = length;
+              path.style.strokeDashoffset = length;
+              path.style.animation = `drawStroke 1.2s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.05}s forwards`;
             }
           });
-
-          // Manejar teclado
-          container.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-              e.preventDefault();
-              if (video.paused) {
-                video.play().catch(e => console.log('Error al reproducir vídeo:', e));
-              } else {
-                video.pause();
-              }
-            }
-          });
-        }
-      });
-
-      // Intersection Observer para pausar vídeos fuera de vista
-      if ('IntersectionObserver' in window) {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            const video = entry.target;
-            if (entry.isIntersecting) {
-              if (!prefersReduced) {
-                video.play().catch(e => console.log('Error al reproducir vídeo:', e));
-              }
-            } else {
-              video.pause();
-            }
-          });
-        }, {
-          threshold: 0.5
-        });
-
-        videos.forEach(video => {
-          observer.observe(video);
-        });
-      }
+        })
+        .catch(err => console.log('Error al cargar SVG:', err));
     })();
 
     // Carrusel de formación
