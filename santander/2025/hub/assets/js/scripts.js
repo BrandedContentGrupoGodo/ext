@@ -116,32 +116,19 @@
         // Función para ir al siguiente elemento
         function nextSlide() {
           const maxIndex = getMaxIndex();
-          const itemsPerView = getItemsPerView();
           
           if (currentIndex < maxIndex) {
-            if (isMobile()) {
-              // En móvil, avanzar de uno en uno
-              currentIndex = Math.min(currentIndex + 1, maxIndex);
-            } else {
-              // En desktop, avanzar de tres en tres
-              currentIndex = Math.min(currentIndex + itemsPerView, maxIndex);
-            }
+            // Siempre avanzar de uno en uno
+            currentIndex = Math.min(currentIndex + 1, maxIndex);
             updateCarousel();
           }
         }
 
         // Función para ir al elemento anterior
         function prevSlide() {
-          const itemsPerView = getItemsPerView();
-          
           if (currentIndex > 0) {
-            if (isMobile()) {
-              // En móvil, retroceder de uno en uno
-              currentIndex = Math.max(currentIndex - 1, 0);
-            } else {
-              // En desktop, retroceder de tres en tres
-              currentIndex = Math.max(currentIndex - itemsPerView, 0);
-            }
+            // Siempre retroceder de uno en uno
+            currentIndex = Math.max(currentIndex - 1, 0);
             updateCarousel();
           }
         }
