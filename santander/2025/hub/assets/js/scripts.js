@@ -161,12 +161,57 @@
           if (!video) return;
 
           // Cargar vídeo diferidamente cuando esté visible
+          let isVideoLoaded = false;
+          let loadPromise = null;
+          
           function loadVideo() {
             const videoSrc = video.getAttribute('data-src');
-            if (videoSrc && !video.src) {
-              video.src = videoSrc;
-              video.load();
+            
+            if (!videoSrc) {
+              // Si no hay data-src, el vídeo ya tiene source, solo cargar
+              if (!isVideoLoaded && video.querySelector('source')) {
+                isVideoLoaded = true;
+                video.load();
+              }
+              return Promise.resolve();
             }
+            
+            if (loadPromise) {
+              return loadPromise;
+            }
+            
+            if (videoSrc && !isVideoLoaded) {
+              isVideoLoaded = true;
+              
+              loadPromise = new Promise((resolve) => {
+                // Crear source element
+                const source = document.createElement('source');
+                source.src = videoSrc;
+                source.type = 'video/mp4';
+                video.appendChild(source);
+                
+                // Cargar el vídeo
+                video.load();
+                
+                // Esperar a que esté listo para reproducir en iOS
+                const handleReady = () => {
+                  video.setAttribute('data-loaded', 'true');
+                  resolve();
+                };
+                
+                if (video.readyState >= 3) {
+                  handleReady();
+                } else {
+                  video.addEventListener('canplay', handleReady, { once: true });
+                  // Timeout de seguridad
+                  setTimeout(handleReady, 3000);
+                }
+              });
+              
+              return loadPromise;
+            }
+            
+            return Promise.resolve();
           }
 
           // Cargar vídeo cuando entre en vista
@@ -181,39 +226,70 @@
 
           videoObserver.observe(video);
 
-          // Manejar clic en el vídeo
-          item.addEventListener('click', (e) => {
+          // Manejar clic en el vídeo (optimizado para iOS)
+          const handleVideoClick = async (e) => {
             // No hacer nada si se hace clic en el enlace
             if (e.target.closest('.formation__link')) return;
             
             e.preventDefault();
+            e.stopPropagation();
+            
             // Asegurar que el vídeo esté cargado antes de reproducir
-            if (!video.src) {
-              loadVideo();
-            }
-            if (video.paused) {
-              video.play().catch(err => console.log('Error al reproducir vídeo:', err));
-              if (playOverlay) playOverlay.style.opacity = '0';
-            } else {
-              video.pause();
-              if (playOverlay) playOverlay.style.opacity = '1';
-            }
-          });
-
-          // Manejar teclado
-          item.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-              e.preventDefault();
-              // Asegurar que el vídeo esté cargado antes de reproducir
-              if (!video.src) {
-                loadVideo();
-              }
+            await loadVideo();
+            
+            // Toggle play/pause
+            try {
               if (video.paused) {
-                video.play().catch(err => console.log('Error al reproducir vídeo:', err));
-                if (playOverlay) playOverlay.style.opacity = '0';
+                // iOS requiere interacción directa del usuario
+                const playPromise = video.play();
+                if (playPromise !== undefined) {
+                  await playPromise;
+                  if (playOverlay) playOverlay.style.opacity = '0';
+                }
               } else {
                 video.pause();
                 if (playOverlay) playOverlay.style.opacity = '1';
+              }
+            } catch (err) {
+              console.log('Error al reproducir vídeo:', err);
+              // Intentar de nuevo en iOS
+              setTimeout(() => {
+                video.play().catch(e => console.log('Reintento fallido:', e));
+              }, 100);
+            }
+          };
+          
+          item.addEventListener('click', handleVideoClick);
+          
+          // Para iOS, también manejar touchend
+          item.addEventListener('touchend', (e) => {
+            if (!e.target.closest('.formation__link')) {
+              handleVideoClick(e);
+            }
+          }, { passive: false });
+
+          // Manejar teclado
+          item.addEventListener('keydown', async (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              
+              // Asegurar que el vídeo esté cargado antes de reproducir
+              await loadVideo();
+              
+              // Toggle play/pause
+              try {
+                if (video.paused) {
+                  const playPromise = video.play();
+                  if (playPromise !== undefined) {
+                    await playPromise;
+                    if (playOverlay) playOverlay.style.opacity = '0';
+                  }
+                } else {
+                  video.pause();
+                  if (playOverlay) playOverlay.style.opacity = '1';
+                }
+              } catch (err) {
+                console.log('Error al reproducir vídeo:', err);
               }
             }
           });
@@ -227,21 +303,28 @@
             if (playOverlay) playOverlay.style.opacity = '1';
           });
 
-          // Hover para reproducir automáticamente
-          item.addEventListener('mouseenter', () => {
-            // Asegurar que el vídeo esté cargado antes de reproducir
-            if (!video.src) {
-              loadVideo();
-            }
-            video.play().catch(err => console.log('Error al reproducir vídeo:', err));
-            if (playOverlay) playOverlay.style.opacity = '0';
-          });
+          // Hover para reproducir automáticamente (solo desktop)
+          const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+          
+          if (!isTouch) {
+            item.addEventListener('mouseenter', async () => {
+              // Asegurar que el vídeo esté cargado antes de reproducir
+              await loadVideo();
+              
+              try {
+                await video.play();
+                if (playOverlay) playOverlay.style.opacity = '0';
+              } catch (err) {
+                console.log('Error al reproducir vídeo:', err);
+              }
+            });
 
-          // Quitar hover para pausar
-          item.addEventListener('mouseleave', () => {
-            video.pause();
-            if (playOverlay) playOverlay.style.opacity = '1';
-          });
+            // Quitar hover para pausar
+            item.addEventListener('mouseleave', () => {
+              video.pause();
+              if (playOverlay) playOverlay.style.opacity = '1';
+            });
+          }
 
           // Manejar errores de carga
           video.addEventListener('error', (e) => {
@@ -268,21 +351,54 @@
           }, 250);
         });
 
-        // Funcionalidad de swipe para móvil
+        // Funcionalidad de swipe para móvil con seguimiento visual
         let touchStartX = 0;
         let touchEndX = 0;
         let touchStartY = 0;
         let touchEndY = 0;
+        let isDragging = false;
+        let currentTranslate = 0;
+        let prevTranslate = 0;
+        let animationID = 0;
         const swipeThreshold = 50; // mínimo de 50px para considerar un swipe
 
         track.addEventListener('touchstart', (e) => {
-          touchStartX = e.changedTouches[0].screenX;
-          touchStartY = e.changedTouches[0].screenY;
+          touchStartX = e.changedTouches[0].clientX;
+          touchStartY = e.changedTouches[0].clientY;
+          isDragging = true;
+          
+          // Guardar la posición actual
+          const itemWidth = videoItems[0]?.offsetWidth || 320;
+          const gap = isMobile() ? 16 : 24;
+          prevTranslate = -(currentIndex * (itemWidth + gap));
+          
+          // Desactivar transición durante el drag
+          track.style.transition = 'none';
+        }, { passive: true });
+
+        track.addEventListener('touchmove', (e) => {
+          if (!isDragging) return;
+          
+          const currentX = e.changedTouches[0].clientX;
+          const currentY = e.changedTouches[0].clientY;
+          const diffX = currentX - touchStartX;
+          const diffY = Math.abs(currentY - touchStartY);
+          
+          // Solo hacer drag si el movimiento horizontal es mayor que el vertical
+          if (Math.abs(diffX) > diffY) {
+            currentTranslate = prevTranslate + diffX;
+            track.style.transform = `translateX(${currentTranslate}px)`;
+          }
         }, { passive: true });
 
         track.addEventListener('touchend', (e) => {
-          touchEndX = e.changedTouches[0].screenX;
-          touchEndY = e.changedTouches[0].screenY;
+          isDragging = false;
+          touchEndX = e.changedTouches[0].clientX;
+          touchEndY = e.changedTouches[0].clientY;
+          
+          // Restaurar transición
+          track.style.transition = 'transform 0.5s ease';
+          
           handleSwipe();
         }, { passive: true });
 
@@ -291,7 +407,6 @@
           const diffY = Math.abs(touchStartY - touchEndY);
           
           // Solo hacer swipe si el movimiento horizontal es mayor que el vertical
-          // Esto previene conflictos con el scroll vertical
           if (Math.abs(diffX) > diffY && Math.abs(diffX) > swipeThreshold) {
             if (diffX > 0) {
               // Swipe izquierda - siguiente
@@ -300,6 +415,9 @@
               // Swipe derecha - anterior
               prevSlide();
             }
+          } else {
+            // Si no cumple el threshold, volver a la posición original
+            updateCarousel();
           }
         }
 
