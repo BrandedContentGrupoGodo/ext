@@ -4,11 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Preconexiones para optimización -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://brandedcontentgrupogodo.github.io">
+    
+    <!-- Precarga de imagen crítica de cabecera -->
+    <link rel="preload" as="image" href="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap4/assets/img/img-cabecera.png" fetchpriority="high">
+    <link rel="preload" as="image" href="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap1/assets/img/fondo-cabecera.png" fetchpriority="high">
+    
     <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap4/assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
     <div class="body-caixa">
@@ -26,13 +33,24 @@
         <div>
             <section class="hero">
                 <div class="hero__image">
-                    <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap4/assets/img/img-cabecera.png" alt="Retrato de Marta Arce" class="blend-hard">
-                    <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap4/assets/img/img-cabecera.png" alt="Retrato de Marta Arce" aria-hidden="true" class="blend-sat">
+                    <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap4/assets/img/img-cabecera.png" 
+                         alt="Retrato de Marta Arce" 
+                         class="blend-hard"
+                         width="540"
+                         height="540"
+                         fetchpriority="high">
+                    <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap4/assets/img/img-cabecera.png" 
+                         alt="Retrato de Marta Arce" 
+                         aria-hidden="true" 
+                         class="blend-sat"
+                         width="540"
+                         height="540"
+                         fetchpriority="high">
                 </div>
                 <div class="hero__content">
                     <h1 class="hero__title">
                       Marta Arce: <br>
-                      “Cuando subo al pódium, lo hago representando a todas las personas que me han acompañado”
+                      "Cuando subo al pódium, lo hago representando a todas las personas que me han acompañado"
                     </h1>
                     <a href="#video-section" class="hero__cta">▼ Ver reportaje completo</a>
                 </div>
@@ -94,7 +112,12 @@
 
             <section class="image-quote">
                 <div class="image-quote__wrapper">
-                    <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap4/assets/img/img1.jpg" alt="Marta Arce" class="image-quote__img">
+                    <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap4/assets/img/img1.jpg" 
+                         alt="Marta Arce" 
+                         class="image-quote__img"
+                         width="1200"
+                         height="800"
+                         loading="lazy">
                     <p class="image-quote__text">
                         "Aunque pierda, ¿me vas a seguir queriendo?"
                     </p>
@@ -113,7 +136,10 @@
             <!-- tarjetas -->
              <section class="cards-section">
                 <div class="cards-section__bg">
-                    <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap1/assets/img/circulos.svg" alt="Marta Arce" aria-hidden="true">
+                    <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap1/assets/img/circulos.svg" 
+                         alt="Marta Arce" 
+                         aria-hidden="true"
+                         loading="lazy">
                 </div>
 
                 <div class="cards-container">
@@ -147,10 +173,14 @@
 
             <section class="highlight">
                 <div class="highlight__bg">
-                    <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap4/assets/img/fondo-estrellas.jpg" alt="Marta Arce">
+                    <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap4/assets/img/fondo-estrellas.jpg" 
+                         alt="Marta Arce"
+                         width="1920"
+                         height="1080"
+                         loading="lazy">
                 </div>
                 <div class="highlight__content">
-                    <p>“Todo en Marta”, señala Marina Fernández, su entrenadora, “es el reflejo de su trabajo, de su constancia y de su alegría”</p>
+                    <p>"Todo en Marta", señala Marina Fernández, su entrenadora, "es el reflejo de su trabajo, de su constancia y de su alegría"</p>
                 </div>
             </section>
 
@@ -165,9 +195,14 @@
 
             <section class="image-quote-bottom">
                 <div class="image-quote-bottom__wrapper">
-                    <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap4/assets/img/img2.jpg" alt="Marta Arce" class="image-quote-bottom__img">
+                    <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap4/assets/img/img2.jpg" 
+                         alt="Marta Arce" 
+                         class="image-quote-bottom__img"
+                         width="1200"
+                         height="800"
+                         loading="lazy">
                     <p class="image-quote-bottom__text">
-                        “Estoy orgullosa de todas las cosas que hemos conseguido y estoy feliz de poder seguir haciéndolo a pesar de mi edad”, asegura Marta Arce
+                        "Estoy orgullosa de todas las cosas que hemos conseguido y estoy feliz de poder seguir haciéndolo a pesar de mi edad", asegura Marta Arce
                     </p>
                 </div>
             </section>
@@ -183,10 +218,30 @@
 
             <section class="gallery-section">
                 <div class="gallery-container">
-                    <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap4/assets/img/galeria1.png" alt="Foto 1" class="gallery-item">
-                    <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap4/assets/img/galeria2.png" alt="Foto 2" class="gallery-item">
-                    <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap4/assets/img/galeria3.png" alt="Foto 3" class="gallery-item">
-                    <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap4/assets/img/galeria4.png" alt="Foto 4" class="gallery-item">
+                    <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap4/assets/img/galeria1.png" 
+                         alt="Foto 1" 
+                         class="gallery-item"
+                         width="280"
+                         height="280"
+                         loading="lazy">
+                    <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap4/assets/img/galeria2.png" 
+                         alt="Foto 2" 
+                         class="gallery-item"
+                         width="280"
+                         height="280"
+                         loading="lazy">
+                    <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap4/assets/img/galeria3.png" 
+                         alt="Foto 3" 
+                         class="gallery-item"
+                         width="280"
+                         height="280"
+                         loading="lazy">
+                    <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap4/assets/img/galeria4.png" 
+                         alt="Foto 4" 
+                         class="gallery-item"
+                         width="280"
+                         height="280"
+                         loading="lazy">
                 </div>
                 
                 <!-- Lightbox -->
@@ -225,7 +280,12 @@
 
             <!-- Logo centrado -->
             <div>
-            <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/01_09-07-25/assets/img/logo_caixabank.svg" alt="Logo CaixaBank" class="logo">
+            <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/01_09-07-25/assets/img/logo_caixabank.svg" 
+                 alt="Logo CaixaBank" 
+                 class="logo"
+                 width="250"
+                 height="60"
+                 loading="lazy">
             </div>
         </div>
 
