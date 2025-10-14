@@ -576,6 +576,15 @@
 }
 
 /* Estilos para integración con La Vanguardia - Aislados */
+@media screen and (min-width: 768px) {
+  .col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto {
+      padding-left: 0!important;
+      padding-right: 0!important;
+  }
+  .article-default .content-border, .article-default .content-free-html, .article-default .content-subtitle {
+    margin: 0 auto;
+}
+}
 .cellnex-hub-container .wallpaper-inverted-ad{display:none!important}
 .cellnex-hub-container .visual-article-free .col-12,.cellnex-hub-container .content-free-html,.cellnex-hub-container .visual__story--free .content-free-html,.cellnex-hub-container .row>*{margin:0!important;padding:0!important}
 .cellnex-hub-container .article-default a:hover{text-decoration:none;box-shadow:none}
