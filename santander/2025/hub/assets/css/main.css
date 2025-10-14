@@ -101,6 +101,62 @@ html { scroll-behavior: smooth; }
   display: block;
 }
 
+/* SVG inline para animación de trazo */
+.hero__svg-inline {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 4px 12px rgba(31, 65, 142, 0.15));
+}
+
+/* Animación de dibujo de trazo */
+@keyframes drawStroke {
+  from {
+    stroke-dashoffset: var(--path-length);
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Fallback para imagen SVG sin JS */
+.hero__image--animated {
+  animation: svgFadeIn 1s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes svgFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Respetar preferencias de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  .hero__svg-inline path,
+  .hero__svg-inline line,
+  .hero__svg-inline polyline,
+  .hero__svg-inline polygon,
+  .hero__svg-inline circle,
+  .hero__svg-inline ellipse,
+  .hero__svg-inline rect {
+    animation: none !important;
+    stroke-dasharray: none !important;
+    stroke-dashoffset: 0 !important;
+  }
+  
+  .hero__image--animated {
+    animation: none;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Subtítulo principal */
 .hero__subtitle {
   font-size: clamp(0.875rem, 2vw, 1.25rem);
