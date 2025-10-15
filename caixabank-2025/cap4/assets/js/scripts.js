@@ -66,67 +66,78 @@
       if (!section || section.dataset.gsapInit === "true") return;
       section.dataset.gsapInit = "true";
 
-      // Animación propia por sección
-      gsap.fromTo(section,
-        { y: 50, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: section,
-            start: "top 85%",
-            once: true,
-            invalidateOnRefresh: true
-          }
-        }
-      );
+      // Asegurar que el elemento es visible inicialmente para evitar parpadeo
+      section.style.opacity = "1";
 
-      // Al cargar imágenes dentro, recalcular posiciones
-      section.querySelectorAll("img").forEach((img) => {
-        img.addEventListener("load", () => {
-          if (window.ScrollTrigger) ScrollTrigger.refresh();
-        });
-      });
-    }
-
-    // Inicializar lo que ya existe en el DOM
-    if (window.gsap) {
-      gsap.utils.toArray(".reportaje").forEach(initReportajeSection);
-    }
-
-    // Observar inyecciones del CMS y nuevos nodos
-    if (window.MutationObserver) {
-      const observer = new MutationObserver((mutations) => {
-        let foundNew = false;
-        for (const mutation of mutations) {
-          mutation.addedNodes.forEach((node) => {
-            if (node.nodeType !== 1) return; // Element
-            const element = /** @type {HTMLElement} */ (node);
-            if (element.matches && element.matches(".reportaje")) {
-              initReportajeSection(element);
-              foundNew = true;
+      // Solo aplicar animación si GSAP está disponible
+      if (window.gsap && window.ScrollTrigger) {
+        gsap.fromTo(section,
+          { y: 30, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: section,
+              start: "top 90%",
+              once: true,
+              invalidateOnRefresh: true
             }
-            const nested = element.querySelectorAll ? element.querySelectorAll(".reportaje") : [];
-            if (nested && nested.length) {
-              nested.forEach((sec) => initReportajeSection(sec));
-              foundNew = true;
+          }
+        );
+      }
+    }
+
+    // Inicializar animaciones después de que el DOM esté listo
+    function initAllReportajes() {
+      if (window.gsap && window.ScrollTrigger) {
+        const sections = document.querySelectorAll(".reportaje");
+        sections.forEach(section => {
+          if (!section.dataset.gsapInit) {
+            initReportajeSection(section);
+          }
+        });
+      } else {
+        // Fallback: asegurar que todas las secciones son visibles
+        document.querySelectorAll(".reportaje").forEach(section => {
+          section.style.opacity = "1";
+        });
+      }
+    }
+
+    // Ejecutar después de un pequeño delay para asegurar que GSAP se cargó
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(initAllReportajes, 100);
+      });
+    } else {
+      setTimeout(initAllReportajes, 100);
+    }
+
+    // Observar inyecciones del CMS (simplificado)
+    if (window.MutationObserver && window.gsap) {
+      const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          mutation.addedNodes.forEach((node) => {
+            if (node.nodeType === 1) {
+              const element = node;
+              if (element.classList && element.classList.contains('reportaje')) {
+                initReportajeSection(element);
+              }
+              const nested = element.querySelectorAll ? element.querySelectorAll('.reportaje') : [];
+              nested.forEach(sec => initReportajeSection(sec));
             }
           });
-        }
-        if (foundNew && window.ScrollTrigger) {
-          ScrollTrigger.refresh();
-        }
+        });
       });
       observer.observe(document.body, { childList: true, subtree: true });
     }
 
-    // Refrescar al final de carga y tras un pequeño delay por seguridad
+    // Refrescar ScrollTrigger después de que las imágenes carguen
     window.addEventListener("load", () => {
       if (window.ScrollTrigger) {
         ScrollTrigger.refresh();
-        setTimeout(() => ScrollTrigger.refresh(), 300);
       }
     });
 
