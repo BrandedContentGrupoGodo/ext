@@ -95,6 +95,7 @@
 .grid-background {
   background-image: url('https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/01_09-07-25/assets/img/fondo-estrellas.png');
   background-size: contain;
+   background-color: #090d24;
   background-position: center;
   background-repeat: no-repeat;
   background-blend-mode: screen;
@@ -374,6 +375,7 @@ button:focus {
 .fb-share-button {
   color: white!important;
 }
+
 
 
 
