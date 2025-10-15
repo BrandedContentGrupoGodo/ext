@@ -61,85 +61,29 @@
       });
     }
 
-// Inicialización incremental y segura para .reportaje (contenido inyectado por CMS)
-    function initReportajeSection(section) {
-      if (!section || section.dataset.gsapInit === "true") return;
-      section.dataset.gsapInit = "true";
-
-      // Asegurar que el elemento es visible inicialmente para evitar parpadeo
+// Asegurar que las secciones .reportaje sean visibles (sin animación para evitar parpadeo)
+    document.querySelectorAll(".reportaje").forEach(section => {
       section.style.opacity = "1";
+    });
 
-      // Solo aplicar animación si GSAP está disponible
-      if (window.gsap && window.ScrollTrigger) {
-        gsap.fromTo(section,
-          { y: 30, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.8,
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: section,
-              start: "top 90%",
-              once: true,
-              invalidateOnRefresh: true
-            }
-          }
-        );
-      }
-    }
-
-    // Inicializar animaciones después de que el DOM esté listo
-    function initAllReportajes() {
-      if (window.gsap && window.ScrollTrigger) {
-        const sections = document.querySelectorAll(".reportaje");
-        sections.forEach(section => {
-          if (!section.dataset.gsapInit) {
-            initReportajeSection(section);
-          }
-        });
-      } else {
-        // Fallback: asegurar que todas las secciones son visibles
-        document.querySelectorAll(".reportaje").forEach(section => {
-          section.style.opacity = "1";
-        });
-      }
-    }
-
-    // Ejecutar después de un pequeño delay para asegurar que GSAP se cargó
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', () => {
-        setTimeout(initAllReportajes, 100);
-      });
-    } else {
-      setTimeout(initAllReportajes, 100);
-    }
-
-    // Observar inyecciones del CMS (simplificado)
-    if (window.MutationObserver && window.gsap) {
+    // Observar inyecciones del CMS para asegurar visibilidad
+    if (window.MutationObserver) {
       const observer = new MutationObserver((mutations) => {
         mutations.forEach((mutation) => {
           mutation.addedNodes.forEach((node) => {
             if (node.nodeType === 1) {
               const element = node;
               if (element.classList && element.classList.contains('reportaje')) {
-                initReportajeSection(element);
+                element.style.opacity = "1";
               }
               const nested = element.querySelectorAll ? element.querySelectorAll('.reportaje') : [];
-              nested.forEach(sec => initReportajeSection(sec));
+              nested.forEach(sec => sec.style.opacity = "1");
             }
           });
         });
       });
       observer.observe(document.body, { childList: true, subtree: true });
     }
-
-    // Refrescar ScrollTrigger después de que las imágenes carguen
-    window.addEventListener("load", () => {
-      if (window.ScrollTrigger) {
-        ScrollTrigger.refresh();
-      }
-    });
 
 
 // Lightbox funcional
