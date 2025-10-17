@@ -62,29 +62,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function renderEmbed(container){
+    // Los embeds ya están en el HTML, no necesitan renderizado dinámico
+    // Los scripts de Instagram y TikTok los procesarán automáticamente
     if(!container || container.dataset.rendered) return;
-    if(container.classList.contains('embed--tiktok')){
-      const url = container.getAttribute('data-tiktok-url');
-      const match = url && url.match(/video\/(\d+)/);
-      const videoId = match ? match[1] : null;
-      if(videoId){
-        const iframe = document.createElement('iframe');
-        iframe.src = `https://www.tiktok.com/embed/v2/${videoId}`;
-        iframe.title = 'TikTok video';
-        iframe.loading = 'lazy';
-        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-        iframe.allowFullscreen = true;
-        iframe.frameBorder = '0';
-        iframe.referrerPolicy = 'strict-origin-when-cross-origin';
-        iframe.style.width = '100%';
-        container.innerHTML = '';
-        container.appendChild(iframe);
-      }
-    } else if(container.classList.contains('embed--instagram')){
-      const permalink = container.getAttribute('data-instgrm-permalink');
-      container.innerHTML = `<blockquote class="instagram-media" data-instgrm-permalink="${permalink}" data-instgrm-version="14"></blockquote>`;
-      ensureSDK('www.instagram.com/embed.js','https://www.instagram.com/embed.js');
-    }
     container.dataset.rendered = '1';
   }
 
@@ -98,8 +78,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const embeds = slideEls[i].querySelectorAll('.embed');
       embeds.forEach(renderEmbed);
     }
-    // sincroniza alturas tras un pequeño delay para permitir el render de IG
-    setTimeout(syncTikTokHeightToInstagram, 300);
+    // Altura fija en CSS, no necesita sincronización
+    // setTimeout(syncTikTokHeightToInstagram, 300);
   }
 
   // Primer render
@@ -147,31 +127,21 @@ document.addEventListener("DOMContentLoaded", () => {
     viewport.addEventListener('touchend', onEnd);
   }
 
-  // Re-procesar embeds si los SDKs exponen API global
-  function reprocessEmbeds(){
-    if(window.tiktok) { /* no-op, SDK procesa automáticamente */ }
-    if(window.instgrm && window.instgrm.Embeds && window.instgrm.Embeds.process){
-      window.instgrm.Embeds.process();
-    }
-    setTimeout(syncTikTokHeightToInstagram, 300);
-  }
-  document.addEventListener('click', reprocessEmbeds, {capture: true});
+  // Re-procesar embeds después de que los SDKs se carguen
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      if(window.instgrm && window.instgrm.Embeds && window.instgrm.Embeds.process){
+        window.instgrm.Embeds.process();
+      }
+      if(window.tiktok && window.tiktok.embed) {
+        window.tiktok.embed.init();
+      }
+    }, 500);
+  });
 
   // --- Carga SDKs para embeds ---
-  // TikTok
-  if(!document.querySelector('script[src*="tiktok.com/embed.js"]')){
-    const s = document.createElement('script');
-    s.src = 'https://www.tiktok.com/embed.js';
-    s.async = true;
-    document.body.appendChild(s);
-  }
-  // Instagram
-  if(!document.querySelector('script[src*="www.instagram.com/embed.js"]')){
-    const s2 = document.createElement('script');
-    s2.src = 'https://www.instagram.com/embed.js';
-    s2.async = true;
-    document.body.appendChild(s2);
-  }
+  // Los scripts de Instagram y TikTok están en el HTML
+  // No necesitamos cargarlos dinámicamente
 
   // --- Rebuild layout según breakpoint ---
   function splitToSingleEmbeds(){
@@ -223,19 +193,18 @@ document.addEventListener("DOMContentLoaded", () => {
     if(isMobile) splitToSingleEmbeds(); else groupToPairs();
   }
 
-  // Igualar altura de TikTok a la de Instagram
-  function syncTikTokHeightToInstagram(){
-    const sampleIG = document.querySelector('.embed--instagram');
-    if(!sampleIG) return;
-    const h = sampleIG.clientHeight;
-    if(!h || h < 50) return; // ignora alturas no válidas
-    document.querySelectorAll('.embed--tiktok iframe').forEach(iframe => {
-      iframe.style.height = h + 'px';
-    });
-  }
-  window.addEventListener('resize', () => setTimeout(syncTikTokHeightToInstagram, 150));
-  // intento inicial por si IG ya renderizó
-  setTimeout(syncTikTokHeightToInstagram, 600);
+  // Altura fija en CSS (650px), no necesita sincronización dinámica
+  // function syncTikTokHeightToInstagram(){
+  //   const sampleIG = document.querySelector('.embed--instagram');
+  //   if(!sampleIG) return;
+  //   const h = sampleIG.clientHeight;
+  //   if(!h || h < 50) return;
+  //   document.querySelectorAll('.embed--tiktok iframe').forEach(iframe => {
+  //     iframe.style.height = h + 'px';
+  //   });
+  // }
+  // window.addEventListener('resize', () => setTimeout(syncTikTokHeightToInstagram, 150));
+  // setTimeout(syncTikTokHeightToInstagram, 600);
 
   const placeholder = document.querySelector('.video-placeholder');
   if(!placeholder) return;
