@@ -1,150 +1,128 @@
-// Scroll suave
-    const heroCta = document.querySelector(".hero__cta");
-    if (heroCta) {
-      heroCta.addEventListener("click", (e) => {
-        e.preventDefault();
-        const videoSection = document.querySelector("#video-section");
-        if (videoSection) {
-          videoSection.scrollIntoView({
-            behavior: "smooth"
-          });
-        }
-      });
-    }
+// Encapsulación del código en IIFE para evitar contaminar el scope global
+(function() {
+  'use strict';
 
-    // GSAP Animaciones
-    gsap.from(".hero__image img", {
-      x: -50,
-      opacity: 0,
-      duration: 1,
-      ease: "power2.out"
+  // ============================================
+  // SCROLL SUAVE
+  // ============================================
+  const initSmoothScroll = () => {
+    const ctaButton = document.querySelector(".hero__cta");
+    if (!ctaButton) return;
+
+    ctaButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      const targetSection = document.querySelector("#video-section");
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: "smooth" });
+      }
     });
+  };
 
-    gsap.to(".hero__title", {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      delay: 0.5,
-      ease: "power2.out"
-    });
-
-    gsap.fromTo(".hero__cta", 
-      {scale: 0.9, opacity: 0},
-      {scale: 1, opacity: 1, duration: 0.8, delay: 1, ease: "elastic.out(1,0.5)"}
-    );
-
-    // Registrar ScrollTrigger si está disponible
-    if (window.gsap && window.ScrollTrigger) {
-      gsap.registerPlugin(ScrollTrigger);
-    }
-
-    // ScrollTrigger para el reportaje ancla
-    if (document.querySelector("#reportaje")) {
-      gsap.to("#reportaje", {
-        scrollTrigger: {
-          trigger: "#reportaje",
-          start: "top 80%",
-          once: true,
-          invalidateOnRefresh: true
-        },
-        y: 0,
-        opacity: 1,
+  // ============================================
+  // ANIMACIONES GSAP - HERO
+  // ============================================
+  const initHeroAnimations = () => {
+    const timeline = gsap.timeline();
+    
+    timeline
+      .from(".hero__image img", {
+        x: -50,
+        opacity: 0,
         duration: 1,
         ease: "power2.out"
-      });
-    }
+      })
+      .to(".hero__title", {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power2.out"
+      }, "-=0.5")
+      .fromTo(".hero__cta", 
+        { scale: 0.9, opacity: 0 },
+        { scale: 1, opacity: 1, duration: 0.8, ease: "elastic.out(1,0.5)" }
+      );
+  };
 
-// Inicialización incremental y segura para .reportaje (contenido inyectado por CMS)
-    function initReportajeSection(section) {
-      if (!section || section.dataset.gsapInit === "true") return;
-      section.dataset.gsapInit = "true";
-
-      // Animación propia por sección
-      gsap.fromTo(section,
+  // ============================================
+  // ANIMACIONES GSAP - REPORTAJES (ScrollTrigger)
+  // ============================================
+  const initReportajeAnimations = () => {
+    gsap.utils.toArray(".reportaje").forEach(section => {
+      gsap.fromTo(section, 
         { y: 50, opacity: 0 },
-        {
+        { 
           y: 0,
           opacity: 1,
           duration: 1,
           ease: "power2.out",
           scrollTrigger: {
             trigger: section,
-            start: "top 85%",
-            once: true,
-            invalidateOnRefresh: true
+            start: "top 80%"
           }
         }
       );
+    });
+  };
 
-      // Al cargar imágenes dentro, recalcular posiciones
-      section.querySelectorAll("img").forEach((img) => {
-        img.addEventListener("load", () => {
-          if (window.ScrollTrigger) ScrollTrigger.refresh();
-        });
-      });
-    }
+  // ============================================
+  // LIGHTBOX
+  // ============================================
+  const initLightbox = () => {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+    
+    if (!lightbox || !lightboxImg || !lightboxClose) return;
 
-    // Inicializar lo que ya existe en el DOM
-    if (window.gsap) {
-      gsap.utils.toArray(".reportaje").forEach(initReportajeSection);
-    }
+    // Función para cerrar el lightbox
+    const closeLightbox = () => {
+      lightbox.style.display = 'none';
+      lightboxImg.src = '';
+    };
 
-    // Observar inyecciones del CMS y nuevos nodos
-    if (window.MutationObserver) {
-      const observer = new MutationObserver((mutations) => {
-        let foundNew = false;
-        for (const mutation of mutations) {
-          mutation.addedNodes.forEach((node) => {
-            if (node.nodeType !== 1) return; // Element
-            const element = /** @type {HTMLElement} */ (node);
-            if (element.matches && element.matches(".reportaje")) {
-              initReportajeSection(element);
-              foundNew = true;
-            }
-            const nested = element.querySelectorAll ? element.querySelectorAll(".reportaje") : [];
-            if (nested && nested.length) {
-              nested.forEach((sec) => initReportajeSection(sec));
-              foundNew = true;
-            }
-          });
-        }
-        if (foundNew && window.ScrollTrigger) {
-          ScrollTrigger.refresh();
-        }
-      });
-      observer.observe(document.body, { childList: true, subtree: true });
-    }
-
-    // Refrescar al final de carga y tras un pequeño delay por seguridad
-    window.addEventListener("load", () => {
-      if (window.ScrollTrigger) {
-        ScrollTrigger.refresh();
-        setTimeout(() => ScrollTrigger.refresh(), 300);
+    // Delegación de eventos para las imágenes de la galería
+    document.addEventListener('click', (e) => {
+      const galleryItem = e.target.closest('.gallery-item');
+      if (galleryItem) {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = galleryItem.src;
+        lightboxImg.alt = galleryItem.alt;
       }
     });
 
+    // Cerrar con el botón de cierre
+    lightboxClose.addEventListener('click', closeLightbox);
 
-// Lightbox funcional
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-const lightboxClose = document.getElementById('lightbox-close');
+    // Cerrar al hacer click fuera de la imagen
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
 
-document.querySelectorAll('.gallery-item').forEach(img => {
-  img.addEventListener('click', () => {
-    lightbox.style.display = 'flex';
-    lightboxImg.src = img.src;
-    lightboxImg.alt = img.alt;
-  });
-});
+    // Cerrar con la tecla Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.style.display === 'flex') {
+        closeLightbox();
+      }
+    });
+  };
 
-lightboxClose.addEventListener('click', () => {
-  lightbox.style.display = 'none';
-  lightboxImg.src = '';
-});
+  // ============================================
+  // INICIALIZACIÓN
+  // ============================================
+  const init = () => {
+    initSmoothScroll();
+    initHeroAnimations();
+    initReportajeAnimations();
+    initLightbox();
+  };
 
-lightbox.addEventListener('click', (e) => {
-  if (e.target === lightbox) {
-    lightbox.style.display = 'none';
-    lightboxImg.src = '';
+  // Ejecutar cuando el DOM esté listo
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
   }
-});
+
+})();
