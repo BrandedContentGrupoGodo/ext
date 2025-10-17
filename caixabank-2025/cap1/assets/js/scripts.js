@@ -49,9 +49,17 @@
   const initReportajeAnimations = () => {
     // Animar #reportaje y todos los .reportaje
     const sections = ['#reportaje', ...gsap.utils.toArray(".reportaje")];
+    const documentHeight = document.documentElement.scrollHeight;
     
-    sections.forEach(section => {
-      gsap.fromTo(section, 
+    sections.forEach((section, index) => {
+      const element = typeof section === 'string' ? document.querySelector(section) : section;
+      if (!element) return;
+      
+      // Calcular si el elemento está en la parte inferior de la página
+      const elementTop = element.offsetTop;
+      const isNearBottom = elementTop > documentHeight * 0.75;
+      
+      gsap.fromTo(element, 
         { y: 50, opacity: 0 },
         { 
           y: 0,
@@ -59,8 +67,10 @@
           duration: 1,
           ease: "power2.out",
           scrollTrigger: {
-            trigger: section,
-            start: "top 80%"
+            trigger: element,
+            start: isNearBottom ? "top bottom" : "top 95%",  // Más permisivo para elementos al final
+            toggleActions: "play none none none",
+            once: true  // Solo animar una vez
           }
         }
       );
