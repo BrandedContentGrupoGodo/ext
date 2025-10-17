@@ -28,20 +28,31 @@
     );
 
     // ScrollTrigger para el reportaje con id
-    gsap.to("#reportaje", {
-      scrollTrigger: {
-        trigger: "#reportaje",
-        start: "top 80%",
+    gsap.fromTo("#reportaje", 
+      {
+        y: 50,
+        opacity: 0
       },
-      y: 0,
-      opacity: 1,
-      duration: 1,
-      ease: "power2.out"
-    });
+      {
+        scrollTrigger: {
+          trigger: "#reportaje",
+          start: "top 80%",
+          toggleActions: "play none none none"
+        },
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power2.out"
+      }
+    );
 
 // Animación GSAP para todas las secciones con clase .reportaje
 gsap.utils.toArray(".reportaje").forEach((section, index) => {
-  gsap.to(section, 
+  gsap.fromTo(section, 
+    { 
+      y: 50,
+      opacity: 0
+    },
     { 
       y: 0,
       opacity: 1,
@@ -49,9 +60,30 @@ gsap.utils.toArray(".reportaje").forEach((section, index) => {
       ease: "power2.out",
       scrollTrigger: {
         trigger: section,
-        start: "top 85%",        // cuando la sección llegue al 85% de la pantalla
-        toggleActions: "play none none none",
-        once: true               // solo anima una vez para evitar parpadeos
+        start: "top 90%",        // Activación más temprana para los últimos elementos
+        end: "bottom 20%",
+        toggleActions: "play none none none"
+      }
+    }
+  );
+});
+
+// Animación específica para los párrafos individuales dentro de cada sección
+gsap.utils.toArray(".parrafos-caixa").forEach((parrafo, index) => {
+  gsap.fromTo(parrafo, 
+    { 
+      y: 30,
+      opacity: 0
+    },
+    { 
+      y: 0,
+      opacity: 1,
+      duration: 0.8,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: parrafo,
+        start: "top 95%",        // Muy temprano para asegurar que se vean los últimos
+        toggleActions: "play none none none"
       }
     }
   );
