@@ -66,8 +66,16 @@
       );
     }
 
-    // Animar todas las secciones con clase .reportaje
-    gsap.utils.toArray(".reportaje").forEach(section => {
+    // Animar secciones con clase .reportaje, excepto las últimas 2
+    const reportajeSections = gsap.utils.toArray(".reportaje");
+    reportajeSections.forEach((section, index) => {
+      // Quitar animación de las últimas 2 secciones (últimos 4 párrafos)
+      if (index >= reportajeSections.length - 2) {
+        gsap.set(section, { opacity: 1, y: 0 });
+        return;
+      }
+
+      // Animar el resto normalmente
       gsap.fromTo(section, 
         { y: 50, opacity: 0 },
         { 
@@ -77,7 +85,7 @@
           ease: "power2.out",
           scrollTrigger: {
             trigger: section,
-            start: "top bottom-=100",  // Se activa 100px antes del bottom del viewport
+            start: "top bottom-=100",
             toggleActions: "play none none none"
           }
         }
