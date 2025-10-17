@@ -160,8 +160,6 @@
       padding: 5rem 1rem;
       max-width: var(--max-width);
       margin: 0 auto;
-      opacity: 0; /* GSAP animará */
-      transform: translateY(50px);
     }
 
     /* Responsive */
