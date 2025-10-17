@@ -67,9 +67,11 @@
         ease: "power2.out",
         scrollTrigger: {
           trigger: section,
-          start: "top 85%",
+          start: "top 95%",
+          end: "bottom 5%",
           once: true,
-          invalidateOnRefresh: true
+          invalidateOnRefresh: true,
+          // markers: true, // descomentar para debug
         }
       });
 
@@ -118,6 +120,35 @@
         ScrollTrigger.refresh();
         setTimeout(() => ScrollTrigger.refresh(), 300);
       }
+    });
+
+    // Detectar cuando el usuario está cerca del final y mostrar elementos visibles
+    let scrollTimeout;
+    window.addEventListener("scroll", () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const windowHeight = window.innerHeight;
+        const docHeight = document.documentElement.scrollHeight;
+        
+        // Si está en el último 15% del documento
+        if (scrollTop + windowHeight > docHeight * 0.85) {
+          document.querySelectorAll(".reportaje").forEach((section) => {
+            const rect = section.getBoundingClientRect();
+            // Si el elemento está visible en el viewport o justo debajo
+            if (rect.top < windowHeight + 200 && rect.bottom > -200) {
+              if (window.getComputedStyle(section).opacity === "0") {
+                gsap.to(section, { 
+                  opacity: 1, 
+                  y: 0, 
+                  duration: 1, 
+                  ease: "power2.out" 
+                });
+              }
+            }
+          });
+        }
+      }, 100);
     });
 
 
