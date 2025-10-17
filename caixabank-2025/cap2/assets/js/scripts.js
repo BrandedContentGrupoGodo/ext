@@ -27,40 +27,6 @@
       {scale: 1, opacity: 1, duration: 0.8, delay: 1, ease: "elastic.out(1,0.5)"}
     );
 
-    // Establecer estado inicial de todas las secciones de reportaje
-    gsap.set("#reportaje", { opacity: 0, y: 50 });
-    gsap.set(".reportaje", { opacity: 0, y: 50 });
-
-    // ScrollTrigger para el reportaje con id
-    gsap.to("#reportaje", {
-      scrollTrigger: {
-        trigger: "#reportaje",
-        start: "top 95%",
-        end: "bottom top",
-        toggleActions: "play none none none"
-      },
-      y: 0,
-      opacity: 1,
-      duration: 1,
-      ease: "power2.out"
-    });
-
-// Animación GSAP para todas las secciones con clase .reportaje
-gsap.utils.toArray(".reportaje").forEach((section, index) => {
-  gsap.to(section, {
-    scrollTrigger: {
-      trigger: section,
-      start: "top 95%",  // Activación mucho más temprana
-      end: "bottom top",
-      toggleActions: "play none none none"
-    },
-    y: 0,
-    opacity: 1,
-    duration: 1,
-    ease: "power2.out"
-  });
-});
-
 
 // Lightbox funcional
 const lightbox = document.getElementById('lightbox');
