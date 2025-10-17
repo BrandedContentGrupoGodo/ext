@@ -27,48 +27,36 @@
       {scale: 1, opacity: 1, duration: 0.8, delay: 1, ease: "elastic.out(1,0.5)"}
     );
 
-    // ScrollTrigger para el reportaje con id
-    gsap.fromTo("#reportaje", 
-      {
-        y: 50,
-        opacity: 0
-      },
-      {
-        scrollTrigger: {
-          trigger: "#reportaje",
-          start: "top 85%",
-          end: "bottom 15%",
-          toggleActions: "play none none reset",
-          // markers: true  // descomentar para debuggear
-        },
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        ease: "power2.out"
-      }
-    );
+    // Establecer estado inicial de todas las secciones de reportaje
+    gsap.set("#reportaje", { opacity: 0, y: 50 });
+    gsap.set(".reportaje", { opacity: 0, y: 50 });
 
-// Animación GSAP para todas las secciones con clase .reportaje
-gsap.utils.toArray(".reportaje").forEach((section, index) => {
-  gsap.fromTo(section, 
-    { 
-      y: 50,
-      opacity: 0
-    },
-    { 
+    // ScrollTrigger para el reportaje con id
+    gsap.to("#reportaje", {
+      scrollTrigger: {
+        trigger: "#reportaje",
+        start: "top 80%",
+        toggleActions: "play none none none"
+      },
       y: 0,
       opacity: 1,
       duration: 1,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: section,
-        start: "top 85%",
-        end: "bottom 15%",
-        toggleActions: "play none none reset",
-        // markers: true  // descomentar para debuggear
-      }
-    }
-  );
+      ease: "power2.out"
+    });
+
+// Animación GSAP para todas las secciones con clase .reportaje
+gsap.utils.toArray(".reportaje").forEach((section, index) => {
+  gsap.to(section, {
+    scrollTrigger: {
+      trigger: section,
+      start: "top 80%",
+      toggleActions: "play none none none"
+    },
+    y: 0,
+    opacity: 1,
+    duration: 1,
+    ease: "power2.out"
+  });
 });
 
 
