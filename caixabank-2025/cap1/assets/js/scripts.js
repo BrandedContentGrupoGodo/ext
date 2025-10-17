@@ -47,7 +47,10 @@
   // ANIMACIONES GSAP - REPORTAJES (ScrollTrigger)
   // ============================================
   const initReportajeAnimations = () => {
-    gsap.utils.toArray(".reportaje").forEach(section => {
+    // Animar #reportaje y todos los .reportaje
+    const sections = ['#reportaje', ...gsap.utils.toArray(".reportaje")];
+    
+    sections.forEach(section => {
       gsap.fromTo(section, 
         { y: 50, opacity: 0 },
         { 
