@@ -122,33 +122,30 @@
       }
     });
 
-    // Detectar cuando el usuario está cerca del final y mostrar elementos visibles
+    // Sistema de respaldo: detectar elementos visibles que no se han animado
     let scrollTimeout;
     window.addEventListener("scroll", () => {
       clearTimeout(scrollTimeout);
       scrollTimeout = setTimeout(() => {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         const windowHeight = window.innerHeight;
-        const docHeight = document.documentElement.scrollHeight;
         
-        // Si está en el último 15% del documento
-        if (scrollTop + windowHeight > docHeight * 0.85) {
-          document.querySelectorAll(".reportaje").forEach((section) => {
-            const rect = section.getBoundingClientRect();
-            // Si el elemento está visible en el viewport o justo debajo
-            if (rect.top < windowHeight + 200 && rect.bottom > -200) {
-              if (window.getComputedStyle(section).opacity === "0") {
-                gsap.to(section, { 
-                  opacity: 1, 
-                  y: 0, 
-                  duration: 1, 
-                  ease: "power2.out" 
-                });
-              }
+        document.querySelectorAll(".reportaje").forEach((section) => {
+          const rect = section.getBoundingClientRect();
+          // Si el elemento está entrando o ya está en el viewport
+          if (rect.top < windowHeight && rect.bottom > 0) {
+            const opacity = window.getComputedStyle(section).opacity;
+            // Si sigue invisible, animarlo
+            if (parseFloat(opacity) < 0.1) {
+              gsap.to(section, { 
+                opacity: 1, 
+                y: 0, 
+                duration: 1, 
+                ease: "power2.out" 
+              });
             }
-          });
-        }
-      }, 100);
+          }
+        });
+      }, 150);
     });
 
 
