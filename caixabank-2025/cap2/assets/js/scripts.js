@@ -35,7 +35,8 @@
     gsap.to("#reportaje", {
       scrollTrigger: {
         trigger: "#reportaje",
-        start: "top 80%",
+        start: "top 95%",
+        end: "bottom top",
         toggleActions: "play none none none"
       },
       y: 0,
@@ -49,7 +50,8 @@ gsap.utils.toArray(".reportaje").forEach((section, index) => {
   gsap.to(section, {
     scrollTrigger: {
       trigger: section,
-      start: "top 80%",
+      start: "top 95%",  // Activación mucho más temprana
+      end: "bottom top",
       toggleActions: "play none none none"
     },
     y: 0,
