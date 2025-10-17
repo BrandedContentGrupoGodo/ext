@@ -225,6 +225,9 @@
 
 .reportaje {
   padding-top: 3rem;
+  opacity: 0;
+  transform: translateY(50px);
+  will-change: opacity, transform;
 }
 
 .parrafos-caixa {
