@@ -47,19 +47,10 @@
   // ANIMACIONES GSAP - REPORTAJES (ScrollTrigger)
   // ============================================
   const initReportajeAnimations = () => {
-    // Animar #reportaje y todos los .reportaje
-    const sections = ['#reportaje', ...gsap.utils.toArray(".reportaje")];
-    const documentHeight = document.documentElement.scrollHeight;
-    
-    sections.forEach((section, index) => {
-      const element = typeof section === 'string' ? document.querySelector(section) : section;
-      if (!element) return;
-      
-      // Calcular si el elemento está en la parte inferior de la página
-      const elementTop = element.offsetTop;
-      const isNearBottom = elementTop > documentHeight * 0.75;
-      
-      gsap.fromTo(element, 
+    // Animar #reportaje
+    const reportajeId = document.querySelector('#reportaje');
+    if (reportajeId) {
+      gsap.fromTo(reportajeId, 
         { y: 50, opacity: 0 },
         { 
           y: 0,
@@ -67,10 +58,27 @@
           duration: 1,
           ease: "power2.out",
           scrollTrigger: {
-            trigger: element,
-            start: isNearBottom ? "top bottom" : "top 95%",  // Más permisivo para elementos al final
-            toggleActions: "play none none none",
-            once: true  // Solo animar una vez
+            trigger: reportajeId,
+            start: "top 90%",
+            toggleActions: "play none none none"
+          }
+        }
+      );
+    }
+
+    // Animar todas las secciones con clase .reportaje
+    gsap.utils.toArray(".reportaje").forEach(section => {
+      gsap.fromTo(section, 
+        { y: 50, opacity: 0 },
+        { 
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: section,
+            start: "top bottom-=100",  // Se activa 100px antes del bottom del viewport
+            toggleActions: "play none none none"
           }
         }
       );
