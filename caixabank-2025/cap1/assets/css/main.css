@@ -214,17 +214,18 @@
 
 .reportaje {
   padding-top: 3rem;
+  opacity: 0;
+  transform: translateY(50px);
 }
 
 .parrafos-caixa {
   max-width:63ch; 
   margin:0 auto;
-  padding: 16px 32px;
+  padding: 16px;
   margin-bottom: 25px;
   font-style: normal;
   font-weight: 400;
-  line-height: 168.8%;
-    font-size: 18px; 
+  line-height: 168.8%; 
 }
 
 /* ---------- destacados ---------------------------------- */
@@ -246,14 +247,14 @@
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
-  max-width: 650px;
+  max-width: 420px;
   color: #222;
   font-family: "Crimson Text", serif;
    font-size: clamp(1.8rem, 2.5vw, 3rem);
   font-style: normal;
   font-weight: 400;
   line-height: 93%; /* 33.48px */
-  letter-spacing: -1px;
+  letter-spacing: -2px;
   padding: 0.5rem 1rem; /* opcional */
   border-radius: 6px;   /* opcional */
 }
@@ -262,11 +263,9 @@
 @media (max-width: 768px) {
   .image-quote__text {
     font-size: 22px;
-    max-width: 350px;
+    max-width: 280px;
     right: 1rem;
     top: 1rem;
-    color:#fff;
-    z-index: 3;
   }
 }
 
@@ -475,7 +474,7 @@
   position: absolute;
   bottom: 1.5rem;
   left: 1.5rem;
-  max-width: 460px;
+  max-width: 380px;
   color: #fff;
   font-family: var(--font-serif);
   font-size: clamp(1.8rem, 2.5vw, 3rem);
@@ -485,7 +484,6 @@
   letter-spacing: -1px;
   padding: 0.5rem 1rem;
   border-radius: 7px;
-  z-index: 2; 
 }
 
 /* Responsivo */
@@ -495,21 +493,7 @@
     max-width: 90%;
     bottom: 1rem;
     left: 1rem;
-      color:#fff;
-    z-index:3;
   }
-}
-/* Overlay negro solo en móvil para mejorar legibilidad del texto */
-@media (max-width: 768px) {
-  .image-quote__wrapper::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.45);
-    z-index: 1;
-    pointer-events: none;
-  }
-  
 }
 
 /* QUALIFIO */
@@ -527,17 +511,15 @@
   -o-align-items:center;
   width:100%;
   margin-top:0;
-  max-height:670px;
-    min-height: 400px;
+  min-height:670px;
 }
   .iframeQualifio iframe{
     width:100%;
     height:100%;
-    max-height:550px;
+    min-height:550px;
     border: 1px solid var(--red-color)!important;
     padding: 20px;
     margin-bottom: 60px;
-      min-height: 400px;
   }
   .iframeQualifio span {
     font-style:normal;
@@ -546,6 +528,7 @@
     line-height:33px;
     /* color:#fff; */
   }
+
 
 /* ===== SECCIÓN EXTRA DEBAJO DE LA GRID ===== */
 .constelacion-extra {
@@ -639,23 +622,15 @@ button:focus {
     outline: 5px auto var(--background-color) -webkit-focus-ring-color;
 }
 
-/* ---------- MD --------- */
-.article-default.visual__story--icon .content-free-html, .article-default.visual__story--square .content-free-html, .article-default.visual__story--panoramic .content-free-html, .article-default.visual__story--free .content-free-html {
-    margin: 0 !important;
-}
-
-.article-default .content-free-html .blanco iframe {
-  width: 120px;
-}
-
 .no-show {
   opacity: 0;
+}
 
 
 .fb_iframe_widget {
     display: inline-block;
     position: relative;
-    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
     color: white;
 }
 .fb-xfbml-parse-ignore {
@@ -666,19 +641,8 @@ button:focus {
 }
 .blanco {
   color: #fff!important;
-    padding-top: 0.8rem;
-    width: 120px;
+      padding-top: 0.8rem;
 }
 .fb-share-button {
   color: white!important;
 }
-
-
-
-
-
-
-
-
-
-
