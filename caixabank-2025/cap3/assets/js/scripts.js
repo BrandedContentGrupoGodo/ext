@@ -59,22 +59,19 @@
       if (!section || section.dataset.gsapInit === "true") return;
       section.dataset.gsapInit = "true";
 
-      // Animación propia por sección
-      gsap.fromTo(section,
-        { y: 50, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: section,
-            start: "top 85%",
-            once: true,
-            invalidateOnRefresh: true
-          }
+      // Animación propia por sección (el estado inicial ya está en CSS)
+      gsap.to(section, {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: section,
+          start: "top 85%",
+          once: true,
+          invalidateOnRefresh: true
         }
-      );
+      });
 
       // Al cargar imágenes dentro, recalcular posiciones
       section.querySelectorAll("img").forEach((img) => {
