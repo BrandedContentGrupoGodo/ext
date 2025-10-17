@@ -66,9 +66,10 @@ const historias = [
     enlace: "https://www.lavanguardia.com/deportes/20251006/11112328/toni-ponce-campeon-nada-hijos-promesa-madre-natacion-paralimpico-constelaciones-streaming-brl.html"
   },
   {
-    nombre: "Luna",
-    frase: "Bailar es desafiar la gravedad con belleza.",
-    imagen: "https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/01_09-07-25/assets/img/locked.png"
+    nombre: "Marta Arce",
+    frase: "Cuando subo al pódium, lo hago representando a todas las personas que me han acompañado",
+    imagen: "https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/01_09-07-25/assets/img/cap4.png",
+    enlace: "https://www.lavanguardia.com/deportes/20251020/11157098/marta-arce-judoka-espanola-volvio-tatami-47-anos-gano-medalla-juegos-judo-paralimpico-constelaciones-streaming-brl.html"
   },
   {
     nombre: "Erik",
@@ -88,8 +89,8 @@ historias.forEach(({ nombre, frase, imagen, enlace }, i) => {
   const card = document.createElement('div');
   card.className = 'card';
 
-  if (i === 0 || i === 1 || i === 2) {
-    // Primera, segunda y tercera historia desbloqueadas
+  if (i === 0 || i === 1 || i === 2 || i === 3) {
+    // Primera, segunda, tercera y cuarta historia desbloqueadas
     card.innerHTML = `
       <img src="${imagen}" alt="Retrato de ${nombre}, atleta paralímpico">
       <div class="card-content">
@@ -123,4 +124,3 @@ historias.forEach(({ nombre, frase, imagen, enlace }, i) => {
     delay: i * 0.05
   });
 });
-
