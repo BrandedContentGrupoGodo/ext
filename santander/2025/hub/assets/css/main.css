@@ -317,6 +317,10 @@ html { scroll-behavior: smooth; }
   gap: var(--bc-spacing-xs);
   transition: all 0.3s ease;
   margin-top: var(--bc-spacing-lg);
+  min-height: 48px;
+  min-width: 48px;
+  padding: var(--bc-spacing-xs);
+  cursor: pointer;
 }
 
 .hero__arrow {
@@ -476,6 +480,7 @@ html { scroll-behavior: smooth; }
   display: flex;
   flex-direction: column;
   gap: var(--bc-spacing-sm);
+  min-height: 48px;
 }
 
 .formation__video-container {
@@ -485,6 +490,7 @@ html { scroll-behavior: smooth; }
   border-radius: var(--hero-video-border-radius);
   overflow: hidden;
   background: #000;
+  min-height: 280px;
 }
 
 .formation__video {
@@ -640,7 +646,8 @@ html { scroll-behavior: smooth; }
 .formation__content {
   display: flex;
   flex-direction: column;
-  gap: var(--bc-spacing-xs);
+  gap: var(--bc-spacing-sm);
+  padding: var(--bc-spacing-xs) 0;
 }
 
 .formation__description {
@@ -665,6 +672,8 @@ html { scroll-behavior: smooth; }
   text-decoration: none;
   transition: color 0.3s ease;
   align-self: flex-start;
+  min-height: 48px;
+  padding: var(--bc-spacing-xs) 0;
 }
 
 .formation__link:hover {
@@ -681,6 +690,8 @@ html { scroll-behavior: smooth; }
 
 /* Flechas del carrusel */
 .formation__arrow {
+  min-width: 48px;
+  min-height: 48px;
   width: 48px;
   height: 48px;
   border: none;
@@ -692,6 +703,7 @@ html { scroll-behavior: smooth; }
   border-radius: 50%;
   transition: all 0.3s ease;
   flex-shrink: 0;
+  padding: var(--bc-spacing-xs);
 }
 
 .formation__arrow:hover:not(:disabled) {
@@ -768,8 +780,15 @@ html { scroll-behavior: smooth; }
   }
   
   .formation__arrow {
-    width: 40px;
-    height: 40px;
+    min-width: 48px;
+    min-height: 48px;
+    width: 48px;
+    height: 48px;
+  }
+  
+  .formation__link {
+    min-height: 48px;
+    padding: var(--bc-spacing-sm) 0;
   }
 }
 
@@ -794,13 +813,20 @@ html { scroll-behavior: smooth; }
   }
   
   .formation__arrow {
-    width: 32px;
-    height: 32px;
+    min-width: 48px;
+    min-height: 48px;
+    width: 48px;
+    height: 48px;
   }
   
   .formation__play-icon {
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .formation__link {
+    min-height: 48px;
+    padding: var(--bc-spacing-sm) 0;
   }
 }
 
