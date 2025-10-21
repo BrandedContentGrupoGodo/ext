@@ -3,14 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aprender cambia todo. Un proyecto de Banco Santander sobre la importancia de la formación continua y el aprendizaje como motor de transformación profesional.">
+    <meta name="theme-color" content="#1F418E">
+    <title>Aprender Cambia Todo | Banco Santander</title>
 
+    <!-- Preconnect para mejorar rendimiento -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    
+    <!-- Fonts optimizadas -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
+    <a href="#main-content" class="skip-to-main">Saltar al contenido principal</a>
+    
     <div class="body-santander">
 
         <!-- HERO ============================================= -->
@@ -32,42 +41,50 @@
                 </div>
                 
                 <!-- Subtítulo principal -->
-                <h1 class="hero__subtitle hero__fade-in" style="animation-delay: 0.3s;">
+                <p class="hero__subtitle hero__fade-in" style="animation-delay: 0.3s;">
                     Un proyecto que refuerza el compromiso de Banco Santander con el aprendizaje como motor de transformación. Aprender y seguir formándonos es clave para adaptarnos, crecer y liderar el cambio
-                </h1>
+                </p>
                 
                 <!-- Grid de imágenes -->
                 <div class="hero__videos hero__fade-in" role="region" aria-label="Imágenes destacadas" style="animation-delay: 0.5s;">
-                    <div class="hero__video hero__video--large" tabindex="0" aria-label="Imagen principal">
+                    <div class="hero__video hero__video--large">
                         <img 
                             class="hero__video-element hero__image-element"
                             src="assets/img/cabecera-1.jpg"
                             alt="Aprendizaje y transformación"
                             loading="eager"
+                            width="400"
+                            height="600"
                         >
                     </div>
-                    <div class="hero__video hero__video--medium" tabindex="0" aria-label="Imagen secundaria 1">
+                    <div class="hero__video hero__video--medium">
                         <img 
                             class="hero__video-element hero__image-element"
                             src="assets/img/cabecera-2.jpg"
                             alt="Formación continua"
                             loading="eager"
+                            width="400"
+                            height="600"
                         >
                     </div>
-                    <div class="hero__video hero__video--medium" tabindex="0" aria-label="Imagen secundaria 2">
+                    <div class="hero__video hero__video--medium">
                         <img 
                             class="hero__video-element hero__image-element"
                             src="assets/img/cabecera-3.jpg"
                             alt="Crecimiento profesional"
                             loading="eager"
+                            width="400"
+                            height="600"
                         >
                     </div>
-                    <div class="hero__video hero__video--large" tabindex="0" aria-label="Imagen destacada">
+                    <div class="hero__video hero__video--large">
                         <img 
                             class="hero__video-element hero__image-element"
                             src="assets/img/cabecera-4.jpg"
                             alt="Transformación digital"
                             loading="eager"
+                            width="400"
+                            height="600"
                         >
                     </div>
                 </div>
@@ -88,7 +105,7 @@
         </section>
 
         <!-- Silvia Leal ============================================= -->
-        <section class="formation" role="region" aria-label="Sección de formación">
+        <section class="formation" id="main-content" role="region" aria-label="Sección de formación">
             <div class="formation__container">
                 <!-- Títulos -->
                 <div class="formation__header">
@@ -178,6 +195,12 @@
                                         src="assets/img/silvia-3.jpg" 
                                         alt="Hard y soft skills del futuro: las competencias más valoradas para encontrar trabajo" 
                                         class="formation__locked-image"
+                                        loading="lazy"
+                                        width="280"
+                                        height="498"
+                                        loading="lazy"
+                                        width="280"
+                                        height="498"
                                     >
                                     <div class="formation__lock-icon">
                                         <img src="assets/img/lock.svg" alt="Bloqueado" aria-hidden="true">
@@ -195,6 +218,9 @@
                                         src="assets/img/silvia-4.jpg" 
                                         alt="Sostenibilidad y responsabilidad social corporativa" 
                                         class="formation__locked-image"
+                                        loading="lazy"
+                                        width="280"
+                                        height="498"
                                     >
                                     <div class="formation__lock-icon">
                                         <img src="assets/img/lock.svg" alt="Bloqueado" aria-hidden="true">
@@ -212,6 +238,9 @@
                                         src="assets/img/silvia-5.jpg" 
                                         alt="Finanzas personales y planificación del futuro" 
                                         class="formation__locked-image"
+                                        loading="lazy"
+                                        width="280"
+                                        height="498"
                                     >
                                     <div class="formation__lock-icon">
                                         <img src="assets/img/lock.svg" alt="Bloqueado" aria-hidden="true">
@@ -229,6 +258,9 @@
                                         src="assets/img/silvia-6.jpg" 
                                         alt="Emprendimiento y creación de nuevas oportunidades" 
                                         class="formation__locked-image"
+                                        loading="lazy"
+                                        width="280"
+                                        height="498"
                                     >
                                     <div class="formation__lock-icon">
                                         <img src="assets/img/lock.svg" alt="Bloqueado" aria-hidden="true">
@@ -255,8 +287,10 @@
             <div class="data__background">
                 <img 
                     src="assets/img/fondo-santander.svg" 
-                    alt="Fondo de datos" 
+                    alt="" 
                     class="data__bg-image"
+                    loading="lazy"
+                    aria-hidden="true"
                 >
             </div>
             <div class="data__container">
@@ -407,6 +441,9 @@
                                         src="assets/img/cap-3-off.jpg" 
                                         alt="Análisis de datos y Big Data - Bloqueado" 
                                         class="formation__locked-image"
+                                        loading="lazy"
+                                        width="280"
+                                        height="498"
                                     >
                                     <div class="formation__lock-icon">
                                         <img src="assets/img/lock.svg" alt="Bloqueado" aria-hidden="true">
@@ -424,6 +461,9 @@
                                         src="assets/img/cap-4-off.jpg" 
                                         alt="Desarrollo de software y programación - Bloqueado" 
                                         class="formation__locked-image"
+                                        loading="lazy"
+                                        width="280"
+                                        height="498"
                                     >
                                     <div class="formation__lock-icon">
                                         <img src="assets/img/lock.svg" alt="Bloqueado" aria-hidden="true">
@@ -441,6 +481,9 @@
                                         src="assets/img/cap-5-off.jpg" 
                                         alt="Marketing digital y e-commerce - Bloqueado" 
                                         class="formation__locked-image"
+                                        loading="lazy"
+                                        width="280"
+                                        height="498"
                                     >
                                     <div class="formation__lock-icon">
                                         <img src="assets/img/lock.svg" alt="Bloqueado" aria-hidden="true">
@@ -458,6 +501,9 @@
                                         src="assets/img/cap-6-off.jpg" 
                                         alt="Sostenibilidad y economía verde - Bloqueado" 
                                         class="formation__locked-image"
+                                        loading="lazy"
+                                        width="280"
+                                        height="498"
                                     >
                                     <div class="formation__lock-icon">
                                         <img src="assets/img/lock.svg" alt="Bloqueado" aria-hidden="true">
@@ -484,8 +530,10 @@
             <div class="data__background">
                 <img 
                     src="assets/img/fondo-santander2.svg" 
-                    alt="Fondo de datos" 
+                    alt="" 
                     class="data__bg-image"
+                    loading="lazy"
+                    aria-hidden="true"
                 >
             </div>
             <div class="data__container data__container--second">
@@ -497,7 +545,7 @@
                         <div class="data__bar data__bar--horizontal data__bar--light">
                             <div class="data__bar-content data__bar-content--horizontal">
                                 <div class="data__bar-image">
-                                    <img src="assets/img/dato-1.svg" alt="Automatización" class="data__bar-img">
+                                    <img src="assets/img/dato-1.svg" alt="Automatización" class="data__bar-img" loading="lazy" width="80" height="80">
                                 </div>
                                 <div class="data__bar-text data__bar-text--horizontal">
                                     <p class="data__bar-description data__bar-description--horizontal">
@@ -511,7 +559,7 @@
                         <div class="data__bar data__bar--horizontal data__bar--medium">
                             <div class="data__bar-content data__bar-content--horizontal">
                                 <div class="data__bar-image">
-                                    <img src="assets/img/dato-2.svg" alt="Reciclaje profesional" class="data__bar-img">
+                                    <img src="assets/img/dato-2.svg" alt="Reciclaje profesional" class="data__bar-img" loading="lazy" width="80" height="80">
                                 </div>
                                 <div class="data__bar-text data__bar-text--horizontal">
                                     <p class="data__bar-description data__bar-description--horizontal">
@@ -525,7 +573,7 @@
                         <div class="data__bar data__bar--horizontal data__bar--dark">
                             <div class="data__bar-content data__bar-content--horizontal">
                                 <div class="data__bar-image">
-                                    <img src="assets/img/dato-3.svg" alt="Cambio de sector" class="data__bar-img">
+                                    <img src="assets/img/dato-3.svg" alt="Cambio de sector" class="data__bar-img" loading="lazy" width="80" height="80">
                                 </div>
                                 <div class="data__bar-text data__bar-text--horizontal">
                                     <p class="data__bar-description data__bar-description--horizontal">
@@ -563,9 +611,8 @@
         </div>
     </div>  
     
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script src="assets/js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+    <script src="assets/js/scripts.js" defer></script>
 </body>
 </html>
