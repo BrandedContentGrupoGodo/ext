@@ -26,34 +26,12 @@
       
       if (!svgImage) return;
 
-      // Cargar el SVG y aplicar animación de trazo
-      fetch(svgImage.src)
-        .then(response => response.text())
-        .then(svgContent => {
-          const parser = new DOMParser();
-          const svgDoc = parser.parseFromString(svgContent, 'image/svg+xml');
-          const svg = svgDoc.querySelector('svg');
-          
-          if (!svg) return;
-
-          // Reemplazar la imagen con el SVG inline
-          svg.classList.add('hero__svg-inline');
-          svgImage.parentNode.replaceChild(svg, svgImage);
-
-          // Aplicar animación de trazo a todos los paths
-          const paths = svg.querySelectorAll('path, line, polyline, polygon, circle, ellipse, rect');
-          
-          paths.forEach((path, index) => {
-            const length = path.getTotalLength ? path.getTotalLength() : 0;
-            
-            if (length > 0) {
-              path.style.strokeDasharray = length;
-              path.style.strokeDashoffset = length;
-              path.style.animation = `drawStroke 1.2s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.05}s forwards`;
-            }
-          });
-        })
-        .catch(err => console.log('Error al cargar SVG:', err));
+      // Si es una imagen SVG, aplicar solo la animación de fade-in del CSS
+      // Para evitar errores de CORS cuando se abre desde el sistema de archivos
+      // La animación de dibujo de trazo requeriría SVG inline directamente en el HTML
+      
+      // El SVG se animará con la clase hero__image--animated mediante CSS
+      // Si quieres animación de trazo, reemplaza el <img> con el SVG inline directamente en el HTML
     })();
 
     // Carrusel de formación
