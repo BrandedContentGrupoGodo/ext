@@ -423,8 +423,8 @@ a {
 
 .image-quote-bottom__text {
   position: absolute;
-  bottom: 1.5rem;
-  left: 1.5rem;
+  top: 1.5rem;
+  right: 1.5rem;
   max-width: 670px;
   color: #fff;
   font-family: var(--font-serif);
@@ -618,3 +618,4 @@ button:focus {
     grid-template-columns: 1fr;
   }
 }
+
