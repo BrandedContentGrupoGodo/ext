@@ -72,9 +72,10 @@ const historias = [
     enlace: "https://www.mundodeportivo.com/juegos-olimpicos/20251020/1002550228/marta-arce-judoka-espanola-volvio-tatami-47-anos-gano-medalla-juegos-judo-paralimpico-constelaciones-streaming-brl.html"
   },
   {
-    nombre: "Erik",
-    frase: "Donde termina la vista, comienza el instinto.",
-    imagen: "https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/01_09-07-25/assets/img/locked.png"
+    nombre: "Álvaro del Amo",
+    frase: "El peso de la bola es un símbolo, la prueba tangible de que en esta vida nada es fácil",
+    imagen: "https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/01_09-07-25/assets/img/cap5.png",
+    enlace: "https://www.mundodeportivo.com/juegos-olimpicos/20251103/1002559708/alvaro-amo-consejo-cambio-carrera-medallista-espanol-disco-peso-paralimpico-constelaciones-streaming-brl.html"
   },
   {
     nombre: "Valentina",
@@ -89,8 +90,8 @@ historias.forEach(({ nombre, frase, imagen, enlace }, i) => {
   const card = document.createElement('div');
   card.className = 'card';
 
-  if (i === 0 || i === 1 || i === 2 || i === 3) {
-    // Primera, segunda, tercera y cuarta historia desbloqueadas
+  if (i === 0 || i === 1 || i === 2 || i === 3 || i === 4) {
+    // Historias desbloqueadas
     card.innerHTML = `
       <img src="${imagen}" alt="Retrato de ${nombre}, atleta paralímpico">
       <div class="card-content">
