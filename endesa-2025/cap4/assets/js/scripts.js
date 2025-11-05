@@ -1,9 +1,77 @@
-const lenis = new Lenis({ smooth: true });
-  function raf(time) {
-    lenis.raf(time);
+// Configurar Lenis con opciones para evitar conflictos con iframes
+let lenis;
+
+// Inicializar Lenis después de que todo esté cargado
+document.addEventListener("DOMContentLoaded", () => {
+  lenis = new Lenis({ 
+    smooth: true,
+    smoothWheel: true,
+    wheelMultiplier: 1,
+    touchMultiplier: 2,
+    infinite: false,
+    lerp: 0.1
+  });
+
+  // Integrar Lenis con ScrollTrigger si está disponible
+  if (typeof ScrollTrigger !== 'undefined') {
+    lenis.on('scroll', ScrollTrigger.update);
+    
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
+    });
+    
+    gsap.ticker.lagSmoothing(0);
+  } else {
+    // Si ScrollTrigger no está disponible, usar el método tradicional
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
     requestAnimationFrame(raf);
   }
-  requestAnimationFrame(raf);
+
+  // Pausar scroll suave cuando el mouse está sobre el video
+  const videoContainer = document.querySelector(".video-container");
+  
+  if (videoContainer && lenis) {
+    let isOverVideo = false;
+    
+    // Pausar Lenis cuando el mouse entra al área del video
+    videoContainer.addEventListener("mouseenter", () => {
+      isOverVideo = true;
+      lenis.stop();
+    }, { passive: true });
+    
+    // Reanudar Lenis cuando el mouse sale del área del video
+    videoContainer.addEventListener("mouseleave", () => {
+      isOverVideo = false;
+      lenis.start();
+    }, { passive: true });
+    
+    // También usar pointer events para mejor detección
+    videoContainer.addEventListener("pointerenter", () => {
+      if (!isOverVideo) {
+        isOverVideo = true;
+        lenis.stop();
+      }
+    }, { passive: true });
+    
+    videoContainer.addEventListener("pointerleave", () => {
+      if (isOverVideo) {
+        isOverVideo = false;
+        lenis.start();
+      }
+    }, { passive: true });
+    
+    // Prevenir que el scroll de la página interfiera cuando se está sobre el video
+    videoContainer.addEventListener("wheel", (e) => {
+      if (isOverVideo) {
+        // Permitir que el scroll nativo funcione sobre el iframe
+        return true;
+      }
+    }, { passive: true });
+  }
+});
 
 window.addEventListener("load", () => {
   const header = document.querySelector(".header-section");
