@@ -1,0 +1,916 @@
+:root {
+  --header-height: 50px;
+  --bg-color: #000;
+  --text-color: #fff;
+  --text-color-dark:#214068;
+  --accent-color:#325D94;
+  --star-glow: rgba(255, 255, 255, 0.15);
+  --font-sans: "Albert Sans", sans-serif;
+  --font-serif: "Bacasime Antique", serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- ESTILOS LANDING -------------------------------------- */
+.sticky-bar {
+      position: sticky;
+      top: 0;
+      height: var(--header-height);
+      background-color: var(--bg-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1rem;
+      z-index: 1000;
+    }
+
+    .sticky-bar__icon {
+      width: 24px;
+      height: 24px;
+      fill: var(--text-color);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .sticky-bar__icon:hover {
+      transform: scale(1.1);
+    }
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.header-section.loaded {
+  opacity: 1;
+  transition: opacity 1.4s ease;
+}
+
+.header-section {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  background: url('https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap3/assets/img/endesa1.jpg') right bottom /cover no-repeat;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  padding: 0 3rem;
+}
+.header-section::before {
+content: '';
+position: absolute;
+inset: 0;
+background: inherit;
+filter: blur(20px);
+transform: scale(1.2);
+opacity: 0;
+z-index: 1;
+pointer-events: none;
+}
+
+.header-section.loaded::before {
+transition: all 2s ease;
+filter: blur(0);
+transform: scale(1);
+opacity: 1;
+}
+
+.header-text {
+  max-width: 600px;
+  margin-top: 2rem;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0px 2px 15px rgba(0, 0, 0);
+}
+
+.header-text > * {
+  opacity: 0;
+  transform: translateY(20px);
+  filter: blur(6px);
+}
+
+.header-text__pretitle {
+  color: var(--text-color);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 127.075%;
+  letter-spacing: 1.32px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.header-text__title {
+  color: var(--text-color);
+  font-family: var(--font-serif);
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 80%;
+  margin-bottom: 1rem;
+}
+
+.header-text__subtitle {
+  color: var(--text-color);
+  max-width: 500px;
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 108.8%;
+  
+}
+
+@media (max-width: 768px) {
+  .header-section {
+    background: url('https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap3/assets/img/endesa1-mobile.jpg') left bottom / cover no-repeat;
+  }
+  .header-text__title {
+    font-size: 28px;
+  }
+  .header-text__subtitle {
+    font-size: 16px;
+  }
+}
+@media (max-width: 550px) {
+  .header-section {
+    padding: 2rem;
+  }
+}
+
+.entradilla {
+  padding: 3.5rem 0;
+}
+
+.entradilla p {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 16px;
+  color: var(--text-color-dark);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 168.8%;
+}
+
+.titular-podcast {
+  max-width: 760px;
+  margin: 0 auto 2.5rem;
+}
+
+.titular-podcast p {
+  color: var(--text-color-dark);
+  text-align: center;
+  font-family:var(--font-serif);
+  font-size: 22px;
+  font-style: normal;
+  line-height: 90%;
+  padding: 0 16px;
+}
+
+.video-endesa {
+  height: 100vh;
+  padding: 2rem;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+@media (max-width: 600px) {
+  .video-endesa {
+    height: 60vh;
+  }
+}
+
+.timeline-section {
+  background-color: var(--accent-color);
+  background: url('https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap3/assets/img/fondo-endesa.jpg') right bottom/cover no-repeat;
+  color: var(--text-color);
+  padding: 5rem 2rem;
+}
+
+.timeline-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+  /* max-width: 1200px; */
+  margin: auto;
+  align-items: center;
+}
+
+.timeline-left {
+  flex: 1;
+  min-width: 280px;
+  position: relative;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 15px;
+  top: 0;
+  height: 100%;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4rem;
+  margin-top: 5rem;
+  position: relative;
+  padding-left: 40px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.5s ease-out;
+}
+
+.timeline-item.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-icon {
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.timeline-year {
+  font-family: var(--font-sans);
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.timeline-desc {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  margin: 0.2rem 0 0;
+  max-width:320px;
+}
+
+.timeline-right {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.timeline-heading {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+.timeline-paragraph {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 168.8%;
+}
+
+@media (max-width: 768px) {
+  .timeline-container {
+    flex-direction: column;
+  }
+  .timeline-line {
+    left: 0;
+  }
+  .timeline-item {
+    padding-left: 30px;
+    margin-top: 2rem;
+  }
+}
+.full-image {
+  max-width: 100%;
+}
+.full-image img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  display: block;
+   max-width: 100%;
+}
+.full-image-alimento {
+  width: 100%;
+}
+
+.full-image-alimento img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  max-width: 100%;
+}
+
+/* Por defecto: ocultamos mobile, mostramos desktop */
+.img-mobile {
+  display: none !important;
+}
+
+.img-desktop {
+  display: block !important;
+}
+
+@media (max-width: 550px) {
+.full-image img {
+  width: 100%;
+  height: 60vh;
+}
+  .img-desktop {
+    display: none !important;
+  }
+
+  .img-mobile {
+    display: block !important;
+  }
+}
+
+.image-caption {
+  color: #6D94AA;
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 168.8%;
+  margin-top: 0.75rem;
+  max-width: 1200px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* fases */
+.fases-proceso {
+  padding: 3rem 2rem;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  text-align: center;
+  min-height: 400px;
+}
+
+.fases-title {
+  font-size: 2rem;
+  font-family: var(--font-serif);
+  margin-bottom: 2rem;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.fases-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: space-evenly;
+}
+
+.fase-card {
+  position: relative;
+  background: #60A4B9;
+  border-radius: 15px;
+  box-shadow: 0 4px 9.7px 0 #49828B;
+  padding: 1.5rem 1rem;
+  width: 150px;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+  justify-content: center;
+}
+
+.fase-card:hover {
+  transform: translateY(-5px);
+}
+
+.fase-icon {
+  width: 50px;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+.fase-name {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-sans);
+}
+
+.fase-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--text-color-dark);
+  font-family: var(--font-sans);
+  color: white;
+  padding: 0.75rem;
+  border-radius: 0 0 15px 15px;
+  font-size: 0.85rem;
+  opacity: 0;
+  transform: translateY(20%);
+  transition: opacity 0.4s cubic-bezier(.25,.8,.25,1),
+              transform 0.4s cubic-bezier(.25,.8,.25,1);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.fase-card:hover .fase-info {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.flecha {
+  position: absolute;
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .fases-container {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .fase-card {
+    flex: 0 0 calc(50% - 1.5rem);
+  }
+
+  .flecha {
+    display: none;
+  }
+}
+
+/* ---------- CRÉDITOS ---------------------------------- */
+.authorship-f {
+  color: #888;
+  font-size: .8em;
+  text-align: center;
+  padding-bottom: 30px;
+  font-family: var(--font-sans);
+}
+
+.container-fluid-f {
+  width: calc(100% - 40px);
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+#audio-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1001;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 20px;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  transition: background 0.3s ease;
+}
+
+#audio-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+#audio-toggle.pulse {
+  animation: pulseIcon 1.5s infinite ease-in-out;
+}
+
+@keyframes pulseIcon {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.parrafos-normal {
+  padding: 3.5rem 0;
+}
+.parrafos-normal h2 {
+  max-width: 600px;
+  margin: auto;
+  padding: 50px 16px 10px;
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 300;
+  color: var(--text-color-dark);
+}
+
+.parrafos-normal p {
+  max-width: 600px;
+  margin: auto;
+  padding: 30px 16px;
+  color: var(--text-color-dark);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 168.8%;
+
+}
+
+.destacado-endesa {
+  background-color: var(--accent-color);
+  display: flex;
+    flex-wrap: wrap;
+        justify-content: space-around;
+    align-items: center;
+    padding: 2rem;
+    gap: 1rem;
+    align-content: center;
+}
+
+.destacado-texto {
+  flex: 1;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.bloque-bosque {
+position: relative;
+  width: 100%;
+  background: url('https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap3/assets/img/fondo-endesa.jpg') right bottom/cover no-repeat;
+  color: white;
+  padding: 5rem 1.5rem; /* más alto que antes */
+  font-family: var(--font-sans);
+  margin-top: 2rem;
+  text-align: center;
+  margin: auto;
+}
+
+.bosque-titulo {
+  text-align: center;
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 3rem;
+  color: white;
+}
+
+.hogar-cajas-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  max-width: 740px;
+  text-align: center;
+  align-items: center;
+  justify-items: center;
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hogar-caja {
+    background: #214068;
+    border: 1px solid #4F8FE0;
+    border-radius: 12px;
+    padding: 1.5rem 1.2rem;
+    box-sizing: border-box;
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+}
+.hogar-caja p {
+  font-family: var(--font-sans);
+    margin: 0;
+    color: var(--text-color);
+    font-size: 1rem;
+    text-align: center;
+}
+@media (max-width: 700px) {
+    .hogar-cajas-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+.map-info-section {
+  color: var(--text-color);
+  padding: 4rem 2rem;
+}
+
+.map-info-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: space-between;
+  max-width: 1280px;
+  margin: auto;
+}
+
+.map-info-text {
+  flex: 1;
+  min-width: 280px;
+  font-family: var(--font-sans);
+}
+.map-info-text p:first-of-type {
+  font-size: 5rem;
+}
+.map-info-text p:last-of-type {
+  max-width: 280px;
+}
+.map-wrapper {
+  flex: 1;
+  min-width: 280px;
+  position: relative;
+}
+
+#mapa-svg {
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+.map-divider {
+  border-top: 1px solid #DDD6CC;
+  margin-top: 4rem;
+  padding-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.map-column {
+  flex: 1;
+  min-width: 280px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 168.8%;
+}
+
+.map-column h3 {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.map-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.map-content img {
+max-width: 100%;
+}
+
+.map-title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 90%;
+  max-width: 150px;
+  line-height: 1.2;
+}
+
+.region-hover {
+  position: absolute;
+  z-index: 5;
+  cursor: pointer;
+}
+
+/* Ajusta estas coordenadas según la posición real del mapa */
+.region-hover.azul {
+  top: 30%;
+  left: 10%;
+  width: 20%;
+  height: 20%;
+}
+
+.region-hover.naranja {
+  bottom: 20%;
+  right: 10%;
+  width: 20%;
+  height: 20%;
+}
+/* Estilos generales para todas las cajas */
+.map-box {
+  position: absolute;
+  border-radius: 8px;
+  overflow: hidden; /* Para que los fondos de título y texto se vean bien */
+  max-width: 200px;
+  color: white;
+  font-family: var(--font-sans);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Titulares */
+.map-box h3 {
+  margin: 0;
+  padding: 0.5rem;
+  font-weight: bold;
+  font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+  line-height: 168.8%;
+}
+
+/* Texto */
+.map-box p {
+  margin: 0;
+  padding: 0.75rem;
+  font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 168.8%;
+}
+
+/* Caja Azul - Población estable */
+.map-box.azul h3 {
+  background-color: #6D94AA;
+}
+
+.map-box.azul p {
+  background-color: #4B5C86;
+  font-size: 0.8rem;
+}
+
+/* Caja Naranja - Reintroducción */
+.map-box.naranja h3 {
+  background-color: #D48076;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.map-box.naranja p {
+  background-color: #214068 ;
+  font-size: 0.8rem;
+}
+
+.map-box.azul {
+  top: 20%;
+  left: 10%;
+}
+
+.map-box.naranja {
+  top: -30%;
+  right: 40%;
+}
+
+.map-box.show {
+  opacity: 1;
+}
+
+
+
+@media (max-width: 768px) {
+  .map-info-container {
+    flex-direction: column;
+  }
+  .map-divider {
+    flex-direction: column;
+  }
+    .map-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .map-title {
+    max-width: none;
+  }
+
+}
+
+.timeline-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    font-family: var(--font-sans);
+}
+.timeline-stat-item {
+    display: flex;
+    align-items: center;
+    border-radius: 1rem;
+    padding: 1.2rem 1rem;
+}
+.timeline-stat-icon {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+}
+.timeline-stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    min-width: 2.5em;
+    text-align: center;
+}
+.timeline-stat-text {
+    font-size: 1rem;
+    color: #fff;
+    flex: 1;
+    margin-left: 0.5rem;
+}
+@media (max-width: 600px) {
+    .timeline-stats {
+        max-width: 100%;
+        gap: 1.2rem;
+    }
+    .timeline-stat-item {
+        padding: 0.8rem 0.5rem;
+        gap: 0.7rem;
+    }
+    .timeline-stat-icon {
+        width: 36px;
+        height: 36px;
+    }
+    .timeline-stat-number {
+        font-size: 1.6rem;
+        min-width: 2em;
+    }
+    .timeline-stat-text {
+        font-size: 1rem;
+    }
+}
+/* estilos para que en LV se muestre el contenido sin margenes */
+.wallpaper-inverted-ad{
+    display: none!important;
+  }
+  
+  .visual-article-free .col-12 {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    margin-top: 0 !important;
+  }
+  .content-free-html {
+    margin:0 !important;
+  }
+  .container-fluid {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+  .visual__story--free .content-free-html {
+    margin: 0px !important;
+  }
+  .row>* {
+    padding-right: 0!important;
+    padding-left: 0!important;
+    margin-top: 0!important;
+  }
+  .article-default a:hover {
+    text-decoration: none;
+    box-shadow: none;
+  }
+button:focus {
+    outline: 1px dotted var(--background-color);
+    outline: 5px auto var(--background-color) -webkit-focus-ring-color;
+}
+.links-endesa {
+color: var(--accent-color);
+}
+.timeline-right .links-endesa {
+color: var(--text-color);
+}
