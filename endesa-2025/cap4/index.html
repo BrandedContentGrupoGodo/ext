@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Bacasime+Antique&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap4/assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
     <!-- <div class="sticky-bar">
@@ -66,10 +66,12 @@
             <div class="video-endesa">
               <div class="video-container">
                 <iframe 
-                  src="https://www.youtube.com/embed/zafZlfTx4lk?si=8OYrM3Xtf_y8qlLC"
-                  title="YouTube video"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  src="https://www.youtube.com/embed/zafZlfTx4lk?rel=0&modestbranding=1"
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowfullscreen
+                  loading="lazy"
+                  frameborder="0"
                 ></iframe>
               </div>
             </div>
@@ -90,7 +92,7 @@
         </section>
 
         <section class="full-image">
-            <img src="https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap4/assets/img/endesa2.jpg" alt="Eli y Pilar hablan con Carlos Isus, president del Consell Comarcal del Pallars Sobirà" />
+            <img class="img-small" src="https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap4/assets/img/endesa2.jpg" alt="Eli y Pilar hablan con Carlos Isus, president del Consell Comarcal del Pallars Sobirà" />
             <p class="image-caption">
                 Eli y Pilar hablan con Carlos Isus, president del Consell Comarcal del Pallars Sobirà
             </p>
@@ -110,8 +112,40 @@
             </div>
         </section>
 
-        <section>
-            tarjetas
+        <section class="cards-section">
+            <h2 class="cards-section__title">Turismo de aventura en el Noguera Pallaresa</h2>
+            <div class="cards-grid">
+                <article class="card">
+                    <div class="card__label">Temporada</div>
+                    <img class="card__image card__image--icon" src="https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap4/assets/img/icono1.svg" alt="Temporada icono" />
+                    <h3 class="card__title">Temporada de marzo a octubre</h3>
+                    <p class="card__description">En invierno el protagonismo lo toman los deportes de nieve por la cercanía de tres estaciones de esquí</p>
+                </article>
+                <article class="card">
+                    <div class="card__label">Recorrido</div>
+                    <img class="card__image card__image--icon" src="https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap4/assets/img/icono2.svg" alt="Recorrido icono" />
+                    <h3 class="card__title">60 km navegables</h3>
+                    <p class="card__description">Desde Llavorsí hasta el desfiladero de Collegats, pasando por Sort y Rialp, Montardit de Baix o Baro</p>
+                </article>
+                <article class="card">
+                    <div class="card__label">Turistas</div>
+                    <img class="card__image card__image--icon" src="https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap4/assets/img/icono3.svg" alt="Turistas icono" />
+                    <h3 class="card__title">80% nacionales, 20% extranjeros</h3>
+                    <p class="card__description">Predominan los catalanes, aragoneses y valencianos. Los franceses son el principal público internacional</p>
+                </article>
+                <article class="card">
+                    <div class="card__label">Récord 2024</div>
+                    <img class="card__image card__image--icon" src="https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap4/assets/img/icono4.svg" alt="Récord 2024 icono" />
+                    <h3 class="card__title">831.034 servicios registrados</h3>
+                    <p class="card__description">La cifra más alta hasta la fecha. El <i>rafting</i> fue la actividad estrella</p>
+                </article>
+                <article class="card">
+                    <div class="card__label">Competencias</div>
+                    <img class="card__image card__image--icon" src="https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap4/assets/img/icono5.svg" alt="Competencias icono" />
+                    <h3 class="card__title">Competiciones nacionales e internacionales</h3>
+                    <p class="card__description">Copa de Europa de Rafting y Campeonato del Mundo de Kayak Freestyle. La Seu d'Urgell y Sort, albergarán los Mundiales de piragüismo del año 2027</p>
+                </article>
+            </div>
         </section>
 
 
@@ -151,95 +185,61 @@
         </section>
 
         <section class="timeline-section">
-            <h2 class="bosque-titulo">12 años de Endesabats</h2>
             
             <div class="timeline-container">
-                <!-- Parte izquierda -->
+                <!-- Parte izquierda: Imagen de fondo con icono y título -->
                 <div class="timeline-left">
-                 <svg class="timeline-line" xmlns="http://www.w3.org/2000/svg" width="1" height="733" viewBox="0 0 1 733" fill="none">
-                    <path d="M0.5 0V732.5" stroke="white" stroke-dasharray="12 12" />
-                </svg> 
-
-                <!-- Hito 1 -->
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-                    <svg width="31" height="22" viewBox="0 0 31 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8.4087 1.61729C9.1435 0.900856 10.1292 0.499916 11.1554 0.5H25.8861C26.7416 0.5 27.7373 0.737477 28.5513 1.24247C29.3796 1.75462 30.1393 2.63586 30.1393 3.89764V17.8458C30.1393 19.1076 29.3796 19.9874 28.5513 20.501C27.7458 20.9836 26.8251 21.2401 25.8861 21.2435H11.1554C10.1292 21.2435 9.1435 20.8426 8.4087 20.1262L0.75508 12.6643C0.515864 12.431 0.325752 12.1523 0.195946 11.8444C0.0661407 11.5366 -0.000732422 11.2058 -0.000732422 10.8717C-0.000732422 10.5376 0.0661407 10.2069 0.195946 9.89906C0.325752 9.5912 0.515864 9.31245 0.75508 9.07921L8.4087 1.61729ZM17.9249 7.25236C17.8267 7.14694 17.7083 7.06239 17.5767 7.00375C17.445 6.9451 17.303 6.91357 17.1589 6.91103C17.0148 6.90849 16.8717 6.93499 16.7381 6.98895C16.6045 7.04292 16.4832 7.12324 16.3813 7.22512C16.2794 7.327 16.1991 7.44837 16.1451 7.58196C16.0912 7.71556 16.0647 7.85866 16.0672 8.00273C16.0697 8.14679 16.1013 8.28887 16.1599 8.42048C16.2186 8.55209 16.3031 8.67055 16.4085 8.76877L18.5115 10.8717L16.4085 12.9747C16.3031 13.0729 16.2186 13.1914 16.1599 13.323C16.1013 13.4546 16.0697 13.5967 16.0672 13.7407C16.0647 13.8848 16.0912 14.0279 16.1451 14.1615C16.1991 14.2951 16.2794 14.4165 16.3813 14.5183C16.4832 14.6202 16.6045 14.7005 16.7381 14.7545C16.8717 14.8085 17.0148 14.835 17.1589 14.8324C17.303 14.8299 17.445 14.7984 17.5767 14.7397C17.7083 14.6811 17.8267 14.5965 17.9249 14.4911L20.0279 12.3882L22.1309 14.4911C22.2291 14.5965 22.3475 14.6811 22.4792 14.7397C22.6108 14.7984 22.7528 14.8299 22.8969 14.8324C23.041 14.835 23.1841 14.8085 23.3177 14.7545C23.4513 14.7005 23.5726 14.6202 23.6745 14.5183C23.7764 14.4165 23.8567 14.2951 23.9107 14.1615C23.9646 14.0279 23.9911 13.8848 23.9886 13.7407C23.9861 13.5967 23.9545 13.4546 23.8959 13.323C23.8372 13.1914 23.7527 13.0729 23.6473 12.9747L21.5443 10.8717L23.6473 8.76877C23.7527 8.67055 23.8372 8.55209 23.8959 8.42048C23.9545 8.28887 23.9861 8.14679 23.9886 8.00273C23.9911 7.85866 23.9646 7.71556 23.9107 7.58196C23.8567 7.44837 23.7764 7.327 23.6745 7.22512C23.5726 7.12324 23.4513 7.04292 23.3177 6.98895C23.1841 6.93499 23.041 6.90849 22.8969 6.91103C22.7528 6.91357 22.6108 6.9451 22.4792 7.00375C22.3475 7.06239 22.2291 7.14694 22.1309 7.25236L20.0279 9.35531L17.9249 7.25236Z" fill="white" />
-                    </svg>
-                    </div>
-                    <div class="timeline-text">
-                    <p class="timeline-year">Origen</p>
-                    <p class="timeline-desc">Técnicos de Endesa encuentran colonias de murciélagos en Orfes (Girona) y Camarasa (Lleida).</p>
+                    <div class="timeline-left__content">
+                        <img class="timeline-left__icon" src="https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap4/assets/img/icono-endesa.png" alt="Icono Simbiosis de energía, ocio y naturaleza"/>
+                        <h2 class="bosque-titulo">Simbiosis de energía, ocio y naturaleza</h2>
                     </div>
                 </div>
 
-                <!-- Hito 2 -->
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-                    <svg width="31" height="22" viewBox="0 0 31 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M19.5556 13.4375V2.5C19.5556 1.53203 18.7611 0.75 17.7778 0.75H14.2222C13.2389 0.75 12.4444 1.53203 12.4444 2.5V13.4375C12.4444 14.1648 11.85 14.75 11.1111 14.75C10.3722 14.75 9.77778 14.1648 9.77778 13.4375V3.27109C5 5.00469 1.77778 9.48906 1.77778 14.75V18.25H30.2222V14.75C30.1667 9.54375 26.9778 5.03203 22.2222 3.27656V13.4375C22.2222 14.1648 21.6278 14.75 20.8889 14.75C20.15 14.75 19.5556 14.1648 19.5556 13.4375ZM2.22222 20.875C0.994444 20.875 0 21.8539 0 23.0625C0 24.2711 0.994444 25.25 2.22222 25.25H29.7778C31.0056 25.25 32 24.2711 32 23.0625C32 21.8539 31.0056 20.875 29.7778 20.875H2.22222Z" fill="white" />
-                    </svg>
-                    </div>
-                    <div class="timeline-text">
-                    <p class="timeline-year">2013</p>
-                    <p class="timeline-desc">Nace Endesabats junto al CTFC para proteger y estudiar murciélagos cavernícolas.</p>
-                    </div>
-                </div>
-
-                <!-- Hito 3 -->
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-                    <svg width="31" height="22" viewBox="0 0 31 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.3125 1C0.3125 1 7.75 -0.75 13 2.75C13 2.75 13.875 9.3125 17.375 9.3125V6.25C17.375 6.25 18.25 8 20 8C21.75 8 22.625 6.25 22.625 6.25V9.3125C26.125 9.3125 27 2.75 27 2.75C32.25 -0.75 39.6875 1 39.6875 1C36.1875 2.75 35.75 8.875 35.75 8.875C28.75 8.875 28.75 14.5625 28.75 14.5625C20 12.8125 20 19.375 20 19.375C20 19.375 20 12.8125 11.25 14.5625C11.25 14.5625 11.25 8.875 4.25 8.875C4.25 8.875 3.8125 2.75 0.3125 1Z" fill="white" />
-                    </svg>
-                    </div>
-                    <div class="timeline-text">
-                    <p class="timeline-year">Hoy</p>
-                    <p class="timeline-desc">50 colonias identificadas en 22 centrales y 28 cuevas naturales cercanas a los ríos en Andalucía, Aragón, Castilla y León, Catalunya y Galicia.</p>
-                    </div>
-                </div>
-                </div>
-
-                <!-- Parte central -->
+                <!-- Parte derecha: Timeline con 5 bullets -->
                 <div class="timeline-right">
-                    <div class="map-info-section">
-                        <div class="map-info-container">
-                            <!-- Parte derecha: Mapa -->
-                            <div class="map-wrapper">
-                                <div class="map-content">
-                                    <img id="mapa-img" src="https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap4/assets/img/endesa-mapa.svg" alt="12 años de Endesabats" />
-                                </div>
-                                <!-- Cajas flotantes -->
-                                <div class="map-box naranja">
-                                    <h3>Alcance</h3>
-                                    <p><strong>22</strong> centrales<br><strong>28</strong> cuevas naturales</p>
-                                </div>
-                            </div>
-                            <!-- Parte izquierda -->
-                            <div class="map-info-text">
-                                <p>12 años</p>
-                                <p>de investigación y conservación de murciélagos cavernícolas</p>
+                    <div class="timeline-list">
+                        <svg class="timeline-line" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 800" preserveAspectRatio="none">
+                            <path d="M0.5 0V800" stroke="white" stroke-dasharray="12 12" stroke-width="1" />
+                        </svg>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-text">
+                                <p class="timeline-year">Regulación hídrica</p>
+                                <p class="timeline-desc">Técnicos de Endesa encuentran colonias de murciélagos en Orfes (Girona) y Camarasa (Lleida).</p>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-                <!-- Parte derecha -->
-                <div class="timeline-stats">
-                    <div class="timeline-stat-item">
-                        <img src="https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap4/assets/img/icono4.svg" alt="Icono 1" class="timeline-stat-icon" />
-                        <span class="timeline-stat-number">50</span>
-                        <span class="timeline-stat-text"><strong>colonias identificadas</strong> (cerca de los ríos en Andalucía, Aragón, Castilla y León, Catalunya y Galicia)</span>
-                    </div>
-                    <div class="timeline-stat-item">
-                        <img src="https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap4/assets/img/icono5.svg" alt="Icono 2" class="timeline-stat-icon" />
-                        <span class="timeline-stat-number">26</span>
-                        <span class="timeline-stat-text"><strong>especies detectadas</strong> (80% las 32 que hay en España)</span>
-                    </div>
-                    <div class="timeline-stat-item">
-                        <img src="https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap4/assets/img/icono6.svg" alt="Icono 3" class="timeline-stat-icon" />
-                        <span class="timeline-stat-number">2</span>
-                        <span class="timeline-stat-text"><strong>especies vulnerables protegidas</strong> <em>(M. capaccinii y Miniopterus schreibersii)</em></span>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-text">
+                                <p class="timeline-year">Red de ríos conectados</p>
+                                <p class="timeline-desc">Endesa también regula el agua para actividades deportivas en el Noguera Ribagorçana y en el Garona</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-text">
+                                <p class="timeline-year">Temporada 2025</p>
+                                <p class="timeline-desc">Durante la temporada, se asegura un flujo de 22 m³/s entre las 10 y las 14 h, el horario de máxima actividad deportiva</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-text">
+                                <p class="timeline-year">Optimizar el caudal</p>
+                                <p class="timeline-desc">Al final de temporada se redujo a 2 h durante 7 días laborables para optimizar el agua si no era necesaria para el deporte</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-text">
+                                <p class="timeline-year">Agua que vuelve</p>
+                                <p class="timeline-desc">El 99 % del agua retorna al entorno natural tras generar energía renovable para más de 11.000 hogares</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -274,11 +274,11 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/Observer.min.js"></script>
     <script src="https://brandedcontentgrupogodo.github.io/ext/danacol01/assets/js/lenis1.js"></script>
-    <script src="https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap4/assets/js/scripts.js"></script>
+    <script src="assets/js/scripts.js"></script>
 
 
     <audio id="bg-audio" autoplay loop muted playsinline>
-    <source src="https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap4/assets/audio/cap3.mp3" type="audio/mpeg"/>
+    <source src="https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap4/assets/audio/cap4.mp3" type="audio/mpeg"/>
     </audio>
     <button id="audio-toggle" aria-label="Activar o desactivar sonido">🔊</button>
 </body>
