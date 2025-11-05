@@ -1066,6 +1066,18 @@ color: var(--text-color);
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
+  justify-items: stretch;
+}
+
+/* Centrar las últimas dos tarjetas (4ta y 5ta) en la última fila */
+@media (min-width: 769px) {
+  .cards-grid .card:nth-child(4) {
+    grid-column: 2 / 3;
+  }
+  
+  .cards-grid .card:nth-child(5) {
+    grid-column: 3 / 4;
+  }
 }
 
 .card {
