@@ -54,12 +54,12 @@
   overflow: hidden;
   width: 100%;
   height: 100vh;
-  background: url('https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap3/assets/img/endesa1.jpg') right bottom /cover no-repeat;
+  background: url('https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap4/assets/img/endesa1.jpg') right bottom /cover no-repeat;
   display: flex;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: flex-end;
   text-align: left;
-  padding: 0 3rem;
+  padding: 0 15rem;
 }
 .header-section::before {
 content: '';
@@ -95,7 +95,7 @@ opacity: 1;
 }
 
 .header-text__pretitle {
-  color: var(--text-color);
+  color: var(--text-color-dark);
   font-family: var(--font-sans);
   font-size: 12px;
   font-weight: 700;
@@ -106,7 +106,7 @@ opacity: 1;
 }
 
 .header-text__title {
-  color: var(--text-color);
+  color: var(--text-color-dark);
   font-family: var(--font-serif);
   font-size: 40px;
   font-weight: 400;
@@ -115,7 +115,7 @@ opacity: 1;
 }
 
 .header-text__subtitle {
-  color: var(--text-color);
+  color: var(--text-color-dark);
   max-width: 500px;
   font-family: var(--font-sans);
   font-size: 18px;
@@ -126,7 +126,7 @@ opacity: 1;
 
 @media (max-width: 768px) {
   .header-section {
-    background: url('https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap3/assets/img/endesa1-mobile.jpg') left bottom / cover no-repeat;
+    background: url('https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap4/assets/img/endesa1-mobile.jpg') left bottom / cover no-repeat;
   }
   .header-text__title {
     font-size: 28px;
@@ -201,7 +201,7 @@ opacity: 1;
 
 .timeline-section {
   background-color: var(--accent-color);
-  background: url('https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap3/assets/img/fondo-endesa.jpg') right bottom/cover no-repeat;
+  background: url('https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap4/assets/img/fondo-endesa.jpg') right bottom/cover no-repeat;
   color: var(--text-color);
   padding: 5rem 2rem;
 }
@@ -565,7 +565,7 @@ opacity: 1;
 .bloque-bosque {
 position: relative;
   width: 100%;
-  background: url('https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap3/assets/img/fondo-endesa.jpg') right bottom/cover no-repeat;
+  background: url('https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap4/assets/img/fondo-endesa.jpg') right bottom/cover no-repeat;
   color: white;
   padding: 5rem 1.5rem; /* más alto que antes */
   font-family: var(--font-sans);
