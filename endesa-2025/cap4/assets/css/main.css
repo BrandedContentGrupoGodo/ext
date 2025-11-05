@@ -57,9 +57,8 @@
   background: url('https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap4/assets/img/endesa1.jpg') right bottom /cover no-repeat;
   display: flex;
   align-items: flex-start;
-  justify-content: flex-end;
+  justify-content: center;
   text-align: left;
-  padding: 0 15rem;
 }
 .header-section::before {
 content: '';
@@ -85,7 +84,7 @@ opacity: 1;
   margin-top: 2rem;
   position: relative;
   z-index: 2;
-  text-shadow: 0px 2px 15px rgba(0, 0, 0);
+  margin-left: 23rem;
 }
 
 .header-text > * {
@@ -119,7 +118,7 @@ opacity: 1;
   max-width: 500px;
   font-family: var(--font-sans);
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 108.8%;
   
 }
@@ -133,6 +132,9 @@ opacity: 1;
   }
   .header-text__subtitle {
     font-size: 16px;
+  }
+  .header-section {
+    padding-left: 0;
   }
 }
 @media (max-width: 550px) {
@@ -336,6 +338,9 @@ opacity: 1;
 .full-image img {
   width: 100%;
   height: 60vh;
+}
+.full-image img.img-small {
+  height: 30vh;
 }
   .img-desktop {
     display: none !important;
