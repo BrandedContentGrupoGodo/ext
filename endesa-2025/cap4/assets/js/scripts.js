@@ -224,8 +224,12 @@ document.addEventListener("DOMContentLoaded", () => {
 // MAPA
 document.addEventListener("DOMContentLoaded", () => {
   const mapa = document.getElementById("mapa-img");
-
   const boxNaranja = document.querySelector(".map-box.naranja");
+
+  // Verificar que los elementos existan antes de agregar event listeners
+  if (!mapa || !boxNaranja) {
+    return;
+  }
 
   let boxesVisible = false;
 
@@ -258,7 +262,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Tocar fuera del mapa oculta las cajas (mobile)
   document.addEventListener("click", (e) => {
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth <= 768 && mapa) {
       const isClickInside = mapa.contains(e.target);
       if (!isClickInside && boxesVisible) {
         boxNaranja.classList.remove("show");
