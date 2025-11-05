@@ -1073,10 +1073,12 @@ color: var(--text-color);
 @media (min-width: 769px) {
   .cards-grid .card:nth-child(4) {
     grid-column: 2 / 3;
+    transform: translateX(calc(-16.666% - 0.75rem));
   }
   
   .cards-grid .card:nth-child(5) {
     grid-column: 3 / 4;
+    transform: translateX(calc(-50% + 0.75rem));
   }
 }
 
