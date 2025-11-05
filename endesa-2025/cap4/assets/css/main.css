@@ -193,6 +193,19 @@ opacity: 1;
   width: 100%;
   height: 100%;
   border: none;
+  pointer-events: auto;
+}
+
+/* Permitir que el scroll pase a través cuando no se está sobre el video */
+.video-container {
+  pointer-events: auto;
+}
+
+/* Mejorar la interacción táctil */
+@media (hover: hover) {
+  .video-container:hover {
+    pointer-events: auto;
+  }
 }
 
 @media (max-width: 600px) {
