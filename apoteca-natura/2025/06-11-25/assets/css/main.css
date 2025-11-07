@@ -1001,10 +1001,11 @@
 /* ---------- CRÉDITOS ---------------------------------- */
 .authorship-f {
   color: #888;
-  font-size: .8em;
+  font-size: 1em;
   text-align: center;
   padding-bottom: 30px;
   font-family: var(--apoteca-font-sans);
+      background-color: white;
 }
 
 .container-fluid-f {
@@ -1013,3 +1014,4 @@
   margin-inline: auto;
   padding-inline: 20px;
 }
+
