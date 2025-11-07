@@ -61,7 +61,7 @@
   overflow: hidden;
   width: 100%;
   height: 90vh;
-    background: url(../img/apoteca-hero.png) right top / cover no-repeat;
+    background: url('https://brandedcontentgrupogodo.github.io/ext/apoteca-natura/2025/06-11-25/assets/img/apoteca-hero.png') right top / cover no-repeat;
     background-color: var(--apoteca-accent-color);
     display: flex;
     align-items: flex-end;
@@ -246,7 +246,7 @@
 @media (max-width: 768px) {
   .header-section {
     height: 60vh;
-    background: url('../img/apoteca-hero.png') center bottom / cover no-repeat;
+    background: url('https://brandedcontentgrupogodo.github.io/ext/apoteca-natura/2025/06-11-25/assets/img/apoteca-hero.png') center bottom / cover no-repeat;
   }
   .header-text {
     margin-left: 2rem;
@@ -287,7 +287,7 @@
 }
 .intro-section {
   background-color: var(--apoteca-text-color);
-  background-image: url(../img/apoteca-intro.png);
+  background-image: url('https://brandedcontentgrupogodo.github.io/ext/apoteca-natura/2025/06-11-25/assets/img/apoteca-intro.png');
   background-position: left bottom;
   background-size: 30% auto;
   background-repeat: no-repeat;
@@ -302,7 +302,7 @@
 .hero-image-section {
   position: relative;
   min-height: 100vh;
-  background-image: url(../img/apoteca-hero-full.png);
+  background-image: url('https://brandedcontentgrupogodo.github.io/ext/apoteca-natura/2025/06-11-25/assets/img/apoteca-hero-full.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -314,7 +314,7 @@
 }
 
 .hero-image-section--second {
-  background-image: url(../img/apoteca-hero-full-2.png);
+  background-image: url('https://brandedcontentgrupogodo.github.io/ext/apoteca-natura/2025/06-11-25/assets/img/apoteca-hero-full-2.png');
   margin-bottom: 4rem;
 }
 
@@ -346,7 +346,7 @@
   }
   .intro-section {
     background-color: var(--apoteca-text-color);
-    background-image: url(../img/apoteca-intro.png);
+    background-image: url('https://brandedcontentgrupogodo.github.io/ext/apoteca-natura/2025/06-11-25/assets/img/apoteca-intro.png');
     background-position: left bottom;
     background-size: 60% auto;
     height: auto;
@@ -374,6 +374,31 @@
   padding: 5rem 2rem;
   text-align: center;
   position: relative;
+}
+
+/* Sección editorial con imagen de fondo específica */
+.editorial-section:has(#editorial-heading-3) {
+  position: relative;
+}
+
+.editorial-section:has(#editorial-heading-3)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://brandedcontentgrupogodo.github.io/ext/apoteca-natura/2025/06-11-25/assets/img/apoteca-fondo-2.png');
+  background-position: center center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.editorial-section:has(#editorial-heading-3) .editorial-section__content {
+  position: relative;
+  z-index: 1;
 }
 
 .editorial-section__title {
@@ -448,7 +473,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(../img/apoteca-fondo.png);
+  background-image: url('https://brandedcontentgrupogodo.github.io/ext/apoteca-natura/2025/06-11-25/assets/img/apoteca-fondo.png');
   background-size: 100% auto;
   background-position: center center;
   background-repeat: no-repeat;
