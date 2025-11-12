@@ -110,7 +110,7 @@ a {
 .blend-hard {
   position: relative;
   z-index: 1;
-  mix-blend-mode: lighten;
+  mix-blend-mode: color;
 }
 
 .blend-sat {
@@ -120,7 +120,7 @@ a {
   width: 100%;
   height: auto;
   z-index: 2;
-  mix-blend-mode: hue;
+  mix-blend-mode: screen;
 }
 
 .hero__content {
@@ -618,3 +618,4 @@ button:focus {
     grid-template-columns: 1fr;
   }
 }
+
