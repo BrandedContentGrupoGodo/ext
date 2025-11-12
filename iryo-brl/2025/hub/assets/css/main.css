@@ -285,6 +285,10 @@ line-height: 168.8%;
   background-image: url('https://brandedcontentgrupogodo.github.io/ext/iryo-brl/2025/hub/assets/img/cap2.png');
 }
 
+.chapter.cap3 {
+  background-image: url('https://brandedcontentgrupogodo.github.io/ext/iryo-brl/2025/hub/assets/img/cap3.jpg');
+}
+
 @media (max-width: 768px) {
   .chapter-content {
     padding: 1.5rem;
@@ -299,13 +303,15 @@ line-height: 168.8%;
      .chapter.cap2 {
     background-image: url('https://brandedcontentgrupogodo.github.io/ext/iryo-brl/2025/hub/assets/img/cap2-mobile.jpg');
   }
+  .chapter.cap3 {
+    background-image: url('https://brandedcontentgrupogodo.github.io/ext/iryo-brl/2025/hub/assets/img/cap3-mobile.jpg');
+  }
 }
 
 .destacdo-final {
   margin: auto;
   text-align: center;
   margin-bottom: 100px;
-  padding: 1rem; 
 }
 
 .destacdo-final p {
@@ -374,5 +380,3 @@ line-height: 118.8%; /* 42.768px */
     text-decoration: none;
     box-shadow: none;
   }
-
-
