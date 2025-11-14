@@ -463,6 +463,10 @@ html { scroll-behavior: smooth; }
   /* 4 visibles con gap: cada columna ocupa (100% - 3*g)/4 */
   .actions-carousel__track { grid-auto-columns: calc((100% - (var(--actions-gap) * 3)) / 4); }
 }
+@media (max-width: 600px) {
+  /* 4 visibles con gap: cada columna ocupa (100% - 3*g)/4 */
+  .actions-carousel { padding-left: 0.5rem; padding-right: 0.5rem; }
+}
 
 /* ---------- IMPACT SECTION --------------------------- */
 .impact-section { background: #FFFFFF; padding: clamp(50px, 8vw, 60px) 0; }
@@ -488,6 +492,7 @@ html { scroll-behavior: smooth; }
 .equivalence__card.blue { background-color: #314552; color: #FFFFFF; max-width: 300px; text-align: center; margin: auto; margin-bottom: 80px;}
 .equivalence__card.blue p { color: #FFFFFF; font-size: 1.3em;}
 .impact__disclaimer { text-align: center; margin-top: clamp(20px, 4vw, 32px); font-size: 0.9em; color: #666; }
+@media (max-width: 600px) {.impact__grid { padding-left: 1rem; padding-right: 1rem; }}
 
 /* ---------- CRÉDITOS ---------------------------------- */
 .authorship-f {
@@ -537,6 +542,7 @@ button:focus {
     outline: 1px dotted var(--background-color);
     outline: 5px auto var(--background-color) -webkit-focus-ring-color;
 }
+
 
 
 
