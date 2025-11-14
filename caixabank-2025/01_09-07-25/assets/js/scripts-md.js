@@ -78,9 +78,10 @@ const historias = [
     enlace: "https://www.mundodeportivo.com/juegos-olimpicos/20251103/1002559708/alvaro-amo-consejo-cambio-carrera-medallista-espanol-disco-peso-paralimpico-constelaciones-streaming-brl.html"
   },
   {
-    nombre: "Valentina",
-    frase: "El músculo más fuerte no se entrena: es el alma.",
-    imagen: "https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/01_09-07-25/assets/img/locked.png"
+    nombre: "Ander Cepas",
+    frase: "Soy un chaval normal, con mis aciertos y defectos, que siempre intenta estar de buen humor",
+    imagen: "https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/01_09-07-25/assets/img/cap6.png",
+    enlace: "https://www.mundodeportivo.com/juegos-olimpicos/20251117/1002568983/ander-cepas-tenis-mesa-campeon-olvido-era-numero-uno-mundo-constelaciones-streaming-brl.html"
   }
 ];
 
@@ -90,7 +91,7 @@ historias.forEach(({ nombre, frase, imagen, enlace }, i) => {
   const card = document.createElement('div');
   card.className = 'card';
 
-  if (i === 0 || i === 1 || i === 2 || i === 3 || i === 4) {
+  if (i === 0 || i === 1 || i === 2 || i === 3 || i === 4 || i === 5) {
     // Historias desbloqueadas
     card.innerHTML = `
       <img src="${imagen}" alt="Retrato de ${nombre}, atleta paralímpico">
