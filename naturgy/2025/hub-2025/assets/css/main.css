@@ -189,6 +189,11 @@ html { scroll-behavior: smooth; }
 .opacity-6 {
   opacity: 0.6;
 }
+@media (max-width: 600px) {
+  .alt-section {
+    padding: 1rem;
+  }
+}
 
 /* ---------- SOCIAL CAROUSEL ------------------------- */
 .social-carousel {
@@ -532,5 +537,6 @@ button:focus {
     outline: 1px dotted var(--background-color);
     outline: 5px auto var(--background-color) -webkit-focus-ring-color;
 }
+
 
 
