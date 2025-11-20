@@ -231,9 +231,11 @@
 }
 
 /* Sección editorial centrada */
-.editorial-section {
+.body-sanofi .editorial-section {
   text-align: center;
   position: relative;
+  width: 100%;
+  max-width: 100%;
 }
 
 .body-sanofi .editorial-section__title {
@@ -252,10 +254,23 @@
 }
 
 .body-sanofi .editorial-section__content {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 32px 24px;
-  gap: 32px;
+  max-width: 700px !important;
+  margin: 0 auto !important;
+  padding: 32px 24px !important;
+  gap: 32px !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Selector específico para asegurar estilos del contenido en todas las secciones */
+.body-sanofi .editorial-section[aria-labelledby="editorial-heading-2"] .editorial-section__content,
+.body-sanofi .editorial-section .editorial-section__content {
+  max-width: 700px !important;
+  margin: 0 auto !important;
+  padding: 32px 24px !important;
+  gap: 32px !important;
+  display: flex !important;
+  flex-direction: column !important;
 }
 
 .body-sanofi .editorial-section__title + .editorial-section__content {
@@ -263,13 +278,32 @@
 }
 
 .body-sanofi .editorial-section__paragraph {
-  color: var(--sanofi-text-color-dark);
-  font-family: var(--sanofi-font-sans);
-  font-size: clamp(1rem, 1.5vw, 1.25rem);
-  font-weight: 400;
-  line-height: 1.8;
-  margin-bottom: 2rem;
-  text-align: left;
+  color: var(--sanofi-text-color-dark) !important;
+  font-family: var(--sanofi-font-sans) !important;
+  font-size: clamp(1rem, 1.5vw, 1.25rem) !important;
+  font-weight: 400 !important;
+  line-height: 1.8 !important;
+  margin-bottom: 2rem !important;
+  margin-top: 0 !important;
+  padding: 0 !important;
+  text-align: left !important;
+}
+
+/* Selector específico para asegurar estilos en todas las secciones editoriales */
+.body-sanofi .editorial-section[aria-labelledby="editorial-heading-2"] .editorial-section__paragraph,
+.body-sanofi .editorial-section[aria-labelledby="editorial-heading-2"] .editorial-section__content .editorial-section__paragraph,
+.body-sanofi .editorial-section .editorial-section__content .editorial-section__paragraph {
+  color: #000000 !important;
+  color: var(--sanofi-text-color-dark) !important;
+  font-family: "Work Sans", sans-serif !important;
+  font-family: var(--sanofi-font-sans) !important;
+  font-size: clamp(1rem, 1.5vw, 1.25rem) !important;
+  font-weight: 400 !important;
+  line-height: 1.8 !important;
+  margin-bottom: 2rem !important;
+  margin-top: 0 !important;
+  padding: 0 !important;
+  text-align: left !important;
 }
 
 .body-sanofi .editorial-section__paragraph:first-child {
@@ -1386,7 +1420,7 @@
 .authorship-f {
   background-color: #F3F3F3;
   color: #666666;
-  font-size: .8em;
+  font-size: .9em!important;
   text-align: center;
   padding-bottom: 30px;
   font-family: var(--sanofi-font-sans);
