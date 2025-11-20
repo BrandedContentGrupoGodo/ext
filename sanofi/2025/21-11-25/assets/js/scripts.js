@@ -143,20 +143,28 @@
       mainContent.setAttribute('aria-label', 'Contenido principal');
     }
     
-    // Aplicar estilos a los párrafos de editorial-heading-2
-    setTimeout(() => {
+    // Aplicar estilos a los párrafos de editorial-heading-2 con !important
+    const applyParagraphStyles = () => {
       const paragraphs = bodySanofi.querySelectorAll('.editorial-section[aria-labelledby="editorial-heading-2"] .editorial-section__paragraph');
       paragraphs.forEach(p => {
-        p.style.color = '#000000';
-        p.style.fontFamily = '"Work Sans", sans-serif';
-        p.style.fontSize = 'clamp(1rem, 1.5vw, 1.25rem)';
-        p.style.fontWeight = '400';
-        p.style.lineHeight = '1.8';
-        p.style.marginBottom = '2rem';
-        p.style.marginTop = '0';
-        p.style.padding = '0';
-        p.style.textAlign = 'left';
+        p.style.setProperty('color', '#000000', 'important');
+        p.style.setProperty('font-family', '"Work Sans", sans-serif', 'important');
+        p.style.setProperty('font-size', 'clamp(1rem, 1.5vw, 1.25rem)', 'important');
+        p.style.setProperty('font-weight', '400', 'important');
+        p.style.setProperty('line-height', '1.8', 'important');
+        p.style.setProperty('margin-bottom', '2rem', 'important');
+        p.style.setProperty('margin-top', '0', 'important');
+        p.style.setProperty('margin-left', '0', 'important');
+        p.style.setProperty('margin-right', '0', 'important');
+        p.style.setProperty('padding', '0', 'important');
+        p.style.setProperty('text-align', 'left', 'important');
       });
-    }, 500);
+    };
+    
+    // Aplicar inmediatamente y después de cargar
+    applyParagraphStyles();
+    setTimeout(applyParagraphStyles, 100);
+    setTimeout(applyParagraphStyles, 500);
+    window.addEventListener('load', applyParagraphStyles);
   });
 })();
