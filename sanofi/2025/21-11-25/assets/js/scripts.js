@@ -101,22 +101,33 @@
       if (video && playButton) {
         // Inicialmente ocultar controles del vídeo
         video.removeAttribute('controls');
+        video.controls = false;
         
         // Al hacer clic en el botón de reproducción
         const playVideo = () => {
           video.classList.add('playing');
-          video.setAttribute('controls', 'true');
+          video.controls = true;
           playButton.classList.add('hidden');
-          video.play().catch(err => {
-            console.error('Error al reproducir el vídeo:', err);
-          });
+          const playPromise = video.play();
+          if (playPromise !== undefined) {
+            playPromise.catch(err => {
+              console.error('Error al reproducir el vídeo:', err);
+              // Si falla, mostrar controles para que el usuario pueda reproducir manualmente
+              video.controls = true;
+            });
+          }
         };
         
-        playButton.addEventListener('click', playVideo);
+        playButton.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          playVideo();
+        });
         
         // También permitir clic directo en el vídeo (si tiene poster)
-        video.addEventListener('click', () => {
+        video.addEventListener('click', (e) => {
           if (!video.classList.contains('playing')) {
+            e.preventDefault();
             playVideo();
           }
         });
@@ -126,10 +137,18 @@
           playButton.classList.add('hidden');
         });
         
+        // Mostrar botón cuando el vídeo se pausa
+        video.addEventListener('pause', () => {
+          if (!video.ended) {
+            playButton.classList.remove('hidden');
+          }
+        });
+        
         // Manejar teclado para accesibilidad
         playButton.addEventListener('keydown', (e) => {
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
+            e.stopPropagation();
             playVideo();
           }
         });
