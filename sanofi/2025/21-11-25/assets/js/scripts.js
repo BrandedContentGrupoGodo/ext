@@ -142,5 +142,22 @@
       mainContent.setAttribute('role', 'main');
       mainContent.setAttribute('aria-label', 'Contenido principal');
     }
+    
+    // Forzar estilos en párrafos de editorial-heading-2 si el CMS los sobrescribe
+    const editorialSection2 = bodySanofi.querySelector('.editorial-section[aria-labelledby="editorial-heading-2"]');
+    if (editorialSection2) {
+      const paragraphs = editorialSection2.querySelectorAll('.editorial-section__paragraph');
+      paragraphs.forEach(p => {
+        p.style.setProperty('color', '#000000', 'important');
+        p.style.setProperty('font-family', '"Work Sans", sans-serif', 'important');
+        p.style.setProperty('font-size', 'clamp(1rem, 1.5vw, 1.25rem)', 'important');
+        p.style.setProperty('font-weight', '400', 'important');
+        p.style.setProperty('line-height', '1.8', 'important');
+        p.style.setProperty('margin-bottom', '2rem', 'important');
+        p.style.setProperty('margin-top', '0', 'important');
+        p.style.setProperty('padding', '0', 'important');
+        p.style.setProperty('text-align', 'left', 'important');
+      });
+    }
   });
 })();
