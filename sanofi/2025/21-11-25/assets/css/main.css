@@ -1,7 +1,6 @@
 /* 
- * ESTILOS sanofi - Compatible con CMS Xalok
+ * ESTILOS sanofi
  * Todos los estilos están encapsulados dentro de .body-sanofi
- * para evitar conflictos con estilos del CMS
  */
 
 /* Variables CSS con prefijo para evitar conflictos */
@@ -17,7 +16,7 @@
   --h1-size-mobile: 2rem;
 }
 
-/* Reset solo dentro del contenedor para evitar conflictos con el CMS */
+/* Reset solo dentro del contenedor */
 .body-sanofi *,
 .body-sanofi *::before,
 .body-sanofi *::after {
@@ -32,40 +31,10 @@
   max-width: 100%;
   overflow-x: hidden;
   box-sizing: border-box;
-  /* Aislar el contexto de apilamiento para evitar conflictos con CMS Xalok */
-  isolation: isolate;
-  /* Crear nuevo contexto de formato para evitar interferencias del CMS */
-  contain: layout style paint;
-}
-
-/* Protección adicional para CMS Xalok - Sin all: initial para evitar problemas */
-.body-sanofi[data-xalok-content="true"] {
-  display: block;
   font-family: var(--sanofi-font-sans);
   color: var(--sanofi-text-color-dark);
   font-size: 16px;
   line-height: 1.5;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-  box-sizing: border-box;
-}
-
-/* Protección contra estilos globales del CMS - Solo para elementos sin clases específicas */
-.body-sanofi h1:not([class]),
-.body-sanofi h2:not([class]),
-.body-sanofi h3:not([class]),
-.body-sanofi h4:not([class]),
-.body-sanofi h5:not([class]),
-.body-sanofi h6:not([class]),
-.body-sanofi p:not([class]),
-.body-sanofi ul:not([class]),
-.body-sanofi ol:not([class]),
-.body-sanofi li:not([class]) {
-  margin: 0;
-  padding: 0;
 }
 
 /* Skip link para accesibilidad - Fuera de .body-sanofi pero protegido */
