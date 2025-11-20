@@ -22,32 +22,35 @@
 .body-sanofi *::before,
 .body-sanofi *::after {
   box-sizing: border-box;
+  max-width: 100%;
 }
 
 .body-sanofi {
   margin: 0;
   padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
   /* Aislar el contexto de apilamiento para evitar conflictos con CMS Xalok */
   isolation: isolate;
   /* Crear nuevo contexto de formato para evitar interferencias del CMS */
   contain: layout style paint;
 }
 
-/* Protección adicional para CMS Xalok - Resetear estilos del CMS */
+/* Protección adicional para CMS Xalok - Sin all: initial para evitar problemas */
 .body-sanofi[data-xalok-content="true"] {
-  all: initial;
   display: block;
   font-family: var(--sanofi-font-sans);
   color: var(--sanofi-text-color-dark);
   font-size: 16px;
   line-height: 1.5;
-  /* Asegurar que las variables CSS estén disponibles */
-  --sanofi-text-color: #fff;
-  --sanofi-text-color-dark: #000000;
-  --sanofi-accent-color: #7a00e6;
-  --sanofi-light-blue-color: #EAF2FF;
-  --sanofi-font-sans: "Work Sans", sans-serif;
-  --sanofi-font-serif: "Donegal One", serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 /* Protección contra estilos globales del CMS - Solo para elementos sin clases específicas */
@@ -106,11 +109,11 @@
   width: 100%;
   height: 95vh;
   background: url('../img/cabecera-sanofi.jpg') center / cover no-repeat;
-  background-color: var(--sanofi-accent-color);
-  display: flex;
+    background-color: var(--sanofi-accent-color);
+    display: flex;
   align-items: center;
   justify-content: flex-start;
-  text-align: left;
+    text-align: left;
   /* Animación sutil de entrada */
   animation: headerFadeIn 1s ease-out;
 }
@@ -260,13 +263,13 @@
 }
 
 .body-sanofi .editorial-section__paragraph {
-  color: var(--sanofi-text-color-dark) !important;
-  font-family: var(--sanofi-font-sans) !important;
-  font-size: clamp(1rem, 1.5vw, 1.25rem) !important;
-  font-weight: 400 !important;
-  line-height: 1.8 !important;
-  margin-bottom: 2rem !important;
-  text-align: left !important;
+  color: var(--sanofi-text-color-dark);
+  font-family: var(--sanofi-font-sans);
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  text-align: left;
 }
 
 .body-sanofi .editorial-section__paragraph:first-child {
@@ -1250,17 +1253,17 @@
 .references-section__item {
   color: var(--sanofi-text-color-dark);
   font-family: var(--sanofi-font-sans);
-  font-size: clamp(1rem, 1vw, 1rem);
+  font-size: clamp(1rem, 1vw, 1rem)!important;
   font-weight: 400;
-  line-height: 1.6;
+  line-height: 1.6!important;
 }
 
 .references-section__link {
   color: var(--sanofi-accent-color);
   font-family: var(--sanofi-font-sans);
-  font-size: clamp(1rem, 1vw, 1rem);
+  font-size: clamp(1rem, 1vw, 1rem)!important;
   font-weight: 400;
-  text-decoration: underline;
+  text-decoration: underline!important;
   transition: opacity 0.2s ease;
 }
 
@@ -1395,33 +1398,33 @@
   padding-inline: 20px;
   padding-top: 20px;
 }
- /* estilos para que en LV se muestre el contenido sin margenes */
-.wallpaper-inverted-ad{
-    display: none!important;
-  }
-  
-  .visual-article-free .col-12 {
-    padding-right: 0 !important;
-    padding-left: 0 !important;
-    margin-top: 0 !important;
-  }
-  .content-free-html {
-    margin:0 !important;
-  }
-  .container-fluid {
-    padding-right: 0 !important;
-    padding-left: 0 !important;
-  }
-  .visual__story--free .content-free-html {
-    margin: 0px !important;
-  }
-  .row>* {
-    padding-right: 0!important;
-    padding-left: 0!important;
-    margin-top: 0!important;
-  }
-  .article-default a:hover {
-    text-decoration: none;
-    box-shadow: none;
-  }
 
+ /* estilos para que en LV se muestre el contenido sin margenes */
+ .wallpaper-inverted-ad{
+  display: none!important;
+}
+
+.visual-article-free .col-12 {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  margin-top: 0 !important;
+}
+.content-free-html {
+  margin:0 !important;
+}
+.container-fluid {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+.visual__story--free .content-free-html {
+  margin: 0px !important;
+}
+.row>* {
+  padding-right: 0!important;
+  padding-left: 0!important;
+  margin-top: 0!important;
+}
+.article-default a:hover {
+  text-decoration: none;
+  box-shadow: none;
+}
