@@ -258,8 +258,8 @@
   text-align: left !important;
 }
 
-/* Selector específico para asegurar estilos en todas las secciones editoriales */
-.body-sanofi .editorial-section[aria-labelledby="editorial-heading-2"] .editorial-section__paragraph,
+/* Selector ultra-específico para forzar estilos sobre el CMS */
+.body-sanofi section.editorial-section[aria-labelledby="editorial-heading-2"] div.editorial-section__content p.editorial-section__paragraph,
 .body-sanofi .editorial-section[aria-labelledby="editorial-heading-2"] .editorial-section__content .editorial-section__paragraph,
 .body-sanofi .editorial-section .editorial-section__content .editorial-section__paragraph {
   color: #000000 !important;
@@ -271,8 +271,17 @@
   line-height: 1.8 !important;
   margin-bottom: 2rem !important;
   margin-top: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
   padding: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
   text-align: left !important;
+  text-decoration: none !important;
+  letter-spacing: normal !important;
+  text-transform: none !important;
 }
 
 .body-sanofi .editorial-section__paragraph:first-child {
