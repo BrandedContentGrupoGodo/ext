@@ -492,22 +492,21 @@
 }
 
 /* ---------- CRÉDITOS ---------------------------------- */
-.authorship-f {
-  background-color: #F3F3F3;
-  color: #666666;
+.footer-democracia {
+  color: var(--democracia-text-color-dark);
   font-size: .9em!important;
   text-align: center;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
   font-family: var(--democracia-font-sans);
+  background-color: #C8DFEA;
 }
 
-.container-fluid-f {
+.container-fluid-democracia {
   max-width: 1400px;
   margin-inline: auto;
   padding-inline: 20px;
   padding-top: 20px;
 }
-
 /* ==============================================
    SECCIÓN DE PREGUNTA Y TARJETAS INTERACTIVAS
    ============================================== */
@@ -750,3 +749,4 @@
 .body-democracia .card-button:focus:not(:focus-visible) {
   outline: none;
 }
+
