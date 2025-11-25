@@ -173,6 +173,20 @@
   will-change: clip-path;
 }
 
+/* Pantallas muy grandes - mayores a 1600px */
+@media (min-width: 1601px) {
+  .body-democracia .header-content {
+    max-width: 770px;
+  }
+  .body-democracia .header-content__title {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+  }
+  
+  .body-democracia .header-content__subtitle {
+    font-size: clamp(1.125rem, 2vw, 1.5rem);
+  }
+}
+
 @keyframes headerFadeIn {
   from {
     opacity: 0;
@@ -391,6 +405,13 @@
   mix-blend-mode: normal;
 }
 
+/* Pantallas muy grandes - mayores a 1600px */
+@media (min-width: 1601px) {
+  .body-democracia .parallax-section__title-reveal {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+  }
+}
+
 .body-democracia .parallax-section__text-reveal {
   font-size: clamp(1.25rem, 3vw, 2rem);
   font-weight: 600;
@@ -405,6 +426,13 @@
   /* Máscara de recorte desde abajo - oculta desde abajo inicialmente */
   clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
   will-change: clip-path;
+}
+
+/* Pantallas muy grandes - mayores a 1600px */
+@media (min-width: 1601px) {
+  .body-democracia .parallax-section__text-reveal {
+    font-size: clamp(1.5rem, 3.5vw, 3rem);
+  }
 }
 
 /* Estado cuando se revela la imagen - controlado por JavaScript */
@@ -507,6 +535,7 @@
   padding-inline: 20px;
   padding-top: 20px;
 }
+
 /* ==============================================
    SECCIÓN DE PREGUNTA Y TARJETAS INTERACTIVAS
    ============================================== */
@@ -547,6 +576,17 @@
   line-height: 1.4;
 }
 
+/* Pantallas muy grandes - mayores a 1600px */
+@media (min-width: 1601px) {
+  .body-democracia .question-section__title {
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  }
+  
+  .body-democracia .question-section__intro {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+  }
+}
+
 .body-democracia .cards-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -565,6 +605,7 @@
   padding: 1.5rem 1.5rem;
   background: #E6F1F8;
   border-radius: 20px;
+  border: 2px solid transparent;
   text-decoration: none;
   color: var(--democracia-text-color-dark);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -574,20 +615,13 @@
   min-height: 160px;
 }
 
-/* Efecto de fondo animado */
+/* Efecto de fondo animado - Desactivado */
 .body-democracia .card-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(221, 223, 65, 0.1), transparent);
-  transition: left 0.5s ease;
+  display: none;
 }
 
 .body-democracia .card-button:hover::before {
-  left: 100%;
+  display: none;
 }
 
 /* Hover state */
@@ -595,11 +629,12 @@
   transform: translateY(-4px);
   box-shadow: 0 8px 16px rgba(43, 92, 108, 0.12);
   background: linear-gradient(135deg, #E6F1F8 0%, #2b5c6c38 100%);
+  border-color: var(--democracia-accent-color);
 }
 
 .body-democracia .card-button:hover .card-button__icon {
   transform: scale(1.15) rotate(5deg);
-  color: var(--democracia-accent-color);
+  color: var(--democracia-text-color-dark);
 }
 
 .body-democracia .card-button:hover .card-button__title {
@@ -647,6 +682,17 @@
   flex-grow: 1;
   display: flex;
   align-items: center;
+}
+
+/* Pantallas muy grandes - mayores a 1600px */
+@media (min-width: 1601px) {
+  .body-democracia .card-button__title {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+  }
+  
+  .body-democracia .card-button__description {
+    font-size: clamp(1.125rem, 2vw, 1.375rem);
+  }
 }
 
 /* Responsive - Tablet */
@@ -749,4 +795,3 @@
 .body-democracia .card-button:focus:not(:focus-visible) {
   outline: none;
 }
-
