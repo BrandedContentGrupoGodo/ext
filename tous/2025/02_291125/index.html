@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Preload de fuentes para carga más rápida -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Estilos críticos inline para evitar FOUC -->
+    <style>
+        /* Reset básico crítico */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Estilos críticos del body - usar fallback fonts primero */
+        body {
+            margin: 0;
+            color: #000000;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", sans-serif;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+            background-color: #F7F7F7;
+        }
+        
+        /* Aplicar fuentes web cuando estén cargadas */
+        body.fonts-loaded {
+            font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", sans-serif;
+        }
+        
+        /* Estilos críticos del hero para evitar salto visual */
+        .hero-tous {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+        }
+        
+        .hero__video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+        
+        .hero__overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #FEBCAC;
+            opacity: 0.3;
+            z-index: 2;
+        }
+        
+        .hero__content {
+            position: relative;
+            z-index: 3;
+            width: 100%;
+            padding: 2rem;
+            padding-bottom: 4rem;
+            max-width: 1250px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .body-tous {
+            position: relative;
+        }
+        
+        /* Prevenir cambios de layout mientras cargan las fuentes */
+        .hero__title {
+            font-family: system-ui, -apple-system, sans-serif;
+            font-weight: 600;
+        }
+        
+        body.fonts-loaded .hero__title {
+            font-family: "Space Grotesk", system-ui, -apple-system, sans-serif;
+        }
+    </style>
+    
+    <!-- Cargar fuentes de forma asíncrona -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&family=Covered+By+Your+Grace&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/css/main.css">
+    
+    <script>
+        // Detectar cuando las fuentes están cargadas y aplicar clase
+        (function() {
+            if (document.fonts && document.fonts.ready) {
+                document.fonts.ready.then(function() {
+                    document.body.classList.add('fonts-loaded');
+                });
+            } else {
+                // Fallback: esperar a que la página cargue completamente
+                if (document.readyState === 'complete') {
+                    document.body.classList.add('fonts-loaded');
+                } else {
+                    window.addEventListener('load', function() {
+                        document.body.classList.add('fonts-loaded');
+                    });
+                }
+            }
+        })();
+    </script>
+</head>
+<body>
+    <div class="body-tous">
+
+        <section aria-labelledby="tous-headline" class="hero-tous">
+            <video class="hero__video" autoplay muted loop playsinline>
+                <source src="assets/img/tous-video.mp4" type="video/mp4">
+                <!-- Añade aquí la URL de tu video -->
+            </video>
+            <div class="hero__overlay"></div>
+            <div class="hero__content">
+                <p class="hero__intro">En colaboración con TOUS</p>
+                <div class="hero__title-wrapper">
+                    <h1 id="tous-headline" class="hero__title">
+                        De referente pop a símbolo emocional global: cuatro décadas en la vida del OSO más icónico
+                    </h1>
+                </div>
+                <p class="hero__subtitle">
+                    Así ha evolucionado el Oso de TOUS entre colecciones, colaboraciones, cambios estéticos y una comunidad global que lo ha hecho suyo
+                </p>
+            </div>
+        </section>
+
+        <section class="highlight-entradilla" aria-labelledby="highlight-text">
+            <div class="highlight__content text-section">
+                <div class="text-box">
+                    <p id="highlight-text" class="highlight-entradilla__intro">
+                        Desde que en 1985 Rosa Oriol se detuvo ante el escaparate de una juguetería en Milán y convirtió un osito de peluche en joya, aquel pequeño <i>charm</i> no ha dejado de crecer hasta convertirse en un emblema global que conecta generaciones, estilos y una misma forma de entender la joyería: cercana, emocional y creativa.
+                    </p>
+                    <h2 class="highlight-entradilla__title">La fiesta que reúne a una comunidad global</h2>
+                    <p class="highlight-entradilla__paragraph">
+                        En el año del 40º aniversario del Oso, TOUS lanza <i>Celebrate Joy. Everyone’s Invited,</i> una campaña global concebida como una gran fiesta donde todos los estilos se encuentran y todas las personas tienen un lugar. Siete artistas y creadores —Amaia, Ángela Molina, Lux Pascal, Cecilia Suárez, Macarena Achaga, Agustín Della Corte y el modelo Robin Shrestha— encarnan una comunidad diversa, creativa y auténtica que celebra un mismo icono compartido.
+                    </p>
+                    <p class="highlight-entradilla__paragraph">
+                        El spot, dirigido por Gorka Postigo, con fotografía de Felicity Ingram y dirección creativa de Alicia Padrón, tiene lugar alrededor de una gran mesa compartida. Allí, intérpretes de cine, series y música entonan <i>C’est la vie,</i> de Amaia, mientras lucen algunas de las colecciones emblemáticas de la firma: desde HOLD, que la cantante explora jugando con capas y volúmenes, hasta Manifesto, los diamantes de laboratorio o las versiones clásicas del Oso y las propuestas de TOUS Man. La escena funciona como metáfora de la filosofía de la marca: la joyería como lenguaje universal que une a personas muy distintas y reafirma su singularidad.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="video-section">
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <iframe 
+                        src="https://www.youtube.com/embed/8tyP6O8DIL8?si=h6mrSSrXxt2w8DTh" 
+                        title="Video de YouTube" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen
+                        class="video-iframe">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+        <!-- Párrafos -->
+        <section class="text-section">
+            <div class="text-box">
+                <p>
+                    Bajo el lema <i>Happy Bear Day,</i> la campaña da el pistoletazo de salida a cuatro meses de celebraciones globales. TOUS estrena un logotipo conmemorativo que rinde tributo a la silueta original del Oso y lanza una colección especial con hasta cuarenta Osos distintos, realizados con diferentes técnicas joyeras, materiales y acabados —incluyendo ediciones especiales y limitadas—. Cada pieza es un guiño a la creatividad que ha permitido al Oso reinventarse una y otra vez durante cuatro décadas, y un homenaje a quienes lo han convertido en icono escribiendo con él sus propias historias.
+                </p>
+            </div>
+        </section>
+        
+        <section class="centered-image-section">
+            <div class="centered-image-container">
+                <img src="assets/img/tous-1.png" alt="Imagen centrada" class="centered-image centered-image--desktop">
+                <img src="assets/img/tous-1-mobile.png" alt="Imagen centrada móvil" class="centered-image centered-image--mobile">
+            </div>
+        </section>
+
+        <!-- Párrafos -->
+         <section class="text-section">
+            <div class="text-box">
+                <h2>Siete talentos. Siete formas de celebrar</h2>
+                <p>
+                    Cada protagonista reinterpreta el icono de TOUS desde su propio lenguaje creativo y, juntos, dibujan el retrato actual de la comunidad de la marca: diversa, inquieta y sin reglas más allá de una, ser fiel a uno mismo.
+                </p>
+            </div>
+        </section>
+
+        <section class="grid-cards-section">
+            <div class="grid-cards-container">
+                <!-- Primera fila: 4 columnas -->
+                <div class="grid-cards-row grid-cards-row--top">
+                    <div class="grid-card">
+                        <div class="grid-card__image">
+                            <img src="assets/img/card-1.jpg" alt="Card 1">
+                        </div>
+                        <div class="grid-card__content">
+                            <h3 class="grid-card__title">Amaia</h3>
+                            <p class="grid-card__description">Su energía espontánea conecta con una generación que entiende la joyería como un juego de capas, mezcla y autoexpresión</p>
+                        </div>
+                    </div>
+                    <div class="grid-card">
+                        <div class="grid-card__image">
+                            <img src="assets/img/card-2.jpg" alt="Card 2">
+                        </div>
+                        <div class="grid-card__content">
+                            <h3 class="grid-card__title">Ángela Molina</h3>
+                            <p class="grid-card__description">Aporta la elegancia atemporal y la fuerza de una carrera mítica, demostrando que el estilo y las joyas no entienden de edad, solo de actitud</p>
+                        </div>
+                    </div>
+                    <div class="grid-card">
+                        <div class="grid-card__image">
+                            <img src="assets/img/card-3.jpg" alt="Card 3">
+                        </div>
+                        <div class="grid-card__content">
+                            <h3 class="grid-card__title">Cecilia Suárez</h3>
+                            <p class="grid-card__description">Representa una sofisticación sin imposturas: una forma de llevar las joyas que combina carácter y sensibilidad contemporánea</p>
+                        </div>
+                    </div>
+                    <div class="grid-card">
+                        <div class="grid-card__image">
+                            <img src="assets/img/card-4.jpg" alt="Card 4">
+                        </div>
+                        <div class="grid-card__content">
+                            <h3 class="grid-card__title">Lux Pascal</h3>
+                            <p class="grid-card__description"> Aporta una mirada creativa y personal, cada pieza se convierte en una extensión auténtica de identidad y libertad personal</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Segunda fila: 3 columnas -->
+                <div class="grid-cards-row grid-cards-row--bottom">
+                    <div class="grid-card">
+                        <div class="grid-card__image">
+                            <img src="assets/img/card-5.jpg" alt="Card 5">
+                        </div>
+                        <div class="grid-card__content">
+                            <h3 class="grid-card__title">Macarena Achaga</h3>
+                            <p class="grid-card__description">Pone el acento en la alegría y el color; su manera de mezclar símbolos y volúmenes convierte cada look en una celebración en sí misma</p>
+                        </div>
+                    </div>
+                    <div class="grid-card">
+                        <div class="grid-card__image">
+                            <img src="assets/img/card-6.jpg" alt="Card 6">
+                        </div>
+                        <div class="grid-card__content">
+                            <h3 class="grid-card__title">Agustín Della Corte</h3>
+                            <p class="grid-card__description">Aporta una visión fresca de la masculinidad, abierta y expresiva, donde las joyas son una herramienta más para contar quién es</p>
+                        </div>
+                    </div>
+                    <div class="grid-card">
+                        <div class="grid-card__image">
+                            <img src="assets/img/card-7.jpg" alt="Card 7">
+                        </div>
+                        <div class="grid-card__content">
+                            <h3 class="grid-card__title">Robin Shrestha</h3>
+                            <p class="grid-card__description">Su estilo urbano y global conecta la joyería con la moda de calle, llevando el Oso y las cadenas a un terreno moderno y desenfadado</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Párrafos -->
+        <section class="text-section">
+            <div class="text-box">
+                <h2>El pequeño charm que se convirtió en fenómeno pop</h2>
+                <p>
+                    Lo que empezó como un <i>charm</i> ha terminado formando parte de la memoria afectiva de varias generaciones. El Oso se regala entre madres e hijas, amigas, parejas o familiares, convirtiéndose en un símbolo de afecto que se transmite casi como un legado emocional.
+                </p>
+                <p>
+                    A lo largo de estos años se han vendido millones de Osos en todo el mundo, una cifra que habla de su capacidad para acompañar historias personales muy distintas.
+                </p>
+            </div>
+        </section>
+        
+        <section class="centered-image-section">
+            <div class="centered-image-container">
+                <img src="assets/img/tous-2.png" alt="Imagen centrada" class="centered-image centered-image--desktop">
+                <img src="assets/img/tous-2-mobile.png" alt="Imagen centrada móvil" class="centered-image centered-image--mobile">
+            </div>
+        </section>
+
+        <!-- Párrafos -->
+        <section class="text-section">
+            <div class="text-box">
+                <p>
+                    En cuatro décadas, el Oso ha pasado de ser uno de los motivos de una colección a consolidarse como icono pop y parte del imaginario colectivo en mercados de todo el planeta. Hoy TOUS está presente en más de cuarenta países y cuenta con más de 600 tiendas, con versiones del Oso que dialogan con distintas culturas y formas de entender la joyería.
+                </p>
+            </div>
+        </section>
+
+        <section class="centered-text-section">
+            <div class="centered-text-container">
+                <p class="centered-text">El símbolo ya no pertenece solo a la firma: es también un poco de todos los que lo han convertido en amuleto, recuerdo o declaración de estilo</p>
+            </div>
+        </section>
+        <!-- Párrafos -->
+        <section class="text-section">
+            <div class="text-box">
+                <p>
+                    Convertido en icono de la cultura popular, el Oso aparece en editoriales de moda, en redes sociales, en colaboraciones artísticas y en la cultura urbana. Ha protagonizado colecciones cápsula y proyectos con músicos, diseñadores y nuevos talentos que han reinterpretado su silueta desde lenguajes muy diversos. Su forma sencilla y reconocible funciona casi como un <i>emoji</i> físico: un gesto mínimo que expresa cariño, juego, nostalgia o celebración según quién lo lleve.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN IMAGEN A PANTALLA COMPLETA -->
+        <section class="full-image-section">
+            <div class="full-image">
+                <img src="assets/img/tous-4.jpg" alt="TOUS" class="full-image--desktop">
+                <img src="assets/img/tous-4-mobile.jpg" alt="TOUS" class="full-image--mobile">
+            </div>
+        </section>
+
+        <!-- Párrafos -->
+         <section class="text-section">
+            <div class="text-box">
+                <h2>Un Oso, mil versiones: joyas que cuentan quién eres</h2>
+                <p>
+                    Desde su origen, el Oso encarna la visión de TOUS: la joyería como un lenguaje personal, cercano y emocional. Por eso, durante cuarenta años ha sido reinterpretado en múltiples versiones y materiales, convirtiéndose en una plataforma para la autoexpresión de creadores, diseñadores y clientes de todo el mundo.
+                </p>
+            </div>
+        </section>
+
+        <section class="banner-section">
+            <div class="banner-image-container">
+                <img src="assets/img/tous-5.png" alt="Banner image" class="banner-image">
+            </div>
+            <div class="banner-text-wrapper">
+                <div class="banner-text-scroll">
+                    <span class="banner-text">Cada Oso refleja la creatividad de su tiempo y, al mismo tiempo, preserva la esencia que lo convirtió en icono • Cada Oso refleja la creatividad de su tiempo y, al mismo tiempo, preserva la esencia que lo convirtió en icono • Cada Oso refleja la creatividad de su tiempo y, al mismo tiempo, preserva la esencia que lo convirtió en icono • Cada Oso refleja la creatividad de su tiempo y, al mismo tiempo, preserva la esencia que lo convirtió en icono • Cada Oso refleja la creatividad de su tiempo y, al mismo tiempo, preserva la esencia que lo convirtió en icono • Cada Oso refleja la creatividad de su tiempo y, al mismo tiempo, preserva la esencia que lo convirtió en icono • </span>
+                    <span class="banner-text" aria-hidden="true">Cada Oso refleja la creatividad de su tiempo y, al mismo tiempo, preserva la esencia que lo convirtió en icono • Cada Oso refleja la creatividad de su tiempo y, al mismo tiempo, preserva la esencia que lo convirtió en icono • Cada Oso refleja la creatividad de su tiempo y, al mismo tiempo, preserva la esencia que lo convirtió en icono • Cada Oso refleja la creatividad de su tiempo y, al mismo tiempo, preserva la esencia que lo convirtió en icono • Cada Oso refleja la creatividad de su tiempo y, al mismo tiempo, preserva la esencia que lo convirtió en icono • Cada Oso refleja la creatividad de su tiempo y, al mismo tiempo, preserva la esencia que lo convirtió en icono • </span>
+                </div>
+            </div>
+        </section>
+
+
+         <!-- Párrafos -->
+         <section class="text-section">
+            <div class="text-box">
+                <h2>Cuatro décadas de historia, creatividad y reinvención</h2>
+                <p>
+                    Desde su nacimiento en 1985 a su entrada en el Museu del Disseny de Barcelona. De las colaboraciones con Chopard, Kylie Minogue o Pepa Salazar al nacimiento del <i>Bold Bear.</i> De los proyectos 100x100 TOUS o <i>Made of Sound</i> a la celebración global del 40 aniversario.
+                </p>
+            </div>
+        </section>
+
+        <section class="interactive-words-section">
+            <div class="interactive-words-container">
+                <div class="interactive-words-menu">
+                    <button class="interactive-word-item active" data-index="0">
+                        <span class="word-text">1985</span>
+                        <span class="word-line"></span>
+                    </button>
+                    <button class="interactive-word-item" data-index="1">
+                        <span class="word-text">1989</span>
+                        <span class="word-line"></span>
+                    </button>
+                    <button class="interactive-word-item" data-index="2">
+                        <span class="word-text">2017</span>
+                        <span class="word-line"></span>
+                    </button>
+                    <button class="interactive-word-item" data-index="3">
+                        <span class="word-text">2022</span>
+                        <span class="word-line"></span>
+                    </button>
+                    <button class="interactive-word-item" data-index="4">
+                        <span class="word-text">2025</span>
+                        <span class="word-line"></span>
+                    </button>
+                </div>
+                <div class="interactive-words-content">
+                    <div class="interactive-words-text">
+                        <h2 class="interactive-words-title">Nace el Oso</h2>
+                        <p class="interactive-words-description">Rosa Oriol transforma el osito de peluche que ve en una juguetería de Milán en joya y da origen al icono más reconocible de TOUS.</p>
+                    </div>
+                    <div class="interactive-words-image">
+                        <img src="assets/img/interactive-1.jpg" alt="Imagen inicial" class="interactive-image">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Datos ocultos para cada palabra -->
+            <script type="application/json" id="interactive-words-data">
+            {
+                "0": {
+                    "title": "Nace el Oso",
+                    "description": "Rosa Oriol transforma el osito de peluche que ve en una juguetería de Milán en joya y da origen al icono más reconocible de TOUS.",
+                    "image": "assets/img/interactive-1.jpg"
+                },
+                "1": {
+                    "title": "El Oso empieza su aventura global",
+                    "description": "La apertura de la primera tienda de TOUS en Barcelona marca el inicio de su expansión internacional: la ciudad se convierte en escaparate al mundo y el Oso comienza a viajar a nuevos mercados y generaciones.",
+                    "image": "assets/img/interactive-2.jpg"
+                },
+                "2": {
+                    "title": "El Oso entra en el museo",
+                    "description": "El Museu del Disseny de Barcelona incorpora el Oso a su colección permanente, reconociendo su valor como pieza de arte y diseño contemporáneo.",
+                    "image": "assets/img/interactive-3.jpg"
+                },
+                "3": {
+                    "title": "La familia crece: nace el Bold Bear",
+                    "description": "Por primera vez se suma un nuevo Oso a la familia: Bold Bear, una versión tridimensional, más audaz y moderna del icono clásico, que actualiza su silueta y se convierte en uno de los grandes éxitos recientes de la firma.",
+                    "image": "assets/img/interactive-4.jpg"
+                },
+                "4": {
+                    "title": "40 aniversario: un icono vivo",
+                    "description": "Bajo el lema Happy Bear Day y la campaña global Celebrate Joy. Everyone’s Invited, el Oso celebra cuatro décadas reinventándose sin perder su esencia.",
+                    "image": "assets/img/interactive-5.jpg"
+                }
+            }
+            </script>
+        </section>
+
+        <!-- Párrafos -->
+        <section class="text-section">
+            <div class="text-box">
+                <h2>Tres ciudades. Un mismo espíritu</h2>
+                <p>
+                    Para seguir celebrando el aniversario, TOUS transforma tres espacios emblemáticos —Rambla Catalunya (Barcelona), El Palacio de Hierro Polanco (Ciudad de México) y Rockefeller Center (Nueva York)— en tiendas OSO, pop-ups experienciales diseñadas como pequeños templos del icono.
+                </p>
+            </div>
+        </section>
+
+        <section class="centered-text-section">
+            <div class="centered-text-container">
+                <p class="centered-text">Durante un tiempo limitado, estos puntos de venta se convierten en destinos exclusivos donde descubrir el legado del Oso y su versión más contemporánea</p>
+            </div>
+        </section>
+
+       <section class="banner-section">
+            <div class="banner-image-container">
+                <img src="assets/img/tous-7.png" alt="Banner image" class="banner-image">
+            </div>
+            <div class="banner-text-wrapper">
+                <div class="banner-text-scroll">
+                    <span class="banner-text">Tiendas OSO: cuando el icono se convierte en experiencia • Tiendas OSO: cuando el icono se convierte en experiencia • Tiendas OSO: cuando el icono se convierte en experiencia • Tiendas OSO: cuando el icono se convierte en experiencia • Tiendas OSO: cuando el icono se convierte en experiencia • Tiendas OSO: cuando el icono se convierte en experiencia • </span>
+                    <span class="banner-text" aria-hidden="true">Tiendas OSO: cuando el icono se convierte en experiencia • Tiendas OSO: cuando el icono se convierte en experiencia • Tiendas OSO: cuando el icono se convierte en experiencia • Tiendas OSO: cuando el icono se convierte en experiencia • Tiendas OSO: cuando el icono se convierte en experiencia • Tiendas OSO: cuando el icono se convierte en experiencia • </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Párrafos -->
+        <section class="text-section">
+            <div class="text-box">
+                <p>
+                    En Barcelona, un Oso gigante inspirado en el Double Bear preside la tienda: un lado mate que distorsiona las formas, otro lado espejo que las devuelve nítidas. A sus pies, una topografía de peluche rosa crea un espacio inmersivo que invita a acercarse, sentarse, fotografiarse y habitar el icono. DJ sessions en directo y servicios especiales como los infinity bracelets convierten la visita en una experiencia que mezcla joyería, cultura contemporánea y nuevas generaciones.
+                </p>
+                <p>
+                    Las tiendas OSO de Ciudad de México y Nueva York replican ese mismo espíritu: una cuidada selección de Osos icónicos, ediciones especiales del 40 aniversario y un recorrido sensorial que celebra al Oso como lo que es hoy: un símbolo global, cercano y abierto a todas las personas que quieran hacerlo suyo.
+                </p>
+            </div>
+        </section>
+
+        <!-- Párrafos -->
+        <section class="text-section">
+            <div class="text-box">
+                <h2>Una noche para el recuerdo: el Oso toma el MACBA</h2>
+                <p>
+                    Barcelona acogió una celebración especialmente simbólica en el Museu d’Art Contemporani de Barcelona (MACBA), transformado por una noche en un homenaje al icono de TOUS. Bajo la dirección artística de Marta Pazos, el museo se convirtió en un recorrido sensorial dividido en cuatro actos: un cóctel bañado en tonos fucsia, una cena dorada presidida por una gran pepita de oro que evocaba el origen del Oso, una experiencia gastronómica firmada por Meilan Kao —que reinterpretó el arte del dim sum en pequeñas joyas comestibles— y, como cierre, una actuación sorpresa de Amaia.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN IMAGEN A PANTALLA COMPLETA -->
+        <section class="full-image-section">
+            <div class="full-image">
+                <img src="assets/img/tous-8.png" alt="TOUS">
+            </div>
+        </section>
+
+        <!-- Párrafos -->
+        <section class="text-section">
+            <div class="text-box">
+                <p>
+                    Más de 300 invitados, embajadoras de la marca, talentos internacionales y amigos de TOUS como Rossy de Palma, Clara Galle, Cecilia Suárez o Ingrid García-Jonsson, celebraron una trayectoria que ha trascendido la joyería para convertirse en parte de la cultura visual contemporánea.
+                </p>
+                <p>
+                    Fue, en esencia, una noche dedicada a la creatividad y a la autoexpresión: una oda al Oso como símbolo universal de alegría, identidad y transformación.
+                </p>
+            </div>
+        </section>
+
+        <section class="centered-image-section">
+            <div class="centered-image-container">
+                <img src="assets/img/tous-9.png" alt="Imagen centrada" class="centered-image">
+            </div>
+        </section>
+
+         <!-- Párrafos -->
+         <section class="text-section">
+            <div class="text-box">
+                <h2>Un icono que sigue evolucionando</h2>
+                <p>
+                    Cuarenta años después, el Oso de TOUS sigue recordándonos que la verdadera joya es poder reinventarse tantas veces como haga falta sin dejar de ser uno mismo. Igual que quienes lo llevan el icono ha cambiado de piel, de estilo, de forma y de materiales, pero nunca de esencia.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN IMAGEN A PANTALLA COMPLETA -->
+        <section class="full-image-section">
+            <div class="full-image">
+                <img src="assets/img/tous-10.jpg" alt="TOUS" class="full-image--desktop">
+                <img src="assets/img/tous-10-mobile.jpg" alt="TOUS" class="full-image--mobile">
+            </div>
+        </section>
+
+
+        <!-- CRÉDITOS ============================================= -->
+        <div class="authorship-f" aria-label="Créditos del proyecto">
+            <div class="container-fluid-f">
+                <span>Coordinación: Flavia Codinas</span> |
+                <span>Redacción: Alejandra Muñoz</span> |
+                <span>Diseño y maquetación: Alejandra Santander</span> |
+                <span>Fotografía y vídeo: TOUS.</span>
+                <span>Un proyecto de Brandslab. Godó Nexus.</span>
+            </div>
+        </div>
+    </div>  
+    
+    </div>
+    <script src="https://brandedcontentgrupogodo.github.io/ext/danacol01/assets/js/lenis1.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script> -->
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>
