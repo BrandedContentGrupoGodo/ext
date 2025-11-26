@@ -86,7 +86,7 @@
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 95vh;
+  height: 75vh;
   display: grid;
   grid-template-columns: 2fr 1fr;
   align-items: center;
@@ -137,7 +137,7 @@
   color: var(--democracia-text-color-dark);
   font-family: var(--democracia-font-sans);
   font-size: clamp(2rem, 3.5vw, 3rem);
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.2;
   margin: 0;
   /* Máscara de recorte desde abajo - oculta inicialmente */
@@ -151,7 +151,7 @@
   font-family: var(--democracia-font-sans);
   font-size: clamp(1.125rem, 1.75vw, 1.375rem);
   font-weight: 400;
-  line-height: 1.7;
+  line-height: 1.3;
   margin: 0;
   /* Máscara de recorte desde abajo - oculta inicialmente */
   clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
@@ -203,8 +203,12 @@
   }
   
   .body-democracia .header-section__left {
-    height: 50vh;
+    height: auto;
     min-height: 300px;
+    padding: 2rem 1rem;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow: visible;
   }
   
   .body-democracia .header-section__right {
@@ -215,25 +219,30 @@
   
   .body-democracia .header-content {
     gap: 1.25rem;
+    justify-content: flex-start;
+    padding-top: 1rem;
   }
 }
 
 @media (max-width: 550px) {
   .body-democracia .header-section {
-    min-height: 70vh;
+    min-height: auto;
   }
   
   .body-democracia .header-section__left {
-    height: 40vh;
+    height: auto;
     min-height: 250px;
+    padding: 1.5rem 1rem;
   }
   
   .body-democracia .header-section__right {
     padding: 0 1rem;
+    min-height: 40vh;
   }
   
   .body-democracia .header-content {
     gap: 1rem;
+    padding-top: 0.5rem;
   }
 }
 
