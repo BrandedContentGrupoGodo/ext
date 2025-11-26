@@ -162,7 +162,7 @@
 }
 
 .body-democracia .header-content__subtitle {
-  color: var(--democracia-text-color-dark);
+  color: #3C869C;
   font-family: var(--democracia-font-sans);
   font-size: clamp(1rem, 1.5vw, 1.125rem);
   font-weight: 400;
@@ -795,3 +795,4 @@
 .body-democracia .card-button:focus:not(:focus-visible) {
   outline: none;
 }
+
