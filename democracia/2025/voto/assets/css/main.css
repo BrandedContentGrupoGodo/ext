@@ -1308,7 +1308,7 @@
 .body-democracia .blue-background-section__hero-text {
   position: relative;
   min-height: 500px;
-  background-image: url('../img/destacado-democracia.png');
+  background-image: url('https://brandedcontentgrupogodo.github.io/ext/democracia/2025/voto/assets/img/destacado-democracia.png');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -1408,4 +1408,5 @@
     margin: 0 0 3rem 0;
   }
 }
+
 
