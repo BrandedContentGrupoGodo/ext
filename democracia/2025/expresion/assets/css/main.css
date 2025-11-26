@@ -1455,7 +1455,7 @@
 .body-democracia .blue-background-section__hero-text {
   position: relative;
   min-height: 500px;
-  background-image: url('../img/destacado-democracia.png');
+  background-image: url('https://brandedcontentgrupogodo.github.io/ext/democracia/2025/expresion/assets/img/destacado-democracia.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1866,3 +1866,4 @@ button:focus {
   outline: 1px dotted var(--background-color);
   outline: 5px auto var(--background-color) -webkit-focus-ring-color;
 }
+
