@@ -1,0 +1,1577 @@
+/* 
+ * ESTILOS democracia
+ * Todos los estilos están encapsulados dentro de .body-democracia
+ */
+
+/* Variables CSS con prefijo para evitar conflictos */
+:root {
+  --democracia-text-color: #fff;
+  --democracia-text-color-dark: #2B5C6C;
+  --democracia-accent-color: #DDDF41;
+  --democracia-light-blue-color: #F5FAFF;
+  --democracia-font-sans: "Poppins", sans-serif;
+  --h1-size-desktop: 3rem;
+  --h1-size-tablet: 2.5rem;
+  --h1-size-mobile: 2rem;
+}
+
+/* Scroll suave y snap en escritorio - Comentado para usar Lenis */
+@media (min-width: 769px) {
+  html {
+    /* scroll-behavior: smooth; - Deshabilitado para usar Lenis */
+    scroll-snap-type: y mandatory;
+  }
+}
+
+/* Reset solo dentro del contenedor */
+.body-democracia *,
+.body-democracia *::before,
+.body-democracia *::after {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.body-democracia {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  background-color: var(--democracia-light-blue-color);
+  font-family: var(--democracia-font-sans);
+  color: var(--democracia-text-color-dark);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Skip link para accesibilidad - Fuera de .body-democracia pero protegido */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--democracia-accent-color) !important;
+  color: var(--democracia-text-color) !important;
+  padding: 8px 16px !important;
+  text-decoration: none !important;
+  z-index: 10000 !important;
+  font-family: var(--democracia-font-sans) !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  border: none !important;
+  margin: 0 !important;
+}
+
+.skip-link:focus {
+  top: 0 !important;
+}
+
+/* Clase para ocultar visualmente pero mantener accesible */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border-width: 0 !important;
+}
+
+
+
+/* Header section - Encapsulado dentro de .body-democracia */
+.body-democracia .header-section {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 95vh;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+  /* Animación sutil de entrada */
+  animation: headerFadeIn 1s ease-out;
+  border-bottom: 1px solid var(--democracia-text-color-dark);
+}
+
+.body-democracia .header-section__left {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0 1rem;
+}
+
+.body-democracia .header-section__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.body-democracia .header-section__right {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.body-democracia .header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 820px;
+  gap: 2rem;
+  width: 100%;
+  /* Animación sutil de entrada */
+  animation: headerTextFadeInUp 1.2s ease-out 0.3s both;
+}
+
+.body-democracia .header-content__title {
+  color: var(--democracia-text-color-dark);
+  font-family: var(--democracia-font-sans);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0;
+  /* Máscara de recorte desde abajo - oculta inicialmente */
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  will-change: clip-path;
+  text-align: left;
+}
+
+.body-democracia .header-content__subtitle {
+  color: #3C869C;
+  font-family: var(--democracia-font-sans);
+  font-size: clamp(1.125rem, 1.75vw, 1.375rem);
+  font-weight: 400;
+  line-height: 1.7;
+  margin: 0;
+  /* Máscara de recorte desde abajo - oculta inicialmente */
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  will-change: clip-path;
+  text-align: left;
+}
+
+/* Pantallas muy grandes - mayores a 1600px */
+@media (min-width: 1601px) {
+  .body-democracia .header-content {
+    max-width: 980px;
+  }
+  .body-democracia .header-content__title {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+  }
+  
+  .body-democracia .header-content__subtitle {
+    font-size: clamp(1.125rem, 2vw, 1.5rem);
+  }
+}
+
+@keyframes headerFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+@keyframes headerTextFadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+
+@media (max-width: 768px) {
+  .body-democracia .header-section {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: 80vh;
+  }
+  
+  .body-democracia .header-section__left {
+    height: auto;
+    min-height: 300px;
+    padding: 2rem 1rem;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow: visible;
+  }
+  
+  .body-democracia .header-section__right {
+    height: auto;
+    min-height: 50vh;
+    padding: 2rem 1.5rem;
+  }
+  
+  .body-democracia .header-content {
+    gap: 1.25rem;
+    justify-content: flex-start;
+    padding-top: 1rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .body-democracia .header-section {
+    min-height: auto;
+  }
+  
+  .body-democracia .header-section__left {
+    height: auto;
+    min-height: 250px;
+    padding: 1.5rem 1rem;
+  }
+  
+  .body-democracia .header-section__right {
+    padding: 0 1rem;
+    min-height: 40vh;
+  }
+  
+  .body-democracia .header-content {
+    gap: 1rem;
+    padding-top: 0.5rem;
+  }
+}
+
+/* Scroll snap para header en escritorio */
+@media (min-width: 769px) {
+  .body-democracia .header-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+}
+
+
+
+/* ==============================================
+   SECCIÓN LOGO
+   ============================================== */
+
+.body-democracia .logo-section {
+  position: relative;
+  width: 100%;
+  min-height: 20vh;
+  background-color: #5EA0B8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  margin-top: 0;
+  border-top: none;
+}
+
+
+@media (min-width: 769px) {
+  .body-democracia .logo-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+}
+
+.body-democracia .logo-section__container {
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.body-democracia .logo-section__logo {
+  max-width: 100%;
+  height: auto;
+  max-height: 30vh;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .body-democracia .logo-section {
+    padding: 0;
+  }
+  
+  .body-democracia .logo-section__logo {
+    max-height: 30vh;
+  }
+}
+
+@media (max-width: 550px) {
+  .body-democracia .logo-section {
+    padding: 0;
+  }
+  .body-democracia .logo-section__logo {
+    max-height: 20vh;
+}
+  .body-democracia .logo-section__container {
+    flex-direction: column;
+  }
+  
+}
+
+/* ---------- CRÉDITOS ---------------------------------- */
+.footer-democracia {
+  color: var(--democracia-text-color-dark);
+  font-size: .9em!important;
+  text-align: center;
+  padding-bottom: 20px;
+  font-family: var(--democracia-font-sans);
+  background-color: #C8DFEA;
+}
+
+.container-fluid-democracia {
+  max-width: 1400px;
+  margin-inline: auto;
+  padding-inline: 20px;
+  padding-top: 20px;
+}
+
+/* ==============================================
+   SECCIÓN DE PREGUNTA Y TARJETAS INTERACTIVAS
+   ============================================== */
+
+.body-democracia .question-section {
+  padding: 3rem 2rem;
+  max-width: 1440px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Scroll snap y altura completa para que la sección sea visible al hacer scroll */
+@media (min-width: 769px) {
+  .body-democracia .question-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+}
+
+.body-democracia .question-section__title {
+  font-size: clamp(1.875rem, 3.5vw, 2.25rem);
+  font-weight: 600;
+  color: var(--democracia-text-color-dark);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+  font-family: var(--democracia-font-sans);
+}
+
+/* Pantallas muy grandes - mayores a 1600px */
+@media (min-width: 1601px) {
+  .body-democracia .question-section__title {
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  }
+}
+
+.body-democracia .cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  max-width: 1280px;
+  margin: 1.5rem auto;
+  padding: 2.5rem 0;
+}
+
+/* Estilos para .card-box */
+.body-democracia .card-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.75rem;
+  background: transparent;
+  border: 2px solid var(--democracia-text-color-dark);
+  border-radius: 12px;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  overflow: visible;
+}
+
+.body-democracia .card-box__icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.body-democracia .card-box__title {
+  font-size: clamp(1.125rem, 2.25vw, 1.5rem);
+  font-weight: 500;
+  color: var(--democracia-text-color-dark);
+  margin: 0;
+  font-family: var(--democracia-font-sans);
+  transition: all 0.3s ease;
+  text-align: left;
+  line-height: 28px;
+}
+
+.body-democracia .card-box__tooltip {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--democracia-text-color-dark);
+  color: var(--democracia-text-color);
+  text-transform: uppercase;
+  font-weight: 300;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-family: var(--democracia-font-sans);
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.body-democracia .card-box__tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid var(--democracia-text-color-dark);
+}
+
+/* Hover state */
+.body-democracia .card-box:hover {
+  background-color: var(--democracia-accent-color);
+  border-color: transparent;
+}
+
+.body-democracia .card-box:hover .card-box__tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-5px);
+}
+
+
+/* Responsive - Tablet */
+@media (max-width: 768px) {
+  .body-democracia .question-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .body-democracia .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .body-democracia .card-box {
+    padding: 1.25rem;
+  }
+
+  .body-democracia .card-box__icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 480px) {
+  .body-democracia .question-section {
+    padding: 2rem 1rem;
+  }
+
+  .body-democracia .question-section__title {
+    margin-bottom: 1rem;
+  }
+
+  .body-democracia .cards-grid {
+    gap: 1.25rem;
+    padding: 0.5rem 0;
+  }
+
+  .body-democracia .card-box {
+    padding: 1rem;
+    gap: 0.75rem;
+  }
+
+  .body-democracia .card-box__icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .body-democracia .card-box__tooltip {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+    top: -45px;
+  }
+}
+
+
+/* ==============================================
+   SECCIÓN DE CONTENIDO
+   ============================================== */
+
+.body-democracia .content-section {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2.5rem 0;
+}
+
+.body-democracia .content-section__text {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.body-democracia .content-section__text + .content-section__text {
+  margin-top: 2.5rem;
+}
+
+.body-democracia .content-section__paragraph {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 16px;
+  font-family: var(--democracia-font-sans);
+  color: var(--democracia-text-color-dark);
+  font-size: clamp(1.0625rem, 1.5vw, 1.1875rem);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.body-democracia .content-section__paragraph:last-child {
+  margin-bottom: 0;
+}
+
+/* Padding inferior específico para el último párrafo de la última sección de contenido */
+.body-democracia .content-section:last-of-type .content-section__paragraph:last-child {
+  padding-bottom: 4rem;
+}
+.body-democracia .content-section__paragraph .negativo {
+  color: #A33450;
+  font-weight: 600;
+  text-decoration:line-through;
+}
+
+.body-democracia .content-section__heading {
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+  padding: 0 16px;
+  font-family: var(--democracia-font-sans);
+  color: var(--democracia-text-color-dark);
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.body-democracia .content-section__highlight {
+  max-width: 1280px;
+  margin: 4rem auto;
+  padding: 1.5rem 16px;
+  background-color: var(--democracia-accent-color);
+  border-radius: 16px;
+}
+
+.body-democracia .content-section__highlight-inner {
+  position: relative;
+  border: 2px solid var(--democracia-text-color-dark);
+  background-color: #5EA0B81A;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Filtro de ruido para el destacado */
+.body-democracia .content-section__highlight-inner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: overlay;
+}
+
+.body-democracia .content-section__highlight-text {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  font-family: var(--democracia-font-sans);
+  color: var(--democracia-text-color-dark);
+  font-size: clamp(1.25rem, 2.25vw, 1.625rem);
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Variante azul del destacado */
+.body-democracia .content-section__highlight--blue {
+  background-color: #5EA0B81A;
+}
+
+.body-democracia .content-section__highlight-inner--blue {
+  background-color: transparent;
+}
+
+/* Destacado: Derecho al voto para las mujeres */
+.body-democracia .women-vote-highlight {
+  width: calc(100% - 4rem);
+  max-width: 1440px;
+  background-color: var(--democracia-accent-color);
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  margin: 4rem auto;
+}
+
+.body-democracia .women-vote-highlight__title {
+  font-family: var(--democracia-font-sans);
+  color: var(--democracia-text-color-dark);
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: center;
+  margin: 0 0 3rem 0;
+}
+
+.body-democracia .women-vote-highlight__columns {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.body-democracia .women-vote-highlight__box {
+  position: relative;
+  background-color: #5EA0B81A;
+  border: 1px solid var(--democracia-text-color-dark);
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+/* Filtro de ruido para cada caja */
+.body-democracia .women-vote-highlight__box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: overlay;
+}
+
+.body-democracia .women-vote-highlight__subtitle {
+  position: relative;
+  z-index: 2;
+  font-family: var(--democracia-font-sans);
+  color: var(--democracia-text-color-dark);
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0 0 1rem 0;
+  text-align: center;
+}
+
+.body-democracia .women-vote-highlight__description {
+  position: relative;
+  z-index: 2;
+  font-family: var(--democracia-font-sans);
+  color: var(--democracia-text-color-dark);
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0;
+  text-align: center;
+}
+
+/* Responsive - Tablet */
+@media (max-width: 1024px) {
+  .body-democracia .women-vote-highlight {
+    width: calc(100% - 3rem);
+    padding: 2.5rem 1.5rem;
+    margin: 3rem auto;
+  }
+
+  .body-democracia .women-vote-highlight__columns {
+    gap: 1.5rem;
+  }
+
+  .body-democracia .women-vote-highlight__box {
+    padding: 1.75rem 1.25rem;
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+  .body-democracia .women-vote-highlight {
+    width: calc(100% - 2rem);
+    padding: 2rem 1rem;
+    margin: 2rem auto;
+    border-radius: 12px;
+  }
+
+  .body-democracia .women-vote-highlight__title {
+    margin-bottom: 2rem;
+  }
+
+  .body-democracia .women-vote-highlight__columns {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .body-democracia .women-vote-highlight__box {
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .body-democracia .women-vote-highlight {
+    width: calc(100% - 2rem);
+    padding: 1.5rem 1rem;
+    margin: 1.5rem auto;
+  }
+
+  .body-democracia .women-vote-highlight__title {
+    margin-bottom: 1.5rem;
+  }
+
+  .body-democracia .women-vote-highlight__box {
+    padding: 1.25rem 1rem;
+  }
+}
+
+/* ==============================================
+   SECCIÓN GALERÍA DE IMÁGENES
+   ============================================== */
+
+.body-democracia .image-gallery-section {
+  width: 100%;
+  background-color: var(--democracia-accent-color);
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  margin: 4rem auto;
+  max-width: 1440px;
+}
+
+.body-democracia .image-gallery-section__container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.body-democracia .image-gallery-section__box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.body-democracia .image-gallery-section__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+  display: block;
+}
+
+.body-democracia .image-gallery-section__title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 1.5rem;
+  font-family: var(--democracia-font-sans);
+  color: #fff;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-weight: 700;
+  text-align: center;
+  z-index: 2;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+
+/* Responsive - Tablet */
+@media (max-width: 1024px) {
+  .body-democracia .image-gallery-section {
+    padding: 2.5rem 1.5rem;
+    margin: 3rem auto;
+  }
+
+  .body-democracia .image-gallery-section__container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+  .body-democracia .image-gallery-section {
+    padding: 2rem 1rem;
+    margin: 2rem auto;
+    border-radius: 12px;
+  }
+
+  .body-democracia .image-gallery-section__container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .body-democracia .image-gallery-section__title {
+    padding: 1.25rem;
+    font-size: clamp(0.9rem, 2vw, 1.125rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .body-democracia .image-gallery-section {
+    padding: 1.5rem 1rem;
+    margin: 1.5rem auto;
+  }
+
+  .body-democracia .image-gallery-section__container {
+    gap: 1.25rem;
+  }
+
+  .body-democracia .image-gallery-section__title {
+    padding: 1rem;
+  }
+}
+
+.body-democracia .content-section__image {
+  max-width: 100%;
+  margin: 4rem auto;
+  padding: 0 16px;
+}
+
+/* Reducir márgenes verticales para imagen específica */
+.body-democracia .content-section__image--compact {
+  margin: 0 auto 2rem auto;
+}
+
+.body-democracia .democracia-collage {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .body-democracia .content-section {
+    padding: 1.5rem 0;
+  }
+
+  .body-democracia .content-section__text {
+    margin-top: 1.5rem;
+  }
+
+  .body-democracia .content-section__image {
+    margin: 1.5rem auto;
+  }
+
+  .body-democracia .content-section__image--compact {
+    margin: 1rem auto;
+  }
+
+  .body-democracia .content-section__highlight {
+    margin: 1.5rem auto;
+    padding: 1.25rem 16px;
+  }
+
+  .body-democracia .content-section__highlight-inner {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .body-democracia .content-section {
+    padding: 1rem 0;
+  }
+
+  .body-democracia .content-section__paragraph,
+  .body-democracia .content-section__heading {
+    padding: 0 16px;
+  }
+
+  .body-democracia .content-section__image {
+    margin: 1rem auto;
+    padding: 0 16px;
+  }
+
+  .body-democracia .content-section__image--compact {
+    margin: 0.75rem auto;
+  }
+
+  .body-democracia .content-section__highlight {
+    margin: 1.5rem auto;
+    padding: 1rem 16px;
+  }
+
+  .body-democracia .content-section__highlight-inner {
+    padding: 1rem;
+  }
+
+  .body-democracia .content-section__highlight-text {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+  }
+}
+
+/* ==============================================
+   SECCIÓN TRES COLUMNAS
+   ============================================== */
+
+.body-democracia .three-columns-section {
+  position: relative;
+  width: 100%;
+  padding: 5rem 2rem;
+  overflow: hidden;
+}
+
+/* Filtro de ruido usando pseudo-elemento */
+.body-democracia .three-columns-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: overlay;
+}
+
+.body-democracia .three-columns-section__container {
+  position: relative;
+  z-index: 2;
+  max-width: 1640px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  align-items: center;
+  min-height: 500px;
+}
+
+.body-democracia .three-columns-section__column {
+  position: relative;
+  background-color: var(--democracia-text-color-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  min-height: 400px;
+}
+
+/* Filtro de ruido para cada columna */
+.body-democracia .three-columns-section__column::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: overlay;
+}
+/* Sin fondo ni filtro de ruido para la columna del centro */
+.body-democracia .three-columns-section__column--center {
+  min-height: 600px;
+  background-color: transparent;
+}
+
+.body-democracia .three-columns-section__column--center::before {
+  display: none;
+}
+
+
+.body-democracia .three-columns-section__content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.body-democracia .three-columns-section__date {
+  font-family: var(--democracia-font-sans);
+  font-size: clamp(2.25rem, 7vw, 6rem);
+  font-weight: 700;
+  color: var(--democracia-text-color);
+  margin-bottom: 0;
+  line-height: 1.2;
+}
+
+.body-democracia .three-columns-section__title {
+  font-family: var(--democracia-font-sans);
+  font-size: clamp(1.5rem, 3vw, 1.9rem);
+  font-weight: 300;
+  color: var(--democracia-text-color);
+  margin: 0;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.body-democracia .three-columns-section__image-wrapper {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 550px;
+}
+
+.body-democracia .three-columns-section__image {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.body-democracia .three-columns-section__paragraph {
+  font-family: var(--democracia-font-sans);
+  font-size: clamp(1.125rem, 1.75vw, 1.3125rem);
+  font-weight: 400;
+  color: var(--democracia-text-color);
+  line-height: 1.7;
+  margin: 0 auto;
+  text-align: left;
+  max-width: 90%;
+}
+
+/* Scroll snap para escritorio */
+@media (min-width: 769px) {
+  .body-democracia .three-columns-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+}
+
+/* Responsive - Tablet */
+@media (max-width: 1024px) {
+  .body-democracia .three-columns-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .body-democracia .three-columns-section__container {
+    grid-template-columns: 1fr 1.3fr 1fr;
+    gap: 1.5rem;
+    min-height: 450px;
+  }
+
+  .body-democracia .three-columns-section__column {
+    padding: 1.5rem;
+    min-height: 350px;
+  }
+
+  .body-democracia .three-columns-section__column--center {
+    min-height: 500px;
+  }
+
+  .body-democracia .three-columns-section__image-wrapper {
+    min-height: 450px;
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+  .body-democracia .three-columns-section {
+    padding: 2rem 1rem;
+  }
+
+  .body-democracia .three-columns-section__container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    min-height: auto;
+  }
+
+  .body-democracia .three-columns-section__column {
+    padding: 2rem 1.5rem;
+    min-height: auto;
+    border-radius: 24px;
+  }
+
+  .body-democracia .three-columns-section__column--center {
+    min-height: 400px;
+    order: -1;
+  }
+
+  .body-democracia .three-columns-section__image-wrapper {
+    min-height: 350px;
+  }
+
+  .body-democracia .three-columns-section__date {
+    margin-bottom: 0.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .body-democracia .three-columns-section {
+    padding: 1.5rem 1rem;
+  }
+
+  .body-democracia .three-columns-section__container {
+    gap: 1.5rem;
+  }
+
+  .body-democracia .three-columns-section__column {
+    padding: 1.5rem 1rem;
+  }
+
+  .body-democracia .three-columns-section__column--center {
+    min-height: 300px;
+  }
+
+  .body-democracia .three-columns-section__image-wrapper {
+    min-height: 250px;
+  }
+}
+
+/* ==============================================
+   SECCIÓN DOS COLUMNAS DESTACADA
+   ============================================== */
+
+.body-democracia .featured-two-columns-section {
+  position: relative;
+  width: 100%;
+  padding: 3rem 2rem;
+  overflow: hidden;
+  background-color: var(--democracia-light-blue-color);
+}
+
+.body-democracia .featured-two-columns-section__container {
+  position: relative;
+  z-index: 2;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.body-democracia .featured-two-columns-section__column {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.body-democracia .featured-two-columns-section__column--left {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.body-democracia .featured-two-columns-section__column--center {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.body-democracia .featured-two-columns-section__column--right {
+  width: 100%;
+}
+
+.body-democracia .featured-two-columns-section__image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
+}
+
+.body-democracia .featured-two-columns-section__image {
+  width: 110%;
+  height: 110%;
+  max-width: 110%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+}
+
+.body-democracia .featured-two-columns-section__date {
+  font-family: var(--democracia-font-sans);
+  font-size: clamp(2.25rem, 7vw, 6rem);
+  font-weight: 700;
+  color: var(--democracia-text-color-dark);
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+}
+
+.body-democracia .featured-two-columns-section__subtitle {
+  font-family: var(--democracia-font-sans);
+  font-size: clamp(1.5rem, 3vw, 1.9rem);
+  font-weight: 300;
+  color: var(--democracia-text-color-dark);
+  margin: 0;
+  line-height: 1.1;
+}
+
+.body-democracia .featured-two-columns-section__paragraph {
+  font-family: var(--democracia-font-sans);
+  font-size: clamp(1.125rem, 1.75vw, 1.3125rem);
+  font-weight: 400;
+  color: var(--democracia-text-color-dark);
+  line-height: 1.7;
+  margin: 0;
+  text-align: left;
+}
+
+/* Scroll snap para escritorio */
+@media (min-width: 769px) {
+  .body-democracia .featured-two-columns-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+}
+
+/* Responsive - Tablet */
+@media (max-width: 1024px) {
+  .body-democracia .featured-two-columns-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .body-democracia .featured-two-columns-section__container {
+    grid-template-columns: 1fr 1.3fr 1fr;
+    gap: 2rem;
+  }
+
+  .body-democracia .featured-two-columns-section__image-wrapper {
+    min-height: 450px;
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+  .body-democracia .featured-two-columns-section {
+    padding: 2rem 1rem;
+  }
+
+  .body-democracia .featured-two-columns-section__container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .body-democracia .featured-two-columns-section__image-wrapper {
+    min-height: 350px;
+    order: -1;
+  }
+
+  .body-democracia .featured-two-columns-section__column--left {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .body-democracia .featured-two-columns-section {
+    padding: 1.5rem 1rem;
+  }
+
+  .body-democracia .featured-two-columns-section__container {
+    gap: 1.5rem;
+  }
+
+  .body-democracia .featured-two-columns-section__image-wrapper {
+    min-height: 300px;
+  }
+}
+
+/* ==============================================
+   SECCIÓN FONDO AZUL
+   ============================================== */
+
+.body-democracia .blue-background-section {
+  position: relative;
+  width: 100%;
+  background-color: var(--democracia-text-color-dark);
+  overflow: hidden;
+}
+
+.body-democracia .blue-background-section__text-content {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.body-democracia .blue-background-section__heading {
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+  padding: 0 16px;
+  font-family: var(--democracia-font-sans);
+  color: var(--democracia-text-color);
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.body-democracia .blue-background-section__paragraph-content {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 16px;
+  font-family: var(--democracia-font-sans);
+  color: var(--democracia-text-color);
+  font-size: clamp(1.0625rem, 1.5vw, 1.1875rem);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.body-democracia .blue-background-section__paragraph-content:last-child {
+  margin-bottom: 0;
+}
+
+/* Primera parte: Dos columnas */
+.body-democracia .blue-background-section__two-columns {
+  width: 100%;
+  padding: 5rem 2rem;
+}
+
+.body-democracia .blue-background-section__container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.body-democracia .blue-background-section__column {
+  display: flex;
+  flex-direction: column;
+}
+
+.body-democracia .blue-background-section__column--left {
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.body-democracia .blue-background-section__date {
+  font-family: var(--democracia-font-sans);
+  font-size: clamp(2.25rem, 7vw, 6rem);
+  font-weight: 700;
+  color: var(--democracia-text-color);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.body-democracia .blue-background-section__text {
+  font-family: var(--democracia-font-sans);
+  font-size: clamp(1.5rem, 3vw, 1.9rem);
+  font-weight: 300;
+  color: var(--democracia-text-color);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.body-democracia .blue-background-section__column--right {
+  justify-content: center;
+}
+
+.body-democracia .blue-background-section__paragraph {
+  font-family: var(--democracia-font-sans);
+  font-size: clamp(1.125rem, 1.75vw, 1.3125rem);
+  font-weight: 400;
+  color: var(--democracia-text-color);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Segunda parte: Imagen a tamaño completo */
+.body-democracia .blue-background-section__full-image {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--democracia-text-color-dark);
+}
+
+.body-democracia .blue-background-section__full-image-content {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+/* Tercera parte: Imagen de fondo con texto centrado */
+.blue-background-section__hero-text {
+  margin: 0;
+}
+.body-democracia .blue-background-section__hero-text {
+  position: relative;
+  min-height: 500px;
+  background-image: url('../img/destacado-democracia.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 2rem;
+  margin: 0 2rem 4rem 2rem;
+}
+
+.body-democracia .blue-background-section__hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.body-democracia .blue-background-section__hero-text-content {
+  font-family: var(--democracia-font-sans);
+  font-size: clamp(1.75rem, 3.5vw, 3rem);
+  font-weight: 700;
+  color: var(--democracia-text-color);
+  line-height: 1.3;
+  margin: 0;
+  text-align: center;
+}
+
+/* Scroll snap para escritorio */
+@media (min-width: 769px) {
+  .body-democracia .blue-background-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+}
+
+/* Responsive - Tablet */
+@media (max-width: 1024px) {
+  .body-democracia .blue-background-section__two-columns {
+    padding: 3rem 1.5rem;
+  }
+
+  .body-democracia .blue-background-section__container {
+    gap: 2rem;
+  }
+
+  .body-democracia .blue-background-section__hero-text {
+    min-height: 400px;
+    padding: 3rem 1.5rem;
+    background-size: cover;
+    border-radius: 16px;
+    margin: 0 1.5rem 3rem 1.5rem;
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+  .body-democracia .blue-background-section__text-content {
+    padding: 2rem 1rem;
+  }
+
+  .body-democracia .blue-background-section__two-columns {
+    padding: 2rem 1rem;
+  }
+
+  .body-democracia .blue-background-section__container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .body-democracia .blue-background-section__date {
+    margin-bottom: 0.5rem;
+  }
+
+  .body-democracia .blue-background-section__hero-text {
+    min-height: 350px;
+    padding: 2rem 1rem;
+    background-size: cover;
+    border-radius: 12px;
+    margin: 0 1rem 2rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .body-democracia .blue-background-section__text-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .body-democracia .blue-background-section__heading,
+  .body-democracia .blue-background-section__paragraph-content {
+    padding: 0 16px;
+  }
+
+  .blue-background-section__hero-text {
+    margin: 0;
+  }
+  .body-democracia .blue-background-section__hero-content {
+    width: 100%;
+  }
+  .body-democracia .blue-background-section__two-columns {
+    padding: 1.5rem 1rem;
+  }
+
+  .body-democracia .blue-background-section__container {
+    gap: 1.5rem;
+  }
+
+  .body-democracia .blue-background-section__hero-text {
+    min-height: 300px;
+    padding: 1.5rem 1rem;
+    background-size: cover;
+    border-radius: 12px;
+    margin: 0 1rem 2rem 1rem;
+  }
+  .body-democracia .blue-background-section__full-image {
+    margin: 0 0 3rem 0;
+  }
+}
