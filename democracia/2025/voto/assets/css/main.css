@@ -1421,7 +1421,8 @@
     margin-top: 0 !important;
   }
   .content-free-html {
-    margin:0 !important;
+    margin-top:0 !important;
+    margin-bottom:0 !important;
   }
   .container-fluid {
     padding-right: 0 !important;
@@ -1443,5 +1444,6 @@ button:focus {
     outline: 1px dotted var(--background-color);
     outline: 5px auto var(--background-color) -webkit-focus-ring-color;
 }
+
 
 
