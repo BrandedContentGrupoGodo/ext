@@ -689,16 +689,17 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.15'/%3E%3C/svg%3E");
-  opacity: 0.3;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.7;
   pointer-events: none;
   z-index: 1;
+  mix-blend-mode: overlay;
 }
 
 .body-democracia .three-columns-section__container {
   position: relative;
   z-index: 2;
-  max-width: 1440px;
+  max-width: 1640px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1.2fr 1fr;
@@ -724,17 +725,12 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.15'/%3E%3C/svg%3E");
-  opacity: 0.3;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.4;
   pointer-events: none;
   z-index: 1;
+  mix-blend-mode: overlay;
 }
-
-/* Bordes redondeados solo en el lado izquierdo */
-.body-democracia .three-columns-section__column--left {
-  border-radius: 18px 0 0 18px;
-}
-
 /* Sin fondo ni filtro de ruido para la columna del centro */
 .body-democracia .three-columns-section__column--center {
   min-height: 600px;
@@ -745,10 +741,6 @@
   display: none;
 }
 
-/* Bordes redondeados solo en el lado derecho */
-.body-democracia .three-columns-section__column--right {
-  border-radius: 0 18px 18px 0;
-}
 
 .body-democracia .three-columns-section__content {
   position: relative;
@@ -763,20 +755,20 @@
 
 .body-democracia .three-columns-section__date {
   font-family: var(--democracia-font-sans);
-  font-size: clamp(2.25rem, 4.5vw, 4rem);
+  font-size: clamp(2.25rem, 7vw, 6rem);
   font-weight: 700;
   color: var(--democracia-text-color);
-  margin-bottom: 2rem;
+  margin-bottom: 0;
   line-height: 1.2;
 }
 
 .body-democracia .three-columns-section__title {
   font-family: var(--democracia-font-sans);
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  font-weight: 600;
+  font-size: clamp(1.5rem, 3vw, 1.9rem);
+  font-weight: 300;
   color: var(--democracia-text-color);
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.1;
   text-align: center;
 }
 
@@ -872,7 +864,7 @@
   }
 
   .body-democracia .three-columns-section__date {
-    margin-bottom: 1rem;
+    margin-bottom: 0.3rem;
   }
 }
 
@@ -1088,7 +1080,7 @@
 
 .body-democracia .blue-background-section__date {
   font-family: var(--democracia-font-sans);
-  font-size: clamp(3.5rem, 7vw, 6rem);
+  font-size: clamp(2.25rem, 7vw, 6rem);
   font-weight: 700;
   color: var(--democracia-text-color);
   line-height: 1.2;
@@ -1097,10 +1089,10 @@
 
 .body-democracia .blue-background-section__text {
   font-family: var(--democracia-font-sans);
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  font-weight: 600;
+  font-size: clamp(1.5rem, 3vw, 1.9rem);
+  font-weight: 300;
   color: var(--democracia-text-color);
-  line-height: 1.4;
+  line-height: 1.1;
   margin: 0;
 }
 
