@@ -147,7 +147,7 @@
 }
 
 .body-democracia .header-content__subtitle {
-  color: var(--democracia-text-color-dark);
+  color: #3C869C;
   font-family: var(--democracia-font-sans);
   font-size: clamp(1.125rem, 1.75vw, 1.375rem);
   font-weight: 400;
@@ -405,6 +405,7 @@
   font-family: var(--democracia-font-sans);
   transition: all 0.3s ease;
   text-align: left;
+  line-height: 28px;
 }
 
 .body-democracia .card-box__tooltip {
@@ -573,14 +574,33 @@
 }
 
 .body-democracia .content-section__highlight-inner {
+  position: relative;
   border: 2px solid var(--democracia-text-color-dark);
   background-color: #5EA0B81A;
   border-radius: 12px;
   padding: 1.5rem;
   text-align: center;
+  overflow: hidden;
+}
+
+/* Filtro de ruido para el destacado */
+.body-democracia .content-section__highlight-inner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: overlay;
 }
 
 .body-democracia .content-section__highlight-text {
+  position: relative;
+  z-index: 2;
   margin: 0;
   font-family: var(--democracia-font-sans);
   color: var(--democracia-text-color-dark);
@@ -588,6 +608,149 @@
   font-weight: 700;
   line-height: 1.6;
   text-align: center;
+}
+
+/* Variante azul del destacado */
+.body-democracia .content-section__highlight--blue {
+  background-color: #5EA0B81A;
+}
+
+.body-democracia .content-section__highlight-inner--blue {
+  background-color: transparent;
+}
+
+/* Destacado: Derecho al voto para las mujeres */
+.body-democracia .women-vote-highlight {
+  width: 100%;
+  background-color: #E6F1F8;
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  margin: 4rem 0;
+}
+
+.body-democracia .women-vote-highlight__title {
+  font-family: var(--democracia-font-sans);
+  color: var(--democracia-text-color-dark);
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: center;
+  margin: 0 0 3rem 0;
+}
+
+.body-democracia .women-vote-highlight__columns {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.body-democracia .women-vote-highlight__box {
+  position: relative;
+  background-color: #5EA0B81A;
+  border: 1px solid var(--democracia-text-color-dark);
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+/* Filtro de ruido para cada caja */
+.body-democracia .women-vote-highlight__box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: overlay;
+}
+
+.body-democracia .women-vote-highlight__subtitle {
+  position: relative;
+  z-index: 2;
+  font-family: var(--democracia-font-sans);
+  color: var(--democracia-text-color-dark);
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0 0 1rem 0;
+  text-align: center;
+}
+
+.body-democracia .women-vote-highlight__description {
+  position: relative;
+  z-index: 2;
+  font-family: var(--democracia-font-sans);
+  color: var(--democracia-text-color-dark);
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0;
+  text-align: center;
+}
+
+/* Responsive - Tablet */
+@media (max-width: 1024px) {
+  .body-democracia .women-vote-highlight {
+    padding: 2.5rem 1.5rem;
+    margin: 3rem 0;
+  }
+
+  .body-democracia .women-vote-highlight__columns {
+    gap: 1.5rem;
+  }
+
+  .body-democracia .women-vote-highlight__box {
+    padding: 1.75rem 1.25rem;
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+  .body-democracia .women-vote-highlight {
+    padding: 2rem 1rem;
+    margin: 2rem 0;
+    border-radius: 12px;
+  }
+
+  .body-democracia .women-vote-highlight__title {
+    margin-bottom: 2rem;
+  }
+
+  .body-democracia .women-vote-highlight__columns {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .body-democracia .women-vote-highlight__box {
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .body-democracia .women-vote-highlight {
+    padding: 1.5rem 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .body-democracia .women-vote-highlight__title {
+    margin-bottom: 1.5rem;
+  }
+
+  .body-democracia .women-vote-highlight__box {
+    padding: 1.25rem 1rem;
+  }
 }
 
 .body-democracia .content-section__image {
