@@ -628,8 +628,7 @@
 .body-democracia .card-button:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 16px rgba(43, 92, 108, 0.12);
-  background: linear-gradient(135deg, #E6F1F8 0%, #2b5c6c38 100%);
-  border-color: var(--democracia-accent-color);
+  background: var(--democracia-accent-color);
 }
 
 .body-democracia .card-button:hover .card-button__icon {
@@ -795,4 +794,5 @@
 .body-democracia .card-button:focus:not(:focus-visible) {
   outline: none;
 }
+
 
