@@ -23,8 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
   function update() {
     const slides = getSlides();
     if(!track || slides.length === 0) return;
-    const step = 100 / visibleSlides; // ej: 1.5 visibles => paso 66.666%
-    const offset = -index * step;
+    // Calcular el ancho de cada slide basado en cuántos son visibles
+    const slideWidth = 100 / visibleSlides;
+    const offset = -index * slideWidth;
     track.style.transform = `translateX(${offset}%)`;
     updateBullets();
   }
@@ -50,6 +51,26 @@ document.addEventListener("DOMContentLoaded", () => {
   if(nextBtn) nextBtn.addEventListener('click', goNext);
   measureVisible();
   update();
+  // Verificar que todos los embeds estén presentes
+  setTimeout(() => {
+    const allEmbeds = track ? track.querySelectorAll('.embed') : [];
+    const allSlides = getSlides();
+    console.log('📊 Debug carrusel:');
+    console.log('- Total slides encontrados:', allSlides.length);
+    console.log('- Total embeds encontrados:', allEmbeds.length);
+    console.log('- Slides visibles:', visibleSlides);
+    console.log('- Índice actual:', index);
+    allSlides.forEach((slide, i) => {
+      const embedsInSlide = slide.querySelectorAll('.embed');
+      console.log(`  Slide ${i}: ${embedsInSlide.length} embeds`);
+    });
+    if(allEmbeds.length !== 6) {
+      console.warn('⚠️ Se esperaban 6 embeds pero se encontraron', allEmbeds.length);
+    }
+    if(allSlides.length !== 3) {
+      console.warn('⚠️ Se esperaban 3 slides pero se encontraron', allSlides.length);
+    }
+  }, 1000);
   window.addEventListener('resize', () => { measureVisible(); update(); });
   
   // Lazy render de embeds (solo visibles y el siguiente)
@@ -165,15 +186,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     track.dataset.mobileMode = '1';
     index = 0; update(); renderAround(0);
+    // Procesar embeds después de reorganizar
+    setTimeout(processEmbeds, 300);
   }
   function groupToPairs(){
     if(!track || track.dataset.mobileMode !== '1') return;
     const currentSlides = getSlides();
     const embeds = [];
     currentSlides.forEach(slide => {
-      const e = slide.querySelector('.embed');
-      if(e) embeds.push(e);
+      const slideEmbeds = slide.querySelectorAll('.embed');
+      slideEmbeds.forEach(e => embeds.push(e));
     });
+    if(embeds.length === 0) return;
     track.innerHTML = '';
     for(let i=0;i<embeds.length;i+=2){
       const slide = document.createElement('div');
@@ -187,9 +211,25 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     delete track.dataset.mobileMode;
     index = 0; update(); renderAround(0);
+    // Procesar embeds después de reorganizar
+    setTimeout(processEmbeds, 300);
+  }
+  function processEmbeds(){
+    if(window.instgrm && window.instgrm.Embeds && window.instgrm.Embeds.process){
+      window.instgrm.Embeds.process();
+    }
+    if(window.tiktok && window.tiktok.embed) {
+      window.tiktok.embed.init();
+    }
   }
   function maybeRebuildLayout(){
     const isMobile = !window.matchMedia('(min-width: 900px)').matches;
+    // En desktop, no reorganizar si ya están en pares (evitar perder embeds)
+    if(!isMobile && track && track.dataset.mobileMode !== '1') {
+      // Ya están en modo desktop, no hacer nada
+      return;
+    }
+    // En móvil, separar cada embed en su propio slide (1 post por slide)
     if(isMobile) splitToSingleEmbeds(); else groupToPairs();
   }
 
