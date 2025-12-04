@@ -452,6 +452,12 @@
   .body-democracia .parallax-section__content {
     padding: 2rem 1rem;
   }
+    .body-democracia .parallax-section__content {
+    padding: 2rem 1rem;
+  }
+  .body-democracia .parallax-section__svg-wrapper {
+    height: auto;
+  }
 }
 
 
@@ -798,6 +804,7 @@
 .body-democracia .card-button:focus:not(:focus-visible) {
   outline: none;
 }
+
 
 
 
