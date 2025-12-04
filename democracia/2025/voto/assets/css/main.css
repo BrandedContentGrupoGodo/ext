@@ -242,7 +242,7 @@
   
   .body-democracia .header-content {
     gap: 1rem;
-    padding-top: 0.5rem;
+    padding: 0.5rem;
   }
 }
 
@@ -1527,3 +1527,4 @@ button:focus {
     max-width: 100%;
   }
 }
+
