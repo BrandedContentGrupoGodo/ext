@@ -57,38 +57,60 @@
 
     // Inicializar Lenis para scroll suave en toda la página
     if (typeof Lenis !== 'undefined') {
-      lenis = new Lenis({
-        duration: 1.2,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        smooth: true,
-        smoothTouch: false
-      });
+      try {
+        lenis = new Lenis({
+          duration: 1.2,
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          smooth: true,
+          smoothTouch: false
+        });
 
-      // Función para obtener la posición de scroll de Lenis
-      function getLenisScroll() {
-        try {
-          // Intentar diferentes propiedades según la versión de Lenis
-          if (typeof lenis.scroll === 'number') return lenis.scroll;
-          if (typeof lenis.scrollTop === 'number') return lenis.scrollTop;
-          if (lenis.actualScroll !== undefined) return lenis.actualScroll;
-          if (lenis.targetScroll !== undefined) return lenis.targetScroll;
-          // Para versiones más antiguas
-          if (lenis.lerp !== undefined && lenis.scroll !== undefined) return lenis.scroll;
-        } catch(e) {
-          // Si falla, usar scroll nativo
+        // Verificar que Lenis se haya inicializado correctamente
+        if (!lenis || typeof lenis.raf !== 'function') {
+          console.warn('Lenis no se inicializó correctamente');
+          return;
         }
-        return window.pageYOffset || document.documentElement.scrollTop;
-      }
 
-      // Iniciar el loop de animación de Lenis SIEMPRE (importante para que funcione el scroll)
-      function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-      }
-      requestAnimationFrame(raf);
+        // Función para obtener la posición de scroll de Lenis
+        function getLenisScroll() {
+          try {
+            // Intentar diferentes propiedades según la versión de Lenis
+            if (typeof lenis.scroll === 'number') return lenis.scroll;
+            if (typeof lenis.scrollTop === 'number') return lenis.scrollTop;
+            if (lenis.actualScroll !== undefined) return lenis.actualScroll;
+            if (lenis.targetScroll !== undefined) return lenis.targetScroll;
+            // Para versiones más antiguas
+            if (lenis.lerp !== undefined && lenis.scroll !== undefined) return lenis.scroll;
+          } catch(e) {
+            // Si falla, usar scroll nativo
+          }
+          return window.pageYOffset || document.documentElement.scrollTop;
+        }
 
-      // Integrar Lenis con ScrollTrigger
-      if (typeof ScrollTrigger !== 'undefined' && typeof gsap !== 'undefined') {
+        // Iniciar el loop de animación de Lenis (con verificación de que raf existe)
+        function raf(time) {
+          try {
+            if (lenis && typeof lenis.raf === 'function') {
+              lenis.raf(time);
+            }
+          } catch(e) {
+            console.warn('Error en Lenis raf:', e);
+            return;
+          }
+          requestAnimationFrame(raf);
+        }
+        
+        // Esperar a que Lenis esté completamente inicializado antes de iniciar el loop
+        setTimeout(() => {
+          if (lenis && typeof lenis.raf === 'function') {
+            requestAnimationFrame(raf);
+          } else {
+            console.warn('Lenis no está listo para iniciar el loop de animación');
+          }
+        }, 100);
+
+        // Integrar Lenis con ScrollTrigger
+        if (typeof ScrollTrigger !== 'undefined' && typeof gsap !== 'undefined') {
         // Configurar proxy para que ScrollTrigger use el scroll de Lenis
         ScrollTrigger.scrollerProxy(window, {
           scrollTop(value) {
@@ -129,6 +151,13 @@
         window.addEventListener('resize', () => {
           ScrollTrigger.refresh();
         });
+        }
+      } catch(error) {
+        console.error('Error al inicializar Lenis:', error);
+        // Si Lenis falla, usar ScrollTrigger normal
+        if (typeof ScrollTrigger !== 'undefined') {
+          ScrollTrigger.refresh();
+        }
       }
     } else {
       // Si Lenis no está disponible, usar ScrollTrigger normal
