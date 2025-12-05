@@ -1,0 +1,347 @@
+
+<html lang="es" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        /* Prevenir FOUC - ocultar contenido hasta que esté listo */
+        .body-moeve {
+            opacity: 0;
+            transition: opacity 0.3s ease-in;
+        }
+        .body-moeve.loaded {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <div class="body-moeve">
+        <main id="main-content" role="main">
+            <!-- Hero Section con Video de Fondo -->
+            <section class="hero-video" aria-label="Hero principal">
+                <div class="hero-video__overlay" aria-hidden="true"></div>
+                <video 
+                    class="hero-video__background" 
+                    autoplay 
+                    muted 
+                    loop 
+                    playsinline
+                    aria-label="Video de fondo del hero"
+                >
+                    <source src="assets/img/moeve-cabecera.mp4" type="video/mp4">
+                    <!-- Fallback temporal: usar video existente si no hay uno en assets/video -->
+                    <source src="assets/img/moeve-cabecera.mp4" type="video/mp4">
+                    <!-- Fallback para navegadores que no soportan video -->
+                    <p class="sr-only">Tu navegador no soporta la reproducción de video.</p>
+                </video>
+                <div class="hero-video__content">
+                    <p class="hero-video__small-text">En colaboración con MOEVE</p>
+                    <h1 class="hero-video__title">Cuando el paisaje se convierte en oficio</h1>
+                    <p class="hero-video__subtitle">La industria textil de Begur crece a partir del diálogo entre el mar y quienes han sabido transmitir su saber de generación en generación</p>
+                </div>
+            </section>
+
+            <!-- Sección Texto e Imagen -->
+            <section class="content-split" aria-label="Contenido editorial">
+                <div class="content-split__container">
+                    <div class="content-split__text">
+                        <p>
+                            Desde las primeras luces del día, con el Mediterráneo golpeando sus rocas, Begur ha aprendido a mirarse en su propio paisaje. Aquí, en la Costa Brava, la tradición textil ha crecido siempre al compás del entorno. Los colores que nacen de sus telares parecen extraídos del mar, del movimiento de la Tramontana sobre el agua, de los pinos que se aferran a los acantilados. De algún modo, cada textura lleva dentro un fragmento de este territorio que estimula el talento de quienes habitan en él.
+                        </p>
+                    </div>
+                    <div class="content-split__image">
+                        <img 
+                            src="assets/img/mapa-begur.png" 
+                            alt="Mapa Begur"
+                            loading="lazy"
+                        >
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Imagen a Ancho Completo -->
+            <section class="full-width-image" aria-label="Imagen destacada">
+                <div class="full-width-image__container">
+                    <img 
+                        class="full-width-image__desktop"
+                        src="assets/img/begur-moeve.png" 
+                        alt="Imagen de Begur"
+                        loading="lazy"
+                    >
+                    <img 
+                        class="full-width-image__mobile"
+                        src="assets/img/begur-moeve-mobile.png" 
+                        alt="Imagen de Begur"
+                        loading="lazy"
+                    >
+                </div>
+            </section>
+
+            <!-- Sección Párrafos -->
+            <section class="text-content" aria-label="Contenido textual">
+                <div class="text-content__container">
+                    <p>
+                        Esa personalidad única, el respeto por el entorno y el saber acumulado por generaciones, ha dado forma a lo largo de los siglos a una industria textil que representa un modo de vida en Begur y da identidad a su comunidad. Por eso, el proyecto de Moeve Legados con futuro viaja hasta aquí, porque este lugar encarna lo que desea poner en valor.
+                    </p>
+                    <p>
+                        En un mundo que avanza a un ritmo vertiginoso, esta localidad de la Costa Brava conserva una tradición textil que permanece y evoluciona, un saber artesanal que sigue vivo gracias al legado de las generaciones anteriores, a la colaboración constante, a la fuerza de las raíces y al deseo de proyectarlas hacia el futuro.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Sección Destacado con Quote -->
+            <section class="quote-highlight" aria-label="Cita destacada">
+                <div class="quote-highlight__container">
+                    <div class="quote-highlight__svg">
+                        <img 
+                            src="assets/img/quotes.svg" 
+                            alt=""
+                            aria-hidden="true"
+                        >
+                    </div>
+                    <blockquote class="quote-highlight__text">
+                        <p>“Los legados más importantes son los morales, cosas que sean para toda la vida”,</p>
+                    </blockquote>
+                    <p class="quote-highlight__signature">afirma José María Pujadas</p>
+                </div>
+            </section>
+
+            <!-- Sección Contenido Final -->
+            <section class="text-content" aria-label="Contenido final">
+                <div class="text-content__container">
+                    <h2 class="text-content__title">
+                        El impulso de quienes supieron mirar más allá
+                    </h2>
+                    <p>
+                        La historia textil de la familia Pujadas recoge ese espíritu. El padre de José María Pujadas era propietario de una gran fábrica textil en esta localidad de Girona. José María había estudiado económicas y marketing, nada hacía indicar que seguiría con el negocio familiar. Sin embargo, su padre, consciente de los grandes cambios que se estaban avecinando en la profesión, le lanzó un día una pregunta: “¿A ti no te interesaría venir a trabajar en esto?” Y lo que empezó como una visita por las tardes a la fábrica familiar se convirtió en una dedicación de toda una vida: “Me quedé enganchado y no salí de ahí hasta los 67 años”, confiesa José María.
+                    </p>
+                    <p>
+                        La empresa, fundada alrededor de 1875, había sido pionera desde sus inicios. “Hicieron saltos de agua en el Pirineo y bajaron la electricidad hasta la fábrica”, explica Pujadas. “Fue la primera línea eléctrica que hubo en Cataluña; eso es emprender y ser valiente”, comenta. Sus palabras evocan una época en la que la innovación era casi un acto de fe y en la que aquellas grandes fábricas catalanas estaban llenas de vida, de ruido, de trabajadores que conocían cada hebra como si fuera parte de su propia historia.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Sección Imagen a Ancho Completo -->
+            <section class="full-width-image" aria-label="Imagen destacada">
+                <div class="full-width-image__container">
+                    <img 
+                        class="full-width-image__desktop"
+                        src="assets/img/moeve-destacado1.png" 
+                        alt="Imagen de Begur"
+                        loading="lazy"
+                    >
+                    <img 
+                        class="full-width-image__mobile"
+                        src="assets/img/moeve-destacado1-mobile.png" 
+                        alt="Imagen de Begur"
+                        loading="lazy"
+                    >
+                </div>
+            </section>
+
+             <!-- Sección Contenido Final -->
+             <section class="text-content" aria-label="Contenido final">
+                <div class="text-content__container">
+                    <h2 class="text-content__title">
+                        Un relevo que respira continuidad
+                    </h2>
+                    <p>
+                        En medio de estos cambios, su hijo José María tomó el testigo con la naturalidad de alguien para el que este oficio ha formado parte del aire que se respira en el día a día. “Hemos tenido muchas vivencias juntos”, recuerda. En esa convivencia familiar y empresarial “vas absorbiendo ese know-how de tradición textil. Mi padre sigue siendo un referente para mí”, confiesa. Tanto que todavía permanece activo, curioso, aportando ideas, sin que el tiempo haya hecho mella en su pasión. “No envejece a nivel profesional”, afirma con admiración.
+                    </p>
+                    <p>
+                        Antes de que José María hijo impulsara tradición hacia nuevos horizontes, con un nuevo proyecto textil, Aiguavista, padre e hijo trabajaron juntos dándole forma, investigando materiales, cuestionándose como combinar tradición e innovación. “Somos industriales y queríamos ofrecer algo diferente a la gente”, explica. Aquella búsqueda los llevó a crear productos innovadores, más sostenibles, que mantienen el ADN de la marca y siguen anclados en la esencia del textil de Begur.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Sección Imagen a Ancho Completo -->
+            <section class="full-width-image" aria-label="Imagen destacada">
+                <div class="full-width-image__container">
+                    <img 
+                        class="full-width-image__desktop"
+                        src="assets/img/moeve-destacado2.png" 
+                        alt="Imagen de Begur"
+                        loading="lazy"
+                    >
+                    <img 
+                        class="full-width-image__mobile"
+                        src="assets/img/moeve-destacado2-mobile.png" 
+                        alt="Imagen de Begur"
+                        loading="lazy"
+                    >
+                </div>
+            </section>
+
+            <!-- Sección Contenido Final -->
+            <section class="text-content" aria-label="Contenido final">
+                <div class="text-content__container">
+                    <p>
+                        Y este legado se extiende hacia el mañana a través de los propios hijos de José María, de tres y seis años. “Ellos ya son conscientes de lo que hago”, explica. “Quiero inculcarles la cultura del mar, del saber hacer, del disfrutar de las pequeñas cosas”. Porque el futuro de Begur y de su industria textil se construye despacio, con raíces sólidas, pero que miran hacia el futuro.
+                    </p>
+                    <h2 class="text-content__title pt-3">
+                        El arte que crece como crece la marea
+                    </h2>
+                    <p>
+                        En este viaje por la Costa Brava, la tradición textil también se expresa en el arte. Es allí donde aparece la figura de Rosa Tarrés. Su obra, arraigada a la tierra que la vio nacer, se mueve al ritmo de los vientos de Begur. “Estoy muy influenciada por el sitio donde vivo, por el mar, por el verde, los colores que cambian según los vientos”, confiesa. El paisaje, podríamos decir, es, a la vez, su inspiración y su maestro.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Sección Destacado con Quote -->
+            <section class="quote-highlight" aria-label="Cita destacada">
+                <div class="quote-highlight__container">
+                    <div class="quote-highlight__svg">
+                        <img 
+                            src="assets/img/quotes.svg" 
+                            alt=""
+                            aria-hidden="true"
+                        >
+                    </div>
+                    <blockquote class="quote-highlight__text">
+                        <p>“Estoy muy influida por el sitio donde vivo, por el mar, por el verde, los colores que cambian según los vientos”,</p>
+                    </blockquote>
+                    <p class="quote-highlight__signature">explica la artista textil Rosa Tarrés</p>
+                </div>
+            </section>
+
+             <!-- Sección Contenido Final -->
+             <section class="text-content" aria-label="Contenido final">
+                <div class="text-content__container">
+                    <p>
+                        Recuerda cómo empezó a pintar alentada por su padre, también artista. Años después, en Londres, una ciudad inmensa tan diferente a su pueblo mediterráneo, encontró una forma en la que podía expresar su arte y conectarlo con la esencia de la Costa Brava. “Empecé a pintarme un pantalón, un trocito, otro trocito… hasta que terminé con el pantalón entero”, rememora. Aquello se convirtió en una forma de vida. La gente le pedía piezas personalizadas y el textil volvió a convertirse en un puente entre culturas.
+                    </p>
+                </div>
+            </section>
+
+             <!-- Sección Imagen a Ancho Completo -->
+             <section class="full-width-image" aria-label="Imagen destacada">
+                <div class="full-width-image__container">
+                    <img 
+                        class="full-width-image__desktop"
+                        src="assets/img/moeve-destacado3.png" 
+                        alt="Imagen de Begur"
+                        loading="lazy"
+                    >
+                    <img 
+                        class="full-width-image__mobile"
+                        src="assets/img/moeve-destacado3-mobile.png" 
+                        alt="Imagen de Begur"
+                        loading="lazy"
+                    >
+                </div>
+            </section>
+
+            <!-- Sección Contenido Final -->
+            <section class="text-content" aria-label="Contenido final">
+                <div class="text-content__container">
+                    <p>
+                        Y este legado se extiende hacia el mañana a través de los propios hijos de José María, de tres y seis años. “Ellos ya son conscientes de lo que hago”, explica. “Quiero inculcarles la cultura del mar, del saber hacer, del disfrutar de las pequeñas cosas”. Porque el futuro de Begur y de su industria textil se construye despacio, con raíces sólidas, pero que miran hacia el futuro.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Sección Destacado con Quote -->
+            <section class="quote-highlight border-bottom" aria-label="Cita destacada">
+                <div class="quote-highlight__container">
+                    <div class="quote-highlight__svg">
+                        <img 
+                            src="assets/img/quotes.svg" 
+                            alt=""
+                            aria-hidden="true"
+                        >
+                    </div>
+                    <blockquote class="quote-highlight__text">
+                        <p>La marcha, en el siglo XIX, de centenares de begurenses a América para emprender forma parte del tejido emocional de Begur</p>
+                    </blockquote>
+                </div>
+            </section>
+
+            <!-- Sección Contenido Final -->
+            <section class="text-content" aria-label="Contenido final">
+                <div class="text-content__container">
+                    <h2 class="text-content__title">
+                        El viaje que transformó a un pueblo
+                    </h2>
+                    <p>
+                        Begur no sería Begur sin otro legado mucho más antiguo, el indiano. A mediados del siglo XIX, este pequeño pueblo vivió una crisis profunda. “Aquí había muchos viñedos y la filoxera los afectó mucho”, explica Julia Clavell, de la Oficina de Turismo de la localidad. Ante esta situación, fue el momento de buscar alternativas. Cerca de 500 begurenses de una población de apenas 2.000 habitantes emprendieron un viaje incierto a América, especialmente hacia Cuba y Puerto Rico.
+                    </p>
+                    <p>
+                        “Algunos se enriquecieron, otros no”, comenta. Y los que volvieron a su hogar, crearon una nueva vida, dejando un legado que ha dejado las huellas de lo que hoy es Begur. Las casas indianas, con sus fachadas elegantes y colores cálidos, son testigos de aquellos regresos. Hoy, cada año, un festival recuerda ese pasado. “No sé cómo sería nuestro pueblo si no hubiera ocurrido aquello”, reconoce Julia. Ese viaje, ese movimiento humano, también forma parte del otro tejido de Begur, el emocional.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Sección Imagen a Ancho Completo -->
+            <section class="full-width-image" aria-label="Imagen destacada">
+                <div class="full-width-image__container">
+                    <img 
+                        class="full-width-image__desktop"
+                        src="assets/img/moeve-destacado4.png" 
+                        alt="Imagen de Begur"
+                        loading="lazy"
+                    >
+                    <img 
+                        class="full-width-image__mobile"
+                        src="assets/img/moeve-destacado4-mobile.png" 
+                        alt="Imagen de Begur"
+                        loading="lazy"
+                    >
+                </div>
+            </section>
+
+            <!-- Sección Contenido Final -->
+            <section class="text-content" aria-label="Contenido final">
+                <div class="text-content__container">
+                    <h2 class="text-content__title">
+                        ELegados que se comparten
+                    </h2>
+                    <p>
+                        En esta localidad de la Costa Brava, la historia, el arte y la industria se viven como hilos que se siguen moviendo. Aquí, la tradición inspira. El futuro no se imagina desde la ruptura, sino desde el diálogo con lo que ya existe. Y el proyecto Legados con futuro, de Moeve, se integra en esta realidad. Porque su propósito va más allá de documentar, su objetivo es activar, Invitar a detenernos, a escuchar y a reconocer que en las manos de los trabajadores de hoy hay un eco que viene de muy lejos.
+                    </p>
+                    <p>
+                        El pasado es también un faro y las historias de quienes nos precedieron pueden servirnos de guía. Porque cuando un legado se comparte se preserva, pero también se transforma y mira hacia el futuro.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Sección Imagen y Contenido con Fondo -->
+            <section class="image-content-section" aria-label="Sección con imagen y contenido">
+                <div class="image-content-section__image">
+                    <img 
+                        src="assets/img/moeve-footer.jpg" 
+                        alt="Imagen destacada"
+                        loading="lazy"
+                    >
+                </div>
+                <div class="image-content-section__content">
+                    <h2 class="image-content-section__title">Cultura que transforma</h2>
+                    <p class="image-content-section__text">Con Legados con futuro, Moeve reivindica la dignidad del trabajo artesanal y el poder de los saberes heredados como herramientas de inspiración y cambio social.</p>
+                </div>
+            </section>
+            
+        </main>
+
+       
+
+        <!-- CRÉDITOS ============================================= -->
+        <div class="footer-moeve" role="contentinfo" aria-label="Créditos del proyecto">
+            <div class="container-fluid-democracia">
+                <span>Coordinación: Kevin Casas</span> |
+                <span>Diseño y maquetación: Laura Alvarado</span> |
+                <span>Redacción: Javier Martín</span> |
+                <span>Fotografía: Moeve</span> |
+                <span>Vídeo: Getty Images</span> |
+                <span>Un proyecto de Brandslab. Godó Nexus.</span>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,941 @@
+/* 
+ * ESTILOS moeve
+ */
+
+/* Variables CSS con prefijo para evitar conflictos */
+:root {
+  --moeve-text-color: #fff;
+  --moeve-text-color-dark: #004656;
+  --moeve-accent-color: #90FFBB;
+  --moeve-light-blue-color: #0478B2;
+  --moeve-light-blue-soft: #E8F4F8;
+  --moeve-font-sans: "Poppins", sans-serif;
+  --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);
+  --ease-in-out-cubic: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+
+/* Reset solo dentro del contenedor */
+.body-moeve *,
+.body-moeve *::before,
+.body-moeve *::after {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.body-moeve {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  background-color: var(--moeve-light-blue-soft);
+  font-family: var(--moeve-font-sans);
+  color: var(--moeve-text-color-dark);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Skip link para accesibilidad - Fuera de .body-moeve pero protegido */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--moeve-accent-color) !important;
+  color: var(--moeve-text-color) !important;
+  padding: 8px 16px !important;
+  text-decoration: none !important;
+  z-index: 10000 !important;
+  font-family: var(--moeve-font-sans) !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  border: none !important;
+  margin: 0 !important;
+}
+
+.skip-link:focus {
+  top: 0 !important;
+}
+
+/* Clase para ocultar visualmente pero mantener accesible */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border-width: 0 !important;
+}
+
+/* ---------- HERO CON VIDEO DE FONDO ---------------------------------- */
+.hero-video {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  min-height: 500px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  border-bottom: 5px solid var(--moeve-accent-color);
+}
+
+.hero-video__background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  /* Asegurar que el video cubra toda el área */
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.hero-video__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+.hero-video__content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: var(--moeve-text-color);
+  padding: 2rem 1.5rem 4rem;
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hero-video__small-text {
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.hero-video__title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.hero-video__subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  font-weight: 300;
+  line-height: 1.4;
+  margin: 0;
+  max-width: 800px;
+  opacity: 0.95;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive: Tablets */
+@media (max-width: 768px) {
+  .hero-video {
+    min-height: 400px;
+  }
+
+  .hero-video__content {
+    padding: 1.5rem 1rem 3rem;
+    gap: 0.75rem;
+  }
+
+  .hero-video__small-text {
+    font-size: 0.75rem;
+  }
+}
+
+/* Responsive: Móviles */
+@media (max-width: 480px) {
+  .hero-video {
+    min-height: 350px;
+  }
+
+  .hero-video__content {
+    padding: 1rem 0.75rem 2.5rem;
+    gap: 0.5rem;
+  }
+
+  .hero-video__small-text {
+    font-size: 0.7rem;
+  }
+}
+
+/* Accesibilidad: Reducir animaciones si el usuario lo prefiere */
+@media (prefers-reduced-motion: reduce) {
+  .hero-video__background {
+    display: none;
+  }
+
+  .hero-video {
+    background-color: var(--moeve-light-blue-color);
+  }
+}
+
+/* Mejoras de contraste para accesibilidad */
+@media (prefers-contrast: high) {
+  .hero-video__overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  .hero-video__title,
+  .hero-video__subtitle {
+    text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.8);
+  }
+}
+
+/* ---------- SECCIÓN TEXTO E IMAGEN ---------------------------------- */
+.content-split {
+  padding: 5rem 0;
+  background-color: #fff;
+}
+
+.content-split__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.content-split__text {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: var(--moeve-text-color-dark);
+}
+
+.content-split__text p {
+  margin: 0 0 1.5rem 0;
+}
+
+.content-split__text p:last-child {
+  margin-bottom: 0;
+}
+
+.content-split__image {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.content-split__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Responsive: Tablets */
+@media (max-width: 968px) {
+  .content-split {
+    padding: 4rem 0;
+  }
+
+  .content-split__container {
+    padding: 0 2rem;
+    gap: 3rem;
+  }
+
+  .content-split__text {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+  }
+}
+
+/* Responsive: Móviles y tablets pequeñas */
+@media (max-width: 768px) {
+  .content-split {
+    padding: 3rem 0;
+  }
+
+  .content-split__container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 0 1.5rem;
+  }
+
+  .content-split__text {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .content-split__text p {
+    margin-bottom: 1.25rem;
+  }
+
+  .content-split__image {
+    order: -1;
+  }
+}
+
+/* Responsive: Móviles pequeños */
+@media (max-width: 480px) {
+  .content-split {
+    padding: 2.5rem 0;
+  }
+
+  .content-split__container {
+    padding: 0 1.25rem;
+    gap: 2rem;
+  }
+
+  .content-split__text {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+}
+
+/* ---------- IMAGEN A ANCHO COMPLETO ---------------------------------- */
+.full-width-image {
+  padding: 1rem 0;
+  background-color: #fff;
+}
+
+.full-width-image__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.full-width-image__container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  max-width: 100%;
+}
+
+/* Mostrar imagen desktop por defecto, ocultar móvil */
+.full-width-image__desktop {
+  display: block !important;
+}
+
+.full-width-image__mobile {
+  display: none !important;
+}
+
+/* Responsive: Tablets */
+@media (max-width: 968px) {
+  .full-width-image {
+    padding: 4rem 0;
+  }
+
+  .full-width-image__container {
+    padding: 0 2rem;
+  }
+}
+
+/* Responsive: Móviles y tablets pequeñas */
+@media (max-width: 768px) {
+  .full-width-image {
+    padding: 3rem 0;
+  }
+
+  .full-width-image__container {
+    padding: 0 1.5rem;
+  }
+
+  /* Ocultar desktop y mostrar móvil en pantallas pequeñas */
+  .full-width-image__desktop {
+    display: none !important;
+  }
+
+  .full-width-image__mobile {
+    display: block !important;
+  }
+}
+
+/* Responsive: Móviles pequeños */
+@media (max-width: 480px) {
+  .full-width-image {
+    padding: 2.5rem 0;
+  }
+
+  .full-width-image__container {
+    padding: 0 1.25rem;
+  }
+
+  /* Asegurar que desktop esté oculto y móvil visible */
+  .full-width-image__desktop {
+    display: none !important;
+  }
+
+  .full-width-image__mobile {
+    display: block !important;
+  }
+}
+
+/* ---------- SECCIÓN PÁRRAFOS ---------------------------------- */
+.text-content {
+  padding: 5rem 0;
+  background-color: #fff;
+}
+
+.text-content__container {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 0 3rem;
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--moeve-text-color-dark);
+}
+
+.text-content__container p {
+  margin: 0 0 1.5rem 0;
+}
+
+.text-content__container p:last-child {
+  margin-bottom: 0;
+}
+
+.text-content__title {
+  font-size: 27px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0 0 1.5rem 0;
+  color: var(--moeve-text-color-dark);
+}
+
+/* Responsive: Tablets */
+@media (max-width: 968px) {
+  .text-content {
+    padding: 4rem 0;
+  }
+
+  .text-content__container {
+    padding: 0 2rem;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+  }
+}
+
+/* Responsive: Móviles */
+@media (max-width: 768px) {
+  .text-content {
+    padding: 3rem 0;
+  }
+
+  .text-content__container {
+    padding: 0 1.5rem;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .text-content__container p {
+    margin-bottom: 1.25rem;
+  }
+
+  .text-content__title {
+    margin-bottom: 1.25rem;
+  }
+}
+
+/* Responsive: Móviles pequeños */
+@media (max-width: 480px) {
+  .text-content {
+    padding: 2.5rem 0;
+  }
+
+  .text-content__container {
+    padding: 0 1.25rem;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+}
+
+/* ---------- DESTACADO CON QUOTE ---------------------------------- */
+.quote-highlight {
+  padding: 5rem 0;
+  background-color: var(--moeve-text-color-dark);
+}
+
+.quote-highlight__container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 3rem;
+  text-align: center;
+  color: var(--moeve-text-color);
+}
+
+.quote-highlight__svg {
+  margin: 0 auto 2rem;
+  width: 60px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quote-highlight__svg img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.quote-highlight__text {
+  margin: 0 0 1.5rem 0;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.quote-highlight__text p {
+  margin: 0;
+}
+
+.quote-highlight__signature {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 400;
+  opacity: 0.9;
+  letter-spacing: 0.05em;
+}
+
+/* Responsive: Tablets */
+@media (max-width: 968px) {
+  .quote-highlight {
+    padding: 4rem 0;
+  }
+
+  .quote-highlight__container {
+    padding: 3.5rem 2rem;
+  }
+
+  .quote-highlight__text {
+    font-size: 1.375rem;
+  }
+}
+
+/* Responsive: Móviles */
+@media (max-width: 768px) {
+  .quote-highlight {
+    padding: 3rem 0;
+  }
+
+  .quote-highlight__container {
+    padding: 3rem 1.5rem;
+  }
+
+  .quote-highlight__svg {
+    width: 50px;
+    margin-bottom: 1.5rem;
+  }
+
+  .quote-highlight__text {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+  }
+
+  .quote-highlight__signature {
+    font-size: 0.8125rem;
+  }
+}
+
+/* Responsive: Móviles pequeños */
+@media (max-width: 480px) {
+  .quote-highlight {
+    padding: 2.5rem 0;
+  }
+
+  .quote-highlight__container {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .quote-highlight__svg {
+    width: 40px;
+    margin-bottom: 1.25rem;
+  }
+
+  .quote-highlight__text {
+    font-size: 1.125rem;
+  }
+
+  .quote-highlight__signature {
+    font-size: 0.75rem;
+  }
+}
+
+.border-bottom {
+  border-bottom: 5px solid var(--moeve-accent-color);
+}
+
+/* ---------- SECCIÓN IMAGEN Y CONTENIDO CON FONDO ---------------------------------- */
+.image-content-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.image-content-section__image {
+  width: 100%;
+  overflow: hidden;
+}
+
+.image-content-section__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.image-content-section__content {
+  width: 100%;
+  background-color: var(--moeve-light-blue-color);
+  padding: 5rem 3rem;
+  text-align: center;
+  color: var(--moeve-text-color);
+}
+
+.image-content-section__title {
+  max-width: 800px;
+  margin: 0 auto 1.5rem;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.image-content-section__text {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 1.125rem;
+  line-height: 1.75;
+  font-weight: 300;
+}
+
+/* Responsive: Tablets */
+@media (max-width: 968px) {
+  .image-content-section__content {
+    padding: 4rem 2rem;
+  }
+
+  .image-content-section__text {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+  }
+}
+
+/* Responsive: Móviles */
+@media (max-width: 768px) {
+  .image-content-section__content {
+    padding: 3rem 1.5rem;
+  }
+
+  .image-content-section__title {
+    margin-bottom: 1.25rem;
+  }
+
+  .image-content-section__text {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+}
+
+/* Responsive: Móviles pequeños */
+@media (max-width: 480px) {
+  .image-content-section__content {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .image-content-section__text {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+}
+
+.pt-3 {
+  padding-top: 3rem;
+}
+
+/* ---------- EFECTOS Y ANIMACIONES MODERNAS ---------------------------------- */
+
+/* Animaciones modernas basadas en mejores prácticas */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Aplicar animaciones modernas a secciones - empiezan ocultas */
+.content-split,
+.text-content,
+.quote-highlight,
+.image-content-section {
+  opacity: 0;
+  transform: translateY(24px) scale(0.98);
+  transition: opacity 0.6s var(--ease-out-cubic), transform 0.6s var(--ease-out-cubic);
+  will-change: opacity, transform;
+}
+
+/* Cuando la sección es visible, animar */
+.content-split.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition-delay: 0s;
+}
+
+.text-content.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition-delay: 0.1s;
+}
+
+.quote-highlight.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition-delay: 0.15s;
+}
+
+.image-content-section.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition-delay: 0.1s;
+}
+
+/* Animación especial para contenido split - slide desde lados */
+.content-split__text {
+  opacity: 0;
+  transform: translateX(-24px);
+  transition: opacity 0.6s var(--ease-out-cubic), transform 0.6s var(--ease-out-cubic);
+}
+
+.content-split__image {
+  opacity: 0;
+  transform: translateX(24px);
+  transition: opacity 0.6s var(--ease-out-cubic), transform 0.6s var(--ease-out-cubic);
+}
+
+.content-split__text.is-visible,
+.content-split.is-visible .content-split__text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.content-split__image.is-visible,
+.content-split.is-visible .content-split__image {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.1s;
+}
+
+/* Transiciones modernas en imágenes */
+.content-split__image img,
+.full-width-image__container img,
+.image-content-section__image img {
+  transition: transform 0.4s var(--ease-out-cubic), opacity 0.4s var(--ease-out-cubic);
+  will-change: transform;
+}
+
+/* Efecto moderno de hover en imágenes (solo desktop) */
+@media (hover: hover) and (pointer: fine) {
+  .content-split__image:hover img {
+    transform: scale(1.02) translateZ(0);
+  }
+
+  .full-width-image__container:hover img {
+    transform: scale(1.01) translateZ(0);
+  }
+
+  .image-content-section__image:hover img {
+    transform: scale(1.02) translateZ(0);
+  }
+}
+
+/* Mejora de legibilidad con transiciones suaves en textos */
+.content-split__text,
+.text-content__container {
+  transition: opacity var(--transition-smooth);
+}
+
+/* Efecto moderno en el quote highlight */
+.quote-highlight__container {
+  transition: transform 0.3s var(--ease-out-cubic);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .quote-highlight:hover .quote-highlight__container {
+    transform: translateY(-4px) scale(1.01);
+  }
+}
+
+/* Animación moderna para el SVG de quotes */
+.quote-highlight__svg {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.5s var(--ease-out-cubic) 0.2s, transform 0.5s var(--ease-out-cubic) 0.2s;
+}
+
+.quote-highlight.is-visible .quote-highlight__svg {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Animación moderna en títulos - stagger effect */
+.text-content__title,
+.image-content-section__title {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s var(--ease-out-cubic), transform 0.5s var(--ease-out-cubic);
+}
+
+.text-content.is-visible .text-content__title,
+.image-content-section.is-visible .image-content-section__title {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+/* Efecto stagger moderno en párrafos */
+.text-content__container p,
+.content-split__text p {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.4s var(--ease-out-cubic), transform 0.4s var(--ease-out-cubic);
+}
+
+.text-content.is-visible .text-content__container p:nth-child(1),
+.content-split.is-visible .content-split__text p:nth-child(1) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s;
+}
+
+.text-content.is-visible .text-content__container p:nth-child(2),
+.content-split.is-visible .content-split__text p:nth-child(2) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.4s;
+}
+
+.text-content.is-visible .text-content__container p:nth-child(3),
+.content-split.is-visible .content-split__text p:nth-child(3) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.5s;
+}
+
+/* Mejora de contraste y legibilidad en imágenes con overlay sutil */
+.content-split__image {
+  position: relative;
+  overflow: hidden;
+}
+
+.content-split__image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.02) 100%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition-smooth);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .content-split__image:hover::after {
+    opacity: 1;
+  }
+}
+
+/* Optimización: desactivar animaciones si el usuario prefiere movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Mejora de rendimiento: usar GPU solo cuando sea necesario */
+.content-split__image img,
+.full-width-image__container img {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* ---------- CRÉDITOS ---------------------------------- */
+.footer-moeve {
+  color: #24281b8a;
+  font-size: .9em!important;
+  text-align: center;
+  padding: 20px;
+  font-family: var(--moeve-font-sans);
+  background-color: #E7ECF3;
+}
+
+.container-fluid-moeve {
+  margin-inline: auto;
+  padding-inline: 20px;
+
+}
