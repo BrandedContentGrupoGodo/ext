@@ -648,6 +648,17 @@ button:focus-visible {
     min-height: 250px;
     max-height: 400px;
   }
+
+  .steps-images-secondary {
+    height: auto;
+    max-height: none;
+  }
+
+  .steps-images-secondary .steps-img {
+    height: auto;
+    min-height: 180px;
+    flex: none;
+  }
 }
 
 @media (max-width: 540px) {
@@ -662,11 +673,16 @@ button:focus-visible {
 
   .steps-images-secondary {
     flex-direction: column;
+    height: auto;
+    max-height: none;
   }
 
   .steps-images-secondary .steps-img {
     width: 100%;
     max-width: none;
+    height: auto;
+    min-height: 200px;
+    flex: none;
   }
 }
 
