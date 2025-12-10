@@ -1170,3 +1170,21 @@ button:focus {
   outline: 1px dotted var(--background-color);
   outline: 5px auto var(--background-color) -webkit-focus-ring-color;
 }
+/* ---------- SOBRESCRIBIR ESTILOS DEL CMS ---------------------------------- */
+/* Sobrescribir estilos del CMS para enlaces en .article-default */
+.article-default a:hover {
+  text-decoration: underline !important;
+  box-shadow: none !important;
+}
+
+/* Sobrescribir estilos del CMS para navegación */
+.navbar-acciona nav a:hover,
+.navbar-acciona .navbar-link-acciona:hover,
+.navbar-acciona .navbar-brand:hover {
+  color: var(--acciona-accent-color) !important;
+}
+
+nav.navbar-acciona a:hover,
+.ui-widget-content nav.navbar-acciona a:hover {
+  color: var(--acciona-accent-color) !important;
+}
