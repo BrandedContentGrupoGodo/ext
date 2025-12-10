@@ -127,9 +127,11 @@ opacity: 1;
   .header-section {
     background: url('https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap4/assets/img/endesa1-mobile.jpg') left bottom / cover no-repeat;
   }
+    .header-text {
+    margin-left: 0;
+  }
   .header-text__title {
     font-size: 28px;
-    margin-left: 0;
   }
   .header-text__subtitle {
     font-size: 16px;
@@ -1236,5 +1238,6 @@ color: var(--text-color);
     padding: 1.25rem;
   }
 }
+
 
 
