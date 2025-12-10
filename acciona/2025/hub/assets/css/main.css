@@ -813,3 +813,8 @@ nav.navbar-acciona a:hover,
 .ui-widget-content nav.navbar-acciona a:hover {
   color: var(--acciona-accent-color) !important;
 }
+
+a:hover {
+    color: var(--acciona-accent-color) !important;
+    text-decoration: none!important;
+}
