@@ -56,15 +56,23 @@ button:focus-visible {
 .navbar-acciona {
   background-color: var(--acciona-white-color);
   padding: clamp(10px, 3vw, 14px) clamp(20px, 5vw, 30px);
-  position: sticky !important;
-  position: -webkit-sticky !important; /* Safari */
-  top: 0 !important;
-  z-index: 9999 !important;
-  backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.95);
-  width: 100%;
+  position: absolute;
+  top: 0;
   left: 0;
   right: 0;
+  width: 100%;
+  z-index: 9999;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.95);
+  transition: transform 0.3s ease;
+}
+
+.navbar-acciona.navbar-fixed {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
 }
 
 .navbar-container-acciona {
@@ -1157,25 +1165,4 @@ button:focus-visible {
 nav.navbar-acciona a:hover,
 .ui-widget-content nav.navbar-acciona a:hover {
   color: var(--acciona-accent-color) !important;
-}
-
-/* Asegurar que el sticky funcione en el CMS */
-/* Prevenir que contenedores del CMS rompan el sticky */
-body > *:not(.navbar-acciona),
-body > div:not(.body-acciona):not(.navbar-acciona) {
-  overflow-x: visible !important;
-}
-
-/* Forzar que el navbar sea sticky incluso si hay contenedores con overflow */
-.navbar-acciona {
-  position: sticky !important;
-  position: -webkit-sticky !important;
-  top: 0 !important;
-  z-index: 9999 !important;
-}
-
-/* Asegurar que el body no tenga overflow que rompa el sticky */
-body {
-  overflow-x: hidden;
-  overflow-y: auto;
 }
