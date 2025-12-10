@@ -86,7 +86,7 @@ button:focus-visible {
 .hero-card {
   pointer-events: auto;
   max-width: min(1150px, 95%);
-  background-image: url("../img/acciona-cabecera-fondo.svg");
+  background-image: url("https://brandedcontentgrupogodo.github.io/ext/acciona/2025/hub/assets/img/acciona-cabecera-fondo.svg");
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: right top;
@@ -760,3 +760,4 @@ button:focus-visible {
   padding-inline: 20px;
 
 }
+
