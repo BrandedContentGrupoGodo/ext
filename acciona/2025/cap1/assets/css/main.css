@@ -27,6 +27,7 @@ body {
 
 .body-acciona {
   min-height: 100vh;
+  padding-top: 40px; /* Altura del menú del CMS */
 }
 
 .skip-link {
@@ -57,7 +58,7 @@ button:focus-visible {
   background-color: var(--acciona-white-color);
   padding: clamp(10px, 3vw, 14px) clamp(20px, 5vw, 30px);
   position: absolute;
-  top: 0;
+  top: 40px; /* Debajo del menú del CMS que mide 40px */
   left: 0;
   right: 0;
   width: 100%;
@@ -69,7 +70,7 @@ button:focus-visible {
 
 .navbar-acciona.navbar-fixed {
   position: fixed !important;
-  top: 0 !important;
+  top: 40px !important; /* Debajo del menú del CMS que mide 40px */
   left: 0 !important;
   right: 0 !important;
   width: 100% !important;
