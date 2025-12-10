@@ -132,7 +132,17 @@
   /* Animación sutil de entrada */
   animation: headerTextFadeInUp 1.2s ease-out 0.3s both;
 }
-
+/* Banner de colaboración */
+.body-democracia .collaboration-banner {
+  width: 100%;
+  text-align: left;
+  color: var(--democracia-text-color-dark);
+  font-family: var(--democracia-font-sans);
+  font-size: clamp(0.75rem, 1vw, 0.875rem);
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
 .body-democracia .header-content__title {
   color: var(--democracia-text-color-dark);
   font-family: var(--democracia-font-sans);
@@ -1693,4 +1703,5 @@ button:focus {
     max-width: 100%;
   }
 }
+
 
