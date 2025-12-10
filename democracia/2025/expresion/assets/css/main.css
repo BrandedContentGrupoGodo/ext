@@ -135,8 +135,7 @@
 /* Banner de colaboración */
 .body-democracia .collaboration-banner {
   width: 100%;
-  text-align: center;
-  padding: 1rem 2rem;
+  text-align: left;
   color: var(--democracia-text-color-dark);
   font-family: var(--democracia-font-sans);
   font-size: clamp(0.75rem, 1vw, 0.875rem);
@@ -1960,5 +1959,6 @@ button:focus {
     max-width: 100%;
   }
 }
+
 
 
