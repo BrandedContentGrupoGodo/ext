@@ -129,6 +129,7 @@ opacity: 1;
   }
   .header-text__title {
     font-size: 28px;
+    margin-left: 0;
   }
   .header-text__subtitle {
     font-size: 16px;
@@ -1235,4 +1236,5 @@ color: var(--text-color);
     padding: 1.25rem;
   }
 }
+
 
