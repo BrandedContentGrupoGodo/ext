@@ -222,6 +222,9 @@
   .text-highlight-plain {
     letter-spacing: 0;
   }
+  .text-section-title {
+    padding: 0 16px;
+  }
 }
 
 /* ---------- FULL WIDTH IMAGE ---------------------------------- */
@@ -471,4 +474,5 @@
   padding-left: 0!important;
   margin-top: 0!important;
 }
+
 
