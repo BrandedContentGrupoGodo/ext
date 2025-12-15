@@ -212,6 +212,18 @@
   letter-spacing: -3px;
 }
 
+@media (max-width: 900px) { 
+  .text-paragraph {
+    padding: 0 16px;
+  }
+  .hero-subtitle {
+    padding: 0 16px;
+  }
+  .text-highlight-plain {
+    letter-spacing: 0;
+  }
+}
+
 /* ---------- FULL WIDTH IMAGE ---------------------------------- */
 .full-width-image-wrapper {
   width: 100%;
@@ -388,11 +400,6 @@
     padding: 0 0.5rem;
   }
 
-  .full-width-image {
-    min-height: 250px;
-    max-height: 350px;
-  }
-
   .image-wrapper {
     width: 100%;
     margin: 1.5rem auto;
@@ -404,6 +411,9 @@
 
   .split-image {
     max-height: 300px;
+  }
+  .split-text {
+    padding: 16px;
   }
 }
 
@@ -461,3 +471,4 @@
   padding-left: 0!important;
   margin-top: 0!important;
 }
+
