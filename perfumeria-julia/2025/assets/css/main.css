@@ -222,7 +222,7 @@
   .text-highlight-plain,.text-highlight {
     letter-spacing: 0;
   }
-  .text-section-title {
+  .text-heading {
     padding: 0 16px;
   }
 }
@@ -474,6 +474,7 @@
   padding-left: 0!important;
   margin-top: 0!important;
 }
+
 
 
 
