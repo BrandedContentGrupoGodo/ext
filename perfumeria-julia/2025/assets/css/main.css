@@ -219,7 +219,7 @@
   .hero-subtitle {
     padding: 0 16px;
   }
-  .text-highlight-plain {
+  .text-highlight-plain,.text-highlight {
     letter-spacing: 0;
   }
   .text-section-title {
@@ -474,5 +474,6 @@
   padding-left: 0!important;
   margin-top: 0!important;
 }
+
 
 
