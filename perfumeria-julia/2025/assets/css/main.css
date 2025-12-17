@@ -474,6 +474,10 @@
   padding-left: 0!important;
   margin-top: 0!important;
 }
+.links-pj {
+  color:var(--pj-accent-color);
+  font-weight:500;
+}
 
 
 
