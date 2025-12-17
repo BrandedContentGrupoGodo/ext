@@ -924,6 +924,10 @@
   backface-visibility: hidden;
 }
 
+.links-moeve {
+  color: var(--moeve-accent-color) !important;
+}
+
 /* ---------- CRÉDITOS ---------------------------------- */
 .footer-moeve {
   color: #24281b8a;
