@@ -54,7 +54,7 @@
   overflow: hidden;
   width: 100%;
   height: 115vh;
-  background: url('https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap5/assets/img/endesa1.jpg') right bottom /cover no-repeat;
+  background: url('https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap6/assets/img/endesa1.jpg') right bottom /cover no-repeat;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -126,7 +126,7 @@ opacity: 1;
 
 @media (max-width: 768px) {
   .header-section {
-    background: url('https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap5/assets/img/endesa1-mobile.jpg') left bottom / cover no-repeat;
+    background: url('https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap6/assets/img/endesa1-mobile.jpg') right bottom / cover no-repeat;
   }
   .header-text {
     margin-left: 15rem;
@@ -1346,4 +1346,5 @@ color: var(--text-color);
   .features-box__description {
     font-size: 0.9375rem;
   }
+
 }
