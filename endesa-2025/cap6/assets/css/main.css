@@ -57,7 +57,7 @@
   background: url('https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap6/assets/img/endesa1.jpg') right bottom /cover no-repeat;
   display: flex;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: center;
   text-align: left;
   
 }
@@ -85,7 +85,7 @@ opacity: 1;
   margin-top: 2rem;
   position: relative;
   z-index: 2;
-  margin-left: 20rem;
+  margin-left: 10rem;
 }
 
 .header-text > * {
@@ -1348,3 +1348,4 @@ color: var(--text-color);
   }
 
 }
+
