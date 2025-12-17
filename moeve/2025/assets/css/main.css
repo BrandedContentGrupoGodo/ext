@@ -925,7 +925,8 @@
 }
 
 .links-moeve {
-  color: var(--moeve-accent-color) !important;
+  color: #237f94 !important;
+  font-weight: 600;
 }
 
 /* ---------- CRÉDITOS ---------------------------------- */
@@ -943,3 +944,4 @@
   padding-inline: 20px;
 
 }
+
