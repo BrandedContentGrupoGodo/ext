@@ -180,7 +180,7 @@ button:focus-visible {
   align-items: center;
 }
 
- {
+.video-title {
   margin: 0 0 clamp(32px, 6vw, 48px) 0;
   font-size: clamp(1.5rem, 4vw, 2.5rem);
   max-width: 980px;
@@ -1066,6 +1066,29 @@ button:focus-visible {
   }
 }
 
+/* ---------- SPACER SECTION ---------------------------------- */
+.spacer-section {
+  padding: clamp(20px, 5vw, 30px) 0;
+  background-color: var(--acciona-white-color);
+}
+
+.spacer-container {
+  height: 1px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .spacer-section {
+    padding: clamp(32px, 6vw, 48px) 0;
+  }
+}
+
+@media (max-width: 540px) {
+  .spacer-section {
+    padding: 32px 0;
+  }
+}
+
 /* ---------- CTA SECTION ---------------------------------- */
 .cta-section {
   padding: clamp(14px, 3vw, 18px);
@@ -1159,4 +1182,3 @@ nav.navbar-acciona a:hover,
 .ui-widget-content nav.navbar-acciona a:hover {
   color: var(--acciona-accent-color) !important;
 }
-
