@@ -749,7 +749,7 @@ button:focus-visible {
 
 .infographic-item-row {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: clamp(16px, 2.5vw, 24px);
 }
 
@@ -809,7 +809,7 @@ button:focus-visible {
   grid-template-columns: 1fr 1fr 1fr;
   gap: clamp(32px, 5vw, 48px);
   width: 100%;
-  align-items: start;
+  align-items: center;
 }
 
 .infographic-stat-column {
@@ -1182,3 +1182,4 @@ nav.navbar-acciona a:hover,
 .ui-widget-content nav.navbar-acciona a:hover {
   color: var(--acciona-accent-color) !important;
 }
+
