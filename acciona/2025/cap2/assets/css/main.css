@@ -180,7 +180,7 @@ button:focus-visible {
   align-items: center;
 }
 
-.video-title {
+ {
   margin: 0 0 clamp(32px, 6vw, 48px) 0;
   font-size: clamp(1.5rem, 4vw, 2.5rem);
   max-width: 980px;
@@ -263,6 +263,7 @@ button:focus-visible {
 
   .video-title {
     margin-bottom: 24px;
+    padding-top: 35px;
   }
 
   .video-wrapper {
@@ -1158,3 +1159,4 @@ nav.navbar-acciona a:hover,
 .ui-widget-content nav.navbar-acciona a:hover {
   color: var(--acciona-accent-color) !important;
 }
+
