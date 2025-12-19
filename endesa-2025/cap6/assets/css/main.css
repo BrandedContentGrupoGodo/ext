@@ -218,7 +218,7 @@ opacity: 1;
 @media (max-width: 550px) {
 .full-image img {
   width: 100%;
-  height: 60vh;
+  height: 30vh;
 }
 .full-image img.img-small {
   height: 30vh;
@@ -636,5 +636,6 @@ color: var(--accent-color);
     padding: 1.5rem 1rem;
   }
 }
+
 
 
