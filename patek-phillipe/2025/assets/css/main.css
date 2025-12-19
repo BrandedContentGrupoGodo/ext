@@ -597,7 +597,7 @@
 
 .pillar-feature__logo-img {
   width: 100%;
-  max-width: min(400px, 80vw);
+  max-width: min(260px, 80vw);
   height: auto;
   display: block;
 }
@@ -957,5 +957,6 @@
   padding-left: 0!important;
   margin-top: 0!important;
 }
+
 
 
