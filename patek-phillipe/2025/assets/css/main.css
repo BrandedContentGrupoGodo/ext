@@ -140,11 +140,13 @@
 .hero-pp__kicker {
   margin: 0;
   font-family: var(--pp-font-sans);
-  font-size: clamp(12px, 0.95vw, 14px);
-  letter-spacing: 0.26em;
+  font-size: clamp(13px, 1.1vw, 16px);
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  font-weight: 400;
+  font-weight: 500;
   color: var(--pp-kicker-color);
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
 }
 
 .hero-pp__title {
@@ -180,7 +182,8 @@
   }
 
   .hero-pp__kicker {
-    letter-spacing: 0.22em;
+    letter-spacing: 0.18em;
+    font-size: clamp(13px, 1.2vw, 15px);
   }
 }
 
@@ -578,6 +581,21 @@
   margin-inline: 0;
 }
 
+.pillar-feature__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: clamp(32px, 6vw, 56px) 0;
+}
+
+.pillar-feature__logo-img {
+  width: 100%;
+  max-width: min(400px, 80vw);
+  height: auto;
+  display: block;
+}
+
 /* -------------------- DESTACADO MEDIA DOS COLUMNAS -------------------- */
 .media-feature-pp {
   background: var(--pp-surface-light);
@@ -932,5 +950,4 @@
   padding-right: 0!important;
   padding-left: 0!important;
   margin-top: 0!important;
-
 }
