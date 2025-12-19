@@ -597,7 +597,7 @@
 
 .pillar-feature__logo-img {
   width: 100%;
-  max-width: min(260px, 80vw);
+  max-width: min(250px, 80vw);
   height: auto;
   display: block;
 }
@@ -848,8 +848,7 @@
 }
 
 .pillars-nav__bar {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  display: flex;
   gap: 8px;
   background: var(--pp-menu-bg);
   color: var(--pp-menu-text);
@@ -857,6 +856,28 @@
   padding: 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
   transition: box-shadow 180ms ease, transform 180ms ease;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(140, 122, 102, 0.3) transparent;
+  -webkit-overflow-scrolling: touch;
+}
+
+.pillars-nav__bar::-webkit-scrollbar {
+  height: 4px;
+}
+
+.pillars-nav__bar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.pillars-nav__bar::-webkit-scrollbar-thumb {
+  background: rgba(140, 122, 102, 0.3);
+  border-radius: 2px;
+}
+
+.pillars-nav__bar::-webkit-scrollbar-thumb:hover {
+  background: rgba(140, 122, 102, 0.5);
 }
 
 .pillars-nav__item {
@@ -871,7 +892,9 @@
   padding: 12px 10px;
   border-radius: 3px;
   cursor: pointer;
-  width: 100%;
+  flex: 0 0 auto;
+  white-space: nowrap;
+  min-width: fit-content;
   transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease, transform 160ms ease;
 }
 
@@ -906,11 +929,22 @@
 @media (min-width: 900px) {
   .pillars-nav__bar {
     padding: 12px 16px;
+    display: grid;
     grid-template-columns: repeat(5, 1fr);
+    overflow-x: visible;
+    overflow-y: visible;
+  }
+  
+  .pillars-nav__bar::-webkit-scrollbar {
+    display: none;
   }
 
   .pillars-nav__item {
     font-size: 13px;
+    width: 100%;
+    flex: none;
+    white-space: normal;
+    min-width: auto;
   }
 }
 
@@ -957,6 +991,3 @@
   padding-left: 0!important;
   margin-top: 0!important;
 }
-
-
-
