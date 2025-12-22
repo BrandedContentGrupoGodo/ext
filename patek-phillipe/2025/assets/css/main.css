@@ -191,6 +191,9 @@
     letter-spacing: 0.18em;
     font-size: clamp(13px, 1.2vw, 15px);
   }
+    .hero-pp__video {
+    object-fit: cover;
+  }
 }
 
 /* -------------------- DESTACADO FULL -------------------- */
@@ -1029,3 +1032,4 @@
   padding-left: 0!important;
   margin-top: 0!important;
 }
+
