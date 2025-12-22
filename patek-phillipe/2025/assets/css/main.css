@@ -690,7 +690,12 @@
   width: min(100%, 360px);
 }
 
-.media-feature-pp__item img,
+.media-feature-pp__item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .media-feature-pp__item video {
   width: 100%;
   height: 100%;
