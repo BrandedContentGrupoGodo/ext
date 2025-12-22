@@ -465,7 +465,11 @@ opacity: 1;
   line-height: 168.8%;
 
 }
-
+@media (max-width: 550px) {
+  .parrafos-normal {
+      padding: 1.5rem 16px;
+  }
+}
 .destacado-endesa {
   background-color: var(--accent-color);
   display: flex;
@@ -1209,4 +1213,5 @@ color: var(--text-color);
     font-size: 1.125rem;
   }
 }
+
 
