@@ -317,9 +317,11 @@ opacity: 1;
 
 }
 
-
-
-
+@media (max-width: 550px) {
+  .parrafos-normal {
+      padding: 1.5rem 16px;
+  }
+}
 
 
 /* ---------- SECCIÓN DE TARJETAS ---------------------------------- */
@@ -636,6 +638,7 @@ color: var(--accent-color);
     padding: 1.5rem 1rem;
   }
 }
+
 
 
 
