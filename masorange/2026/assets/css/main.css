@@ -98,7 +98,6 @@ button:focus-visible {
   font-size: clamp(0.8rem, 1.2vw, 1rem);
   font-weight: 400;
   letter-spacing: 0.05em;
-  text-transform: uppercase;
   opacity: 0.9;
   font-family: var(--orange-font-sans);
 }
@@ -281,3 +280,4 @@ h2 {
 .visual-article-free .col-12 {
   padding: 0!important;
 }
+
