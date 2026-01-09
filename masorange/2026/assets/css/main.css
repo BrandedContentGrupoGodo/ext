@@ -67,7 +67,7 @@ button:focus-visible {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../img/hero-orange.jpg'); /* Reemplazar con la imagen real */
+  background-image: url('https://brandedcontentgrupogodo.github.io/ext/masorange/2026/assets/img/hero-orange.jpg'); /* Reemplazar con la imagen real */
   background-size: cover;
   background-position: right center;
   background-repeat: no-repeat;
@@ -259,10 +259,11 @@ h2 {
 /* ---------- CRÉDITOS ---------------------------------- */
 .footer-orange {
   color: #323E71;
-  font-size: .9em!important;
+  font-size: 1em!important;
   text-align: center;
   padding: 20px;
   font-family: var(--orange-font-sans);
+  margin-top: 50px;
 }
 
 .container-fluid-orange {
@@ -272,20 +273,11 @@ h2 {
 }
 
 /* ---------- SOBRESCRIBIR ESTILOS DEL CMS ---------------------------------- */
-/* Sobrescribir estilos del CMS para enlaces en .article-default */
+
 .article-default a:hover {
   text-decoration: underline !important;
   box-shadow: none !important;
 }
-
-/* Sobrescribir estilos del CMS para navegación */
-.navbar-orange nav a:hover,
-.navbar-orange .navbar-link-orange:hover,
-.navbar-orange .navbar-brand:hover {
-  color: var(--orange-accent-color) !important;
-}
-
-nav.navbar-orange a:hover,
-.ui-widget-content nav.navbar-orange a:hover {
-  color: var(--orange-accent-color) !important;
+.visual-article-free .col-12 {
+  padding: 0!important;
 }
