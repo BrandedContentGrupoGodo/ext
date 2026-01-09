@@ -1,0 +1,291 @@
+/* 
+ * ESTILOS moeve
+ */
+
+/* Variables CSS con prefijo para evitar conflictos */
+:root {
+  --orange-white-color: #fff;
+  --orange-text-color-dark: #00000E;
+  --orange-accent-color: #FF7900;
+  --orange-font-sans: "Albert Sans", sans-serif;
+}
+
+/* ---------- BASE ---------------------------------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--orange-font-sans);
+  color: var(--orange-text-color-dark);
+  background-color: var(--orange-white-color);
+  overflow-x: hidden;
+}
+
+.body-orange {
+  min-height: 100vh;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  background: var(--orange-accent-color);
+  color: var(--orange-white-color);
+  padding: 10px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  left: 12px;
+  top: 12px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--orange-accent-color);
+  outline-offset: 2px;
+}
+
+/* ---------- HERO SECTION ---------------------------------- */
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../img/hero-orange.jpg'); /* Reemplazar con la imagen real */
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 100%);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1270px;
+  width: 100%;
+  padding: clamp(40px, 8vw, 80px) clamp(24px, 6vw, 64px);
+  text-align: center;
+  color: var(--orange-white-color);
+}
+
+.hero-collaboration {
+  margin: 0 0 clamp(10px, 2vw, 12px) 0;
+  font-size: clamp(0.8rem, 1.2vw, 1rem);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.9;
+  font-family: var(--orange-font-sans);
+}
+
+.hero-title {
+  margin: 0 0 clamp(18px, 3vw, 22px) 0;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--orange-white-color);
+  font-family: var(--orange-font-sans);
+}
+
+.hero-subtitle {
+  margin: 0;
+  font-size: clamp(1.1rem, 1.9vw, 1.5rem);
+  line-height: 1.4;
+  color: var(--orange-white-color);
+  max-width: 1270px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.95;
+  font-family: var(--orange-font-sans);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 80vh;
+  }
+
+  .hero-content {
+    padding: clamp(32px, 6vw, 48px) clamp(20px, 5vw, 32px);
+  }
+
+  .hero-title {
+    line-height: 1.3;
+  }
+}
+
+@media (max-width: 540px) {
+  .hero-section {
+    min-height: 70vh;
+  }
+
+  .hero-content {
+    padding: 32px 16px;
+  }
+
+  .hero-collaboration {
+    margin-bottom: 12px;
+  }
+
+  .hero-title {
+    margin-bottom: 20px;
+  }
+}
+
+/* ---------- SECCIÓN PÁRRAFOS ---------------------------------- */
+.paragraphs-section {
+  padding: clamp(24px, 4vw, 40px) clamp(24px, 6vw, 64px);
+  background-color: var(--orange-white-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: auto;
+}
+
+.paragraphs-container {
+  max-width: 700px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 3vw, 28px);
+}
+
+.paragraph-text {
+  margin: 0;
+  font-size: clamp(1rem, 1.8vw, 1.1rem);
+  line-height: 1.7;
+  color: var(--orange-text-color-dark);
+  text-align: left;
+  font-family: var(--orange-font-sans);
+}
+
+.highlight-text {
+  position: relative;
+  margin: clamp(40px, 6vw, 60px) 0;
+  padding-top: clamp(24px, 3vw, 32px);
+  font-size: clamp(1.2rem, 2.2vw, 1.8rem);
+  line-height: 1.4;
+  color: var(--orange-text-color-dark);
+  text-align: left;
+  font-family: var(--orange-font-sans);
+  font-weight: 600;
+  max-width: 600px;
+}
+
+h2 {
+  margin: 0 0 clamp(20px, 3vw, 28px) 0;
+  font-size: clamp(1.4rem, 2.5vw, 2.1rem);
+  line-height: 1.4;
+  color: var(--orange-text-color-dark);
+  text-align: left;
+  font-family: var(--orange-font-sans);
+  font-weight: 900;
+}
+
+.highlight-text::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 700px;
+  height: 3px;
+  background-color: var(--orange-accent-color);
+}
+
+@media (max-width: 700px) {
+  .highlight-text::before {
+    width: 100%;
+  }
+}
+
+.image-container {
+  margin: clamp(32px, 5vw, 48px) 0;
+  text-align: center;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .paragraphs-section {
+    padding: clamp(20px, 3vw, 32px) clamp(20px, 5vw, 32px);
+    min-height: auto;
+  }
+
+  .paragraphs-container {
+    gap: clamp(18px, 3vw, 24px);
+  }
+}
+
+@media (max-width: 540px) {
+  .paragraphs-section {
+    padding: 20px 16px;
+  }
+
+  .paragraphs-container {
+    gap: 16px;
+  }
+}
+
+/* ---------- CRÉDITOS ---------------------------------- */
+.footer-orange {
+  color: #323E71;
+  font-size: .9em!important;
+  text-align: center;
+  padding: 20px;
+  font-family: var(--orange-font-sans);
+}
+
+.container-fluid-orange {
+  margin-inline: auto;
+  padding-inline: 20px;
+
+}
+
+/* ---------- SOBRESCRIBIR ESTILOS DEL CMS ---------------------------------- */
+/* Sobrescribir estilos del CMS para enlaces en .article-default */
+.article-default a:hover {
+  text-decoration: underline !important;
+  box-shadow: none !important;
+}
+
+/* Sobrescribir estilos del CMS para navegación */
+.navbar-orange nav a:hover,
+.navbar-orange .navbar-link-orange:hover,
+.navbar-orange .navbar-brand:hover {
+  color: var(--orange-accent-color) !important;
+}
+
+nav.navbar-orange a:hover,
+.ui-widget-content nav.navbar-orange a:hover {
+  color: var(--orange-accent-color) !important;
+}
