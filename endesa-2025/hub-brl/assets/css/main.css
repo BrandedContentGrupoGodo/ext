@@ -145,7 +145,7 @@ body {
 }
 
 .collab-endesa {
-  color: var(--text-color-muted);
+  color: #29385a;
   text-align: center;
   font-size: var(--font-size-xs);
   font-style: normal;
@@ -168,7 +168,7 @@ body {
   font-size: var(--font-size-hero);
   margin-bottom: var(--spacing-md);
   font-family: var(--font-serif);
-  color: var(--text-color-muted);
+  color: #29385a;
   text-align: center;
   font-style: normal;
   font-weight: 400;
@@ -188,7 +188,7 @@ body {
   font-size: var(--font-size-2xl);
   font-weight: 300;
   margin-bottom: var(--spacing-xl);
-  color: var(--text-color-muted);
+  color: #29385a;
   text-align: center;
   font-style: normal;
   line-height: var(--line-height-normal);
@@ -587,4 +587,3 @@ button:focus {
 .links-endesa {
 color: var(--accent-color);
 }
-
