@@ -207,10 +207,10 @@ body {
   color: var(--accent-color-hover);
   text-decoration: none;
   padding: var(--spacing-md) var(--spacing-lg);
-  border-radius: 9.375rem; /* 150px */
+  border-radius:var(--spacing-xs); 
   font-size: var(--font-size-base);
   font-style: normal;
-  font-weight: 300;
+  font-weight: 600;
   line-height: var(--line-height-normal);
   display: inline-block;
   min-height: var(--touch-target-min);
@@ -540,7 +540,7 @@ body {
 
 /* ---------- CRÉDITOS ---------------------------------- */
 .authorship-f {
-   color: var(--button-bg-hover);
+  color: var(--button-bg-hover);
   font-size: var(--font-size-sm);
   text-align: center;
   padding: var(--spacing-md);
@@ -586,4 +586,3 @@ button:focus {
 .links-endesa {
 color: var(--accent-color);
 }
-
