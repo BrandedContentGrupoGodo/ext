@@ -96,13 +96,25 @@ body {
   position: relative;
   width: 100%;
   overflow: hidden;
-  margin-top: clamp(-11.25rem, -15vw, -11.25rem); /* -180px responsive */
+  margin-top: clamp(-11.25rem, -15vw, -11.25rem);
+  opacity: 0;
+  transition: opacity 0.6s ease-in;
+}
+
+.body-endesa.loaded {
+  opacity: 1;
 }
 
 .hub-background {
   width: 100%;
   height: auto;
   display: block;
+  opacity: 0;
+  transition: opacity 0.8s ease-in;
+}
+
+.hub-background.loaded {
+  opacity: 1;
 }
 
 .hub-container {
@@ -123,6 +135,13 @@ body {
   color: var(--text-color-dark);
   z-index: 2;
   position: relative;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.intro-container.loaded {
+  opacity: 1;
+  visibility: visible;
 }
 
 .collab-endesa {
@@ -135,6 +154,14 @@ body {
   letter-spacing: 0.0825rem; /* 1.32px */
   text-transform: uppercase;
   margin-bottom: var(--spacing-md);
+  opacity: 0;
+  transform: translateY(1rem);
+  transition: opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s;
+}
+
+.intro-container.loaded .collab-endesa {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .intro-container h1 {
@@ -146,7 +173,15 @@ body {
   font-style: normal;
   font-weight: 400;
   line-height: var(--line-height-tight);
-  letter-spacing: -0.02em; /* Mejora legibilidad en títulos grandes */
+  letter-spacing: -0.02em;
+  opacity: 0;
+  transform: translateY(1.5rem) scale(0.98);
+  transition: opacity 1s ease-out 0.4s, transform 1s ease-out 0.4s;
+}
+
+.intro-container.loaded h1 {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 .intro-container h2 {
@@ -157,6 +192,14 @@ body {
   text-align: center;
   font-style: normal;
   line-height: var(--line-height-normal);
+  opacity: 0;
+  transform: translateY(1rem);
+  transition: opacity 0.8s ease-out 0.6s, transform 0.8s ease-out 0.6s;
+}
+
+.intro-container.loaded h2 {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .intro-container a {
@@ -170,9 +213,16 @@ body {
   font-weight: 300;
   line-height: var(--line-height-normal);
   display: inline-block;
-  min-height: var(--touch-target-min); /* Accesibilidad táctil */
+  min-height: var(--touch-target-min);
   min-width: var(--touch-target-min);
-  transition: background-color 0.2s ease, transform 0.1s ease;
+  transition: background-color 0.2s ease, transform 0.1s ease, opacity 0.8s ease-out 0.8s, transform 0.8s ease-out 0.8s;
+  opacity: 0;
+  transform: translateY(1rem) scale(0.95);
+}
+
+.intro-container.loaded a {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 .intro-container a:hover {
@@ -451,6 +501,17 @@ body {
     opacity: 1 !important;
     transform: none !important;
     will-change: auto !important;
+  }
+  
+  .intro-container,
+  .intro-container.loaded,
+  .intro-container.loaded .collab-endesa,
+  .intro-container.loaded h1,
+  .intro-container.loaded h2,
+  .intro-container.loaded a {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
   }
 }
 
