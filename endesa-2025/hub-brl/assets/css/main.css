@@ -540,11 +540,10 @@ body {
 
 /* ---------- CRÉDITOS ---------------------------------- */
 .authorship-f {
-  color: #ccc;
+   color: var(--button-bg-hover);
   font-size: var(--font-size-sm);
   text-align: center;
   padding: var(--spacing-md);
-  background: var(--overlay-light);
   position: relative;
   bottom: 0;
   width: 100%;
@@ -587,3 +586,4 @@ button:focus {
 .links-endesa {
 color: var(--accent-color);
 }
+
