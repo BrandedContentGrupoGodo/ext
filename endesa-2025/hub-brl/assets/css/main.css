@@ -192,7 +192,10 @@ body {
   padding: var(--spacing-md);
   background: #3d5a9e78;
   border-radius: var(--spacing-sm);
-  backdrop-filter: blur(0.5rem); /* Mejora legibilidad */
+  backdrop-filter: blur(0.5rem);
+  will-change: transform, opacity;
+  transition: transform 0.1s ease-out, opacity 0.3s ease-out;
+  transform-style: preserve-3d;
 }
 
 #cap1 { top: 10%; left: 10%; } /* 1150px */
@@ -442,6 +445,12 @@ body {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+  
+  .hub-section {
+    opacity: 1 !important;
+    transform: none !important;
+    will-change: auto !important;
   }
 }
 
