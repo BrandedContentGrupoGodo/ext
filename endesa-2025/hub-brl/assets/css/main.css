@@ -410,7 +410,7 @@ body {
     align-items: center;
     overflow: hidden;
     border-radius: 0;
-    background: #3d5a9e78;
+    background: transparent;
     scroll-snap-align: start;
     scroll-snap-stop: always;
   }
