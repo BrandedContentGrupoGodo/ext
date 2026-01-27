@@ -240,7 +240,7 @@ body {
   width: 24rem; /* 300px */
   max-width: 90%;
   padding: var(--spacing-md);
-  background: #3d5a9e78;
+  background: #3d5a9e9e;
   border-radius: var(--spacing-sm);
   backdrop-filter: blur(0.5rem);
   will-change: transform, opacity;
@@ -587,3 +587,4 @@ button:focus {
 .links-endesa {
 color: var(--accent-color);
 }
+
