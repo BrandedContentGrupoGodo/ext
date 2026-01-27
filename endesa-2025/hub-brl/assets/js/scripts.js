@@ -1,5 +1,45 @@
-// Scroll suave al hacer clic en enlaces de anclaje
+// Prevenir FOUC (Flash of Unstyled Content) y cargar elementos progresivamente
 document.addEventListener('DOMContentLoaded', function() {
+  // Esperar a que la imagen de fondo se cargue
+  const backgroundImage = document.querySelector('.hub-background');
+  const bodyEndesa = document.querySelector('.body-endesa');
+  const introContainer = document.querySelector('.intro-container');
+  
+  if (backgroundImage) {
+    // Si la imagen ya está cargada
+    if (backgroundImage.complete) {
+      initializePage();
+    } else {
+      // Esperar a que se cargue
+      backgroundImage.addEventListener('load', initializePage);
+      backgroundImage.addEventListener('error', initializePage); // Continuar aunque falle
+      
+      // Timeout de seguridad (máximo 2 segundos)
+      setTimeout(initializePage, 2000);
+    }
+  } else {
+    // Si no hay imagen, inicializar inmediatamente
+    initializePage();
+  }
+  
+  function initializePage() {
+    // Mostrar fondo primero
+    if (bodyEndesa) {
+      bodyEndesa.classList.add('loaded');
+    }
+    if (backgroundImage) {
+      backgroundImage.classList.add('loaded');
+    }
+    
+    // Luego mostrar intro con un pequeño delay
+    setTimeout(() => {
+      if (introContainer) {
+        introContainer.classList.add('loaded');
+      }
+    }, 300);
+  }
+  
+  // Scroll suave al hacer clic en enlaces de anclaje
   // Manejar clic en el botón "Explorar historias"
   const exploreButton = document.querySelector('a[href="#cap1"]');
   if (exploreButton) {
