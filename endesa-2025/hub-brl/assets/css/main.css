@@ -431,32 +431,32 @@ body {
 
   /* Imágenes específicas para cada capítulo */
   #cap1::after {
-    background-image: url('../img/endesa-primer-parque-eolico-cap2.png');
+    background-image: url('../img/endesa-primer-parque-eolico-cap2.jpg');
     background-position: center;
   }
 
   #cap2::after {
-    background-image: url('../img/endesa-planta-solar-extremadura.png');
+    background-image: url('../img/endesa-planta-solar-extremadura.jpg');
     background-position: center;
   }
 
   #cap3::after {
-    background-image: url('../img/endesa-avistamiento-aves-parque-eolico-cap5.png');
+    background-image: url('../img/endesa-avistamiento-aves-parque-eolico-cap5.jpg');
     background-position: right;
   }
 
   #cap4::after {
-    background-image: url('../img/endesa-noguera-pallaresa-cap4.png');
+    background-image: url('../img/endesa-noguera-pallaresa-cap4.jpg');
     background-position: center;
   }
 
   #cap5::after {
-    background-image: url('../img/endesa-oso-pardo-cap1.png');
+    background-image: url('../img/endesa-oso-pardo-cap1.jpg');
     background-position: center;
   }
 
   #cap6::after {
-    background-image: url('../img/endesabats-cap3.png');
+    background-image: url('../img/endesabats-cap3.jpg');
     background-position: center;
   }
 
