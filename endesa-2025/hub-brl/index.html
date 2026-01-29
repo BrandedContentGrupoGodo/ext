@@ -1,80 +1,588 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;700&family=Bacasime+Antique&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/main.css">
-  <title>Hub Endesa</title>
-</head>
-<body>
-  <div class="intro-container">
-    <p class="collab-endesa">En colaboración con Endesa</p>
-    <h1>Conexión a Tierra</h1>
-    <h2>Historias donde las renovables transforman el territorio</h2>
-    <a href="#cap1">Explorar historias</a>
-  </div>
+:root {
+  /* Sistema de tipografía escalable (base 16px = 1rem) */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-md: 1rem; /* 16px */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.25rem; /* 20px */
+  --font-size-2xl: 1.5rem; /* 24px */
+  --font-size-3xl: 2rem; /* 32px */
+  --font-size-4xl: 2.5rem; /* 40px */
+  --font-size-5xl: 3rem; /* 48px */
+  --font-size-6xl: 4rem; /* 64px */
+  --font-size-7xl: 5rem; /* 80px */
+  --font-size-hero: clamp(3rem, 8vw, 7rem); /* Responsive hero */
 
-  <div class="body-endesa">
-    
-    <img class="hub-background" src="assets/img/endesa-fondo-home.jpg" alt="Conexión a tierra Endesa">
-    
-    <div class="hub-container">
-      
-      <!-- Capítulo 1: Oso -->
-      <section class="hub-section" id="cap1">
-        <h2 class="hub-title">Don Quijote no se lo creería: el primer parque eólico de España que convierte sus aspas en hormigón</h2>
-        <a href="https://www.lavanguardia.com/vida/20250812/10965997/aldeavieja-primer-parque-eolico-recicla-aspas-hormigon-conexion-a-tierra-streaming-brl.html" target="_blank" class="hub-button">Ver capítulo</a>
-      </section>
+  /* Line-height para legibilidad */
+  --line-height-tight: 0.8;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+  --line-height-loose: 2;
 
-      <!-- Capítulo 2: Molinos -->
-      <section class="hub-section" id="cap2">
-        <h2 class="hub-title">La planta solar de Extremadura que se convirtió en santuario de animales y plantas</h2>
-        <a href="https://www.lavanguardia.com/vida/20251229/11377041/planta-solar-extremadura-santuario-biodiversidad-conexion-a-tierra-brl.html" target="_blank" class="hub-button">Ver capítulo</a>
-      </section>
+  /* Sistema de espaciado (escala 8px base) */
+  --spacing-xs: 0.25rem; /* 4px */
+  --spacing-sm: 0.5rem; /* 8px */
+  --spacing-md: 1rem; /* 16px */
+  --spacing-lg: 1.5rem; /* 24px */
+  --spacing-xl: 2rem; /* 32px */
+  --spacing-2xl: 3rem; /* 48px */
+  --spacing-3xl: 4rem; /* 64px */
 
-      <!-- Capítulo 3: Murciélagos -->
-      <section class="hub-section" id="cap3">
-        <h2 class="hub-title">Ojo humano + IA: el equipo que protege las aves mientras genera energía limpia</h2>
-        <a href="https://www.lavanguardia.com/vida/20251211/11347640/ojo-humano-ia-equipo-protege-aves-conexion-a-tierra-brl.html" target="_blank" class="hub-button">Ver capítulo</a>
-      </section>
+  /* Colores con mejor contraste WCAG */
+  --bg-color: #000;
+  --text-color: #fff;
+  --text-color-dark: #29385A;
+  --text-color-muted: #47484A;
+  --accent-color: #2B4071;
+  --accent-color-hover: #3d5a9e;
+  --button-bg: #1a3d2f;
+  --button-bg-hover: #3d5a9e;
+  --button-disabled: #6b6b6b;
+  --star-glow: rgba(255, 255, 255, 0.15);
+  
+  /* Overlay para mejor legibilidad */
+  --overlay-light: rgba(0, 0, 0, 0.5);
+  --overlay-medium: rgba(0, 0, 0, 0.7);
+  --overlay-dark: rgba(0, 0, 0, 0.8);
 
-      <!-- Capítulo 4 -->
-      <section class="hub-section" id="cap4">
-        <h2 class="hub-title">Turismo fluvial en el Pirineo: el caudal regulado que hace posible rafting, kayak y naturaleza</h2>
-        <a href="https://www.lavanguardia.com/vida/20251111/11238419/turismo-fluvial-pirineo-caudal-regulado-rafting-conexion-a-tierra-brl.html" target="_blank" class="hub-button">Ver capítulo</a>
-      </section>
+  /* Fuentes */
+  --font-sans: "Albert Sans", sans-serif;
+  --font-serif: "Bacasime Antique", serif;
 
-      <!-- Capítulo 5 -->
-      <section class="hub-section" id="cap5">
-        <h2 class="hub-title">Radiografía del regreso del oso pardo al Pirineo catalán: más biodiversidad e impulso a la economía local</h2>
-        <a href="https://www.lavanguardia.com/vida/20250724/10913915/radiografia-regreso-oso-pardo-pirineo-catalan-conexion-a-tierra-streaming-brl.html" target="_blank" class="hub-button">Ver capítulo</a>
-      </section>
+  /* Breakpoints */
+  --breakpoint-sm: 600px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
 
-      <!-- Capítulo 6 -->
-      <section class="hub-section" id="cap6">
-        <h2 class="hub-title">Ni Batman, ni vampiros: así son los murciélagos que viven en los túneles de una central hidroeléctrica</h2>
-        <a href="https://www.lavanguardia.com/vida/20251003/11112587/murcielagos-viven-tuneles-central-hidroelectrica-conexion-a-tierra-streaming-brl.html" target="_blank" class="hub-button">Ver capítulo</a>
-      </section>
-        
-    </div>
-            <!-- CRÉDITOS ============================================= -->
-        <div class="authorship-f">
-        Coordinación: Silvia Resola | Diseño y maquetación: Alejandra Santander | Ilustración: Alex Batlle. Un proyecto de Brandslab. Godó Nexus
-        </div>
-   </div>
+  /* Tamaños mínimos táctiles (WCAG) */
+  --touch-target-min: 2.75rem; /* 44px */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%; /* 16px por defecto, respeta preferencias del usuario */
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100%;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  scroll-behavior: smooth;
+}
+
+/* ---------- ESTILOS LANDING -------------------------------------- */
+body {
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+.body-endesa {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-top: clamp(-11.25rem, -15vw, -11.25rem);
+  opacity: 0;
+  transition: opacity 0.6s ease-in;
+}
+
+.body-endesa.loaded {
+  opacity: 1;
+}
+
+.hub-background {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.8s ease-in;
+}
+
+.hub-background.loaded {
+  opacity: 1;
+}
+
+.hub-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
 
 
-  <!-- GSAP + SCROLLTRIGGER =================================== -->
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/Observer.min.js"></script>
-  <script src="https://brandedcontentgrupogodo.github.io/ext/danacol01/assets/js/lenis1.js"></script>
+.intro-container {
+  text-align: center;
+  padding: var(--spacing-xl) var(--spacing-md) 0;
+  max-width: 31.25rem; /* 500px */
+  margin: 0 auto;
+  color: var(--text-color-dark);
+  z-index: 2;
+  position: relative;
+  opacity: 0;
+  visibility: hidden;
+}
 
+.intro-container.loaded {
+  opacity: 1;
+  visibility: visible;
+}
 
-  <!-- SCRIPT FINAL DE COMPORTAMIENTO ======================== -->
-  <script src="assets/js/scripts.js"></script>
-</body>
-</html>
+.collab-endesa {
+  color: #29385a;
+  text-align: center;
+  font-size: var(--font-size-xs);
+  font-style: normal;
+  font-weight: 400;
+  line-height: var(--line-height-normal);
+  letter-spacing: 0.0825rem; /* 1.32px */
+  text-transform: uppercase;
+  margin-bottom: var(--spacing-md);
+  opacity: 0;
+  transform: translateY(1rem);
+  transition: opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s;
+}
+
+.intro-container.loaded .collab-endesa {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.intro-container h1 {
+  font-size: var(--font-size-hero);
+  margin-bottom: var(--spacing-md);
+  font-family: var(--font-serif);
+  color: #29385a;
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
+  line-height: var(--line-height-tight);
+  letter-spacing: -0.02em;
+  opacity: 0;
+  transform: translateY(1.5rem) scale(0.98);
+  transition: opacity 1s ease-out 0.4s, transform 1s ease-out 0.4s;
+}
+
+.intro-container.loaded h1 {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.intro-container h2 {
+  font-size: var(--font-size-2xl);
+  font-weight: 300;
+  margin-bottom: var(--spacing-xl);
+  color: #29385a;
+  text-align: center;
+  font-style: normal;
+  line-height: var(--line-height-normal);
+  opacity: 0;
+  transform: translateY(1rem);
+  transition: opacity 0.8s ease-out 0.6s, transform 0.8s ease-out 0.6s;
+}
+
+.intro-container.loaded h2 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.intro-container a {
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color-hover);
+  text-decoration: none;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius:var(--spacing-xs); 
+  font-size: var(--font-size-base);
+  font-style: normal;
+  font-weight: 600;
+  line-height: var(--line-height-normal);
+  display: inline-block;
+  min-height: var(--touch-target-min);
+  min-width: var(--touch-target-min);
+  transition: background-color 0.2s ease, transform 0.1s ease, opacity 0.8s ease-out 0.8s, transform 0.8s ease-out 0.8s;
+  opacity: 0;
+  transform: translateY(1rem) scale(0.95);
+}
+
+.intro-container.loaded a {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.intro-container a:hover {
+  color: #fff;
+  background-color: var(--accent-color);
+}
+
+.intro-container a:focus {
+  outline: 0.125rem solid var(--accent-color);
+  outline-offset: 0.25rem;
+}
+
+.hub-section {
+  position: absolute;
+  width: 24rem; /* 300px */
+  max-width: 90%;
+  padding: var(--spacing-md);
+  background: #3d5a9e9e;
+  border-radius: var(--spacing-sm);
+  backdrop-filter: blur(0.5rem);
+  will-change: transform, opacity;
+  transition: transform 0.1s ease-out, opacity 0.3s ease-out;
+  transform-style: preserve-3d;
+}
+
+#cap1 { top: 10%; left: 10%; } /* 1150px */
+#cap2 { top: 18%; right: 28%; } /* 1480px */
+#cap3 { top: 33%; left: 23%; } /* 1800px */
+#cap4 { top: 50%; left: 25%; } /* 2120px */
+#cap5 { top: 62%; right: 25%; } /* 2440px */
+#cap6 {    bottom: 15%; left: 16%; } /* 2760px */
+
+.hub-title {
+  font-family: var(--font-serif);
+  font-size: 1.7rem;
+  font-weight: 400;
+  margin-bottom: var(--spacing-md);
+  line-height: 1.2;
+  color: var(--text-color);
+  text-shadow: 0 0 0.2px rgb(0 0 0 / 56%);
+}
+
+.hub-button {
+  background-color: var(--accent-color);
+  color: #fff;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border: 0.125rem solid transparent;
+  border-radius: var(--spacing-xs);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: var(--font-size-base);
+  display: inline-block;
+  min-height: var(--touch-target-min);
+  width: 100%;
+  min-width: var(--touch-target-min);
+  line-height: var(--line-height-normal);
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
+}
+
+.hub-button:hover {
+  background-color: var(--button-bg-hover);
+  transform: translateY(-0.0625rem);
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
+}
+
+.hub-button:active {
+  transform: translateY(0);
+  box-shadow: 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.2);
+}
+
+.hub-button:focus {
+  outline: none;
+}
+
+.hub-button:focus-visible {
+  outline: 0.1875rem solid var(--text-color);
+  outline-offset: 0.1875rem;
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.3);
+}
+
+.hub-button:disabled,
+.hub-button.disabled,
+.hub-button[aria-disabled="true"] {
+  background-color: var(--button-disabled);
+  color: rgba(255, 255, 255, 0.7);
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.7;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Media queries responsive */
+@media (max-width: 1024px) and (min-width: 601px) {
+  .hub-section {
+    width: 17.5rem; /* 280px */
+    padding: var(--spacing-md);
+  }
+
+  #cap1 { top: 10%; left: 10%; } /* 1000px */
+  #cap2 { top: 20%; right: 8%; } /* 1300px */
+  #cap3 { top: 30%; left: 20%; } /* 1600px */
+  #cap4 { top: 40%; right: 15%; } /* 1900px */
+  #cap5 { top: 50%; left: 10%; } /* 2200px */
+  #cap6 { top: 60%; right: 8%; } /* 2500px */
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 16px; /* Mantener tamaño base legible */
+  }
+
+  .intro-container {
+    padding: var(--spacing-md) var(--spacing-sm) 0;
+    max-width: 100%;
+  }
+  
+  .intro-container h1 {
+    font-size: clamp(2.5rem, 10vw, 3rem);
+    line-height: var(--line-height-tight);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .intro-container h2 {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-xl);
+  }
+  
+  .intro-container a {
+    padding: var(--spacing-md) var(--spacing-lg);
+    font-size: var(--font-size-base);
+    width: 100%;
+    max-width: 20rem;
+  }
+
+  .body-endesa {
+    margin-top: clamp(1rem, -12vw, -11.25rem);
+    overflow: visible;
+  }
+
+  /* Ocultar imagen principal en móvil ya que será fondo del contenedor */
+  .hub-background {
+    display: none;
+  }
+
+  /* Scroll snap para ver un capítulo por pantalla */
+  body {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+  }
+
+  .hub-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    gap: 0;
+    background: transparent;
+    min-height: auto;
+  }
+
+  .hub-container > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .hub-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+    max-width: 100%;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    margin: 0;
+    padding: 0 0 16px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 0;
+    background: transparent;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+
+  /* Imagen de fondo sin blur para cada capítulo */
+  .hub-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+  }
+
+  /* Imágenes específicas para cada capítulo */
+  #cap1::after {
+    background-image: url('../img/endesa-primer-parque-eolico-cap2.jpg');
+    background-position: center;
+  }
+
+  #cap2::after {
+    background-image: url('../img/endesa-planta-solar-extremadura.jpg');
+    background-position: center;
+  }
+
+  #cap3::after {
+    background-image: url('../img/endesa-avistamiento-aves-parque-eolico-cap5.jpg');
+    background-position: right;
+  }
+
+  #cap4::after {
+    background-image: url('../img/endesa-noguera-pallaresa-cap4.jpg');
+    background-position: center;
+  }
+
+  #cap5::after {
+    background-image: url('../img/endesa-oso-pardo-cap1.jpg');
+    background-position: center;
+  }
+
+  #cap6::after {
+    background-image: url('../img/endesabats-cap3.jpg');
+    background-position: center;
+  }
+
+  /* Contenedor del contenido dentro de la caja */
+  .hub-section > * {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 85%;
+    margin: 0 auto var(--spacing-xl) auto;
+    padding: var(--spacing-lg);
+    background: #3d5a9e78;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: var(--spacing-sm);
+  }
+
+  .hub-title {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-md);
+  }
+
+  /* Los botones mantienen el mismo estilo en mobile */
+  .hub-button {
+    width: 100%;
+    margin: 0 auto;
+    background-color: var(--accent-color);
+  }
+}
+
+/* Preferencias de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .hub-section {
+    opacity: 1 !important;
+    transform: none !important;
+    will-change: auto !important;
+  }
+  
+  .intro-container,
+  .intro-container.loaded,
+  .intro-container.loaded .collab-endesa,
+  .intro-container.loaded h1,
+  .intro-container.loaded h2,
+  .intro-container.loaded a {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+  }
+}
+
+/* Alto contraste para mejor accesibilidad */
+@media (prefers-contrast: high) {
+  .hub-section {
+    background: var(--overlay-dark);
+    border: 0.125rem solid var(--text-color);
+  }
+  
+  .hub-button {
+    border: 0.1875rem solid var(--text-color);
+    background-color: var(--button-bg);
+  }
+  
+  .hub-button:hover {
+    background-color: var(--button-bg-hover);
+    border-color: var(--text-color);
+  }
+  
+  .hub-button:focus-visible {
+    outline: 0.25rem solid var(--text-color);
+    outline-offset: 0.125rem;
+  }
+}
+
+/* ---------- CRÉDITOS ---------------------------------- */
+.authorship-f {
+  color: var(--button-bg-hover);
+  font-size: var(--font-size-sm);
+  text-align: center;
+  padding: var(--spacing-md);
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  line-height: var(--line-height-relaxed);
+}
+
+/* estilos para que en LV se muestre el contenido sin margenes */
+.wallpaper-inverted-ad{
+  display: none!important;
+}
+
+.visual-article-free .col-12 {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  margin-top: 0 !important;
+}
+.content-free-html {
+  margin:0 !important;
+}
+.container-fluid {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+.visual__story--free .content-free-html {
+  margin: 0px !important;
+}
+.row>* {
+  padding-right: 0!important;
+  padding-left: 0!important;
+  margin-top: 0!important;
+}
+.article-default a:hover {
+  text-decoration: none;
+  box-shadow: none;
+}
+button:focus {
+    outline: 1px dotted var(--background-color);
+    outline: 5px auto var(--background-color) -webkit-focus-ring-color;
+}
+.links-endesa {
+color: var(--accent-color);
+}
