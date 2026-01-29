@@ -249,11 +249,11 @@ body {
 }
 
 #cap1 { top: 10%; left: 10%; } /* 1150px */
-#cap2 { top: 18%; right: 28%; } /* 1480px */
-#cap3 { top: 33%; left: 23%; } /* 1800px */
-#cap4 { top: 50%; left: 25%; } /* 2120px */
-#cap5 { top: 62%; right: 25%; } /* 2440px */
-#cap6 {    bottom: 15%; left: 16%; } /* 2760px */
+#cap2 { top: 20%; right: 28%; } /* 1480px */
+#cap3 { top: 36%; left: 24%; } /* 1800px */
+#cap4 { top: 50%; left: 27%; } /* 2120px */
+#cap5 { top: 64%; right: 25%; } /* 2440px */
+#cap6 { bottom: 5%; right: 18%;} /* 2760px */
 
 .hub-title {
   font-family: var(--font-serif);
