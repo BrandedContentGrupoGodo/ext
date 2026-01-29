@@ -96,7 +96,7 @@ body {
   position: relative;
   width: 100%;
   overflow: hidden;
-  margin-top: clamp(-11.25rem, -15vw, -11.25rem);
+  margin-top: clamp(-6.25rem, -15vw, -11.25rem);
   opacity: 0;
   transition: opacity 0.6s ease-in;
 }
@@ -248,12 +248,13 @@ body {
   transform-style: preserve-3d;
 }
 
-#cap1 { top: 10%; left: 10%; } /* 1150px */
-#cap2 { top: 20%; right: 28%; } /* 1480px */
-#cap3 { top: 36%; left: 24%; } /* 1800px */
-#cap4 { top: 50%; left: 27%; } /* 2120px */
-#cap5 { top: 64%; right: 25%; } /* 2440px */
-#cap6 { bottom: 5%; right: 18%;} /* 2760px */
+/* Pantallas grandes (> 1600px) */
+#cap1 { top: 10%; left: 10%; }
+#cap2 { top: 20%; right: 28%; }
+#cap3 { top: 36%; left: 24%; }
+#cap4 { top: 50%; left: 27%; }
+#cap5 { top: 64%; right: 25%; }
+#cap6 { bottom: 5%; right: 18%; }
 
 .hub-title {
   font-family: var(--font-serif);
@@ -319,18 +320,35 @@ body {
 }
 
 /* Media queries responsive */
+
+/* Laptop (1025px - 1600px) — ajustado para ~1520px */
+@media (max-width: 1600px) and (min-width: 1025px) {
+  #cap1 { top: 10%; left: 5%; }
+  #cap2 { top: 22%; right: 31%; }
+  #cap3 { top: 35%; left: 20%; }
+  #cap4 { top: 50%; left: 22%; }
+  #cap5 { top: 63%; right: 18%; }
+  #cap6 { bottom: 4%; right: 11%; }
+}
+
+/* Tablet (601px - 1024px) */
 @media (max-width: 1024px) and (min-width: 601px) {
+  .hub-title {
+    font-size: 1.1rem;
+    line-height: 1;
+    margin-bottom: var(--spacing-sm);
+  }
   .hub-section {
-    width: 17.5rem; /* 280px */
-    padding: var(--spacing-md);
+    width: 15rem; /* 280px */
+    padding: var(--spacing-sm);
   }
 
-  #cap1 { top: 10%; left: 10%; } /* 1000px */
-  #cap2 { top: 20%; right: 8%; } /* 1300px */
-  #cap3 { top: 30%; left: 20%; } /* 1600px */
-  #cap4 { top: 40%; right: 15%; } /* 1900px */
-  #cap5 { top: 50%; left: 10%; } /* 2200px */
-  #cap6 { top: 60%; right: 8%; } /* 2500px */
+  #cap1 { top: 12%; left: 3%; }
+  #cap2 { top: 18%; right: 27%; }
+  #cap3 { top: 33%; left: 8%; }
+  #cap4 { top: 45%; right: 15%; }
+  #cap5 { top: 60%; right: 10%; }
+  #cap6 { bottom: 5%;; right: 8%; }
 }
 
 @media (max-width: 600px) {
@@ -587,4 +605,3 @@ button:focus {
 .links-endesa {
 color: var(--accent-color);
 }
-
