@@ -477,6 +477,7 @@ body {
   .hub-title {
     font-size: var(--font-size-xl);
     margin-bottom: var(--spacing-md);
+    font-weight: 600;
   }
 
   /* Los botones mantienen el mismo estilo en mobile */
@@ -586,3 +587,4 @@ button:focus {
 .links-endesa {
 color: var(--accent-color);
 }
+
