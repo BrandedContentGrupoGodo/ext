@@ -136,6 +136,9 @@ opacity: 1;
   .header-section {
     padding: 2rem;
   }
+    .header-text {
+    margin-top: 0;
+  }
 }
 
 .entradilla {
@@ -677,5 +680,6 @@ color: var(--accent-color);
 .timeline-right .links-endesa {
 color: var(--text-color);
 }
+
 
 
