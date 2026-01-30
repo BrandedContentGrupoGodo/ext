@@ -23,7 +23,7 @@
       background-color: var(--bg-color);
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       padding: 0 1rem;
       z-index: 1000;
     }
@@ -109,7 +109,7 @@ opacity: 1;
   color: var(--text-color);
   font-family: var(--font-serif);
   font-size: 40px;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 80%;
   margin-bottom: 1rem;
 }
@@ -119,7 +119,7 @@ opacity: 1;
   max-width: 500px;
   font-family: var(--font-sans);
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 108.8%;
   
 }
@@ -138,6 +138,9 @@ opacity: 1;
 @media (max-width: 550px) {
   .header-section {
     padding: 2rem;
+  }
+  .header-text {
+    margin-top: 0;
   }
 }
 
@@ -361,6 +364,11 @@ opacity: 1;
   margin-left: auto;
   margin-right: auto;
 }
+@media (max-width: 550px) {
+  .image-caption {
+    width: 94%;
+  }
+}
 
 /* fases */
 .fases-proceso {
@@ -525,7 +533,8 @@ opacity: 1;
   font-family: var(--font-serif);
   font-size: 2rem;
   margin-bottom: 1rem;
-  font-weight: 300;
+  font-weight: 600;
+  line-height: 1;
   color: var(--text-color-dark);
 }
 
@@ -541,11 +550,12 @@ opacity: 1;
   line-height: 168.8%;
 
 }
-@media (max-width: 550px) {
+@media (max-width: 600px) {
   .parrafos-normal {
-      padding: 1.5rem 16px;
+    padding: 2.5rem 16px;
   }
 }
+
 
 .destacado-endesa {
   background-color: var(--accent-color);
@@ -919,4 +929,3 @@ color: var(--accent-color);
 .timeline-right .links-endesa {
 color: var(--text-color);
 }
-
