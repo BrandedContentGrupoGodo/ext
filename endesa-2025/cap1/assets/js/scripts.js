@@ -5,8 +5,10 @@ const lenis = new Lenis({ smooth: true });
   }
   requestAnimationFrame(raf);
 
-window.addEventListener("load", () => {
+// Mostrar header en cuanto la imagen hero esté lista (mejor tiempo de carga percibido)
+function showHeader() {
   const header = document.querySelector(".header-section");
+  if (!header || header.classList.contains("loaded")) return;
   header.classList.remove("hidden");
   header.classList.add("loaded");
 
@@ -27,7 +29,16 @@ window.addEventListener("load", () => {
     delay: 1,
     ease: "power3.out"
   });
-});
+}
+
+// Prioridad: cuando la imagen hero (fondo del header) esté cargada
+const heroImg = new Image();
+heroImg.onload = showHeader;
+heroImg.src = "https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap1/assets/img/endesa1.jpg";
+
+// Fallback: si ya está en caché o tarda, usar load o un timeout
+window.addEventListener("load", showHeader);
+setTimeout(showHeader, 2500); // Máximo 2.5s para no bloquear la entrada
 
 
 // AUDIO
