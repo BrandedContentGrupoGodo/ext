@@ -73,29 +73,45 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-window.addEventListener("load", () => {
+// Mostrar el header en cuanto cargue la imagen del hero (no esperar a todo el sitio)
+(function showHeaderWhenReady() {
   const header = document.querySelector(".header-section");
-  header.classList.remove("hidden");
-  header.classList.add("loaded");
+  if (!header) return;
 
-  // Fondo tipo cine: leve zoom + blur
-  gsap.fromTo(
-    header,
-    { scale: 1.05, filter: "blur(10px)" },
-    { scale: 1, filter: "blur(0px)", duration: 1.8, ease: "power2.out" }
-  );
+  const heroDesktop = "https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap5/assets/img/endesa1.jpg";
+  const heroMobile = "https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap5/assets/img/endesa1-mobile.jpg";
+  const heroSrc = window.matchMedia("(max-width: 768px)").matches ? heroMobile : heroDesktop;
 
-  // Entrada elegante del texto
-  gsap.to(".header-text > *", {
-    opacity: 1,
-    y: 0,
-    filter: "blur(0px)",
-    duration: 1,
-    stagger: 0.3,
-    delay: 1,
-    ease: "power3.out"
-  });
-});
+  let done = false;
+  function revealHeader() {
+    if (done) return;
+    done = true;
+    header.classList.remove("hidden");
+    header.classList.add("loaded");
+    gsap.fromTo(
+      header,
+      { scale: 1.05, filter: "blur(10px)" },
+      { scale: 1, filter: "blur(0px)", duration: 1, ease: "power2.out" }
+    );
+    gsap.to(".header-text > *", {
+      opacity: 1,
+      y: 0,
+      filter: "blur(0px)",
+      duration: 0.8,
+      stagger: 0.2,
+      delay: 0.4,
+      ease: "power3.out"
+    });
+  }
+
+  const img = new Image();
+  img.onload = revealHeader;
+  img.onerror = revealHeader;
+  img.src = heroSrc;
+
+  // Fallback: mostrar header aunque la imagen falle o tarde mucho
+  setTimeout(revealHeader, 4000);
+})();
 
 
 // AUDIO
