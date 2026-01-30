@@ -23,7 +23,7 @@
       background-color: var(--bg-color);
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       padding: 0 1rem;
       z-index: 1000;
     }
@@ -109,7 +109,7 @@ opacity: 1;
   color: var(--text-color-dark);
   font-family: var(--font-serif);
   font-size: 40px;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 80%;
   margin-bottom: 1rem;
 }
@@ -449,7 +449,8 @@ opacity: 1;
   font-family: var(--font-serif);
   font-size: 2rem;
   margin-bottom: 1rem;
-  font-weight: 300;
+  line-height: 1;
+  font-weight: 600;
   color: var(--text-color-dark);
 }
 
@@ -465,11 +466,12 @@ opacity: 1;
   line-height: 168.8%;
 
 }
-@media (max-width: 550px) {
+@media (max-width: 768px) {
   .parrafos-normal {
-      padding: 1.5rem 16px;
+    padding: 2.5rem 16px;
   }
 }
+
 .destacado-endesa {
   background-color: var(--accent-color);
   display: flex;
@@ -1213,5 +1215,3 @@ color: var(--text-color);
     font-size: 1.125rem;
   }
 }
-
-
