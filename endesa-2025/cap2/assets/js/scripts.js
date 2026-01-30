@@ -5,8 +5,10 @@ const lenis = new Lenis({ smooth: true });
   }
   requestAnimationFrame(raf);
 
-window.addEventListener("load", () => {
+// Mostrar el header en cuanto el DOM esté listo (no esperar a imágenes/iframes)
+function initHeader() {
   const header = document.querySelector(".header-section");
+  if (!header) return;
   header.classList.remove("hidden");
   header.classList.add("loaded");
 
@@ -27,7 +29,13 @@ window.addEventListener("load", () => {
     delay: 1,
     ease: "power3.out"
   });
-});
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initHeader);
+} else {
+  initHeader();
+}
 
 
 // AUDIO
@@ -44,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Activar sonido con primer clic (obligatorio por políticas de navegador)
   const activateAudio = () => {
     audio.muted = false;
-    audio.volume = 0.4;
+    audio.volume = 0.2;
     audio.play().catch(err => console.warn("Error de autoplay:", err));
     toggle.textContent = "🔊";
     toggle.classList.remove("pulse");
@@ -68,5 +76,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-
 
