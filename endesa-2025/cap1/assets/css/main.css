@@ -23,7 +23,7 @@
       background-color: var(--bg-color);
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       padding: 0 1rem;
       z-index: 1000;
     }
@@ -39,6 +39,7 @@
     .sticky-bar__icon:hover {
       transform: scale(1.1);
     }
+
 .hidden {
   opacity: 0;
   pointer-events: none;
@@ -51,7 +52,7 @@
 
 .header-section {
   position: relative;
-  overflow: hidden;
+    overflow: hidden;
   width: 100%;
   height: 100vh;
   background: url('https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap1/assets/img/endesa1.jpg') center bottom /cover no-repeat;
@@ -60,7 +61,7 @@
   align-items: flex-start;
   justify-content: center;
   text-align: left;
-  padding: 3rem;
+  padding: 2rem;
 }
 .header-section::before {
 content: '';
@@ -103,31 +104,26 @@ opacity: 1;
   letter-spacing: 1.32px;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
-  text-shadow: 0 8px 17px rgba(0, 0, 0, 0.50);
+  text-shadow: 0 8px 17px rgb(0 0 0 / 95%);
 }
 
 .header-text__title {
   font-family: var(--font-serif);
   font-size: 40px;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 80%;
   margin-bottom: 1rem;
-  text-shadow: 0 8px 17px rgba(0, 0, 0, 0.50);
+  text-shadow: 0 8px 17px rgb(0 0 0 / 95%);
 }
 
 .header-text__subtitle {
   max-width: 500px;
   font-family: var(--font-sans);
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 108.8%;
-  text-shadow: 0 8px 17px rgba(0, 0, 0, 0.50);
-}
-
-@media (min-width: 1980px) {
-    .header-text {
-    margin-top: 12rem;
-  }
+  text-shadow: 0 8px 17px rgb(0 0 0 / 95%);
+  
 }
 
 @media (max-width: 768px) {
@@ -137,16 +133,7 @@ opacity: 1;
   .header-text__subtitle {
     font-size: 16px;
   }
-    .header-text {
-    margin-top: 14rem;
-  }
 }
-@media (max-width: 550px) {
-  .header-section {
-    justify-content: center;
-  }
-}
-
 
 .entradilla {
   padding: 3.5rem 0;
@@ -203,9 +190,6 @@ opacity: 1;
 @media (max-width: 600px) {
   .video-endesa {
     height: 60vh;
-  }
-  .entradilla {
-    padding: 3.5rem 1rem;
   }
 }
 
@@ -342,30 +326,6 @@ opacity: 1;
   width: 100%;
   height: 60vh;
 }
-.body-endesa section.full-image:nth-child(4) img {
-  object-position: center center; /* 1º imagen */
-}
-
-.body-endesa section.full-image:nth-child(7) img {
-  object-position: right center;  /* 2º imagen */
-}
-
-.body-endesa section.full-image:nth-child(12) img {
-  object-position: center center; /* 3º imagen */
-}
-
-.body-endesa section.full-image:nth-child(18) img {
-  object-position: left center; /* 4º imagen */
-}
-
-.body-endesa section.full-image:nth-child(22) img {
-  object-position: left center;   /* 5º imagen */
-}
-
-.body-endesa section.full-image:nth-child(28) img {
-  object-position: center center; /* 6º imagen */
-}
-
   .img-desktop {
     display: none !important;
   }
@@ -387,11 +347,6 @@ opacity: 1;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
-}
-@media (max-width: 550px) {
-.image-caption {
-    max-width: 360px;
-}
 }
 
 .map-info-section {
@@ -471,7 +426,7 @@ max-width: 100%;
   font-style: normal;
   font-weight: 400;
   line-height: 90%;
-  max-width: 350px;
+  max-width: 150px;
   line-height: 1.2;
 }
 
@@ -644,6 +599,8 @@ line-height: 168.8%;
   margin-bottom: 1rem;
   font-weight: 300;
   color: var(--text-color-dark);
+  line-height: 1;
+  font-weight: 600;
 }
 
 .parrafos-normal p {
@@ -656,31 +613,17 @@ line-height: 168.8%;
   font-style: normal;
   font-weight: 300;
   line-height: 168.8%;
-}
 
-@media (max-width: 768px) {
-  .parrafos-normal h2 {
-    padding: 50px 26px 10px;
-}
-
-.parrafos-normal p {
-    padding: 30px 26px;
-  }
-}
-@media (max-width: 550px) {
-  .parrafos-normal h2 {
-    padding: 15px 26px 10px;
-  }
 }
 
 .destacado-endesa {
   background-color: var(--accent-color);
-    display: flex;
+  display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+        justify-content: space-around;
     align-items: center;
     padding: 2rem;
-    gap: 12rem;
+    gap: 1rem;
     align-content: center;
 }
 
@@ -694,7 +637,7 @@ line-height: 168.8%;
 }
 
 .destacado-icono {
-  width: 65px;
+  width: 40px;
   height: auto;
 }
 
@@ -705,9 +648,9 @@ line-height: 168.8%;
 
 .destacado-grafico {
   flex: 1;
-  min-width: 200px;
+  min-width: 250px;
   position: relative;
-  max-width: 220px;
+  max-width: 260px;
 }
 
 .pie-chart {
@@ -804,21 +747,11 @@ line-height: 168.8%;
     transform: translateX(-50%);
     bottom: -10px;
   }
-    .destacado-endesa {
-    gap: 4rem;
-  }
 }
-
-@media (max-width: 550px) {
-  .destacado-endesa {
-    gap: 4rem;
-  }
-}
-
 .bloque-bosque {
   background-color: var(--accent-color);
   color: white;
-  padding: 3rem 1.5rem 0;
+  padding: 3rem 1.5rem;
   font-family: var(--font-sans);
   margin-top: 2rem;
 }
@@ -839,6 +772,7 @@ line-height: 168.8%;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
+  margin-bottom: 2rem;
   gap: 1rem;
   max-width: 1280px;
   margin-left: auto;
@@ -945,10 +879,6 @@ line-height: 168.8%;
     flex-direction: column;
   }
 
-    .bosque-row:last-of-type {
-    padding-bottom: 2rem;
-  }
-
   .col-derecha {
     justify-content: center;
   }
@@ -971,7 +901,8 @@ line-height: 168.8%;
     justify-content: space-between;
   }
     .tabla-cuerpo {
-justify-content: flex-start;
+    flex-direction: column;
+    gap: 1rem;
   }
 
   .cantidad-col {
