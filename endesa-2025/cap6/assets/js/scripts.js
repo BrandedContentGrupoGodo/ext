@@ -73,29 +73,47 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-window.addEventListener("load", () => {
+// Mostrar el header en cuanto esté lista solo la imagen del hero (no esperar a todo el page load)
+(function showHeaderWhenHeroReady() {
   const header = document.querySelector(".header-section");
-  header.classList.remove("hidden");
-  header.classList.add("loaded");
+  if (!header) return;
 
-  // Fondo tipo cine: leve zoom + blur
-  gsap.fromTo(
-    header,
-    { scale: 1.05, filter: "blur(10px)" },
-    { scale: 1, filter: "blur(0px)", duration: 1.8, ease: "power2.out" }
-  );
+  const heroDesktop = "https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap6/assets/img/endesa1.jpg";
+  const heroMobile = "https://brandedcontentgrupogodo.github.io/ext/endesa-2025/cap6/assets/img/endesa1-mobile.jpg";
+  const heroUrl = window.matchMedia("(max-width: 768px)").matches ? heroMobile : heroDesktop;
 
-  // Entrada elegante del texto
-  gsap.to(".header-text > *", {
-    opacity: 1,
-    y: 0,
-    filter: "blur(0px)",
-    duration: 1,
-    stagger: 0.3,
-    delay: 1,
-    ease: "power3.out"
-  });
-});
+  function revealHeader() {
+    header.classList.remove("hidden");
+    header.classList.add("loaded");
+
+    if (typeof gsap !== "undefined") {
+      gsap.fromTo(
+        header,
+        { scale: 1.05, filter: "blur(10px)" },
+        { scale: 1, filter: "blur(0px)", duration: 1.8, ease: "power2.out" }
+      );
+      gsap.to(".header-text > *", {
+        opacity: 1,
+        y: 0,
+        filter: "blur(0px)",
+        duration: 1,
+        stagger: 0.3,
+        delay: 1,
+        ease: "power3.out"
+      });
+    }
+  }
+
+  const img = new Image();
+  img.onload = revealHeader;
+  img.onerror = revealHeader; // Si falla la imagen, mostrar igual el header
+  img.src = heroUrl;
+
+  // Límite: si en 4s no ha cargado la imagen, mostrar el header de todos modos
+  setTimeout(() => {
+    if (!header.classList.contains("loaded")) revealHeader();
+  }, 4000);
+})();
 
 
 // AUDIO
