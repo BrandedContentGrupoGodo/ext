@@ -243,12 +243,12 @@
     <section class="hub-event">
       <p class="hub-event__text">El 27 de enero se inaugurará el Hub BStartup de Banco Sabadell en Barcelona con un gran evento que contará con reconocidos emprendedores del panorama actual. Servirá como colofón al proyecto 'Más allá del <i>pitch:</i> un viaje de la idea al éxito'</p>
       <button class="btn hub-event__btn" onclick="window.open('https://godo.qualifioapp.com/20/2843F1C6-669E-4619-AD00-A339E7077BC8/_omaiv6/v1.cfm?fbappiframe=false&cfid=74e2f568-bc68-4cd6-a998-9b2ac03f9f82&noback=false&uk=Q1Z7RTVS6ZS&page=1&cftoken=0','_blank')">¡Inscríbete aquí!</button>
-    </section> -->
+    </section>-->
+
 
     <div class="logo-sabadell">
       <img src="https://brandedcontentgrupogodo.github.io/ext/sabadell/sabadell-hub-2025/hub/assets/img/logo-sabadell-bstartup.svg" alt="Sabadell BStartup" loading="lazy">
     </div> 
-
 
     <!-- CRÉDITOS -->
     <div class="authorship-f" aria-label="Créditos del proyecto">
@@ -272,12 +272,70 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
   <script src="https://brandedcontentgrupogodo.github.io/ext/sabadell/sabadell-hub-2025/hub/assets/js/scripts.js" defer></script>
   
+  <!-- Navbar sticky con JavaScript (sin CSS sticky, respeta menú CMS) -->
+  <script>
+    (function() {
+      'use strict';
+      const nav = document.querySelector('.nav-sabadell');
+      const mainSabadell = document.querySelector('.main-sabadell');
+      const cmsMenuHeight = 40;
+      let ticking = false;
+      let navbarHeight = 0;
+
+      function getNavbarHeight() {
+        return nav ? nav.offsetHeight : 0;
+      }
+
+      function handleScroll() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (!nav) return;
+
+        if (scrollTop === 0) {
+          nav.classList.remove('nav-fixed');
+          if (mainSabadell) mainSabadell.style.paddingTop = '';
+        } else {
+          if (!nav.classList.contains('nav-fixed')) {
+            navbarHeight = getNavbarHeight();
+            nav.classList.add('nav-fixed');
+            if (mainSabadell) mainSabadell.style.paddingTop = navbarHeight + 'px';
+          }
+        }
+        ticking = false;
+      }
+
+      window.addEventListener('scroll', function() {
+        if (!ticking) {
+          requestAnimationFrame(handleScroll);
+          ticking = true;
+        }
+      }, { passive: true });
+
+      var resizeTimeout;
+      window.addEventListener('resize', function() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(function() {
+          if (nav && nav.classList.contains('nav-fixed')) {
+            navbarHeight = getNavbarHeight();
+            if (mainSabadell) mainSabadell.style.paddingTop = navbarHeight + 'px';
+          }
+        }, 150);
+      }, { passive: true });
+
+      function init() {
+        if (nav) handleScroll();
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() { setTimeout(init, 100); });
+      } else {
+        setTimeout(init, 100);
+      }
+      setTimeout(init, 300);
+    })();
+  </script>
   <!-- Script para lazy load de videos -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Lazy load videos cuando entran en viewport
       const videos = document.querySelectorAll('video[data-autoplay]');
-      
       const videoObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -287,10 +345,7 @@
           }
         });
       }, { threshold: 0.5 });
-      
-      videos.forEach(video => {
-        videoObserver.observe(video);
-      });
+      videos.forEach(video => videoObserver.observe(video));
     });
   </script>
 </body>
