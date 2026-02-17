@@ -89,8 +89,7 @@
     display: flex;
     gap: 1rem;
     padding: 0.5rem 1rem;
-    position: sticky;
-    top: 0;
+    position: relative;
     z-index: 100;
     overflow-x: auto;           /* scroll horizontal */
     white-space: nowrap;        /* evita que los enlaces hagan wrap */
@@ -130,6 +129,14 @@
   
   .nav-sabadell a:hover {
     opacity: 0.8;
+  }
+
+  /* Nav fijo por JS (debajo del menú CMS 40px) */
+  .nav-sabadell.nav-fixed {
+    position: fixed;
+    top: 40px;
+    left: 0;
+    right: 0;
   }
   
   /* ===========================
