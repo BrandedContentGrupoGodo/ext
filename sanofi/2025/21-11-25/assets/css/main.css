@@ -848,7 +848,7 @@
 .video-wrapper--youtube {
   aspect-ratio: 9 / 16;
   width: 100%;
-  max-width: 360px;
+  max-width: 333px;
 }
 
 @media (max-width: 768px) {
@@ -1506,3 +1506,4 @@
   text-decoration: none;
   box-shadow: none;
 }
+
