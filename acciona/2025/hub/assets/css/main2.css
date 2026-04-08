@@ -192,7 +192,7 @@ button:focus-visible {
   max-width: 1400px;
   margin-inline: auto;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: clamp(24px, 4vw, 40px);
 }
 
@@ -304,6 +304,17 @@ button:focus-visible {
 
 .news-link:hover .news-link-arrow {
   transform: translateX(4px);
+}
+
+.news-container {
+  /* Mantener las cards equilibradas cuando hay 3 columnas */
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .news-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
