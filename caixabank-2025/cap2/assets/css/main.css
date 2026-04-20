@@ -165,7 +165,7 @@
     /* Responsive */
     @media (max-width: 768px) {
       .hero {
-        grid-template-columns: 1fr;
+        display: block;
         text-align: center;
       }
     }
