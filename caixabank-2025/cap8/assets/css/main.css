@@ -303,6 +303,7 @@ a {
   line-height: 168.8%;
   font-size: 18px;
   box-sizing: border-box;
+  text-align: left;
 }
 
 /* Image Quote */
@@ -398,6 +399,7 @@ a {
   background-color: #02060E;
   overflow: hidden;
   margin: 3rem 0;
+  text-align: left;
 }
 
 .cards-section__bg img {
