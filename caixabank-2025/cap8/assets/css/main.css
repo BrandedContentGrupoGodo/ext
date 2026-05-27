@@ -93,6 +93,7 @@ a {
   justify-items: center;
   flex: 1;
   margin: 0 auto;
+  padding-top: 100px;
 }
 
 .hero > :first-child {
@@ -139,7 +140,7 @@ a {
 
 .hero__title {
   font-family: var(--font-serif);
-  font-size: clamp(2rem, 3.2vw, 3rem);
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
   font-weight: 400;
   line-height: 93%;
   letter-spacing: -2px;
@@ -178,16 +179,36 @@ a {
 
 /* Social Bar */
 .social-bar {
-  height: 54px;
   width: 100%;
   max-width: 100%;
+  min-height: 54px;
+  padding: 0.625rem 1rem;
   background: #091B2B;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  gap: 1.5rem;
   overflow-x: auto;
   box-sizing: border-box;
+}
+
+.social-bar__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  line-height: 0;
+}
+
+.social-bar iframe {
+  display: block;
+  margin: 0;
+  border: none;
+}
+
+.social-bar .twitter-share-button {
+  margin: 0;
+  vertical-align: middle;
 }
 
 .social-bar a img {
@@ -603,7 +624,12 @@ button:focus {
 
 .blanco {
   color: #fff;
-  padding-top: 0.8rem;
+}
+
+.social-bar .blanco {
+  padding: 0;
+  display: flex;
+  align-items: center;
 }
 
 /* Responsive */
@@ -612,18 +638,32 @@ button:focus {
     grid-template-columns: 1fr;
     grid-template-areas: "col1" "col2";
     text-align: center;
+    padding-top: 0;
   }
   
   .parrafos-caixa {
     padding: 16px 20px;
   }
   
+  .image-quote__wrapper {
+    min-height: 420px;
+  }
+
+  .image-quote__img {
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    object-fit: cover;
+    object-position: center 25%;
+  }
+
   .image-quote__text {
     font-size: 22px;
     max-width: calc(100% - 2rem);
     right: 1rem;
     left: 1rem;
-    top: 1rem;
+    top: auto;
+    bottom: 1rem;
     z-index: 3;
   }
   
@@ -631,7 +671,12 @@ button:focus {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.45);
+    background: linear-gradient(
+      to top,
+      rgba(2, 6, 14, 0.9) 0%,
+      rgba(2, 6, 14, 0.45) 40%,
+      transparent 65%
+    );
     z-index: 1;
     pointer-events: none;
   }
@@ -654,24 +699,46 @@ button:focus {
     height: auto;
   }
   
+  .image-quote-bottom__wrapper {
+    min-height: 420px;
+  }
+
+  .image-quote-bottom__img {
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    object-fit: cover;
+    object-position: center 25%;
+  }
+
   .image-quote-bottom__text {
     font-size: 22px;
     max-width: calc(100% - 2rem);
     right: 1rem;
     left: 1rem;
-    top: 1rem;
+    top: auto;
+    bottom: 1rem;
+    z-index: 3;
+  }
+
+  .image-quote-bottom__wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(2, 6, 14, 0.9) 0%,
+      rgba(2, 6, 14, 0.45) 40%,
+      transparent 65%
+    );
+    z-index: 1;
+    pointer-events: none;
   }
   
   .social-bar {
-    gap: 15px;
-    padding: 0 1rem;
-    flex-wrap: wrap;
-    height: auto;
-    min-height: 54px;
-  }
-  
-  .social-bar iframe {
-    max-width: 100%;
+    gap: 1rem;
+    padding: 0.625rem 1rem;
+    flex-wrap: nowrap;
   }
   
   .iframeQualifio {
@@ -700,14 +767,32 @@ button:focus {
     font-size: 16px;
   }
   
+  .image-quote__wrapper {
+    min-height: 380px;
+  }
+
+  .image-quote__img {
+    min-height: 380px;
+  }
+
   .image-quote__text {
     font-size: 18px;
     padding: 0.5rem;
+    bottom: 0.75rem;
   }
   
+  .image-quote-bottom__wrapper {
+    min-height: 380px;
+  }
+
+  .image-quote-bottom__img {
+    min-height: 380px;
+  }
+
   .image-quote-bottom__text {
     font-size: 18px;
     padding: 0.5rem;
+    bottom: 0.75rem;
   }
   
   .constelacion-extra h3 {
@@ -715,16 +800,8 @@ button:focus {
   }
   
   .social-bar {
-    gap: 10px;
-    padding: 0 0.5rem;
-    flex-wrap: wrap;
-    height: auto;
-    min-height: 54px;
-  }
-  
-  .social-bar iframe {
-    max-width: 100%;
-    width: auto;
+    gap: 0.75rem;
+    padding: 0.5rem;
   }
   
   .iframeQualifio {
