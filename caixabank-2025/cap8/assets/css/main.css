@@ -601,6 +601,10 @@ button:focus {
 .no-show {
   opacity: 0;
 }
+.visual__story--icon .content-free-html, .visual__story--square .content-free-html, .visual__story--panoramic .content-free-html, .visual__story--free .content-free-html
+ {
+    margin: 0 !important;
+}
 
 /* Facebook widgets */
 .fb_iframe_widget {
