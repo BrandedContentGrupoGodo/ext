@@ -165,10 +165,11 @@
 
         var iframe = document.createElement("iframe");
         iframe.src =
-          "https://www.youtube-nocookie.com/embed/" +
+          "https://www.youtube.com/embed/" +
           id +
           "?autoplay=1&rel=0";
         iframe.title = poster.getAttribute("aria-label") || "Video de la campaña";
+        iframe.loading = "lazy";
         iframe.setAttribute("allowfullscreen", "");
         iframe.setAttribute(
           "allow",
@@ -255,6 +256,7 @@
       "https://files.qualifio.com/kit/qualp.2.min.js"
     );
 
+    window._qual_async = window._qual_async || [];
     window._qual_async.push([
       "createIframe",
       "qualifio_insert_place_1666371",
@@ -272,6 +274,7 @@
 
   function initLazyQualifio() {
     observeOnce(document.querySelector(".iframeQualifio"), loadQualifio, "300px");
+    setTimeout(loadQualifio, 3500);
   }
 
   initHeroScroll();
