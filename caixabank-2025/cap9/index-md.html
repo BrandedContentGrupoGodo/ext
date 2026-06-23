@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Preconexiones (solo recursos críticos del primer render) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://brandedcontentgrupogodo.github.io" crossorigin>
+    <link rel="dns-prefetch" href="https://i.ytimg.com">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+    <!-- Precarga LCP: fondo del hero + retrato -->
+    <link rel="preload" as="image" href="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap1/assets/img/fondo-cabecera.png">
+    <link rel="preload" as="image" href="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/ca9/assets/img/img-cabecera.png" fetchpriority="high">
+
+    <link rel="preload" href="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap9/assets/css/main.css" as="style">
+    <link rel="stylesheet" href="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap9/assets/css/main.css">
+
+    <!-- Solo peso 400 (único usado en la página) -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400&family=Crimson+Text:wght@400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400&family=Crimson+Text:wght@400&display=swap"></noscript>
+</head>
+<body>
+    <div class="body-caixa">
+        <div class="header-caixa">
+            <p class="collab">En colaboración con CaixaBank</p>
+            <div class="nav-caixa" aria-label="Navegación de historias">
+                <a href="https://www.mundodeportivo.com/juegos-olimpicos/20260528/1004188252/judith-rodriguez-paralimpicos-esgrima-espana-medalla-constelaciones-streaming-brl.html" target="_blank" rel="noopener" aria-label="Historia anterior" class="nav-btn">⟵</a>
+                <a href="https://www.mundodeportivo.com/juegos-olimpicos/20250908/1002525456/constelaciones-luz-atleta-historias-constelaciones-brl.html" target="_blank" rel="noopener" aria-label="Ir a inicio" class="nav-btn">
+                <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap1/assets/img/home.svg" alt="Home">
+                </a>
+                <a href="historia-siguiente.html" target="_blank" rel="noopener" aria-label="Historia siguiente" class="nav-btn no-show">⟶</a>
+            </div>
+        </div>
+
+        <div>
+            <section class="hero">
+                <div class="hero__image">
+                    <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap9/assets/img/img-cabecera.png" 
+                         alt="Retrato de Araceli Menduiña" 
+                         class="blend-hard"
+                         width="540"
+                         height="540"
+                         decoding="async"
+                         loading="eager"
+                         fetchpriority="high">
+                    <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap9/assets/img/img-cabecera.png" 
+                         alt=""
+                         aria-hidden="true" 
+                         class="blend-sat"
+                         width="540"
+                         height="540"
+                         decoding="async"
+                         fetchpriority="low">
+                </div>
+                <div class="hero__content">
+                    <h1 class="hero__title">
+                        Araceli Menduiña: “En tierra no puedo correr ni saltar, pero en la piragua me siento libre”
+                    </h1>
+                    <a href="#video-section" class="hero__cta">▼ Ver reportaje completo</a>
+                </div>
+            </section>
+            <section>
+                <!-- BARRA REDES SOCIALES ====================================== -->
+                <div class="social-bar">
+                    <div class="social-bar__item">
+                        <!-- ACTUALIZAR CON LA URL FINAL DE LA PÁGINA DE FACEBOOK -->
+                        <iframe
+                            data-src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fwww.mundodeportivo.com%2Fjuegos-olimpicos%20260528%2F1004188252%2Fjudith-rodriguez-paralimpicos-esgrima-espana-medalla-constelaciones-streaming-brl.html&layout&size&width=95&height=20&appId"
+                            src="about:blank"
+                            width="95"
+                            height="20"
+                            title="Compartir en Facebook"
+                            scrolling="no"
+                            allowfullscreen
+                            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                        </iframe>
+                    </div>
+                    <div class="social-bar__item">
+                        <!-- ACTUALIZAR CON LA URL FINAL DE LA PÁGINA DE TWITTER -->
+                        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="video-section" id="video-section">
+                <div class="video-wrapper" data-youtube-id="pf4rgCSrVUc">
+                    <button type="button" class="video-wrapper__poster" aria-label="Reproducir vídeo de la campaña">
+                        <img src="https://i.ytimg.com/vi/pf4rgCSrVUc/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
+                        <span class="video-wrapper__play" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </section>
+
+
+            <!-- Marcador de reportaje -->
+            <section id="reportaje">
+                <p class="parrafos-caixa">
+                    “Lleva mucho tiempo aprender a ser joven”. Esta frase que se atribuye a Picasso parece que fue escrita para Araceli Menduiña. A los 54 años, la piragüista gallega debutó en los Juegos Paralímpicos de París 2024, la competición más importante a la que puede aspirar un deportista. Y no fue allí para disfrutar simplemente del escenario. Fue para competir y medirse con las mejores. En la capital francesa consiguió un cuarto puesto, quedándose apenas a una palada de subir al podio.
+                </p>
+                <p class="parrafos-caixa">
+                    “Seguro que era la deportista más mayor que competía”, recuerda Araceli. Pero un atleta no se define por lo que dice su DNI, sino por lo que se esfuerza, por lo que entrena, por su talento y, por supuesto, por su entusiasmo. Y en todo eso a Araceli no le gana nadie. Aquellos juegos fueron, como ella misma reconoce, “la guinda a toda una vida dedicada al piragüismo; el premio más bonito que se puede recibir”.
+                </p>
+            </section>
+
+            <section class="image-quote">
+                <div class="image-quote__wrapper">
+                    <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap9/assets/img/img1.jpg" 
+                         alt="Araceli Menduiña" 
+                         class="image-quote__img"
+                         width="1200"
+                         height="800"
+                         loading="lazy">
+                    <p class="image-quote__text">
+                        “Mi participación en París 2024”, confiesa Araceli, “fue la guinda a toda una vida dedicada al piragüismo; el premio más bonito que podía recibir”
+                    </p>
+                </div>
+            </section>
+
+            <section class="reportaje">
+                <p class="parrafos-caixa">
+                    Y cuando se refiere a toda una vida no está formulando una hipérbole. “Llevo 45 años haciendo piragüismo”, nos dice. Cuatro décadas y media en las que ha competido al más alto nivel y en las que ha dejado su huella en algunos de los atletas más importantes de la historia del deporte español. Todo empezó cuando, siendo muy joven, tuvo que asumir responsabilidades en el club en el que entrenaba, el Mar Ría de Aldán. Allí descubrió que transmitir sus conocimientos puede ser tan gratificante como subir al podio.
+                </p>
+                <p class="parrafos-caixa">
+                    “Empecé enseñando a mi hermana pequeña”, rememora. Junto a ella llegaron más niños. Y lo que comenzó como una ayuda puntual terminó convirtiéndose en una forma de entender el deporte, compartir lo aprendido para que otros pudieran avanzar y sacar todo su potencial. Entre aquellos chavales estaban futuros medallistas olímpicos como Teresa Portela o David Cal. Pero cuando se le pregunta por lo que más orgullo le produce, no habla de esos éxitos. “Lo que más me gusta es que se hayan enamorado de este deporte”, asegura. Y la misma pasión que ha transmitido es la que ha conservado ella. “Jamás se le irá el amor por el piragüismo”, asegura Carmela Menduiña, su hermana.
+                </p>
+            </section>
+
+            <!-- tarjetas -->
+             <section class="cards-section">
+                <div class="cards-section__bg">
+                    <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap1/assets/img/circulos.svg" 
+                         alt="Araceli Menduiña" 
+                         aria-hidden="true"
+                         loading="lazy">
+                </div>
+
+                <div class="cards-container">
+                    <div class="card card-1">
+                        <h3>Crecer junto al deporte paralímpico</h3>
+                        <p>El deporte paralímpico necesita talento y oportunidades. Por eso CaixaBank mantiene un firme compromiso con el Comité Paralímpico Español y el Plan ADOP, contribuyendo a que deportistas como Araceli Menduiña puedan centrarse en entrenar y competir.</p>
+                    </div>
+                    <div class="card card-2">
+                        <h3>Historias que inspiran más allá de los resultados</h3>
+                        <p>La trayectoria de Araceli demuestra que las grandes historias del deporte no siempre se miden en medallas. También se construyen con constancia y generosidad. CaixaBank trabaja para dar visibilidad a referentes como ella, acercando al público el valor humano que existe detrás de cada logro deportivo.</p>
+                    </div>
+                    <div class="card card-3">
+                        <h3>Impulsar el talento en todas las etapas</h3>
+                        <p>La historia de Araceli recuerda que el rendimiento deportivo no entiende de edad, sino de dedicación y oportunidades. Gracias al respaldo de entidades comprometidas, los deportistas pueden afrontar los retos de la alta competición con mayor estabilidad y confianza. CaixaBank contribuye a generar ese entorno necesario para que cada atleta pueda seguir persiguiendo sus objetivos.</p>
+                    </div>
+                    <div class="card card-4">
+                        <h3>Un compromiso que deja huella</h3>
+                        <p>Detrás de cada deportista hay entrenadores, familias, compañeros y muchas personas que creen en su capacidad. CaixaBank comparte esa mirada, apostando por quienes inspiran con su ejemplo y ayudan a construir una sociedad que reconoce el talento y el valor del esfuerzo. Porque apoyar el deporte paralímpico es también impulsar historias capaces de motivar a toda una generación.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="reportaje">
+                <p class="parrafos-caixa">
+                    Su hijo David conoce bien esa faceta. Tenía cuatro o cinco años cuando empezó a palear bajo la atenta mirada de su madre. De ella aprendió mucho más que a mantener el equilibrio: “Lo que me transmitió fue la disciplina, saber que tienes que estar centrado en lo que haces y no puedes flaquear”. Una enseñanza que sigue acompañándolo cada vez que se sube a una embarcación. Porque Araceli enseña, sobre todo, con el ejemplo.
+                </p>
+                <p class="parrafos-caixa">
+                    Ahora bien, ningún deportista llega lejos en soledad. Detrás de cada éxito hay muchas personas empujando en la misma dirección. En el caso de Araceli está todo su entorno personal y, por supuesto, su entrenador David de Castro. En los entrenamientos, “va en la motora al lado, marcando los ritmos, cuenta las paladas, me corrige, me dice los tiempos”, explica. Los días que entrena sin él nota su ausencia. Porque la exigencia y la presencia de David es lo que consigue también sacar lo mejor de ella, siempre “buscando los métodos más adecuados, motivando”.
+                </p>
+            </section>
+
+            <section class="highlight">
+                <div class="highlight__bg">
+                    <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap4/assets/img/fondo-estrellas.jpg" 
+                         alt="Araceli Menduiña"
+                         width="1920"
+                         height="1080"
+                         loading="lazy">
+                </div>
+                <div class="highlight__content">
+                    <p>“En tierra no puedo correr ni saltar, pero en la piragua me siento libre”, comenta la piragüista</p>
+                </div>
+            </section>
+
+            <section class="reportaje">
+                <p class="parrafos-caixa">
+                    A ese respaldo cercano se le suma otro igual de importante, el que proporcionan las instituciones y entidades comprometidas con el deporte paralímpico. Araceli lo sabe muy bien. “Un deportista necesita apoyo para poder dedicarse a entrenar con tranquilidad”. En ese camino, el compromiso de organizaciones como CaixaBank con el deporte paralímpico contribuye a que deportistas como Araceli dispongan de recursos, estabilidad y visibilidad para poder centrarse en competir al máximo nivel.
+                </p>
+                <p class="parrafos-caixa">
+                    Pero ninguna ayuda tendría sentido sin la voluntad inquebrantable de quien sale cada día a entrenar. Araceli sigue levantándose temprano, enfrentándose al frío, al viento, a las largas sesiones y continúa acumulando kilómetros sobre el agua. Para ella, nos confiesa, una jornada de entrenamiento se puede resumir en tres palabras, “trabajo, ganas y disfrute”. Y probablemente ahí está la clave que explica por qué, a una edad en la que muchos ya han cerrado su etapa deportiva, ella ha llegado a lo más alto.
+                </p>
+            </section>
+
+            <section class="image-quote-bottom">
+                <div class="image-quote-bottom__wrapper">
+                    <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap9/assets/img/img2.jpg" 
+                         alt="Araceli Menduiña" 
+                         class="image-quote-bottom__img"
+                         width="1200"
+                         height="800"
+                         loading="lazy">
+                    <p class="image-quote-bottom__text">
+                        “A Araceli no se le fue nunca el amor por el piragüismo y no se le irá jamás”, nos dice Carmela Menduiña, su hermana
+                    </p>
+                </div>
+            </section>
+
+            <section class="reportaje">
+                <p class="parrafos-caixa">
+                    Quienes la conocen coinciden en destacar precisamente su constancia. “Con las ganas que tiene, la competitividad que tiene y lo luchadora que es, siempre ha tenido cualidades para estar arriba”, dice su hermana. Es esa perseverancia la que le ha dado la oportunidad de participar en unos juegos cuando ya nadie lo esperaba. Lo sabe su hijo, que reconoce que es el ejemplo de que no hay que rendirse, porque “nunca sabes cuándo puede abrirse una nueva puerta”.
+                </p>
+                <p class="parrafos-caixa">
+                    Fue todo esto lo que la condujo hasta París 2024. Logró clasificarse tras superar una lesión de hombro que puso en duda su participación. “Yo solo quería recuperarme”, recuerda. El trabajo del equipo médico, de los fisioterapeutas y de quienes nunca dejaron de creer en ella hicieron posible el regreso. Cuando finalmente ocupó la calle de salida, sabía que ya había ganado. Aun así, remó hasta quedarse a apenas una palada de la medalla. Un cuarto puesto que supo a orgullo. “Después de toda una vida dedicada a este deporte, sentí que el piragüismo le devolvía todo lo que ella había dado”, afirma su hijo.
+                </p>
+            </section>
+
+            <section class="gallery-section">
+                <div class="gallery-container">
+                    <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap9/assets/img/galeria1.png" 
+                         alt="Foto 1" 
+                         class="gallery-item"
+                         width="280"
+                         height="280"
+                         loading="lazy">
+                    <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap9/assets/img/galeria2.png" 
+                         alt="Foto 2" 
+                         class="gallery-item"
+                         width="280"
+                         height="280"
+                         loading="lazy">
+                    <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap9/assets/img/galeria3.png" 
+                         alt="Foto 3" 
+                         class="gallery-item"
+                         width="280"
+                         height="280"
+                         loading="lazy">
+                    <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap9/assets/img/galeria4.png" 
+                         alt="Foto 4" 
+                         class="gallery-item"
+                         width="280"
+                         height="280"
+                         loading="lazy">
+                </div>
+                
+                <!-- Lightbox -->
+                <div class="lightbox" id="lightbox">
+                    <span class="lightbox-close" id="lightbox-close">×</span>
+                    <img src="" alt="" id="lightbox-img">
+                </div>
+            </section>
+
+            <section class="reportaje">
+                <p class="parrafos-caixa">
+                    No obstante, el legado que dejará cuando decida bajarse definitivamente de una piragua será mucho más que los resultados. Será una manera de entender el deporte basada en la constancia, la generosidad y la pasión por lo que uno hace. “A la Araceli niña le diría que nunca tirara la toalla”, comenta la piragüista. Es exactamente el consejo que ha transmitido durante décadas a todos aquellos que han entrenado con ella, también el ejemplo que deja a quienes vendrán después.
+                </p>
+                <p class="parrafos-caixa">
+                    Quizá por eso sigue remando. Porque en el agua desaparecen las limitaciones. “Mi cuerpo deja de tener barreras”, explica. “En tierra no puedo correr ni saltar, pero en la piragua me siento libre”. Allí todo fluye. Allí encuentra paz. Allí sigue disfrutando como aquella niña que descubrió este deporte hace 45 años. Y para que historias como la suya puedan seguir escribiéndose resulta imprescindible el compromiso de entidades como CaixaBank. Porque el talento y la pasión no se jubilan si cuentan con el apoyo que necesitan. Porque Araceli, mientras haya agua por delante, siempre encontrará una nueva meta que alcanzar.
+                </p>
+            </section>
+
+            <!-- qualifio -->
+            <div class="iframeQualifio">
+                <div id="qualifio_insert_place_1666371" class="qualifio_iframe_wrapper"></div>
+            </div>
+
+            <!-- NUEVA SECCIÓN ============================================= -->
+        <div class="constelacion-extra">
+            <h3>Conoce otras historias de nuestra constelación</h3>
+
+            <!-- Botón -->
+            <a href="https://www.mundodeportivo.com/juegos-olimpicos/20250908/1002525456/constelaciones-luz-atleta-historias-constelaciones-brl.html" class="back-btn">
+            Volver a las estrellas
+            </a>
+
+            <!-- Logo centrado -->
+            <div>
+            <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/01_09-07-25/assets/img/logo_caixabank.svg" 
+                 alt="Logo CaixaBank" 
+                 class="logo"
+                 width="250"
+                 height="60"
+                 loading="lazy">
+            </div>
+        </div>
+
+        </div>
+    
+        <!-- CRÉDITOS ============================================= -->
+        <div class="authorship-f" aria-label="Créditos del proyecto">
+            <div class="container-fluid-f">
+                <span>Coordinación: Kevin Casas y Rosa Varona</span> |
+                <span>Redacción: Javier Martín</span> |
+                <span>Diseño y maquetación: Alejandra Santander</span> |
+                <span>Vídeo y fotografía: The Lemon Juice Films, Comité Paralímpico.</span>
+                <span>Un proyecto de Brandslab. Godó Nexus</span>
+            </div>
+        </div>
+    </div>
+
+
+    <script defer src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap9/assets/js/scripts.js"></script>
+</body>
+</html>
