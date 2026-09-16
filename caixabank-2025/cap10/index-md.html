@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Preconexiones (solo recursos críticos del primer render) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://brandedcontentgrupogodo.github.io" crossorigin>
+    <link rel="dns-prefetch" href="https://i.ytimg.com">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+    <!-- Precarga LCP: fondo del hero + retrato -->
+    <link rel="preload" as="image" href="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap1/assets/img/fondo-cabecera.png">
+    <link rel="preload" as="image" href="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/ca9/assets/img/img-cabecera.png" fetchpriority="high">
+
+    <link rel="preload" href="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap9/assets/css/main.css" as="style">
+    <link rel="stylesheet" href="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap9/assets/css/main.css">
+
+    <!-- Solo peso 400 (único usado en la página) -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400&family=Crimson+Text:wght@400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400&family=Crimson+Text:wght@400&display=swap"></noscript>
+</head>
+<body>
+    <div class="body-caixa">
+        <div class="header-caixa">
+            <p class="collab">En colaboración con CaixaBank</p>
+            <div class="nav-caixa" aria-label="Navegación de historias">
+                <a href="https://www.mundodeportivo.com/juegos-olimpicos/20260625/1004198507/araceli-menduina-final-piraguismo-54-anos-constelaciones-streaming-brl.html" target="_blank" rel="noopener" aria-label="Historia anterior" class="nav-btn">⟵</a>
+                <a href="https://www.mundodeportivo.com/juegos-olimpicos/20250908/1002525456/constelaciones-luz-atleta-historias-constelaciones-brl.html" target="_blank" rel="noopener" aria-label="Ir a inicio" class="nav-btn">
+                <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap1/assets/img/home.svg" alt="Home">
+                </a>
+                <a href="historia-siguiente.html" target="_blank" rel="noopener" aria-label="Historia siguiente" class="nav-btn no-show">⟶</a>
+            </div>
+        </div>
+
+        <div>
+            <section class="hero">
+                <div class="hero__image">
+                    <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap10/assets/img/img-cabecera.png" 
+                         alt="Retrato de Martín de la Puente" 
+                         class="blend-hard"
+                         width="540"
+                         height="540"
+                         decoding="async"
+                         loading="eager"
+                         fetchpriority="high">
+                    <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap10/assets/img/img-cabecera.png" 
+                         alt="Martín de la Puente"
+                         aria-hidden="true" 
+                         class="blend-sat"
+                         width="540"
+                         height="540"
+                         decoding="async"
+                         fetchpriority="low">
+                </div>
+                <div class="hero__content">
+                    <h1 class="hero__title">
+                        Martín de la Puente: “El primer bote de mi vida fue aceptar la discapacidad y normalizarla”
+                    </h1>
+                    <a href="#video-section" class="hero__cta">▼ Ver reportaje completo</a>
+                </div>
+            </section>
+            <section>
+                <!-- BARRA REDES SOCIALES ====================================== -->
+                <div class="social-bar">
+                    <div class="social-bar__item">
+                        <!-- ACTUALIZAR CON LA URL FINAL DE LA PÁGINA DE FACEBOOK -->
+                        <iframe
+                            data-src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fwww.mundodeportivo.com%2Fjuegos-olimpicos%20260528%2F1004188252%2Faraceli-menduina-final-piraguismo-54-anos-constelaciones-streaming-brl.html&layout&size&width=95&height=20&appId"
+                            src="about:blank"
+                            width="95"
+                            height="20"
+                            title="Compartir en Facebook"
+                            scrolling="no"
+                            allowfullscreen
+                            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                        </iframe>
+                    </div>
+                    <div class="social-bar__item">
+                        <!-- ACTUALIZAR CON LA URL FINAL DE LA PÁGINA DE TWITTER -->
+                        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="video-section" id="video-section">
+                <div class="video-wrapper" data-youtube-id="xxpuUqXRQNc">
+                    <button type="button" class="video-wrapper__poster" aria-label="Reproducir vídeo de la campaña">
+                        <img src="https://i.ytimg.com/vi/xxpuUqXRQNc/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
+                        <span class="video-wrapper__play" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </section>
+
+
+            <!-- Marcador de reportaje -->
+            <section id="reportaje">
+                <p class="parrafos-caixa">
+                    Todo deportista convive con la victoria y con la derrota y la única forma de mantener una trayectoria exitosa es ser capaz de reaccionar y aprender tanto de la una como de la otra. Es más, a veces pueden llegar juntas en una misma competición. Precisamente, eso le ocurrió al tenista Martín de la Puente en los Juegos Paralímpicos de París hace un par de años. En la prueba individual, después de alcanzar las semifinales, perdió el partido por el bronce y se quedó a las puertas de una medalla por la que había luchado durante años. “Fue difícil de digerir”, reconoce. Había mucho esfuerzo detrás de ese partido.
+                </p>
+                <p class="parrafos-caixa">
+                    Pero el deporte también le había ofrecido otra oportunidad en la misma competición. Lo había hecho en el torneo de dobles, en la mítica pista Suzanne-Lenglen de Roland Garros. Allí disputaron el tercer puesto a una dupla francesa, arropada en las gradas por sus compatriotas.  Ahora bien, Martín también tuvo el soporte incondicional de los suyos, de una pequeña piña de familiares y seres queridos que lo apoyó incondicionalmente durante todo el torneo. Cuando Martín recibió la medalla, su padre, Javier, vivió un momento que, nos dice, compensó todos los años de esfuerzo: “Es un orgullo máximo y me emociona recordarlo”. Aquel bronce pertenecía a todos los que estuvieron con Martín en los buenos y en los malos momentos.
+                </p>
+            </section>
+
+            <section class="image-quote">
+                <div class="image-quote__wrapper">
+                    <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap10/assets/img/img1.jpg" 
+                         alt="Martín de la Puente" 
+                         class="image-quote__img"
+                         width="1200"
+                         height="800"
+                         loading="lazy">
+                    <p class="image-quote__text">
+                        “Soy que es un chico competidor, normal y que lucha por sus sueños y sus ilusiones”, explica el tenista español
+                    </p>
+                </div>
+            </section>
+
+            <section class="reportaje">
+                <p class="parrafos-caixa">
+                    La imagen de Martín levantando los brazos tras la victoria es solo una parte de su historia. Detrás de ese instante están su familia, sus amigos, sus entrenadores, sus compañeros y todas las personas que han estado con él en los momentos importantes. “Soy afortunado porque tengo un entorno maravilloso”, reconoce. Y no hay dudas de que el deporte de alto nivel necesita talento y esfuerzo, pero también una estructura que permita que ese esfuerzo dé sus frutos.
+                </p>
+                <p class="parrafos-caixa">
+                    Demanda entrenadores, fisios, profesionales y recursos que apuesten por el deportista y hagan posible que un atleta pueda prepararse, viajar y competir. En ese camino, el compromiso con el deporte paralímpico de entidades como CaixaBank contribuye a generar oportunidades y a reforzar ese acompañamiento, dando visibilidad a historias como la de Martín y a lo que hay detrás de ellas. Porque en cada victoria hay siempre un entorno que, de una manera u otra, ha creído, trabajado y soñado con el deportista.
+                </p>
+            </section>
+
+            <!-- tarjetas -->
+             <section class="cards-section">
+                <div class="cards-section__bg">
+                    <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap1/assets/img/circulos.svg" 
+                         alt="Martín de la Puente" 
+                         aria-hidden="true"
+                         loading="lazy">
+                </div>
+
+                <div class="cards-container">
+                    <div class="card card-1">
+                        <h3>Mucho más que un podio</h3>
+                        <p>La trayectoria de Martín de la Puente demuestra que detrás de cada logro deportivo hay una historia personal, una familia y muchas personas que acompañan. CaixaBank contribuye a dar visibilidad a referentes del deporte paralímpico como Martín y a poner en valor todo lo que existe detrás de sus resultados. </p>
+                    </div>
+                    <div class="card card-2">
+                        <h3>Oportunidades para seguir creciendo</h3>
+                        <p>Llegar a la élite requiere talento, pero también contar con las condiciones necesarias para desarrollarlo. El compromiso de CaixaBank con el Comité Paralímpico Español y el Plan ADOP contribuye a que los deportistas puedan dedicar más esfuerzos a su preparación, afrontar nuevos retos y seguir avanzando en sus carreras. </p>
+                    </div>
+                    <div class="card card-3">
+                        <h3>Una red que hace posible el camino</h3>
+                        <p>Ningún deportista construye su trayectoria en solitario. Familias, entrenadores, compañeros y profesionales forman una red imprescindible en cada etapa. Por eso, CaixaBank apuesta por fortalecer ese entorno y acompañar al deporte paralímpico para que el talento pueda encontrar el apoyo necesario para crecer. </p>
+                    </div>
+                    <div class="card card-4">
+                        <h3>Historias que abren camino</h3>
+                        <p>La historia de Martín también puede servir de impulso para quienes todavía no han encontrado su lugar en el deporte. Mostrar sus experiencias, sus dificultades y sus logros ayuda a construir nuevos referentes y a demostrar que existen caminos posibles. El compromiso con el deporte paralímpico es también una forma de inspirar a quienes vienen detrás. </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="reportaje">
+                <p class="parrafos-caixa">
+                    Casi siempre, llegar a lo más alto exige afrontar momentos difíciles. En el caso de Martín, su infancia estuvo marcada por el síndrome de Proteus, una enfermedad sin cura que lo llevó a pasar por numerosas cirugías. Vivió la incertidumbre y se hizo todo tipo de preguntas. “¿Por qué me pasa esto a mí? ¿Por qué he tenido que vivir esto?”, se decía Martín. Con el tiempo, nos explica, entendió que la respuesta no pasaba por entender por qué le había ocurrido, sino en decidir qué hacer a partir de entonces. Aquella reflexión fue un punto de inflexión, “el comienzo de la per
+                </p>
+                <p class="parrafos-caixa">
+                    Y eso que el tenis llegó casi sin esperarlo. Tras varias operaciones en la cadera y después de sufrir la amputación del pie izquierdo, algo cambió en él. Fue entonces cuando descubrió un mundo que hasta ese momento desconocía y que pronto le apasionó, el deporte adaptado. “Poco a poco, a medida que fui compitiendo, que fui mejorando, encontré una vida para mí, una red de ilusiones; encontré mi profesión, el tenis”, recuerda.
+                </p>
+            </section>
+
+            <section class="highlight">
+                <div class="highlight__bg">
+                    <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap4/assets/img/fondo-estrellas.jpg" 
+                         alt="Martín de la Puente"
+                         width="1920"
+                         height="1080"
+                         loading="lazy">
+                </div>
+                <div class="highlight__content">
+                    <p>“El tenis adaptado es un deporte muy físico, de mucha potencia y que exige mucha concentración y tesón”, nos explica Javier, el padre de Martín</p>
+                </div>
+            </section>
+
+            <section class="reportaje">
+                <p class="parrafos-caixa">
+                    En el tenis en silla, la pista y la red son las mismas que en el tenis convencional y la única diferencia es que la pelota puede botar dos veces. Martín ha convertido aquella particularidad en una metáfora de su propia vida. “Quizás el primer bote de mi vida fue normalizar la discapacidad, entender que ser diferente no es tan malo”. El segundo llegó después, cuando consiguió transformar aquello que había vivido en una parte de su identidad. “Una vez que fui capaz de dejar todos los complejos atrás, creo que el segundo bote me ha hecho ser capaz de convertirme en quien soy hoy”.
+                </p>
+                <p class="parrafos-caixa">
+                    Su entrenador Roberto Rodríguez lo conoce desde que era niño. “Era impactante ver cómo un niño tan pequeño tenía que hacer todo ese despliegue para meterse en la pista y empezar a practicar un deporte”. Pero el tesón ha sido siempre una de las marcas que definen a Martín. “Le considero un gladiador porque cada día de su vida y en cada momento, él lo que hace lo hace dando el 100%”. Sin duda, esa capacidad de entregarse por completo es una de las razones que lo han conducido a ser uno de los mejores del mundo.
+                </p>
+            </section>
+
+            <section class="image-quote-bottom">
+                <div class="image-quote-bottom__wrapper">
+                    <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap10/assets/img/img2.jpg" 
+                         alt="Martín de la Puente" 
+                         class="image-quote-bottom__img"
+                         width="1200"
+                         height="800"
+                         loading="lazy">
+                    <p class="image-quote-bottom__text">
+                        “A medida que fui compitiendo y mejorando, encontré una vida para mí, una red de ilusiones; encontré mi profesión, el tenis”, recuerda Martín de la Puente
+                    </p>
+                </div>
+            </section>
+
+            <section class="reportaje">
+                <p class="parrafos-caixa">
+                    Pero, pese a sus éxitos deportivos, nada es tan importante como el hecho de que, tal y como nos dice su padre, “Martín es una buena persona”. Javier lo ha visto crecer y evolucionar en cada etapa, desde las operaciones y la incertidumbre de los primeros años hasta los grandes escenarios internacionales. Ha estado a su lado cuando el tenis era algo nuevo y cuando se convirtió en su profesión, lo ha acompañado también en la ilusión de descubrir que podía competir, viajar y construir su futuro alrededor de algo que le apasionaba.
+                </p>
+                <p class="parrafos-caixa">
+                    Quizá por eso, para Javier lo más importante no va a ser nunca una medalla. “Lo que más me gusta es darle un abrazo y decirle que le quiero”, nos confiesa. En ese abrazo cabe buena parte de esta historia. Los años de esfuerzo, las dificultades, las personas que nunca dejaron de estar y también la pasión por seguir adelante. Porque el éxito de un deportista necesita una familia que acompañe, entrenadores que guíen, compañeros que compartan el camino y el apoyo de instituciones como CaixaBank que fortalezcan todo ese ecosistema y ayuden a generar oportunidades para que más deportistas puedan crecer, competir y soñar con llegar tan lejos como Martín.
+                </p>
+            </section>
+
+            <section class="gallery-section">
+                <div class="gallery-container">
+                    <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap10/assets/img/galeria1.png" 
+                         alt="Foto 1" 
+                         class="gallery-item"
+                         width="280"
+                         height="280"
+                         loading="lazy">
+                    <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap10/assets/img/galeria2.png" 
+                         alt="Foto 2" 
+                         class="gallery-item"
+                         width="280"
+                         height="280"
+                         loading="lazy">
+                    <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap10/assets/img/galeria3.png" 
+                         alt="Foto 3" 
+                         class="gallery-item"
+                         width="280"
+                         height="280"
+                         loading="lazy">
+                    <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap10/assets/img/galeria4.png" 
+                         alt="Foto 4" 
+                         class="gallery-item"
+                         width="280"
+                         height="280"
+                         loading="lazy">
+                </div>
+                
+                <!-- Lightbox -->
+                <div class="lightbox" id="lightbox">
+                    <span class="lightbox-close" id="lightbox-close">×</span>
+                    <img src="" alt="" id="lightbox-img">
+                </div>
+            </section>
+
+            <section class="reportaje">
+                <p class="parrafos-caixa">
+                    Martín reconoce que su historia puede servir de inspiración a quienes se encuentren al principio de un camino que todavía no saben cómo recorrer. “Si puedo ayudar a que otra gente vea que hay salidas cuando parece que no”, nos dice, “esa es la victoria más reconfortante con la que me puedo quedar”. No habla solo de tenis. Habla de la posibilidad de descubrir una pasión y de convertir los desafíos en nuevas oportunidades. 
+                </p>
+                <p class="parrafos-caixa">
+                    Sin duda, Martín seguirá compitiendo, continuará buscando esa medalla individual que se le resistió en París y seguirá necesitando a quienes han estado a su lado desde el principio. Porque si algo demuestran trayectorias como la suya es que ningún sueño se construye en solitario. Hace falta trabajo, hace falta perseverancia y hace falta alguien que crea en el deportista cuando está empezando. Ese es también el sentido del compromiso de CaixaBank con el deporte: acompañar y contribuir a que cada vez haya más historias como la de Martín, historias que demuestran que detrás de una medalla siempre hay algo mucho más importante que una victoria.
+                </p>
+            </section>
+
+            <!-- qualifio -->
+            <div class="iframeQualifio"> 
+                <div id='qualifio_insert_place_1789279' class='qualifio_iframe_wrapper'></div> 
+                <script type='text/javascript'> (function(b,o,n,u,s){var a,t;a=b.createElement(u);a.async=1;a.src=s;t=b.getElementsByTagName(u)[0];t.parentNode.insertBefore(a,t);o[n]=o[n]||[]}) (document,window,'_qual_async','script','https://files.qualifio.com/kit/qualp.2.min.js'); _qual_async.push(['createIframe','qualifio_insert_place_1789279','lavanguardia.qualifioapp.com','20','10489ED4-E1F3-4A60-9F49-2AFE06C13BAE','100%','670','','','','max-width:810px;margin:0 auto;']); </script> 
+            </div>
+
+            <!-- NUEVA SECCIÓN ============================================= -->
+        <div class="constelacion-extra">
+            <h3>Conoce otras historias de nuestra constelación</h3>
+
+            <!-- Botón -->
+            <a href="https://www.mundodeportivo.com/juegos-olimpicos/20250908/1002525456/constelaciones-luz-atleta-historias-constelaciones-brl.html" class="back-btn">
+            Volver a las estrellas
+            </a>
+
+            <!-- Logo centrado -->
+            <div>
+            <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/01_09-07-25/assets/img/logo_caixabank.svg" 
+                 alt="Logo CaixaBank" 
+                 class="logo"
+                 width="250"
+                 height="60"
+                 loading="lazy">
+            </div>
+        </div>
+
+        </div>
+    
+        <!-- CRÉDITOS ============================================= -->
+        <div class="authorship-f" aria-label="Créditos del proyecto">
+            <div class="container-fluid-f">
+                <span>Coordinación: Kevin Casas y Rosa Varona</span> |
+                <span>Redacción: Javier Martín</span> |
+                <span>Diseño y maquetación: Alejandra Santander</span> |
+                <span>Vídeo y fotografía: The Lemon Juice Films, Comité Paralímpico.</span>
+                <span>Un proyecto de Brandslab. Godó Nexus</span>
+            </div>
+        </div>
+    </div>
+
+
+    <script defer src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap10/assets/js/scripts.js"></script>
+</body>
+</html>
