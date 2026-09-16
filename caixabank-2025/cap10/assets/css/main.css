@@ -115,6 +115,7 @@ a {
   height: auto;
   object-fit: contain;
   display: block;
+  opacity: 0;
 }
 /*ACTUALIZAR CON EL EFECTO DE LA IMAGEN DE LA CABECERA */
 .blend-hard {
@@ -146,13 +147,14 @@ a {
   letter-spacing: -2px;
   margin-bottom: 1rem;
   max-width: 530px;
+  opacity: 0;
 }
 
 .hero__cta {
   font-family: var(--font-sans);
   font-size: 1rem;
   cursor: pointer;
-  opacity: 0.8;
+  opacity: 0;
   display: inline-block;
   transition: opacity 0.2s;
 }
@@ -390,6 +392,13 @@ a {
   font-size: 2.5rem;
   color: #fff;
   cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  line-height: 1;
+  font-family: inherit;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 /* Cards Section */
@@ -645,6 +654,23 @@ button:focus {
 
 .no-show {
   opacity: 0;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__image img,
+  .hero__title {
+    opacity: 1;
+  }
+
+  .hero__cta {
+    opacity: 0.8;
+  }
+
+  #reportaje {
+    opacity: 1;
+    transform: none;
+  }
 }
 .visual__story--icon .content-free-html, .visual__story--square .content-free-html, .visual__story--panoramic .content-free-html, .visual__story--free .content-free-html
  {

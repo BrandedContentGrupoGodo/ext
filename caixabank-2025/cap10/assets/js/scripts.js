@@ -22,14 +22,6 @@
     });
   }
 
-  function whenIdle(fn, timeout) {
-    if ("requestIdleCallback" in window) {
-      requestIdleCallback(fn, { timeout: timeout || 2000 });
-    } else {
-      setTimeout(fn, 1);
-    }
-  }
-
   function observeOnce(target, onVisible, rootMargin) {
     if (!target) return;
     if (!("IntersectionObserver" in window)) {
@@ -51,11 +43,23 @@
   function applyAnimationFallback() {
     document.querySelectorAll(".hero__image img").forEach(function (img) {
       img.style.opacity = "1";
+      img.style.transform = "none";
     });
     var title = document.querySelector(".hero__title");
-    if (title) title.style.opacity = "1";
+    if (title) {
+      title.style.opacity = "1";
+      title.style.transform = "none";
+    }
     var cta = document.querySelector(".hero__cta");
-    if (cta) cta.style.opacity = "1";
+    if (cta) {
+      cta.style.opacity = "1";
+      cta.style.transform = "none";
+    }
+    var reportaje = document.querySelector("#reportaje");
+    if (reportaje) {
+      reportaje.style.opacity = "1";
+      reportaje.style.transform = "none";
+    }
   }
 
   function initGsapAnimations() {
@@ -186,23 +190,35 @@
     var lightboxClose = document.getElementById("lightbox-close");
     if (!lightbox || !lightboxImg || !lightboxClose) return;
 
+    function openLightbox(img) {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt || "";
+      lightbox.style.display = "flex";
+    }
+
+    function closeLightbox() {
+      lightbox.style.display = "none";
+      lightboxImg.removeAttribute("src");
+      lightboxImg.alt = "";
+    }
+
     document.querySelectorAll(".gallery-item").forEach(function (img) {
       img.addEventListener("click", function () {
-        lightbox.style.display = "flex";
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt;
+        openLightbox(img);
       });
     });
 
-    lightboxClose.addEventListener("click", function () {
-      lightbox.style.display = "none";
-      lightboxImg.src = "";
-    });
+    lightboxClose.addEventListener("click", closeLightbox);
 
     lightbox.addEventListener("click", function (e) {
       if (e.target === lightbox) {
-        lightbox.style.display = "none";
-        lightboxImg.src = "";
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && lightbox.style.display === "flex") {
+        closeLightbox();
       }
     });
   }
@@ -213,7 +229,6 @@
     s.id = "twitter-wjs";
     s.async = true;
     s.src = "https://platform.twitter.com/widgets.js";
-    s.charset = "utf-8";
     document.body.appendChild(s);
   }
 
@@ -238,6 +253,7 @@
   function loadQualifio() {
     var container = document.querySelector(".iframeQualifio");
     if (!container || container.dataset.qualifioLoaded === "true") return;
+    if (!document.getElementById("qualifio_insert_place_1789279")) return;
     container.dataset.qualifioLoaded = "true";
 
     (function (b, o, n, u, s) {
@@ -259,10 +275,10 @@
     window._qual_async = window._qual_async || [];
     window._qual_async.push([
       "createIframe",
-      "qualifio_insert_place_1666371",
+      "qualifio_insert_place_1789279",
       "lavanguardia.qualifioapp.com",
       "20",
-      "D6A2A023-A757-4C3C-9D10-6C1B627D96CA",
+      "10489ED4-E1F3-4A60-9F49-2AFE06C13BAE",
       "100%",
       "670",
       "",
@@ -283,5 +299,5 @@
   initLightbox();
   initLazySocialBar();
   initLazyQualifio();
-  whenIdle(initAnimations, 2500);
+  initAnimations();
 })();

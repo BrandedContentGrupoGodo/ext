@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martín de la Puente: “El primer bote de mi vida fue aceptar la discapacidad y normalizarla”</title>
 
     <!-- Preconexiones (solo recursos críticos del primer render) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,10 +18,23 @@
 
     <link rel="preload" href="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap10/assets/css/main.css" as="style">
     <link rel="stylesheet" href="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap10/assets/css/main.css">
+    <style>
+        .hero__image img,
+        .hero__title,
+        .hero__cta { opacity: 0; }
+    </style>
 
     <!-- Solo peso 400 (único usado en la página) -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400&family=Crimson+Text:wght@400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400&family=Crimson+Text:wght@400&display=swap"></noscript>
+    <noscript>
+        <style>
+            .hero__image img,
+            .hero__title { opacity: 1; }
+            .hero__cta { opacity: 0.8; }
+            #reportaje { opacity: 1; transform: none; }
+        </style>
+    </noscript>
 </head>
 <body>
     <div class="body-caixa">
@@ -51,7 +65,7 @@
                          fetchpriority="high">
                     <!-- ACTUALIZAR CON LA URL FINAL DE LA IMAGEN DE LA CABECERA -->
                     <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap10/assets/img/img-cabecera.png" 
-                         alt="Martín de la Puente"
+                         alt=""
                          aria-hidden="true" 
                          class="blend-sat"
                          width="540"
@@ -73,12 +87,11 @@
                     <div class="social-bar__item">
                         <!-- ACTUALIZAR CON LA URL FINAL DE LA PÁGINA DE FACEBOOK -->
                         <iframe
-                            data-src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fwww.lavanguardia.com%2Fdeportes%2F/20260528%2F11548670%2Faraceli-menduina-final-piraguismo-54-anos-constelaciones-streaming-brl.html&layout&size&width=95&height=20&appId"
+                            data-src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fwww.lavanguardia.com%2Fdeportes%2F20260528%2F11548670%2Faraceli-menduina-final-piraguismo-54-anos-constelaciones-streaming-brl.html&layout&size&width=95&height=20&appId"
                             src="about:blank"
                             width="95"
                             height="20"
                             title="Compartir en Facebook"
-                            scrolling="no"
                             allowfullscreen
                             allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
                         </iframe>
@@ -138,7 +151,7 @@
              <section class="cards-section">
                 <div class="cards-section__bg">
                     <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap1/assets/img/circulos.svg" 
-                         alt="Martín de la Puente" 
+                         alt="" 
                          aria-hidden="true"
                          loading="lazy">
                 </div>
@@ -175,7 +188,7 @@
             <section class="highlight">
                 <div class="highlight__bg">
                     <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/cap4/assets/img/fondo-estrellas.jpg" 
-                         alt="Martín de la Puente"
+                         alt=""
                          width="1920"
                          height="1080"
                          loading="lazy">
@@ -247,8 +260,8 @@
                 
                 <!-- Lightbox -->
                 <div class="lightbox" id="lightbox">
-                    <span class="lightbox-close" id="lightbox-close">×</span>
-                    <img src="" alt="" id="lightbox-img">
+                    <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Cerrar imagen">×</button>
+                    <img alt="" id="lightbox-img">
                 </div>
             </section>
 
@@ -262,9 +275,8 @@
             </section>
 
             <!-- qualifio -->
-            <div class="iframeQualifio"> 
-                <div id='qualifio_insert_place_1789279' class='qualifio_iframe_wrapper'></div> 
-                <script type='text/javascript'> (function(b,o,n,u,s){var a,t;a=b.createElement(u);a.async=1;a.src=s;t=b.getElementsByTagName(u)[0];t.parentNode.insertBefore(a,t);o[n]=o[n]||[]}) (document,window,'_qual_async','script','https://files.qualifio.com/kit/qualp.2.min.js'); _qual_async.push(['createIframe','qualifio_insert_place_1789279','lavanguardia.qualifioapp.com','20','10489ED4-E1F3-4A60-9F49-2AFE06C13BAE','100%','670','','','','max-width:810px;margin:0 auto;']); </script> 
+            <div class="iframeQualifio">
+                <div id="qualifio_insert_place_1789279" class="qualifio_iframe_wrapper"></div>
             </div>
 
             <!-- NUEVA SECCIÓN ============================================= -->
