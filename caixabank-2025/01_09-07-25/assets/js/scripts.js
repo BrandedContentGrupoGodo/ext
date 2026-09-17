@@ -82,16 +82,43 @@ const historias = [
     frase: "Soy un chaval normal, con mis aciertos y defectos, que siempre intenta estar de buen humor",
     imagen: "https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/01_09-07-25/assets/img/cap6.png",
     enlace: "https://www.lavanguardia.com/deportes/20251117/11262846/ander-cepas-tenis-mesa-campeon-olvido-era-numero-uno-mundo-constelaciones-streaming-brl.html"
-  }
+  },
+  {
+    nombre: "Joel Martín",
+    frase: "Del 'no llegarás a nada' a soñar con el oro en Los Ángeles 2028",
+    imagen: "https://brandedcontentgrupogodo.github.io/edicionsclariana/20260429-lacaixa-hub-brl/assets/img/cap7.png",
+    enlace: "https://www.lavanguardia.com/deportes/20260429/11524756/joel-martin-taekwondo-juegos-angeles-2028-constelaciones-streaming-brl.html"
+  },
+  {
+    nombre: "Judith Rodríguez",
+    frase: "Al entrar el último tocado me entraron ganas de llorar al pensar en todo lo que había detrás de ese éxito",
+    imagen: "https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/01_09-07-25/assets/img/cap8.png",
+    enlace: "https://www.lavanguardia.com/deportes/20260528/11548670/judith-rodriguez-paralimpicos-esgrima-espana-medalla-constelaciones-streaming-brl.html"
+  },
+  {
+    nombre: "Araceli Menduiña",
+    frase: "En tierra no puedo correr ni saltar, pero en la piragua me siento libre",
+    imagen: "https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/01_09-07-25/assets/img/cap9.png",
+    enlace: "https://www.lavanguardia.com/deportes/20260625/11573320/araceli-menduina-final-piraguismo-54-anos-constelaciones-streaming-brl.html"
+  },
+  {
+    nombre: "Martín de la Puente",
+    frase: "El primer bote de mi vida fue aceptar la discapacidad y normalizarla",
+    imagen: "https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/01_09-07-25/assets/img/cap10.png",
+    enlace: "https://www.lavanguardia.com/deportes/20260917/11636391/martin-puente-tenista-espanol-aprovecho-segundo-bote-bola-constelaciones-streaming-brl.html"
+  },
+  { locked: true },
+  { locked: true }
 ];
 
 const container = document.getElementById('constelacion');
 
-historias.forEach(({ nombre, frase, imagen, enlace }, i) => {
+historias.forEach((historia, i) => {
   const card = document.createElement('div');
   card.className = 'card';
 
-  if (i === 0 || i === 1 || i === 2 || i === 3 || i === 4 || i === 5) {
+  if (!historia.locked) {
+    const { nombre, frase, imagen, enlace } = historia;
     // Historias desbloqueadas
     card.innerHTML = `
       <img src="${imagen}" alt="Retrato de ${nombre}, atleta paralímpico">
@@ -105,9 +132,9 @@ historias.forEach(({ nombre, frase, imagen, enlace }, i) => {
     // Historias bloqueadas
     card.classList.add("locked");
     card.innerHTML = `
-      <img src="${imagen}" alt="Historia bloqueada">
+      <img src="https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/01_09-07-25/assets/img/locked.png" alt="Historia bloqueada">
       <div class="card-content">
-        <p class="soon-text">Disponible próximamente</p>
+        <p class="soon-text">Próximamente</p>
       </div>
     `;
   }
