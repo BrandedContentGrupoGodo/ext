@@ -232,6 +232,15 @@
     document.body.appendChild(s);
   }
 
+  function revealSocialBar(socialBar) {
+    socialBar.querySelectorAll("iframe[data-src]").forEach(function (iframe) {
+      if (!iframe.src || iframe.src === "about:blank") {
+        iframe.src = iframe.getAttribute("data-src");
+      }
+    });
+    loadTwitterWidgets();
+  }
+
   function initLazySocialBar() {
     var socialBar = document.querySelector(".social-bar");
     if (!socialBar) return;
@@ -239,15 +248,16 @@
     observeOnce(
       socialBar,
       function () {
-        socialBar.querySelectorAll("iframe[data-src]").forEach(function (iframe) {
-          if (!iframe.src || iframe.src === "about:blank") {
-            iframe.src = iframe.getAttribute("data-src");
-          }
-        });
-        loadTwitterWidgets();
+        revealSocialBar(socialBar);
       },
       "200px"
     );
+
+    // Fallback para entornos (p. ej. CMS) donde el IntersectionObserver
+    // no se dispara porque la barra se renderiza oculta o fuera de flujo.
+    setTimeout(function () {
+      revealSocialBar(socialBar);
+    }, 3000);
   }
 
   function loadQualifio() {
