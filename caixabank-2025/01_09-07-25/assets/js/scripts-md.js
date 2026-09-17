@@ -105,7 +105,7 @@ const historias = [
     nombre: "Martín de la Puente",
     frase: "El primer bote de mi vida fue aceptar la discapacidad y normalizarla",
     imagen: "https://brandedcontentgrupogodo.github.io/ext/caixabank-2025/01_09-07-25/assets/img/cap10.png",
-    enlace: "https://www.mundodeportivo.com/juegos-olimpicos/20260918/1004227901/martin-puente-tenista-espanol-aprovecho-segundo-bote-bola-constelaciones-streaming-brl.html"
+    enlace: "https://www.mundodeportivo.com/juegos-olimpicos/20260917/1004227901/martin-puente-tenista-espanol-aprovecho-segundo-bote-bola-constelaciones-streaming-brl.html"
   },
   { locked: true },
   { locked: true }
